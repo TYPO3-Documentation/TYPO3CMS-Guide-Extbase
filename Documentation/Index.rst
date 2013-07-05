@@ -13,16 +13,16 @@ Official TYPO3 Extbase and Fluid Guide
 ======================================
 
 :Version:
-      1.0.0
+      6.2.0
 
 :Language:
       en
 
 :Copyright:
-      2000-2013
+      2013
 
 :Author:
-      Stefan Frömken
+      Documentation Team
 
 :Email:
       documentation@typo3.org
@@ -43,3 +43,14 @@ Under Construction
 ==================
 
 This page is currently under construction.
+
+
+**Table of Contents**
+
+.. toctree::
+   :maxdepth: 5
+   :titlesonly:
+   :glob:
+
+   Targets
+

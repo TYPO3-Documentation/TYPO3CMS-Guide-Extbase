@@ -1,0 +1,9 @@
+# Settings.yml
+
+---
+conf.py:
+  copyright: 2013
+  project: Extbase Guide
+  version: 6.2
+  release: 6.2
+...
