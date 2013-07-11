@@ -3,13 +3,9 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. include:: Includes.txt
+.. include:: ../../../Includes.txt
 
+f:form.errors
+===============
 
-
-.. _labels-for-crossreferencing:
-
-Index: Labels for Crossreferencing
-==================================
-
-.. ref-targets-list::
+Deprecated. Please use ValidationResults-ViewHelper instead.

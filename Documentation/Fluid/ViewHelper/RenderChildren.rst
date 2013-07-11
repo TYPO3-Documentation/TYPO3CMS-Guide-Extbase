@@ -3,13 +3,8 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. include:: Includes.txt
+.. include:: ../../Includes.txt
 
+f:renderChildren
+================
 
-
-.. _labels-for-crossreferencing:
-
-Index: Labels for Crossreferencing
-==================================
-
-.. ref-targets-list::

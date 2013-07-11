@@ -2,8 +2,8 @@
 
 ---
 conf.py:
-  copyright: 2013
-  project: Extbase Guide
-  version: 6.2
-  release: 6.2
+  copyright: 2000-2013
+  project: Official Template
+  version: 2.0.0
+  release: 2.0.0
 ...

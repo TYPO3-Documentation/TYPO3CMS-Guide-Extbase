@@ -1,0 +1,14 @@
+# Settings.yml
+
+---
+conf.py:
+<<<<<<< HEAD
+  copyright: 2013 - 
+  project: Offizieller Extbase Guide (Entwurf)
+=======
+  copyright: 2013-
+  project: Offizieller TYPO3 Fluid Guide (Entwurf)
+>>>>>>> FETCH_HEAD
+  version: 0.0.0
+  release: 0.0.0
+...

@@ -3,13 +3,9 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. include:: Includes.txt
+.. include:: ../../../Includes.txt
 
+f:form.textbox
+==============
 
-
-.. _labels-for-crossreferencing:
-
-Index: Labels for Crossreferencing
-==================================
-
-.. ref-targets-list::
+Deprecated. Please use f:form.textfield instead!

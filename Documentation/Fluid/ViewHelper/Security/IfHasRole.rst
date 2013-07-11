@@ -3,13 +3,10 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. include:: Includes.txt
+.. include:: ../../../Includes.txt
 
+f:security.ifHasRole
+====================
 
-
-.. _labels-for-crossreferencing:
-
-Index: Labels for Crossreferencing
-==================================
-
-.. ref-targets-list::
+Eigenschaften
+-------------
