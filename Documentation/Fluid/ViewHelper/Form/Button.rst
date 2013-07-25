@@ -5,8 +5,12 @@
 
 .. include:: ../../../Includes.txt
 
-f:form.checkbox
-===============
+**Link for german translation**
+
+http://docs.typo3.org/typo3cms/drafts/github/froemken/ExtbaseGuideDE/Fluid/ViewHelper/Form/Button.html
+
+f:form.button
+=============
 
 Dieser ViewHelper erzeugt einen Button zum Absenden des Formulars.
 
