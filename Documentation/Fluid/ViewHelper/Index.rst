@@ -46,5 +46,6 @@ Template-Engine namens *Fluid* entwickelt, die flexibel und erweiterbar, aber do
    RenderChildren
    RenderFlashMessages
    Section
+   Switch
    Then
    Translate
