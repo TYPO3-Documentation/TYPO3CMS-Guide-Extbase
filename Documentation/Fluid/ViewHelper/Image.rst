@@ -15,6 +15,11 @@ und/oder imagemagick auf die hier angegebene Größe verkleinert.
 Eigenschaften
 -------------
 
+.. include:: ../UniversalTagAttributes.txt
+
+Eigenschaften speziell für das HTML-Element
+###########################################
+
 .. t3-field-list-table::
  :header-rows: 1
 

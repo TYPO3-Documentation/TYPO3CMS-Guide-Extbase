@@ -14,6 +14,8 @@ Sternchen umgewandelt.
 Eigenschaften
 -------------
 
+.. include:: ../../UniversalTagAttributes.txt
+
 .. include:: ../../UniversalFormFieldAttributes.txt
 
 Beispiel

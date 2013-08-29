@@ -18,6 +18,8 @@ platziert habt.
 Eigenschaften
 -------------
 
+.. include:: ../UniversalTagAttributes.txt
+
 .. t3-field-list-table::
  :header-rows: 1
 

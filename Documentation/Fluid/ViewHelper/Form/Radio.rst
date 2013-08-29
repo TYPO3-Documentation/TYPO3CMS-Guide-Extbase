@@ -15,6 +15,8 @@ möglich.
 Eigenschaften
 -------------
 
+.. include:: ../../UniversalTagAttributes.txt
+
 .. include:: ../../UniversalFormFieldAttributes.txt
 
 Eigenschaften speziell für das HTML-Element

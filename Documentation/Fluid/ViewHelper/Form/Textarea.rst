@@ -14,6 +14,8 @@ Gut geeignet z.B. für das Nachrichtenfeld im Kontaktformular.
 Eigenschaften
 -------------
 
+.. include:: ../../UniversalTagAttributes.txt
+
 .. include:: ../../UniversalFormFieldAttributes.txt
 
 Beispiele:

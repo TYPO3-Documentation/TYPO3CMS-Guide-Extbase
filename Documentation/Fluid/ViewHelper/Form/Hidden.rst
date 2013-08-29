@@ -15,6 +15,8 @@ Daten einem Datensatz zuzuordnen, um ihn z.B. zu speichern.
 Eigenschaften
 -------------
 
+.. include:: ../../UniversalTagAttributes.txt
+
 .. include:: ../../UniversalFormFieldAttributes.txt
 
 Beispiel

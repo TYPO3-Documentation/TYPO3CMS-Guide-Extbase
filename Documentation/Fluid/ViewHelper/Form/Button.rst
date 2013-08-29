@@ -17,6 +17,8 @@ Dieser ViewHelper erzeugt einen Button zum Absenden des Formulars.
 Eigenschaften
 -------------
 
+.. include:: ../../UniversalTagAttributes.txt
+
 .. include:: ../../UniversalFormFieldAttributes.txt
 
 Eigenschaften speziell für das HTML-Element

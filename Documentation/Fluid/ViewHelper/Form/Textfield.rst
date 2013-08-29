@@ -13,6 +13,8 @@ Mit diesem ViewHelper erstellt Ihr ein Textfeld.
 Eigenschaften
 -------------
 
+.. include:: ../../UniversalTagAttributes.txt
+
 .. include:: ../../UniversalFormFieldAttributes.txt
 
 Eigenschaften speziell für diesen ViewHelper
