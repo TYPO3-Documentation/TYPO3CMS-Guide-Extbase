@@ -91,6 +91,10 @@ Beispiel
 
  <f:debug title="Results of customers">{customers}</f:debug>
 
+::
+
  {customers -> f:debug(title="Results of customers")}
+
+::
 
  {f:debug(subject: customers, title: "Results od customers")}
