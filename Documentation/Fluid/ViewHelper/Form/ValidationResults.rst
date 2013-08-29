@@ -5,6 +5,5 @@
 
 .. include:: ../../../Includes.txt
 
-f:form.validation
-=================
-
+f:form.validationResults
+========================

@@ -30,4 +30,4 @@ Eigenschaften
    Textbox
    Textfield
    Uploads
-   Validation
+   ValidationResults
