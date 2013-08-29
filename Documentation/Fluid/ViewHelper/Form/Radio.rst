@@ -15,6 +15,11 @@ möglich.
 Eigenschaften
 -------------
 
+.. include:: ../../UniversalFormFieldAttributes.txt
+
+Eigenschaften speziell für das HTML-Element
+###########################################
+
 .. t3-field-list-table::
  :header-rows: 1
 

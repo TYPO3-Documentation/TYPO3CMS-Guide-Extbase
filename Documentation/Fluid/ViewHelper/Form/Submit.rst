@@ -14,7 +14,7 @@ absendet und somit die eingegebenen Formulardaten an den Server übermittelt
 Eigenschaften
 -------------
 
-Dieser ViewHelper besitzt keine Eigenschaften
+.. include:: ../../UniversalFormFieldAttributes.txt
 
 Beispiel
 --------

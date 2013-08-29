@@ -15,7 +15,7 @@ Daten einem Datensatz zuzuordnen, um ihn z.B. zu speichern.
 Eigenschaften
 -------------
 
-Dieser ViewHelper besitzt keine Eigenschaften
+.. include:: ../../UniversalFormFieldAttributes.txt
 
 Beispiel
 --------

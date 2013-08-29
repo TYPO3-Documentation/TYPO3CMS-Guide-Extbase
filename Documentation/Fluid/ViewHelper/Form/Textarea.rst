@@ -14,7 +14,7 @@ Gut geeignet z.B. für das Nachrichtenfeld im Kontaktformular.
 Eigenschaften
 -------------
 
-Dieser ViewHelper besitzt keine Eigenschaften
+.. include:: ../../UniversalFormFieldAttributes.txt
 
 Beispiele:
 ----------
