@@ -8,34 +8,34 @@
 f:be.buttons.shortcut
 =====================
 
-Mit diesem ViewHelper könnt Ihr Euren BE-Modul-Besuchern anbieten Euer Modul als Favorit abzuspeichern
+This ViewHelper provides the bookmark function used in backend.
 
-Eigenschaften
--------------
+Features
+--------
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Datatype
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    getVars
    :Datatype:    Array
-   :Description: Wenn nichts angegeben wird, dann werden Seiten-UID, Modul und Modulargumente mit dem Favoriten zusammen abgespeichert.
-   :Standard:    Leeres Array
-   :Mandatory:   Ja
+   :Description: if empty, page-UID, module and module arguments to save with the bookmark
+   :Standard:    empty array
+   :Mandatory:   No
 
  - :Property:    setVars
    :Datatype:    Array
-   :Description: Hier wird auf template::makeShortcutIcon() verwiesen. Wird aber für Extbase-Module normalerweise nicht benötigt.
-   :Standard:    Leeres Array
-   :Mandatory:   Ja
+   :Description: see template::makeShortcutIcon(), usually not used for extbase extensions
+   :Standard:    empty array
+   :Mandatory:   No
 
-Beispiel
---------
+Example
+-------
 
 ::
 
