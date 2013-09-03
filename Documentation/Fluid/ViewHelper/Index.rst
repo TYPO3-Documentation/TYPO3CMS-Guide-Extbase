@@ -8,9 +8,7 @@
 ViewHelper
 ==========
 
-In diesem Guide zeigen wir Ihnen wie Sie Ausgaben für den Nutzer einfach und schnell erzeugen können.
-Um diese Arbeit möglichst effizient zu gestalten, wurde speziell für TYPO3 CMS und TYPO3 Flow eine neue
-Template-Engine namens *Fluid* entwickelt, die flexibel und erweiterbar, aber doch einfach zu erlernen ist.
+The power of Fluid is the usage of ViewHelpers. There are many of them, for all kind of tasks. What is available and how to use it can be found on the following pages.
 
 **Table of Contents**
 
