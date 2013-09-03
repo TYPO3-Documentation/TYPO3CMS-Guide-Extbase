@@ -8,70 +8,65 @@
 f:be.buttons.csh
 ================
 
-Eigentlich viel zu selten verwendet. Aber so ist es nun mal mit der Dokumentation. Mit diesem ViewHelper könnt Ihr
-dem Benutzer kleine Hilfestellungen geben, was sie z.B. in ein bestimmtes Feld eingeben sollen. TYPO3 selbst verwendet
-es nahezu durchgängig und Ihr erkennt es an diesen kleinen runden Fragezeichen in der Nähe eines jeden Eingabefeldes.
-Wenn Ihr mit der Maus drüberfahrt und knapp ne Sekunde oder 2 wartet, dann erscheint der kurze Hilfetext. Klickt Ihr
-auf das Icon öffnet sich ein PopUp mit weiteren Informationen zu diesem Eingabefeld. In den Benutzereinstellungen
-könnt Ihr einstellen, ob dieses PopUp nach einem Klick erscheinen soll oder nicht.
+This ViewHelper is rarely used, but very helpful nonetheless. It enables to include hints into Backend forms.
+TYPO3 uses this functionality all over the backend, and it is noticeable by the small question mark images. When hovered it reveals the helptext in a little tooltip. It can be activated by mouse click and then display the help text in a popup window.
+There is a setting in the user configuration whether to show the popup or not.
 
-Eigenschaften
--------------
+Features
+--------
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Datatype
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    table
    :Datatype:    String
-   :Description: Der Tabellenname
+   :Description: table name
    :Standard:    NULL
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    field
    :Datatype:    String
-   :Description: Der Key aus der Sprachdatei
-   :Standard:    Leerer String
-   :Mandatory:   Ja
+   :Description: the key from locallang file to use
+   :Standard:    empty string
+   :Mandatory:   Yes
 
  - :Property:    iconOnly
    :Datatype:    Boolean
-   :Description: Es wird nur das Bildchen dargestellt, nicht aber der Hilfetext
+   :Description: display the icon, but not the text
    :Standard:    FALSE
-   :Mandatory:   Ja
+   :Mandatory:   No
 
  - :Property:    styleAttributes
    :Datatype:    String
-   :Description: Zusätzliches style-Attribut, das in die umschließende Tabelle eingebunden wird
-   :Standard:    Leerer String
-   :Mandatory:   Ja
+   :Description: additional style attribute, added to the containing table
+   :Standard:    empty string
+   :Mandatory:   No
 
-Beispiel
---------
+Example
+-------
 
-Bei den Tabellen von TYPO3 haben wir meist Glück, dass der key innerhalb der Hilfe-Sprachdatei gleich dem
-Spaltennamen ist:
+Usually in the most TYPO3 tables the language file key is the same as the column name:
 
 ::
 
  <f:be.buttons.csh table="tt_content" field="header" />
 
-Beispiel mit Stil
------------------
+Example with style attribute
+----------------------------
 
-Damit dieses Beispiel funktioniert müsst Ihr zuallererst sicherstellen, dass in der userTSconfig folgende
-Einstellung getroffen wurde:
+Make sure there is the following setting in userTSconfig:
 
 ::
 
  setup.override.edit_showFieldHelp=text
 
-Erst jetzt könnt Ihr sehen wie sich das Icon verändert hat:
+Now the icon has changed:
 
 ::
 
