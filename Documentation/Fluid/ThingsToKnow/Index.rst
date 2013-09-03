@@ -18,3 +18,4 @@ Here are some important informations around Fluid
    :glob:
 
    Arrays
+   JsAndInline
