@@ -8,9 +8,8 @@
 Fluid Guide
 ===========
 
-In diesem Guide zeigen wir Ihnen wie Sie Ausgaben für den Nutzer einfach und schnell erzeugen können.
-Um diese Arbeit möglichst effizient zu gestalten, wurde speziell für TYPO3 CMS und TYPO3 Flow eine neue
-Template-Engine namens *Fluid* entwickelt, die flexibel und erweiterbar, aber doch einfach zu erlernen ist.
+This Guide demonstrates the usage of Fluid to render output.
+Fluid is a template engine that is designed to be flexible and extendable, but easy to use. It is part of TYPO3 Flow and TYPO3 CMS.
 
 
 **Table of Contents**
@@ -21,4 +20,4 @@ Template-Engine namens *Fluid* entwickelt, die flexibel und erweiterbar, aber do
    :glob:
 
    ViewHelper/Index
-   Wissenswertes/Index
+   ThingsToKnow/Index

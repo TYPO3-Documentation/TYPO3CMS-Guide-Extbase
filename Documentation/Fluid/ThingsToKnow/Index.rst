@@ -5,10 +5,10 @@
 
 .. include:: ../../Includes.txt
 
-Wissenswertes
-=============
+Things to know
+==============
 
-Hier findet Ihr ein paar wichtige Informationen rund um das Thema Fluid
+Here are some important informations around Fluid
 
 **Table of Contents**
 
