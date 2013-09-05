@@ -5,6 +5,8 @@
 
 .. include:: ../../../Includes.txt
 
+.. _f-format-cdata:
+
 f:format.cdata
 ==============
 
