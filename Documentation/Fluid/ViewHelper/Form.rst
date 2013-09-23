@@ -30,6 +30,48 @@ Eigenschaften speziell für das HTML-Element
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
+ - :Property:    enctype
+   :Datatype:    String
+   :Description: Mit welchem Encoding sollen die Daten des Formulars versendet werden?
+   :Standard:    NULL
+   :Mandatory:   Nein
+
+ - :Property:    method
+   :Datatype:    String
+   :Description: Übertragungsmethode. Mögliche Werte sind GET oder POST
+   :Standard:    NULL
+   :Mandatory:   Nein
+
+ - :Property:    name
+   :Datatype:    String
+   :Description: Name des Formulars
+   :Standard:    NULL
+   :Mandatory:   Nein
+
+ - :Property:    onreset
+   :Datatype:    String
+   :Description: JavaScript, das ausgeführt werden soll, wenn der Reset-Button für das Formular gedrückt wurde
+   :Standard:    NULL
+   :Mandatory:   Nein
+
+ - :Property:    onsubmit
+   :Datatype:    String
+   :Description: JavaScript, das ausgeführt werden soll, wenn der Submit-Button für das Formular gedrückt wurde
+   :Standard:    NULL
+   :Mandatory:   Nein
+
+Eigenschaften speziell für diesen ViewHelper
+############################################
+
+.. t3-field-list-table::
+ :header-rows: 1
+
+ - :Property,20:    Eigenschaft
+   :Datatype,20:    Datentyp
+   :Description,40: Beschreibung
+   :Standard,10:    Standard
+   :Mandatory,10:   Mandatory
+
  - :Property:    action
    :Datatype:    String
    :Description: Welche Actionmethode soll aufgerufen werden, wenn das Formular abgesendet wird
