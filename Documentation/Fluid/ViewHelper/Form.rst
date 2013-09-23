@@ -30,24 +30,6 @@ Eigenschaften speziell für das HTML-Element
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
- - :Property:    disabled
-   :Datatype:    String
-   :Description: Die Checkbox wird deaktiviert angezeigt.
-   :Standard:
-   :Mandatory:   Nein
-
-Eigenschaften speziell für diesen ViewHelper
-############################################
-
-.. t3-field-list-table::
- :header-rows: 1
-
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
-
  - :Property:    enctype
    :Datatype:    String
    :Description: Mit welchem Encoding sollen die Daten des Formulars versendet werden?
