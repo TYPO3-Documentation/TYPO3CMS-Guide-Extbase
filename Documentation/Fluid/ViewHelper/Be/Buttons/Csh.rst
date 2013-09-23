@@ -28,13 +28,13 @@ Features
    :Datatype:    String
    :Description: table name
    :Standard:    NULL
-   :Mandatory:   Yes
+   :Mandatory:   No
 
  - :Property:    field
    :Datatype:    String
    :Description: the key from locallang file to use
    :Standard:    empty string
-   :Mandatory:   Yes
+   :Mandatory:   No
 
  - :Property:    iconOnly
    :Datatype:    Boolean

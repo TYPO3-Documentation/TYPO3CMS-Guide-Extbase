@@ -26,20 +26,20 @@ Eigenschaften
  - :Property:    uri
    :Datatype:    String
    :Description: Die URL wohin die Reise führen soll. Kann auch mit einem der f:uri.*-ViewHelper kombiniert werden
-   :Standard:    NULL
-   :Mandatory:   Ja
+   :Standard:    Leerer String
+   :Mandatory:   Nein
 
  - :Property:    icon
    :Datatype:    String
    :Description: Der Name des Icons, dass verwendet werden soll
    :Standard:    actions-document-close
-   :Mandatory:   Ja
+   :Mandatory:   Nein
 
  - :Property:    title
    :Datatype:    String
    :Description: Der hier eingegebene Wert wird als title-Attribut für den Link verwendet
    :Standard:    Leerer String
-   :Mandatory:   Ja
+   :Mandatory:   Nein
 
 Welche Werte für den icon-Parameter gültig sind könnt Ihr herausfinden, wenn Ihr irgend einen Schwachsinn als Wert
 für den icon-Parameter angebt. Denn dann erhaltet Ihr folgende Antwort:

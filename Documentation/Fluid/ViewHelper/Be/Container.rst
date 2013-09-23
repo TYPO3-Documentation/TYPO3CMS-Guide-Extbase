@@ -32,70 +32,70 @@ Eigenschaften
    :Datatype:    String
    :Description: BE-Module werden in einem Frame dargestellt, von daher macht ein Seitentitel wenig sind. Einfach leer lassen
    :Standard:    Leerer String
-   :Mandatory:   Ja
+   :Mandatory:   Nein
 
  - :Property:    enableJumpToUrl
    :Datatype:    Boolean
    :Description: Lasst diesen Parameter eingeschaltet, wenn Ihr den ActionMenu-ViewHelper verwenden wollt, da dieser die entsprechenden JavaScripte dazu liefert.
    :Standard:    TRUE
-   :Mandatory:   Ja
+   :Mandatory:   Nein
 
  - :Property:    enableClickMenu
    :Datatype:    Boolean
    :Description: Wenn aktiviert, wird das JavaScript für die Contextmenüs eingebunden
    :Standard:    TRUE
-   :Mandatory:   Ja
+   :Mandatory:   Nein
 
  - :Property:    loadPrototype
    :Datatype:    Boolean
    :Description: Wenn aktiviert, wird das Prototype-JS-Framework eingebunden
    :Standard:    TRUE
-   :Mandatory:   Ja
+   :Mandatory:   Nein
 
  - :Property:    loadScriptaculous
    :Datatype:    Boolean
    :Description: Wenn aktiviert, wird das Zusatzpaket für Prototype eingebunden
    :Standard:    FALSE
-   :Mandatory:   Ja
+   :Mandatory:   Nein
 
  - :Property:    scriptaculousModule
    :Datatype:    String
    :Description: Ihr könnt hier noch weitere Module für das Scriptaculouspaket aktivieren
    :Standard:    Leerer String
-   :Mandatory:   Ja
+   :Mandatory:   Nein
 
  - :Property:    loadExtJs
    :Datatype:    Boolean
    :Description: Wenn aktiviert, wird das ExtJS-Framework eingebunden
    :Standard:    FALSE
-   :Mandatory:   Ja
+   :Mandatory:   Nein
 
  - :Property:    loadExtJsTheme
    :Datatype:    Boolean
    :Description: Wenn aktiviert, werden Vorgaben für die Grafischen Elemente eingebunden.
    :Standard:    TRUE
-   :Mandatory:   Ja
+   :Mandatory:   Nein
 
  - :Property:    extJsAdapter
    :Datatype:    String
    :Description: Statt dem Standard ext-base kann hier ein anderer Adapter angegeben werden.
    :Standard:    Leerer String
-   :Mandatory:   Ja
+   :Mandatory:   Nein
 
  - :Property:    enableExtJsDebug
    :Datatype:    Boolean
    :Description: Sollte nur aktiviert werden, wenn man auf Basis von ExtJS entwickelt.
    :Standard:    FALSE
-   :Mandatory:   Ja
+   :Mandatory:   Nein
 
  - :Property:    addCssFile
    :Datatype:    String
    :Description: Eine CSS-Datei einbinden
    :Standard:    NULL
-   :Mandatory:   Ja
+   :Mandatory:   Nein
 
  - :Property:    addJsFile
    :Datatype:    String
    :Description: Eine JavaScript-Datei einbinden
    :Standard:    NULL
-   :Mandatory:   Ja
+   :Mandatory:   Nein
