@@ -99,3 +99,30 @@ Eigenschaften
    :Description: Eine JavaScript-Datei einbinden
    :Standard:    NULL
    :Mandatory:   Nein
+
+ - :Property:    loadJQuery
+   :Datatype:    Boolean
+   :Description: Soll jQuery als JavaScript Framework eingebunden werden?
+   :Standard:    FALSE
+   :Mandatory:   Nein
+
+ - :Property:    includeCssFiles
+   :Datatype:    Array
+   :Description: Während addCssFile nur eine CSS-Datei einbinden kann, können mit dieser Eigenschaft mehrere
+                 CSS-Dateien eingebunden werden.
+   :Standard:    NULL
+   :Mandatory:   Nein
+
+ - :Property:    includeJsFiles
+   :Datatype:    Array
+   :Description: Während addJsFile nur eine JS-Datei einbinden kann, können mit dieser Eigenschaft mehrere
+                 JS-Dateien eingebunden werden.
+   :Standard:    NULL
+   :Mandatory:   Nein
+
+ - :Property:    addJsInlineLabels
+   :Datatype:    Array
+   :Description: Jeder Wert in diesem Array muss einem Key aus der locallang.xml/xlf entsprechen. Diese Übersetzung
+                 wird dann im Backend zur Verfügung gestellt.
+   :Standard:    NULL
+   :Mandatory:   Nein
