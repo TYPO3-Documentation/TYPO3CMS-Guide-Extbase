@@ -3,10 +3,10 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. include:: ../../../Includes.txt
+.. include:: ../../../../Includes.txt
 
-ViewHelper: Be
-==============
+ViewHelper: Widget
+==================
 
 **Table of Contents**
 
@@ -15,11 +15,4 @@ ViewHelper: Be
    :titlesonly:
    :glob:
 
-   Buttons/Index
-   Menus/Index
-   Security/Index
-   Widget/Index
-   Container
-   PageInfo
-   PagePath
-   TableList
+   Paginate
