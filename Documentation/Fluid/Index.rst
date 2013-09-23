@@ -21,3 +21,4 @@ Fluid is a template engine that is designed to be flexible and extendable, but e
 
    ViewHelper/Index
    ThingsToKnow/Index
+   BestPractice/Index
