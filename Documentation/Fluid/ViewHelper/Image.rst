@@ -29,6 +29,43 @@ Eigenschaften speziell für das HTML-Element
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
+ - :Property:    alt
+   :Datatype:    String
+   :Description: Wenn das Bild nicht geladen wird, wird dieser alternative Text stattdessen angezeigt.
+   :Standard:
+   :Mandatory:   Ja
+
+ - :Property:    ismap
+   :Datatype:    String
+   :Description: Specifies an image as a server-side image-map
+   :Standard:    NULL
+   :Mandatory:   Nein
+
+ - :Property:    longdesc
+   :Datatype:    String
+   :Description: Hier können Sie ein URI hinterlegen, die auf eine Seite verweist,
+                 auf der sich eine umfangreiche Erläuterung diesen Bildes befindet.
+   :Standard:    NULL
+   :Mandatory:   Nein
+
+ - :Property:    usemap
+   :Datatype:    String
+   :Description: Specifies an image as a client-side image-map
+   :Standard:    NULL
+   :Mandatory:   Nein
+
+Eigenschaften speziell für diesen ViewHelper
+############################################
+
+.. t3-field-list-table::
+ :header-rows: 1
+
+ - :Property,20:    Eigenschaft
+   :Datatype,20:    Datentyp
+   :Description,40: Beschreibung
+   :Standard,10:    Standard
+   :Mandatory,10:   Mandatory
+
  - :Property:    src
    :Datatype:    String
    :Description: Pfad zu der Datei. Hier kann auch mit EXT: gearbeitet werden, da es sich hier um ein IMG_RESOURCE handelt
