@@ -1,29 +1,27 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
+
+.. -*- coding: utf-8 -*- ÄÖÜäöüß
 
 .. include:: ../../Includes.txt
 
 Statische Optionen für f:form.select
 ====================================
 
-Der f:form.select-ViewHelper bringt ein paar coole Eigenschaften mit wie z.B. optionValueField und optionLabelField.
-Damit ist es Euch möglich auf bestimmte Eigenschaften eines Objektes zuzugreifen, um diese als value oder auch label
-für die zu generierenden Optionen der Selectbox zu erzeugen.
+Der f:form.select-ViewHelper bringt einige coole Eigenschaften mit wie zum Beispiel optionValueField
+und optionLabelField. Damit ist es möglich, auf bestimmte Eigenschaften eines Objektes zuzugreifen,
+um diese als Value oder auch als Label für die zu generierenden Optionen der Selectbox bereit zu stellen.
 
-Diese beiden Eigenschaften haben aber ein Problem. Sie funktionieren nur in Zusammenarbeit mit Objekten. Selbst wenn
-Ihr Euch die Struktur in einem Array nachbaut, so scheitert allein der Versuch an der Zeile im
-f:form.select-ViewHelper::
+Diese beiden Eigenschaften haben aber ein Problem: sie funktionieren nur in Zusammenarbeit mit Objekten. Selbst wenn
+ihr die Struktur in einem Array nachbaut, so scheitert der Versuch bereits hier im f:form.select-ViewHelper::
 
- if (is_object($value)) {
+   if (is_object($value)) {
 
-Denn nur dort werden diese beiden Eigenschaften überhaupt verarbeitet.
+Denn nur dort werden diese beiden Eigenschaften verarbeitet.
 
-Natürlich könnten wir uns auch ein kleines Mini-Domainmodel mit 2 getter und setter-Methoden bauen,
-um den Label und Value hier abzuspeichern. Etwas zu umfangreich, um "mal eben" ein paar statische Werte hinzuzufügen.
+Natürlich könnten wir uns auch ein kleines Mini-Domainmodel mit zwei Getter- und Setter-Methoden bauen,
+um Label und Value hier abzuspeichern. Das erscheint jedoch als zu aufwändig, nur um einige statische Werte
+bereit zu stellen.
 
-Abhilfe schafft hier die PHP Standardklasse: stdClass::
+Abhilfe schafft hier die PHP Standardklasse :php:`stdClass`::
 
  /**
   * action list
@@ -35,7 +33,7 @@ Abhilfe schafft hier die PHP Standardklasse: stdClass::
  }
 
  /**
-  * get categories for select box
+  * prepare categories for select box
   *
   * @return array
   */
@@ -51,7 +49,7 @@ Abhilfe schafft hier die PHP Standardklasse: stdClass::
    return $categories;
  }
 
-Im Fluid-Template könnt Ihr dann wieder ganz normal die beiden Eigenschaften verwenden::
+Im Fluid-Template könnt ihr dann wieder ganz normal die beiden Eigenschaften verwenden::
 
- <f:form.select name="category" options="{categories}" optionValueField="key" optionLabelField="value" />
+   <f:form.select name="category" options="{categories}" optionValueField="key" optionLabelField="value" />
 
