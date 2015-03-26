@@ -65,7 +65,7 @@ Domain Modelle anlegen
 ----------------------
 
 Das Formular für die Extensionkonfiguration könnt Ihr mit dem kleinen Pfeil oben rechts im Formular schließen. Nun
-steht Euch die komplette kariente Fläche zur weiteren Bearbeitung zur Verfügung. Per Drag and Drop könnt Ihr nun
+steht Euch die komplette karierte Fläche zur weiteren Bearbeitung zur Verfügung. Per Drag and Drop könnt Ihr nun
 aus dem Kasten "New Model Object" ein eigenes Domainmodel herausziehen und auf der weißen Fläche platzieren. Dieses
 Model nennt Ihr "Product". Nach dem Aufklappen der *Domain Object Settings* aktiviert Ihr die Checkbox *Is
 Aggregate Root* und setzt die Beschreibung auf "Product".
