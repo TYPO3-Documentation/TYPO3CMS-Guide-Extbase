@@ -28,13 +28,13 @@ Eigenschaften
    :Standard:    2
    :Mandatory:   Nein
 
- - :Property:    decimalSeperator
+ - :Property:    decimalSeparator
    :Datatype:    String
    :Description: Welcher Zeichen soll für die Trennung von Euro und Cent verwendet werden. Dezimaltrenner.
    :Standard:    .
    :Mandatory:   Nein
 
- - :Property:    thousandsSeperator
+ - :Property:    thousandsSeparator
    :Datatype:    String
    :Description: Welches Zeichen soll als Tausendertrennzeichen verwendet werden.
    :Standard:    ,
