@@ -71,7 +71,7 @@ Einfache Beispiele
    </f:if>
  </f:alias>
  <f:alias map="{elemente: {0: wert1, 1: wert2}}">
-   <f:if condition="{elemente -> f:count()==2">
+   <f:if condition="{elemente -> f:count()}==2">
      <p>Vergleich mit ViewHelpern: Das Elementearray beinhaltet 2 Elemente</p>
    </f:if>
  </f:alias>
