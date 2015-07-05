@@ -25,7 +25,7 @@ modern, clear and highly structured way of PHP development with a hidden bonus:
 If you know Extbase, getting into FLOW3 will be much, much easier for you. Another
 bonus: Porting Extbase extensions to Phoenix will be a walk in the park, whereas
 porting a piBased extension to Phoenix will be incredibly laborious if possible at
-all, and pobably a very bad experience for everyone involved.
+all, and probably a very bad experience for everyone involved.
 
 How do I get started with Extbase?
 ----------------------------------
