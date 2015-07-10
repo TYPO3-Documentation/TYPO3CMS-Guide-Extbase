@@ -32,7 +32,7 @@ Eigenschaften
 
 Folgende Vergleiche sind erlaubt: ==, !=, <, <=, >, >= und %
 
-Vergleicht werden können nur Variablen folgenden Typs: Zahlen, Objekteigenschaften, Arrays und
+Vergleicht werden können nur Variablen folgenden Typs: Zahlen, Objekteigenschaften, Arrays, Strings (seit v6.2) und
 Ergebnisse aus ViewHelpern
 
 Einfache Beispiele
@@ -76,9 +76,13 @@ Einfache Beispiele
    </f:if>
  </f:alias>
  <f:alias map="{wert1: 'hallo'}">
-   <f:if condition="{0: wert1} == {0: 'hallo'}">
-     <p>Stringvergleiche klappen nur als Array</p>
+   <f:if condition="{wert1} == 'hallo'">
+     <p>Stringvergleiche klappen seit v6.2</p>
    </f:if>
+   <f:if condition="{0: wert1} == {0: 'hallo'}">
+     <p>Stringvergleiche vor v6.2 nur als Array</p>
+   </f:if>
+
  </f:alias>
 
 Wenn kein f:then oder f:else-ViewHelper gefunden wurde, dann wird der Inhalt zwischen den f:if-ViewHelpern immer nur
