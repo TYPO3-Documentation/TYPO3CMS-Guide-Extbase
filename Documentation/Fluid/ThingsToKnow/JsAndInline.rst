@@ -64,7 +64,7 @@ Solution
 - wake up Fluid rendering
   Introduce after the JavaScript block a normal syntax term, maybe::
 
-  <f:commment>wake up, fluid!</f:comment>
+  <f:comment>wake up, fluid!</f:comment>
 
 - wrap the JavaScript part in CDATA::
 
