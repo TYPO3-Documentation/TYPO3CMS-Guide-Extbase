@@ -117,3 +117,13 @@ Beispiel
 ::
 
  <f:link.page pageUid="134">Linkname für die Seite 134</f:link.page>
+ 
+ <f:link.page pageUid="134" additionalParams="{L:1}">
+ /index.php?id=134&L=1
+
+ <f:link.page pageUid="134" additionalParams="{param: 'test'}">
+ /index.php?id=134&param=test
+
+ <f:link.page pageUid="134" additionalParams="{param: '{name: \'test\'}'}">
+ /index.php?id=134&param[name]=test
+ 
