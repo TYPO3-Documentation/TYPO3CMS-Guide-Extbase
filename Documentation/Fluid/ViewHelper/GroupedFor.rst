@@ -57,7 +57,7 @@ Beispiel
    <table cellpadding="5" cellspacing="0" border="2">
      <f:groupedFor each="{mitarbeiter}" as="kollegen" groupBy="stadt" groupKey="stadt">
        <tr>
-         <th colspan="2">{stadt}</th>
+         <th colspan="2">{stadt}</th> ist das hier der groupKey? 
        </tr>
        <f:for each="{kollegen}" as="kollege">
          <tr>
@@ -69,7 +69,7 @@ Beispiel
    </table>
  </f:alias>
 
-Hier wieder das Beispiel mit den 6 Mitarbeitern. Wie Ihr sehen könnt gruppiert der f:groupedBy-ViewHelper diese
+Hier wieder das Beispiel mit den 6 Mitarbeitern. Wie Ihr sehen könnt gruppiert der f:groupedBy(müsste es nicht groupedFor lauten)-ViewHelper diese
 Mitarbeiter anhand ihrer Städte (groupBy). Das geübte Auge sieht evtl. sofort, dass die ersten beiden Arrayeinträge
 in Lindlar wohnen. Um innerhalb der f:groupedBy-Tags auf diesen Städtenamen zugreifen zu können, verwendet Ihr den
 Parameter groupKey. Der Wert aus groupBy und groupKey müssen nicht übereinstimmen. Innerhalb von groupKey könntet Ihr
