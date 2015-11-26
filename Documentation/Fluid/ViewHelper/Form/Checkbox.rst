@@ -52,6 +52,12 @@ Eigenschaften speziell für diesen ViewHelper
    :Description: Wenn aktiviert, dann gilt diese Checkbox als markiert.
    :Standard:    NULL
    :Mandatory:   Nein
+   
+ - :Property:    multiple
+   :Datatype:    Boolean
+   :Description: Spezifiziert ob eine Checkbox zu einer Multiselect-Gruppe gehört.
+   :Standard:    NULL
+   :Mandatory:   Nein
 
 Derzeit sind Checkboxen innerhalb von Fluid/Extbase noch eine echte Katastrophe. Es hat mich viel Zeit gekostet eine
 Checkbox überhaupt ans Laufen zu bekommen, da sie ein leeres aber vorhandenes Model erfordern, wenn sie mit Hilfe der
@@ -126,8 +132,8 @@ Das Formular bleibt ähnlich den oberen Beispielen:
 
 ::
 
- <f:form.checkbox property="farbe" value="gelb" />&nbsp:gelb<br />
- <f:form.checkbox property="farbe" value="braun" />&nbsp:braun<br /> <f:form.checkbox property="farbe" value="blau" />&nbsp:blau<br />
+ <f:form.checkbox property="farbe" value="gelb" multiple="1" />&nbsp:gelb<br />
+ <f:form.checkbox property="farbe" value="braun" multiple="1" />&nbsp:braun<br /> <f:form.checkbox property="farbe" value="blau" multiple="1" />&nbsp:blau<br />
 
 Da Ihr ein Array nicht in der Datenbank abspeichern könnt, müsst Ihr das Array, das von den Checkboxen kommt in einen
 String konvertieren. Das könnt Ihr zum Beispiel mit serialize() und unserialize() realisieren. Bearbeitet dazu in Eurem
