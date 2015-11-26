@@ -132,8 +132,8 @@ Das Formular bleibt ähnlich den oberen Beispielen:
 
 ::
 
- <f:form.checkbox property="farbe" value="gelb" multiple=1 />&nbsp:gelb<br />
- <f:form.checkbox property="farbe" value="braun" multiple=1 />&nbsp:braun<br /> <f:form.checkbox property="farbe" value="blau" multiple=1 />&nbsp:blau<br />
+ <f:form.checkbox property="farbe" value="gelb" multiple="1" />&nbsp:gelb<br />
+ <f:form.checkbox property="farbe" value="braun" multiple="1" />&nbsp:braun<br /> <f:form.checkbox property="farbe" value="blau" multiple="1" />&nbsp:blau<br />
 
 Da Ihr ein Array nicht in der Datenbank abspeichern könnt, müsst Ihr das Array, das von den Checkboxen kommt in einen
 String konvertieren. Das könnt Ihr zum Beispiel mit serialize() und unserialize() realisieren. Bearbeitet dazu in Eurem
