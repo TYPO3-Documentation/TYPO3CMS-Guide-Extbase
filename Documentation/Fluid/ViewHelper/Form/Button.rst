@@ -39,3 +39,13 @@ Eigenschaften speziell für das HTML-Element
    :Standard:    NULL
    :Mandatory:   Nein
 
+Beispiel
+--------
+
+::
+
+ <f:form.button>Send Mail</f:form.button>
+ 
+::
+
+ <f:form.button type="reset" name="buttonName" value="buttonValue" disabled="disabled" formmethod="post" formnovalidate="formnovalidate">Cancel</f:form.button>
