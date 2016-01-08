@@ -38,13 +38,13 @@ Eigenschaften speziell für das HTML-Element
 
  - :Property:    size
    :Datatype:    String
-   :Description: Die Größe der Selectbox. Wie viele Optionen sollen gleichzeit angezeigt werden?
+   :Description: Die Größe der Selectbox. Wie viele Optionen sollen gleichzeitig angezeigt werden?
    :Standard:    NULL
    :Mandatory:   Nein
 
  - :Property:    disabled
    :Datatype:    String
-   :Description: Wenn aktiviert, dann ist die Selectbox beim Laen des Formulars deaktiviert.
+   :Description: Wenn aktiviert, dann ist die Selectbox beim Laden des Formulars deaktiviert.
    :Standard:    NULL
    :Mandatory:   Nein
 
