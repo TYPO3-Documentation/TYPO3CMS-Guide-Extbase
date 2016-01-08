@@ -118,7 +118,7 @@ Beispiel mit Stil
 Beispiel: Icons für Formularfelder ohne 1zu1-Abbild in der Datenbank
 ####################################################################
 
-Hier ein Beispiel für den oben beschriebenen Soderfall, bei dem der Tabellenname nicht angegeben werden darf::
+Hier ein Beispiel für den oben beschriebenen Sonderfall, bei dem der Tabellenname nicht angegeben werden darf::
 
  <f:be.buttons.csh field="email" />
 
