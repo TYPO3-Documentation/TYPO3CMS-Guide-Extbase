@@ -77,7 +77,7 @@ Eigenschaften speziell für diesen ViewHelper
 
  - :Property:    noCacheHash
    :Datatype:    Boolean
-   :Description: Verhindert, dass der cHash-Parameter nicht mit an die URL angehangen wird.
+   :Description: Verhindert, dass der ``cHash``-Parameter mit an die URL angehangen wird.
    :Standard:    FALSE
    :Mandatory:   Nein
 
