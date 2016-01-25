@@ -68,3 +68,9 @@ Globale Eigenschaften für das HTML-Element
    :Description: JavaScript Code, der bei Klick auf dieses HTML-Elemtent ausgeführt werden soll
    :Standard:    NULL
    :Mandatory:   Nein
+
+ - :Property:    data
+   :Datatype:    array
+   :Description: Extends the tag with a data-* attribute. Using data="{foo:'bar'}" results data-foo="bar"
+   :Standard:    NULL
+   :Mandatory:   No
