@@ -1,7 +1,3 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
 
 Globale Eigenschaften für das HTML-Element
 ##########################################
@@ -65,12 +61,13 @@ Globale Eigenschaften für das HTML-Element
 
  - :Property:    onclick
    :Datatype:    String
-   :Description: JavaScript Code, der bei Klick auf dieses HTML-Elemtent ausgeführt werden soll
+   :Description: JavaScript Code, der bei Klick auf dieses HTML-Element ausgeführt werden soll
    :Standard:    NULL
    :Mandatory:   Nein
 
  - :Property:    data
    :Datatype:    array
-   :Description: Extends the tag with a data-* attribute. Using data="{foo:'bar'}" results data-foo="bar"
+   :Description: Adds the "data-*" attribute to the tag. New since TYPO3 7 LTS. 
+                 *Example:* `data="{foo:'bar'}"` produces `data-foo="bar"`
    :Standard:    NULL
    :Mandatory:   No
