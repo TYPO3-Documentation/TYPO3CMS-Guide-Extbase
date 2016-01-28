@@ -22,8 +22,8 @@ to allow the website visitor to browse through the product catalogue.
 
 .. tip::
 
-   To ensure that the extension can easily be translated from an English base, we'll create all of the database 
-   column names in English. Column names like *ist_gefraessig* are pretty difficult to read. 
+   To ensure that the extension can easily be translated from an English base, and in order to avoid issues with 
+   special characters, we'll create all of the database column names in English.
 
 Install the Extension Builder
 -----------------------------
