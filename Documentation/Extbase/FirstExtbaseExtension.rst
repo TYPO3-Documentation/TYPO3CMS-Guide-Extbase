@@ -95,8 +95,9 @@ You can now drag a line from the category property of the model *Product* to the
 Activate the extension
 ----------------------
 
-Go to the Extension Manager and activate the extension *productoverview*. Activating the extension will add the necessary 
-fields to the database.
+Go to the Extension Manager and activate the extension *productoverview*. Activating the extension will add the necessary  
+fields to the database. (If you later deactivate the extension, the database fields and any data you've added won't be 
+deleted auomatically.)
 
 Add the plugin to a page
 ------------------------
