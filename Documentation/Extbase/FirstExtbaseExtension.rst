@@ -22,8 +22,8 @@ to allow the website visitor to browse through the product catalogue.
 
 .. tip::
 
-   To ensure that the extension can easily be translated from an English base, we'll create all of the database 
-   column names in English. Column names like *ist_gefraessig* are pretty difficult to read. 
+   To ensure that the extension can easily be translated from an English base, and in order to avoid issues with 
+   special characters, we'll create all of the database column names in English.
 
 Install the Extension Builder
 -----------------------------
@@ -95,8 +95,9 @@ You can now drag a line from the category property of the model *Product* to the
 Activate the extension
 ----------------------
 
-Go to the Extension Manager and activate the extension *productoverview*. Activating the extension will add the necessary 
-fields to the database.
+Go to the Extension Manager and activate the extension *productoverview*. Activating the extension will add the necessary  
+fields to the database. (If you later deactivate the extension, the database fields and any data you've added won't be 
+deleted auomatically.)
 
 Add the plugin to a page
 ------------------------
@@ -107,9 +108,12 @@ you'll see an empty table with the table headers *title* and *price* in the fron
 Add a data record
 -----------------
 
-In the TYPO3 backend, create a new page of type *folder*. You can create new *Product* records in this folder. So that 
-they appear in the frontend, you'll need to tell the plugin where your records are stored. Edit the plugin (content element) and 
-switch to the Plugin tab: there you'll find a *record storage page* field, where you can select the new page (of type *folder*) 
-you've created. Your product entries will now appear in the frontend.
+In the TYPO3 backend, create a new page of type *folder*. You can create new Product records in this folder: most easily by switching 
+to the backend *List* view.
+
+So that the products appear in the frontend, you'll need to tell the plugin where your records are stored. Edit the plugin (content 
+element) and switch to the *Plugin* tab - you can select the new page (of type *folder*) you've created in the *record storage page* field.
+
+Your product entries will now appear in the frontend.
 
 Have fun with your first Extbase extension!
