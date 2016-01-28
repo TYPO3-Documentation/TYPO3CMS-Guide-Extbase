@@ -20,6 +20,7 @@ You'll find the template for the detail view here:
 
  typo3conf/ext/productoverview/Resources/Private/Partials/Product/Properties.html
 
+
 When you begin, you'll see that only the *title* and *price* are displayed. at present, the 
 Extension Builder doesn't automatically display the domain model connections, so you'll need 
 to add them yourself. Add the following code to the template, so that the *category* is displayed.
@@ -57,6 +58,7 @@ to add them yourself. Add the following code to the template, so that the *categ
    </tr>
  </table>
 
+
 As you can see, you can access the related *Category* domain model by using simple dot notation. Because you've 
 defined that each product can be related to more than one category - a principle of an *aggregate root* -  you'll 
 need to use a loop to display all the related categories.
@@ -74,7 +76,7 @@ product. To change that, edit the following file…
 
  typo3conf/ext/productoverview/Configuration/Tca/Product.php
 
-…by replacing the following configuration code…
+…by replacing the following configuration code::
 
  'categories' => array(
    'exclude' => 0,
@@ -95,7 +97,7 @@ product. To change that, edit the following file…
    ),
  ),
 
-…with this code…
+…with this code::
 
  'categories' => array(
    'exclude' => 0,
