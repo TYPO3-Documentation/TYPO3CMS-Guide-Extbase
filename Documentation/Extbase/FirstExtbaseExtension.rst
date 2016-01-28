@@ -108,9 +108,12 @@ you'll see an empty table with the table headers *title* and *price* in the fron
 Add a data record
 -----------------
 
-In the TYPO3 backend, create a new page of type *folder*. You can create new *Product* records in this folder. So that 
-they appear in the frontend, you'll need to tell the plugin where your records are stored. Edit the plugin (content element) and 
-switch to the Plugin tab: there you'll find a *record storage page* field, where you can select the new page (of type *folder*) 
-you've created. Your product entries will now appear in the frontend.
+In the TYPO3 backend, create a new page of type *folder*. You can create new Product records in this folder: most easily by switching 
+to the backend *List* view.
+
+So that the products appear in the frontend, you'll need to tell the plugin where your records are stored. Edit the plugin (content 
+element) and switch to the *Plugin* tab - you can select the new page (of type *folder*) you've created in the *record storage page* field.
+
+Your product entries will now appear in the frontend.
 
 Have fun with your first Extbase extension!
