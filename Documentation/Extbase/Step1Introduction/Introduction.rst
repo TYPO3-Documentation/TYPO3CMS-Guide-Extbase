@@ -5,21 +5,19 @@
 
 .. include:: ../Includes.txt
 
-Einführung
+Introduction
 ==========
 
-Da die TYPO3-Programmierung auf Basis der piBase immer undurchsichtiger wird und
-keine klare Struktur bei der Programmierung zu erkennen ist, haben sich die
-TYPO3-Entwickler auf die Suche gemacht und überlegt welches System sie in Zukunft für
-TYPO3 einsetzen können. Die Entwickler haben sich viele Frameworks angeschaut, aber
-überall Defizite gefunden und entschieden ein eigenes Framework aufzubauen und so ist
-FLOW3 entstanden.
+Because TYPO3 development using piBase became less and less transparent, and 
+lost a clear programming structure, TYPO3 developers began looking for a new and 
+better solution for the future of the system. After looking at many frameworks in 
+detail, the developers couldn't find one without any disadvantages, so the 
+decision was made to develop a completely new framework: FLOW3.
 
-Dieses FLOW3 wird bzw. ist schon die Basis des neuen TYPO3 5, welches derzeit unter
-dem Namen Phoenix durch die TYPO3-Gemeinde wandert. Da FLOW3 eine völlig neue Basis
-und auch völlig anders aufgebaut ist, kann FLOW3 nicht von jetzt auf gleich den
-derzeitigen TYPO3 4.3 Core ersetzten. Damit aber schon heute Extensions auf Basis des
-neuen Systems programmiert werden können, hat man Teile des FLOW3-Systems als
-Sysextension. So entstanden die Extensions extbase und fluid. Auf extbase basierende
-Extensions laufen auf TYPO3-Versionen ab 4.3 und können später mit nur wenig
-Änderungen auf das TYPO3 5 System portiert werden.
+FLOW3 is the basis of the newest versions of TYPO3, formerly code-named “Phoenix”. 
+Because of the completely new logic behind the new framework, FLOW3 was developed 
+and is maintained within the system extensions, and not as a part of the former 
+TYPO3 4.x core. Maintaining the technology within the system extension environment 
+enables developers to begin working with it as soon as possible. This ensures the 
+rapid development of system extensions *extbase* and *fluid*, which have allowed 
+Extbase extensions to be integrated to the CMS since TYPO3 4.3.
