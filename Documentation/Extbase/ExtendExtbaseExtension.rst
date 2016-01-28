@@ -5,23 +5,24 @@
 
 .. include:: Includes.txt
 
-Erweitern der Extbase Extension
-===============================
+Extending an Extbase extension
+==============================
 
-Dieses Tutorial baut auf das Tutorial zum Erstellen der ersten Extbase Extension auf.
+This tutorial builds on the tutorial for the creation of your first Extbase extension.
 
-Anzeigen der Kategorien in der Detailansicht
----------------------------------------------
 
-Das Template für die Detailansicht findet Ihr hier:
+Showing categories in the detail view
+-------------------------------------
+
+You'll find the template for the detail view here:
 
 ::
 
  typo3conf/ext/productoverview/Resources/Private/Partials/Product/Properties.html
 
-Ihr seht, dass nur *title* und *price* ausgegeben werden. Die Verknüpfungen von Domainmodellen kann der Extension
-Builder derzeit nicht darstellen, deshalb müsst Ihr das selber nach holen. Fügt nun die Zeile für die *category*
-ein. Das Template sollte nun so aussehen:
+When you begin, you'll see that only the *title* and *price* are displayed. at present, the 
+Extension Builder doesn't automatically display the domain model connections, so you'll need 
+to add them yourself. Add the following code to the template, so that the *category* is displayed.
 
 ::
 
@@ -56,25 +57,24 @@ ein. Das Template sollte nun so aussehen:
    </tr>
  </table>
 
-Ihr seht, dass vom *Product* per Punktnotation auf das verknüpfte Domainmodel *Category* zugegriffen werden
-kann. Das ist das Prinzip eines *Aggregate Root*. Da Ihr pro Produkt mehrere Kategorien anlegen könnt,
-müssen diese Kategorien mit Hilfe einer Schleife durch laufen werden. Pro Durchlauf wird dann die Eigenschaft
-*category* in einer Liste ausgegeben.
+As you can see, you can access the related *Category* domain model by using simple dot notation. Because you've 
+defined that each product can be related to more than one category - a principle of an *aggregate root* -  you'll 
+need to use a loop to display all the related categories.
 
-Speichert dieses Template ab, leert den Cache und ladet Euer Plugin nochmal neu. Die Kategorien zu den Produkten
-werden nun in einer Liste aufgeführt.
+Save the template, clear the TYPO3 caches and reload the page in the frontend. The categories will now be displayed 
+for each product.
 
-Mehrfachverwendung von Kategorien
----------------------------------
+Multiple usage of categories
+----------------------------
 
-Derzeit könnt Ihr zwar pro Produkt ein oder mehrere Kategorien zuordnen, aber es ist nicht möglich eine bereits
-vorhandene Kategorie einem Produkt zuzuordnen. Um dieses Verhalten zu ändern geht Ihr in diese Datei:
+So far, you can add one or more categories to a product, but you can't connect an existing category to a new 
+product. To change that, edit the following file…
 
 ::
 
  typo3conf/ext/productoverview/Configuration/Tca/Product.php
 
-ersetzt diesen Eintrag hier::
+…by replacing the following configuration code…
 
  'categories' => array(
    'exclude' => 0,
@@ -95,7 +95,7 @@ ersetzt diesen Eintrag hier::
    ),
  ),
 
-mit diesem::
+…with this code…
 
  'categories' => array(
    'exclude' => 0,
@@ -107,3 +107,5 @@ mit diesem::
      'maxitems'      => 9999,
    ),
  ),
+
+This changes the field in the backend from an inline relation field to a select field.
