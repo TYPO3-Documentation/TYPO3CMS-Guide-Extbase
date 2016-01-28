@@ -5,8 +5,8 @@
 
 .. include:: ../../Includes.txt
 
-Step 1 - Einführung
-===================
+Step 1 - Introduction
+=====================
 
 **Table of Contents**
 
