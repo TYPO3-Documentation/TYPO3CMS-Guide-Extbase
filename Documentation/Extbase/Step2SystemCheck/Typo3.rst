@@ -3,12 +3,11 @@
 TYPO3
 =====
 
-Extbase wird seit TYPO3 4.3.0 als Systemextension mitgeliefert und wird parallel zur
-Entwicklung von FLOW3 weiterentwickelt. Seit TYPO3 4.6.0 wurden die Versionsnummern
-von Extbase und Fluid an die Versionsnummer von TYPO3 angepasst.
+Extbase has been delivered as a system extension since TYPO 4.3.0 and it's developed 
+in parallel with FLOW3. Version numbers of Extbase and Fluid match the version number 
+of TYPO3 core since 4.6.0.
 
-Auch wenn Extbase seit 4.3.0 on board ist, so empfehlen wir für den professionellen
-Einsatz mindestens TYPO3 4.5. Sollte für Sie Geschwindigkeit sehr wichtig sein, dann
-verwenden Sie bitte mindestens TYPO3 4.6. Seit dieser Version werden die
-Fluidtemplates in PHP-Dateien kompiliert und können dadurch einen
-Geschwindigkeitsvorteil von 2 - 5x erziehlen.
+Although Extbase is available in TYPO3 since version 4.3.0, we recommend that you use 
+the newest possible version - at the very least, 4.5.0. Where performance is critical, 
+then the newest versions of TYPO3 are essential. Fluid templates are compiled to PHP since 
+TYPO3 4.6, which allowed a performance increase of around 200–500%.
