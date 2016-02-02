@@ -6,7 +6,7 @@
 .. include:: ../Includes.txt
 
 Introduction
-==========
+============
 
 Because TYPO3 development using piBase became less and less transparent, and 
 lost a clear programming structure, TYPO3 developers began looking for a new and 
