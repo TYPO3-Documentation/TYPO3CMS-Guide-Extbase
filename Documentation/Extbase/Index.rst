@@ -13,8 +13,8 @@ What is Extbase?
 
 Extbase is a framework for TYPO3 extension development. It was introduced with
 TYPO3 4.3 in 2009 and is well on the way to entirely replacing the classic way 
-of writing TYPO3 extension (pibase). Most important it is a gateway for TYPO3 
-4.x/6.x to version Phoenix as it is a backport of FLOW3 technology.
+of writing TYPO3 extension (pibase). Most important it is a gateway from TYPO3 
+CMS to version TYPO3 NEOS as it is a backport of TYPO3 FLOW technology.
 
 Should I use Extbase?
 ---------------------
@@ -23,8 +23,8 @@ If you develop an extension for TYPO3 you should most definitely use Extbase.
 The days of piBased extensions are numbered. Extbase gives you the benefit of a
 modern, clear and highly structured means of PHP development with a hidden bonus:
 if you know Extbase, getting into FLOW3 will be much, much easier. Another bonus: 
-porting Extbase extensions to Phoenix will be a walk in the park, whereas
-porting a piBased extension to Phoenix will be incredibly laborious. (If it's even 
+porting Extbase extensions to TYPO3 NEOS will be a walk in the park, whereas
+porting a piBased extension to TYPO3 NEOS will be incredibly laborious. (If it's even 
 possible at all.)
 
 How do I get started with Extbase?
