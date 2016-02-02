@@ -18,7 +18,7 @@ The ActionController
 The *ActionController* contains one or more methods whose names begin with *action*. Depending on the configuration in 
 ext_localconf.php or upon URI parameters, an appropriate action will be executed to modify or control the output. For 
 example, there might be an *action* for a list view, with a second action for a detail view. There might also be actions 
-which are responsible for the creation, modification or deletion of data via the front end.
+which are responsible for the creation, modification or deletion of data via the frontend.
 
 The path to the execution of an action
 --------------------------------------
@@ -194,7 +194,7 @@ callActionMethod
 ::::::::::::::::
 
 Finally, this method handles any errors which have been thrown by the validators. If so, then ErrorHandling kicks in 
-and a suitable error message is displayed in the front end. If there are no errors, the action method is executed. If 
-the method returns a value, this will be shown in the front end. If no value is returned, then **$this->view->render** 
+and a suitable error message is displayed in the frontend. If there are no errors, the action method is executed. If 
+the method returns a value, this will be shown in the frontend. If no value is returned, then **$this->view->render** 
 is executed: this leads to the Fluid Templating Engine parsing the template/s and returning the result to the 
 Dispatcher.
