@@ -5,43 +5,40 @@
 
 .. include:: ../Includes.txt
 
-Der Controller
+The Controller
 ==============
 
-Der *Controller* steht zwischen den *Modellen* und dem *View* (MVC-Prinzip). Über die Informationen darüber,
-wie die *Modelle* mit ein ander verschachtelt sind, kann eine Datenbankabfrage generiert werden,
-die die benötigten Daten an den *Controller* ausliefern kann. Der *Controller* schiebt diese Daten dann
-1zu1 oder in leicht veränderter Form an den *View* (Fluid) weiter, der sich dann um die eigentliche Ausgabe kümmert.
-Seine Hauptaufgabe besteht also nur darin, den Datenfluss zwischen *Modellen* und *View* zu koordinieren.
+The *Controller* stands between the *Model* and the *View* (according to MVC principles). A data request - for example 
+to a database - can be made through the Model; the Controller passes this data - with or without manipulation - to the 
+View (*Fluid*), which is responsible for preparing the actual output. The main role of a Controller is therefore to 
+coordinate the flow of information between the Model and the View.
 
-Der ActionController
+The ActionController
 --------------------
+The *ActionController* contains one or more methods whose names begin with *action*. Depending on the configuration in 
+ext_localconf.php or upon URI parameters, an appropriate action will be executed to modify or control the output. For 
+example, there might be an *action* for a list view, with a second action for a detail view. There might also be actions 
+which are responsible for the creation, modification or deletion of data via the frontend.
 
-In dem *ActionController* befinden sich eine oder mehrere Methoden die mit "action" beginnen. Je nach Konfiguration
-in der ext_localconf.php oder auch Uri-Parameter wird eine andere *Action* ausgeführt,
-die die Inhaltsausgabe verändert. So kann es z.B. eine *Action* geben, die für eine Listenansicht
-während eine andere *Action* für die Detailansicht zuständig ist. Es gibt aber auch *Actions*,
-die nur für das Erstellen oder auch Bearbeiten und Löschen von Datensätzen zuständig sind.
-
-Der Weg bis zum Aufruf einer Action
------------------------------------
-
-Welche *Action* aufgerufen wird, entscheiden die Informationen im $request-Objekt,
-das über den Dispatcher an den *ActionController* übergeben wurde::
+The path to the execution of an action
+--------------------------------------
+The choice of action is decided by the information in the $request object, which is passed to the ActionController via 
+the Dispatcher::
 
  $controller->processRequest($request, $response);
 
-Jeder *Request* will verarbeitet werden. Denn nur wenn ein *Request* verarbeitet wurde,
-geht es im Dispatcher weiter. Der folgende Codeschnipsel zeigt eine Endlosschleife,
-die solange wiederholt wird, bis das $request-Objekt als "verarbeitet" markiert wurde. Im Normalfall reicht
-ein Durchlauf und das $request-Objekt wird innerhalb der *processRequest* Methode als "verarbeitet" markiert. Aber es
-gibt bestimmte Situationen, die diese Information wieder auf "unverarbeitet" setzen. Sowas passiert z.B. wenn
-Ihr von einer *Action* zu einer anderen *Action* weiterleitet. Einige *Actions* erwarten ganz bestimmte Parameter,
-die zwingend gesetzt sein oder einem ganz bestimmten Datentyp entsprechen müssen. Ist dies nicht der Fall,
-spring Extbase wieder zurück zur vorherigen *Action* und führt sie erneut aus. Sollte eine Weiterleitung bestehen,
-wird die fehlerhafte *Action* von gerade erneut aufgerufen. Es ist eine Endlosschleife entstanden. Um solche
-Fälle zu verhindern dürfen pro Webseitenaufruf und Extension nur 99 Weiterleitungen durchgeführt werden. Ist dieser
-Wert erreicht, wird die weitere Ausführung des Scriptes verhindert und eine Fehlermeldung präsentiert::
+Each request has to be parsed - the process reaches the Dispatcher only once the request has been parsed. The following 
+code example creates a repeating loop, which will continue indefinitely until the $request object is marked as having 
+been parsed. One pass is usually sufficient and the $request object is marked as parsed within the *processRequest* 
+method. There may be situations in which the information is re-marked as unparsed - this can happen when an action 
+redirects to a second action.
+
+Some actions expect definite parameters, which must be defined or which must be of a certain type. Wherever this 
+criteria isn't matched, Extbase falls back to the former action and runs it a second time, which in turn runs the second 
+action again; thereby creating an endless loop.
+
+In order to avoid such situations, Extbase only allows a maximum of 99 executions per website request and extension. 
+If this limit is reached, the system stops processing the script and throws an exception message::
 
  while (!$request->isDispatched()) {
    if ($dispatchLoopCount++ > 99) throw new Tx_Extbase_MVC_Exception_InfiniteLoop('Could not ultimately dispatch the request after '  . $dispatchLoopCount . ' iterations. Most probably, a @dontvalidate annotation is missing on re-displaying a form with validation errors.', 1217839467);
@@ -55,30 +52,27 @@ Wert erreicht, wird die weitere Ausführung des Scriptes verhindert und eine Feh
 UriBuilder
 ::::::::::
 
-Der *UriBuilder* bietet Euch die Möglichkeit an Links zu erzeugen. Sämtliche Einstellungen,
-die Ihr in TypoScript hinterlegt habt, werden beim Erstellen von Links berücksichtig. So auch die Konfiguration der
-Extension RealUrl, falls installiert.
+The *UriBuilder* offers you the possibility to create links. Any configuration defined in TypoScript are respected, so 
+that (for example) the configuration in the extension RealUrl is implemented, if it's installed.
 
-Der *ActionController* benötigt den *UriBuilder* zum Verlinken auf eine andere *Action*,
-die über eine veränderte Uri geladen werden soll: $this->redirect();
+The *ActionController* needs the *UriBuilder* to create links to a secondary *action*, which should be loaded via an 
+alternative Uri: $this->redirect();
 
-Die Action
+The Action
 ::::::::::
 
-In der ext_localconf.php werden alle erlaubten *Actions* registriert und nur mit ihrem Namen angesprochen. Zum
-Beispiel: list, detail, update, edit, delete. Auch in der Uri werden die *Actions* mit diesem Namen versehen.
-Innerhalb des *ActionControllers* werden jedoch Methodennamen in lowerCamelCase-Schreibweise erwartet,
-denen ein "Action" angehangen wurde:
-
-Die *Action* "list" muss demnach in den Methodennamen: "listAction" umgewandelt werden::
+All allowed Actions are registered in ext_localconf.php and thenceforth only referenced by name. For example, *list*, 
+*show*, *detail*, *update*, *edit*, *delete*. These names are also used within the page Uri. Within the 
+ActionController, a lowerCamelCase name is required for every action: for example, the action *list* refers to the 
+method *listAction*::
 
  $actionMethodName = $this->request->getControllerActionName() . 'Action';
 
 initializeActionMethodArguments
 :::::::::::::::::::::::::::::::
 
-Diese Methode liest die Parameter der aufzurufenden *Action* Methode aus und stellt diese als Argumente für die
-Action zur Verfügung. Hier ein Beispiel anhand der showAction::
+This method reads out the parameters of the requested action and makes them available as arguments. Here's an example, 
+based on a *showAction*::
 
  /**
   * action show
@@ -90,64 +84,58 @@ Action zur Verfügung. Hier ein Beispiel anhand der showAction::
    $this->view->assign('product', $product);
  }
 
-Noch bevor diese Methode aufgerufen wird liest *initializeActionMethodArguments* mit Hilfe der *ReflectionServices*
-alle Methodenparameter aus. In diesem Fall $product. Dieser Parameter wird analysiert und unter anderem wird heraus
-gefunden, um was für einen Datentyp es sich bei diesem Parameter handelt. Zum Beispiel: String, Integer,
-Array aber auf Objekttypen wie "DateTime" werden in diesem Prozess erkannt.
-
-Dieser Parameter wird mit seinen Datentypinformationen in einem Sammelobjekt *Tx_Extbase_MVC_Controller_Arguments*
-abgespeichert und steht innerhalb des Controllers als **$this->arguments** zur Verfügung.
+*initializeActionMethodArguments* reads out the method parameters using the *ReflectionService*, even before the method 
+is called - in this case, $product. This parameter is analysed and amongst other parsing, its type is identified. (For 
+example, *String*, *Integer*, *Array* or object types like *DateTime*. The parameter is then stored along with its 
+type information in the collective object *Tx_Extbase_MVC_Controller_Arguments*, which is available within the 
+controller (and hence action methods) as **$this->arguments**.
 
 .. note::
 
- Die enthaltenen *Arguments* beinhalten bis hierhin noch keine Werte! Es sind nur Parametername und Datentyp
- gespeichert.
+ The *arguments* in this array don't contain their values at this stage: just the parameter name and data type.
 
 initializeActionMethodValidators
 ::::::::::::::::::::::::::::::::
 
-Für jeden Parameter innerhalb einer *Action* Methode habt Ihr die Möglichkeit sogenannte *Validators* zu aktivieren.
-Auf diese Weise könnt Ihr Extbase anweisen, den Parameter x dahingehend zu testen, ob es sich um einen Parameter vom
-Datentyp y handelt. Ist das nicht der Fall wird die Action nicht ausgeführt. Im Folgenden eine Beispiel *Action* mit
-einem gesetzten *Validator*::
+You have the opportunity to add *validators* to each parameter within each action. For example, you can instruct Extbase 
+to test parameter *x* and make sure its data type is *y*. If an invalid parameter type has been passed in, then the 
+action won't be executed. Here's an example.::
 
  /**
   * action show
   *
   * @param Tx_Productoverview_Domain_Model_Product $product
-  * @param String $autoMarke
-  * @validate $autoMarke String, StringLength(minimum=3,maximum=20)
+  * @param String $manufacturer
+  * @validate $manufacturer String, StringLength(minimum=3,maximum=20)
   * @return void
   */
- public function showAction(Tx_Productoverview_Domain_Model_Product $product, $autoMarke) {
+ public function showAction(Tx_Productoverview_Domain_Model_Product $product, $manufacturer) {
    $this->view->assign('product', $product);
  }
 
-Mit Hilfe der PHPDoc-Annotation "@validate" wurde Extbase nun mitgeteilt, dass der Parameter $autoMarke geprüft
-werden soll, ob es sich dabei um einen String handelt und dieser String zwischen 3 und 20 Zeichen lang ist.
+Extbase is told, through the PHPDoc annotation "@validate", that the parameter $manufacturer should be checked. In this 
+example, it must be a valid String, with a length of between three and twenty characters.
 
-Alle definierten Validatoren werden hier an dieser Stelle noch nicht ausgeführt,
-sondern nur die Information, dass dieser Parameter gegen diesen Validator geprüft werden soll, den gefundenen
-Argumenten in **$this->arguments** hinzugefügt.
+Not all validators will be executed at this point: only the ones that apply to parameters which are to be added to the 
+array **$this->arguments**.
 
 initializeAction
 ::::::::::::::::
 
-Diese *Action* gehört Euch. Alles was Ihr hier rein schreibt, wird VOR dem Aufrufen irgendeiner *Action* ausgeführt.
+The content of this action is up to you: all all of the code in this action will be executed before EVERY specific 
+action method.
 
 initializeXXXAction
 :::::::::::::::::::
 
-Auch diese *Action* gehört Euch. Als Platzhalter für XXX könnt Ihr eine *Action* angeben. Eine Beispiel Methode
-könnte so aussehen: *initializeDetailAction*.
-
-Der Inhalt diese Methode wird nur dann ausgeführt, wenn die angegebene *Action* geladen werden soll.
+This action method is yours, too. Replace XXXX with your own action name: for example, *initializeDetailAction*. This 
+method will then be executed before the related action. (In this example, *detailAction*.)
 
 mapRequestArgumentsToControllerArguments
 ::::::::::::::::::::::::::::::::::::::::
 
-Egal ob alter oder neuer PropertyMapper. Hier in dieser Methode erhalten die ausgelesenen Action Methodenparameter
-die Werte aus dem $request-Objekt::
+As the name suggests, this method reads the values from the $request objects and assigns them as method parameters to 
+the applicable action.::
 
  foreach ($this->arguments as $argument) {
    $argumentName = $argument->getName();
@@ -158,7 +146,8 @@ die Werte aus dem $request-Objekt::
    }
  }
 
-Innerhalb von *setValue* geschieht eine ganze Menge Magic. Schaut Euch nochmal diese *Action* hier an::
+
+A whole load of magic takes place within *setValue*: have a look at the following action.::
 
  /**
   * action show
@@ -170,47 +159,42 @@ Innerhalb von *setValue* geschieht eine ganze Menge Magic. Schaut Euch nochmal d
    $this->view->assign('product', $product);
  }
 
-Egal was Ihr per Formular oder per Uri übergebt: Ihr könnt keine Objekte übertragen! Um trotzdem eine Möglichkeit zu
-schaffen, werden entweder die Eigenschaften des Objektes als Array oder,
-falls das Objekt schon existiert und eine eindeutige UID aufweisen kann, die UID als Integerwert übertragen. Die
-Methode *setValue* geht nun her und prüft, welcher Datentyp vom Formular oder Uri ankommt und in welchen Datentyp der
-Wert konvertiert werden muss.
 
-**Datentyp: Integer**
+Whatever gets passed via form or Uri, you can't transfer objects. In order to bypass this rule, an array containing 
+details of the object - or the UID of the object, if it already exists - are passed instead. The method *setValue* 
+checks and identifies the data type being passed and the data type to which it must be converted.
 
-Wenn eine Zahl für den Parameter $product übergeben wird, wird in der Datenbank nach einem Eintrag mit dieser UID
-gesucht und die Spalten mit Hilfe des *DataMappers* auf die Eigenschaften des angegebenen Datentyps
-(Tx_Productoverview_Domain_Model_Product) übertragen.
+**Data type: Integer**
 
-**Datentyp: Array**
+Where the parameter $product is passed as a number, a matching database entry is fetched and transferred to the data 
+type Tx_Productoverview_Domain_Model_Product via *DataMappers*.
 
-Beim Anlegen eines neuen Produktes gibt es noch keine UID. Es kommen also alle Eigenschaften als Array an. Auch hier
-wird wieder der *DataMapper* aktiv und portiert alle Arrayeinträge auf die Eigenschaften des benötigten Objektes.
+**Data type: Array**
 
-Egal, was für ein Datentyp übergeben wurde, der *PropertyMapper* wird versuchen diese Datentypen in den vorgegebenen
-Datentyp zu konvertieren. Das hat den Vorteil, dass Ihr als Programmierer ein fertig eingerichtetes Objekt innerhalb
-Eurer *Action* zur Verfügung stehen habt.
+There is no UID when creating a new product. Instead, all parameters are passed as an array. The *DataMapper* is active 
+here too, porting all array entries to the attributes of the required object. Whichever data type is passed, the 
+*PropertyMapper* attempts to convert it into the correct data type for the object attribute. Through this, the 
+programmer has the advantage of a complete, correctly configured object within the *action*.
 
 resolveView
 :::::::::::
 
-Für jede *Action* kann ein eigener *View* definiert werden. Dazu müsst Ihr einen *View* mit einem Klassennamen im
-folgenden Format erstellen::
+You can define a unique *View* for every action - in order to do so, you need to create the view with its own class 
+name, according to the following format::
 
  Tx_@extension_View_@controller_@action@format
 
-Ein Klassenname könnte zum Beispiel so aussehen: Tx_Productoverview_View_Product_ShowHtml
+An example class name would therefore be Tx_Productoverview_View_Product_ShowHtml
 
-Wenn eine solche Klasse jedoch nicht angelegt wurde, dann wird der Standard *View*: *Tx_Fluid_View_TemplateView*
-geladen. Kurz: Keine Klasse anzugeben ist das Standardverhalten und läd somit völlig automatisch Fluidtemplates als
-Templateengine.
+If this class isn't created, the standard *View* class takes effect: *Tx_Fluid_View_TemplateView*. In short: if you 
+don't create your own class, then the standard process takes over and Extbase loads the appropriate Fluid template 
+automatically.
 
 callActionMethod
 ::::::::::::::::
 
-In dieser letzten Methode wird überprüft, ob die Validatoren (siehe weiter oben) Fehler verursacht haben. Wenn ja,
-dann wird ein ErrorHandling ausgeführt, dass die verursachten Fehler auf der Webseite darstellen. Wurden keine Fehler
-gefunden wird die *Action* Methode aufgerufen. Wenn die Methode einen Wert zurück gibt,
-wird dieser Wert 1zu1 auf der Webseite ausgegeben. Wird kein Wert mit return zurückgeliefert,
-dann wird völlig automatisch **$this->view->render** aufgerufen also die Fluid Templates gestartet und geparst. Es
-wird dann das Ergebnis aus den Templates an den Dispatcher zurück gegeben.
+Finally, this method handles any errors which have been thrown by the validators. If so, then ErrorHandling kicks in 
+and a suitable error message is displayed in the frontend. If there are no errors, the action method is executed. If 
+the method returns a value, this will be shown in the frontend. If no value is returned, then **$this->view->render** 
+is executed: this leads to the Fluid Templating Engine parsing the template/s and returning the result to the 
+Dispatcher.
