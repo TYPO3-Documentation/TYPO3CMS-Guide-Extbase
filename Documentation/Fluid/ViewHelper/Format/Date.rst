@@ -30,7 +30,7 @@ Eigenschaften
 
  - :Property:    format
    :Datatype:    String
-   :Description: Wie soll das Datum ausgegeben werden?
+   :Description: Wie soll das Datum ausgegeben werden? Format-Syntax ist identisch mit PHPs strftime-Funktion (https://secure.php.net/manual/de/function.strftime.php).
    :Standard:    Y-m-d
    :Mandatory:   Nein
 
