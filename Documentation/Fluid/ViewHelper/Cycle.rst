@@ -8,33 +8,33 @@
 f:cycle
 =======
 
-Mit diesem ViewHelper könnt Ihr die Ausgaben des f:for-ViewHelpers aufpeppen und zum Beispiel odd/even-Tabellen
-erstellen. Zwar könnt Ihr mit dem f:for ViewHelper auf das erste und letzte Element der Schleife zugreifen, aber um
-jeder zweiten oder dritten Zeile ein anderes Aussehen zu verpassen, benötiget Ihr f:cycle.
+You can improve the output of the f:for view helper using f:cycle. For example, you can add odd/even classes to a 
+table row. While you can reach the first and last elements using f:for, you'll need to use f:cycle to reach any of 
+the other entries.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Properties
+   :Datatype,20:    Data type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    values
    :Datatype:    Array
-   :Description: Eingabe als Arraynotation. Erläuterung im Beispiel
+   :Description: Input in array notation. (See example for details.)
    :Standard:
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    as
    :Datatype:    String
-   :Description: Gebt hier den Namen der neuen Variable für das Template an
+   :Description: The name of the new variable for subsequent use in your template.
    :Standard:
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
 Beispiel
 --------
@@ -52,7 +52,7 @@ Beispiel
    </f:for>
  </table>
 
-**Ausgabe**
+**Output**
 
 ::
 

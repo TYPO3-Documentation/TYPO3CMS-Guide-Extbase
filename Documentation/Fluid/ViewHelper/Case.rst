@@ -8,32 +8,31 @@
 f:case
 ======
 
-Dieser ViewHelper ist Bestandteil des f:switch.ViewHelpers. Wenn der Wert aus value dem Wert aus f:switch
-übereinstimmt dann wird der enthaltene Text verarbeitet und ausgegeben.
+This ViewHelper is part of the use case for f:switch. Where the value of this tag matches the value in the f:switch tag, 
+the content of this tag will be rendered and output.
 
-Eigenschaften
--------------
+Properties
+----------
 
-Eigenschaften speziell für diesen ViewHelper
-############################################
+Exclusive properties of this ViewHelper
+#######################################
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Data type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    value
    :Datatype:    Mixed
-   :Description: Gebt hier den Wert an, der vom f:switch ViewHelper als Entscheidungskriterium zur Vefügung gestellt
-                 werden könnte.
+   :Description: The value against which the value from the f:switch view helper should be compared.
    :Standard:
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
-Beispiel
+Example
 --------
 
-Beispiele zur Verwendung des f:case-ViewHelpers findet Ihr im f:switch-ViewHelper
+A example of the usage of the f:case view helper is in the documentation for the f:switch view helper.
