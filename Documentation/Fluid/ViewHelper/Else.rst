@@ -8,9 +8,9 @@
 f:else
 ======
 
-Dieser ViewHelper wird im Bereich f:if erklärt, da er nur dort verwendet werden kann.
+The use of this view helper is explained in the documentation for f:if, as it can only be used within that view helper.
 
-Eigenschaften
--------------
+Properties
+----------
 
-Dieser ViewHelper besitzt keine Eigenschaften
+This view helper has no properties.

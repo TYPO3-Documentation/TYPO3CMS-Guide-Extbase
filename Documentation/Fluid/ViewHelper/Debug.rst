@@ -8,94 +8,91 @@
 f:debug
 =======
 
-Falls eine eurer Variablen wieder erwarten nichts ausgeben sollte, könnt ihr mit Hilfe dieses ViewHelpers die
-Inhalte eurer Variablen anzeigen lassen. In der Ausgabe seht ihr dann, ob euer gewünschter Wert überhaupt
-gefüllt ist oder nicht.
+This view helper allows you to output the value of a variable or a set of variables (e.g. array) to the screen. This can 
+be helpful when debugging, to make sure that the value of the variable is as you would expect it to be. Individual nested 
+array or object attributes can be individually expanded.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Data type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    title
    :Datatype:    String
-   :Description: Mit dieser Eigenschaft könnt ihr der Debug-Ausgabe einen Titel geben,
-                 um die Ausgabe zwischen eventuell weiteren vorhandenen Ausgaben schneller identifizieren zu können.
+   :Description: You can use this property to give the debug output a title, so that it can more readily be identified. 
+                 (For example, if you're going to output multiple debug blocks during the same request.)
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   Yes
 
  - :Property:    maxDepth
    :Datatype:    Integer
-   :Description: Zu Zeiten vor TYPO3 4.7 wurden Arrays und Objekte immer komplett dargestellt. Je nach Objektgröße
-                 und Verschachtelung brach diese Darstellung jedoch ab. Mit dieser Eigenschaft werden die Arrays und
-                 Objekte nur noch bis zu einer Tiefe von 8 Verschachtelungen dargestellt,
-                 um das Problem zu umgehen. Je nach Rechnerleistung und Ausführungszeitraum
-                 könnt ihr die Tiefe entsprechend anpassen.
+   :Description: Extremely large arrays or deeply-nested objects can lead to TYPO3 being unable to build a complete view 
+                 of the entire structure. By using the 'maxDepth' property, you can adjust the depth of the output to a 
+                 maximum of 8 levels, in order to get around this problem. You can fine-tune the value of the property 
+                 according to the performance of the server and the maximum processing time available.
    :Standard:    8
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    plainText
    :Datatype:    Boolean
-   :Description: Für den CLI-Modus könnt ihr hier die Debug-Ausgabe als reinen Text ausgeben lassen.
+   :Description: If you're using the CLI mode, using this property will switch the output into plain text mode.
    :Standard:    FALSE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    ansiColors
    :Datatype:    Boolean
-   :Description: Bestimmte Shells unterstützen die farbliche Hervorhebung von Wörtern in einem Text. Nach Aktivierung
-                 werden der Debug-Ausgabe zusätzliche Steuerzeichen hinzugefügt,
-                 damit die Shell die Hervorhebung vornehmen kann. Dieses funktioniert nur
-                 zusammen mit 'plainText'.
+   :Description: Some shell environments allow syntax highlighting - by activating the ansiColors mode, the debug 
+                 output will be extended with control characters, so that the shell can implement highlighting. This 
+                 option only works when 'plainText' mode is active.
    :Standard:    FALSE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    inline
    :Datatype:    Boolean
-   :Description: Normalerweise erscheint die Debug-Ausgabe oberhalb der Webseite. Mit 'inline'
-                 erscheint die Ausgabe genau an der Stelle des f:debug-ViewHelpers.
+   :Description: The debug output usually appears at the top of the page output. By setting this property, the output 
+                 will appear at the point where the f:debug view helper is inserted in the code.
    :Standard:    FALSE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    blacklistedClassNames
    :Datatype:    Array
-   :Description: Hiermit können ausgewählte Klassen hervorgehoben werden. Funktioniert im Augenblick (?)
-                 nicht mit Namespaces.
+   :Description: The use of this property highlights specific classes. It currently (?) doesn't work when Namespaces 
+                 are in use.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    blacklistedPropertyNames
    :Datatype:    Array
-   :Description: Hiermit können ausgewählte Objekteigenschaften hervorgehoben werden. Funktioniert
-                 im Augenblick (?) nicht mit Namespaces.
+   :Description: The use of this property highlights specific object properties. It currently (?) doesn't work when 
+                 Namespaces are in use.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
 .. tip::
 
-   Das Debuggen von Aggregate-Root-Objekten führte in früheren Versionen immer wieder zu Problemen.
-   Viele Objekte sind sehr tief verschachtelt oder sind rekursiv aufrufbar. Dies führte in vielen 
-   Fällen zur Überschreitung der in php.ini definierten memory_limit oder auch zur Überschreitung
-   der max_execution_time. In solchen Fällen hat es geholfen nur einen Teil des Objektes zu 
-   debuggen oder das komplette Objekt in ein Array zu konvertieren.
+   Debugging aggregate root objects in earlier versions often lead to problems. Many objects are deeply nested or even 
+   built recursively. This lead in many instances to the system exceeding the memory_limit or max_execution_time in 
+   php.ini. In such cases, it's recommended to only debug a part of the object in question, or to first convert it to 
+   an array.
 
-Beispiele
----------
-
-::
-
-   <f:debug title="Results of customers">{customers}</f:debug>
+Examples
+--------
 
 ::
 
-   {customers -> f:debug(title="Results of customers")}
+   <f:debug title="Results of customers query">{customers}</f:debug>
 
 ::
 
-   {f:debug(subject: customers, title: "Results od customers")}
+   {customers -> f:debug(title="Results of customers query")}
+
+::
+
+   {f:debug(subject: customers, title: "Results of customers query")}
