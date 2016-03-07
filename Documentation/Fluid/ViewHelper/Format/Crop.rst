@@ -8,7 +8,7 @@
 f:format.crop
 ===============
 
-Schneidet Text zurecht
+Crops a string according to the defined properties.
 
 Eigenschaften
 -------------
@@ -16,69 +16,76 @@ Eigenschaften
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    maxCharacters
    :Datatype:    Integer
-   :Description: Anzahl Zeichen nach denen abgeschnitten werden soll.
+   :Description: The number of characters to which the string should be abbreviated.
    :Standard:
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    append
    :Datatype:    String
-   :Description: Ein Text oder eine Anzahl Zeichen, die dem Text angefügt werden soll.
+   :Description: A string to be appended to the cropped text.
    :Standard:    ...
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    respectWordBoundaries
    :Datatype:    Boolean
-   :Description: Solange dieser Wert aktiviert ist und ein Schnitt innerhalb eines Wortes geschehen würde, wird dieser Schnitt VOR dem Wort ausgeführt, um das Wort nicht zu stückeln. Mit FALSE zwingt man den ViewHelper zum Trennen IM Wort.
+   :Description: If the value of this property is TRUE, the crop will only happen between complete words. (Before the 
+   number of characters has been reached.)
    :Standard:    TRUE
    :Mandatory:   Nein
 
  - :Property:    respectHtml
    :Datatype:    Boolean
-   :Description: Bei TRUE werden HTML-Tags berücksichtigt. Bei FALSE kann es vorkommen,
-                 dass die Trennung innerhalb des HTML-Tag statt findet.
+   :Description: If the value of this property is TRUE, HTML tags will be taken into account when cropping text. If the 
+   value is FALSE, then the text may be cropped in the middle of an HTML tag.
    :Standard:    TRUE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
-Beispiel
---------
-
-::
-
- <f:format.crop maxCharacters="14">Diesen Text werden wir jetzt zerschnibbeln</f:format.crop>
-
-Normalerweise würde dieser Befehl das Wort "werden" auftrennen. Aber dadurch dass "respectWordBoundaries" per default
-gesetzt ist erhalten wir diese Ausgabe:
-
-Diesen Text...
-
-Beispiel: Trennung im Wort
---------------------------
+Examples
+-------
 
 ::
 
- <f:format.crop maxCharacters="14" respectWordBoundaries="FALSE">Diesen Text werden wir jetzt zerschnibbeln</f:format.crop>
+ <f:format.crop maxCharacters="40">A bolt of lightning is going to strike the clock tower at precisely 10:04pm, next Saturday night.</f:format.crop>
 
-ergibt
-
-Diesen Text we...
-
-Beispiel mit respectHtml = FALSE
---------------------------------
+If the text is cropped strictly at 40 characters, the end of the string will be in the middle of the word “the”. But 
+the property 'respectWordBoundaries' is set by default, so the cropped text will read::
 
 ::
 
- <f:format.crop maxCharacters="25" respectHtml="FALSE"><p>Diesen Text <strong>werden</strong> wir jetzt zerschnibbeln</p></f:format.crop>
+ A bolt of lightning is going to strike…
 
-ergibt
+Splitting a word
+################
 
-Diesen Text...
+::
 
-Wie oben schon erwähnt, liegt das daran, dass nun auch alle Buchstaben der HTML-Tags mitgezählt werden.
+ <f:format.crop maxCharacters="15" respectWordBoundaries="FALSE">A bolt of lightning is going to strike the clock tower at precisely 10:04pm, next Saturday night.</f:format.crop>
+
+produces
+
+::
+
+    A bolt of light...
+
+Don't respect HTML tags
+#######################
+
+::
+
+ <f:format.crop maxCharacters="12" respectHtml="FALSE"><p>A bolt of <em>lightning</em> is going to strike the clock tower at precisely 10:04pm, next Saturday night.</p></f:format.crop>
+
+produces
+
+::
+
+ A bolt of...
+
+This last result is produced because the individual characters within the paragraph tag itself are counted as part of the total.

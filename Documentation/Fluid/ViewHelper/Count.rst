@@ -24,8 +24,8 @@ Properties
 
  - :Property:    subject
    :Datatype:    Array
-   :Description: Provide the array or object containing the entries to be counted. If this value is empty, the view 
-                 helper will attempt to interpret the content between the tags as an array, and then count its entries.
+   :Description: Provide the array or object containing the entries to be counted. If this value is empty, the ViewHelper 
+   will attempt to interpret the content between the tags as an array, and then count its entries.
    :Standard:    NULL
    :Mandatory:   No
 

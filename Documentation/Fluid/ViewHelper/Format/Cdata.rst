@@ -10,58 +10,61 @@
 f:format.cdata
 ==============
 
-Dieser ViewHelper ummantelt einen Text oder eine Variable mit CDATA. Das wird gerade dann interessant,
-wenn Ihr z.B. eine RSS-Ausgabe mit Hilfe von Extbase und Fluid programmiert. Da solche Ausgaben auf XML basieren, ist
-es wichtig HTML-Tags innerhalb dieser XML-Ausgabe zu maskieren.
+This ViewHelper wraps a text or variable output with CDATA tags. This is most useful for generating outputs like an RSS 
+feed via Fluid. Because these format is based on an XML structure, HTML content within its tags need to be appropriately 
+masked using CDATA tags.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    value
    :Datatype:    String
-   :Description: Der Text, der mit CDATA ummantelt werden soll
+   :Description: The string to be wrapped with CDATA tags.
    :Standard:    NULL
    :Mandatory:   Nein
 
-Beispiel mit Text:
-------------------
+Examples
+--------
+
+
+With text
+#########
 
 ::
 
- <f:format.cdata>Text, der ummantelt werden soll</f:format.cdata>
+ <f:format.cdata>Text to be wrapped</f:format.cdata>
 
-wird zu
+**Output**
 
 ::
 
- <![CDATA[Text, der ummantelt werden soll]]>
+ <![CDATA[Text to be wrapped]]>
 
-Beispiel mit Variablen:
------------------------
+With variables
+##############
 
-Als Beispiel übergeben wir etwas untypisch HTML und Text vom Controller aus::
+We'll pass an unusual combination of HTML and text back from our Controller as an example.
 
  $this->view->assign('variable', '<strong>Stefan</strong>');
 
-Im Fluidtemplate wickeln wir die Variable in CDATA ein::
+We'll wrap the variable with CDATA tags in our Fluid template::
 
- <f:format.cdata>{variable}, die ummantelt werden soll</f:format.cdata>
+ <f:format.cdata>{variable} is his name</f:format.cdata>
 
-Als Ergebnis erhaltet ihr::
+which produces the result::
 
- <![CDATA[<strong>Stefan</strong>, die ummantelt werden soll]]>
+ <![CDATA[<strong>Stefan</strong> is his name]]>
 
 .. important::
 
-   Wie Ihr im Ergebnis sehen könnt, wird die Variable 1zu1 ausgegeben. Der Inhalt wird nicht durch htmlspecialchars
-   geschleust oder sonst in irgendeiner Form maskiert. Bitte beachtet diese Vorgehensweise gerade in Hinblick auf
-   XSS-Attacken.
+   As you can see, the variable in this example is output 1:1 instead of being parsed using htmlspecialchars and without 
+   any kind of other masking. Be aware of this, especially taking care against cross site scripting attacks.
