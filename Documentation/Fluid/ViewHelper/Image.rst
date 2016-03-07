@@ -8,13 +8,21 @@
 f:image
 =======
 
-The work which was formerly carried out in an extension or in TypoScript is now available as a complete view helper. 
+The work which was formerly carried out in an extension or in TypoScript is now available as a complete ViewHelper. 
 You don't have to just compress your images: you can re-size them on the server using PHP's GDlib or using ImageMagick.
 
 Properties
 ----------
 
 .. include:: ../UniversalTagAttributes.txt
+
+Inline usage example
+--------------------
+
+::
+
+   {f:image(additionalAttributes: {foo: 'bar'}, data: {foo: 'bar'}, src: 'NULL', width: 'NULL', height: 'NULL', minWidth: 123, minHeight: 123, maxWidth: 123, maxHeight: 123, treatIdAsReference: 1, image: [anySimpleType], crop: [anySimpleType], absolute: 1, class: 'NULL', dir: 'NULL', id: 'NULL', lang: 'NULL', style: 'NULL', title: 'NULL', accesskey: 'NULL', tabindex: 123, onclick: 'NULL', alt: 'NULL', ismap: 'NULL', longdesc: 'NULL', usemap: 'NULL')}
+
 
 Exclusive properties of the HTML tag
 ####################################
@@ -53,7 +61,7 @@ Exclusive properties of the HTML tag
    :Mandatory:   No
 
 Exclusive properties of this ViewHelper
-#######################################
+########################################
 
 .. t3-field-list-table::
  :header-rows: 1
@@ -223,24 +231,26 @@ Exclusive properties of this ViewHelper
    :Standard: NULL
    :Mandatory: No
 
-Example to output the image in its original resolution
-------------------------------------------------------
+Examples
+
+Output the image in its original resolution
+-------------------------------------------
 
 ::
 
  <f:image src="fileadmin/user_upload/landscape.jpg" />
 
-Example to respect the output a smaller image
----------------------------------------------
+Output a smaller image
+----------------------
 
-The proportions of the original image will be respected.
+The proportions of the original image will be respected in this example.
 
 ::
 
  <f:image src="fileadmin/user_upload/landscape.jpg" width="50" />
 
-Example to re-size and crop an image
-------------------------------------
+Re-size and crop an image
+-------------------------
 
 ::
 

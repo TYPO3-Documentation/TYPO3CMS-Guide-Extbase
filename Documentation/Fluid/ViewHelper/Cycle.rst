@@ -8,7 +8,7 @@
 f:cycle
 =======
 
-You can improve the output of the f:for view helper using f:cycle. For example, you can add odd/even classes to a 
+You can improve the output of the f:for ViewHelper using f:cycle. For example, you can add odd/even classes to a 
 table row. While you can reach the first and last elements using f:for, you'll need to use f:cycle to reach any of 
 the other entries.
 

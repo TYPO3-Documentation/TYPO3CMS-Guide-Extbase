@@ -28,11 +28,11 @@ Exclusive properties of this ViewHelper
 
  - :Property:    value
    :Datatype:    Mixed
-   :Description: The value against which the value from the f:switch view helper should be compared.
+   :Description: The value against which the value from the f:switch ViewHelper should be compared.
    :Standard:
    :Mandatory:   Yes
 
 Example
 --------
 
-A example of the usage of the f:case view helper is in the documentation for the f:switch view helper.
+A example of the usage of the f:case ViewHelper is in the documentation for the f:switch ViewHelper.

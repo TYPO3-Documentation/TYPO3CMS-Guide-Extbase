@@ -8,7 +8,7 @@
 f:debug
 =======
 
-This view helper allows you to output the value of a variable or a set of variables (e.g. array) to the screen. This can 
+This ViewHelper allows you to output the value of a variable or a set of variables (e.g. array) to the screen. This can 
 be helpful when debugging, to make sure that the value of the variable is as you would expect it to be. Individual nested 
 array or object attributes can be individually expanded.
 
@@ -57,7 +57,7 @@ Properties
  - :Property:    inline
    :Datatype:    Boolean
    :Description: The debug output usually appears at the top of the page output. By setting this property, the output 
-                 will appear at the point where the f:debug view helper is inserted in the code.
+                 will appear at the point where the f:debug ViewHelper is inserted in the code.
    :Standard:    FALSE
    :Mandatory:   No
 

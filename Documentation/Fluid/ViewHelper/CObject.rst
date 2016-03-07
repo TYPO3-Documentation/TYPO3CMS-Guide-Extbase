@@ -8,7 +8,7 @@
 f:cObject
 =========
 
-This view helper provides a connection to TypoScript. Pass in a TypoScript object path (lib.*) and let TypoScript 
+This ViewHelper provides a connection to TypoScript. Pass in a TypoScript object path (lib.*) and let TypoScript 
 do the work.
 
 Properties
@@ -69,7 +69,7 @@ Simple example
 Example for a localized date value
 ----------------------------------
 
-The f:format.date view helper works with the PHP function date(), so it can only output English month names. It would 
+The f:format.date ViewHelper works with the PHP function date(), so it can only output English month names. It would 
 be better if we could use strftime: TypoScript provides dates formatted using strftime. Here's an example, using the 
 current date and a German date format.
 

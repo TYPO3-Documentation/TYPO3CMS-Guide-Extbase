@@ -8,14 +8,14 @@
 f:comment
 =========
 
-Evrything inside an f:comment view helper will be removed. View helpers within an f:comment block will not be executed. 
-This view helper is most useful when debugging a website: for example, you can temporarily wrap a f:for loop with an 
-f:comment view helper to stop it from being executed.
+Evrything inside an f:comment ViewHelper will be removed. ViewHelpers within an f:comment block will not be executed. 
+This ViewHelper is most useful when debugging a website: for example, you can temporarily wrap a f:for loop with an 
+f:comment ViewHelper to stop it from being executed.
 
 Properties
 ----------
 
-This view helper has no properties.
+This ViewHelper has no properties.
 
 Example
 -------

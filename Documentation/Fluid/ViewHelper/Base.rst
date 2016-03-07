@@ -8,12 +8,12 @@
 f:base
 ======
 
-This view helper embeds the `base-Tag <http://de.selfhtml.org/html/kopfdaten/basis.htm>`_ into your HTML template.
+This ViewHelper embeds the `base-Tag <http://de.selfhtml.org/html/kopfdaten/basis.htm>`_ into your HTML template.
 
 Properties
 ----------
 
-This view helper doesn't contain any properties.
+This ViewHelper doesn't accept any properties.
 
 Example
 --------
@@ -30,5 +30,5 @@ Example
 
 .. tip::
 
-   Using this view helper only makes sense when you're building a website template - including the <head> - using 
+   Using this ViewHelper only makes sense when you're building a website template - including the <head> - using 
    Fluid. If there's no <head> in the template, this HTML tag will be added to the <body> and that's not where it belongs.

@@ -8,8 +8,8 @@
 f:if
 ====
 
-Even though the usage of this view helper is a little limited, it's one of the view helpers you should be know well. If 
-you're familiar with the old fed:if view helper, you'll know what we're talking about.
+Even though the usage of this ViewHelper is a little limited, it's one of the ViewHelpers you should be know well. If 
+you're familiar with the old fed:if ViewHelper, you'll know what we're talking about.
 
 Properties
 ----------
@@ -32,7 +32,7 @@ Properties
 The following comparators are allowed: ==, !=, <, <=, >, >= and %
 
 Only variables of the following types can be compared: numbers, object properties, arrays, strings (since v6.2) and 
-the results of other view helpers.
+the results of other ViewHelpers.
 
 Simple examples
 ---------------
@@ -71,7 +71,7 @@ Simple examples
  </f:alias>
  <f:alias map="{elements: {0: value1, 1: value2}}">
    <f:if condition="{elements -> f:count()}==2">
-     <p>Comparing with view helpers: the array contains 2 elements.</p>
+     <p>Comparing with ViewHelpers: the array contains 2 elements.</p>
    </f:if>
  </f:alias>
  <f:alias map="{value1: 'hello'}">
@@ -84,6 +84,6 @@ Simple examples
  </f:alias>
 
 
-If there are no f:then or f:else view helpers in use, the content between the f:if view helpers will only be output if 
+If there are no f:then or f:else ViewHelpers in use, the content between the f:if ViewHelpers will only be output if 
 the comparison returns a positive result. If you need to use the full if-then-else construct, then you'll have to 
-use the f:then / f:else view helpers.
+use the f:then / f:else ViewHelpers.

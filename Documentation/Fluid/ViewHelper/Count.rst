@@ -8,7 +8,7 @@
 f:count
 =======
 
-This view helper counts the elements in the referenced object or array.
+This ViewHelper counts the elements in the referenced object or array.
 
 Properties
 ----------

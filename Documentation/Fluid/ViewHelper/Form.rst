@@ -8,9 +8,9 @@
 f:form
 ======
 
-The f:form view helper looks pretty mighty, when you see how many parameters it takes. But once you realize that 11 of 
+The f:form ViewHelper looks pretty mighty, when you see how many parameters it takes. But once you realize that 11 of 
 them are needed for generating the form target page, you'll see that there are only a few others remaining. The big 
-advantages of this view helper are security and lighter workload. We'll take a look at these in the following examples.
+advantages of this ViewHelper are security and lighter workload. We'll take a look at these in the following examples.
 
 Properties
 ----------

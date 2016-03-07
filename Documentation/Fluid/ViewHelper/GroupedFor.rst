@@ -8,7 +8,7 @@
 f:groupedFor
 ============
 
-A very powerful view helper in the area of list generation. Pass an array to the view helper with a grouping criterium, 
+A very powerful ViewHelper in the area of list generation. Pass an array to the ViewHelper with a grouping criterium, 
 and you'll get an array of elements which match the group criterium in each iteration.
 
 Properties
@@ -68,7 +68,7 @@ Example
    </table>
  </f:alias>
 
-Here's an example with six employees. As you can see, the f:groupedBy view helper groups the employees by city. An 
+Here's an example with six employees. As you can see, the f:groupedBy ViewHelper groups the employees by city. An 
 experienced eye will see that the first employees in the array work in Lindlar.
 
 So that we can access the city names within the f:groupedBy tags, we'll use the 'groupKey' “city”. (The values 'groupBy' 

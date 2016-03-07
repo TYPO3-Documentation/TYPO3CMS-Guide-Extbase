@@ -8,8 +8,8 @@
 f:alias
 =======
 
-This view helper creates variables that you can use when developing Fluid views. You create variables which contain either 
-static values or dynamic values from objects or other view helpers.
+This ViewHelper creates variables that you can use when developing Fluid views. You create variables which contain either 
+static values or dynamic values from objects or other ViewHelpers.
 
 Details
 -------
@@ -44,7 +44,7 @@ Examples for static values
 
  <p>Hello, my name is Stefan Froemken</p>
 
-Example for results from another view helper
+Example for results from another ViewHelper
 --------------------------------------------
 
 ::
