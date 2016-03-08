@@ -15,6 +15,7 @@
 *.swp
 .buildpath
 .cache
+.DS_Store
 .project
 .session
 .settings
