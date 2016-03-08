@@ -8,186 +8,195 @@
 f:form
 ======
 
-Der f:form-ViewHelper schaut von seinen ganzen Parametern extremst gewaltig aus. Aber wenn man mal bedenkt das allein
-11 Parameter nur für die Generierung der Zielseiten-URL zuständig sind, bleibt nur noch eine handvoll Parameter übrig.
-Der große Vorteil diesen ViewHelpers ist Sicherheit und Arbeitserleichterung, die wir uns in den Beispielen mal näher
-anschauen.
+The f:form ViewHelper looks pretty mighty, when you see how many parameters it takes. But once you realize that 11 of 
+them are needed for generating the form target page, you'll see that there are only a few others remaining. The big 
+advantages of this ViewHelper are security and lighter workload. We'll take a look at these in the following examples.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. include:: ../UniversalTagAttributes.txt
 
-Eigenschaften speziell für das HTML-Element
-###########################################
+Global properties of this ViewHelper
+####################################
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    enctype
    :Datatype:    String
-   :Description: Mit welchem Encoding sollen die Daten des Formulars versendet werden?
+   :Description: The format with which the form data should be encoded and submitted.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    method
    :Datatype:    String
-   :Description: Übertragungsmethode. Mögliche Werte sind GET oder POST
+   :Description: Transfer method - GET or POST.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    name
    :Datatype:    String
-   :Description: Name des Formulars
+   :Description: The HTML 'name' attribute of the form.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    onreset
    :Datatype:    String
-   :Description: JavaScript, das ausgeführt werden soll, wenn der Reset-Button für das Formular gedrückt wurde
+   :Description: The JavaScript to be executed when the reset button in the form is clicked.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    onsubmit
    :Datatype:    String
-   :Description: JavaScript, das ausgeführt werden soll, wenn der Submit-Button für das Formular gedrückt wurde
+   :Description: The JavaScript to be executed when the submit button in the form is clicked.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
-Eigenschaften speziell für diesen ViewHelper
-############################################
+Exclusive properties of this ViewHelper
+#######################################
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    action
    :Datatype:    String
-   :Description: Welche Actionmethode soll aufgerufen werden, wenn das Formular abgesendet wird
+   :Description: The action method to be called when the form is submitted.
    :Standard:    NULL
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    arguments
    :Datatype:    Array
-   :Description: Welche zusätzlichen Variablen sollen beim Absenden mit übergeben werden
-   :Standard:    Leeres Array
-   :Mandatory:   Ja
+   :Description: Additional variables should be sent with each form submission.
+   :Standard:    Empty array
+   :Mandatory:   Yes
 
  - :Property:    controller
    :Datatype:    String
-   :Description: Falls sich die gewünschte Actionmethode nicht im gleichen Controller befindet, muss hier dieser entsprechende Controller angegeben werden
+   :Description: If the action method isn't in the same Controller, then you'll need to specify the appropriate Controller.
    :Standard:    NULL
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    extensionName
    :Datatype:    String
-   :Description: Falls das Formular von einer anderen Extension abgearbeitet werden soll, dann muss hier der Extensionname ohne tx\_ und ohne Unterstriche angegeben werden
+   :Description: If the form submission should be handled by a different extension, this property contains the name of 
+                 this extension, without the tx\_ prefix and without underline characters.
    :Standard:    NULL
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    pluginName
    :Datatype:    String
-   :Description: Falls das Formular von einem anderen Plugin abgearbeitet werden soll, dann muss hier der Pluginname angegeben werden
+   :Description: If the form submission should be handled by a different plugin, this property should contain the plugin name.
    :Standard:    NULL
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    pageUid
    :Datatype:    Integer
-   :Description: Seiten-UID eintragen, wenn das Formular von einer anderen Seite aus abgearbeitet werden soll
+   :Description: Define the page UID if the form submission should be sent to a different page.
    :Standard:    NULL
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    object
    :Datatype:    Mixed
-   :Description: Übergebt hier ein Objekt mit Eigenschaften, die die Eingabefelder im Formular wiederspiegeln.
+   :Description: Contains an object with properties which mirror the input fields in the form.
    :Standard:    NULL
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    pageType
    :Datatype:    Integer
-   :Description: Gebt hier eine Seitentyp ID an, die das Formular abarbeiten soll. Könnte für AJAX interessant sein.
+   :Description: Use the pageType property to define a non-standard page type to handle the form submission. For example, 
+                 where the form submission takes place via AJAX.
    :Standard:    0
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    noCache
    :Datatype:    Boolean
-   :Description: Kann aktiviert werden, um das Caching für die Zielseite zu deaktivieren.
+   :Description: Can be used to completely deactivate the page cache on the target page.
    :Standard:    FALSE
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    noCacheHash
    :Datatype:    Boolean
-   :Description: Nach Aktivierung wird dem generierten Link zur Zielseite kein cHash-Parameter angehangen
+   :Description: If this property is activated, the link to the target page won't contain a cHash parameter.
    :Standard:    FALSE
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    section
    :Datatype:    String
-   :Description: Definition eines Ankers zu dem auf der Zielseite gesprungen werden soll. Interessant wir Seiten auf denen viele Inhalte sind.
-   :Standard:    Leerer String
-   :Mandatory:   Ja
+   :Description: Define an anchor on the target page, if the target page contains a large amount of content. The browser 
+                 will scroll to the indicated anchor.
+   :Standard:    Empty string
+   :Mandatory:   Yes
 
  - :Property:    format
    :Datatype:    String
-   :Description: Gibt an um welches Format es sich bei der Zielseite handelt. Alternativ ginge auch "xml", obwohl das bei einer Formularzielseite wenig Sinn machen würde. Klappt nur wenn actionUri nicht gesetzt ist.
-   :Standard:    Leerer String
-   :Mandatory:   Ja
+   :Description: The required data format to be delivered on the target page - for example, “xml”. This property only takes 
+                 effect if 'actionUri' isn't set.
+   :Standard:    Empty string
+   :Mandatory:   Yes
 
  - :Property:    additionalParams
    :Datatype:    Array
-   :Description: Fügt weitere Variablen der Zielseite an. Im Gegensatz zu arguments, können hiermit Variablen hinzugefügt werden die nicht mit dem Extensionnamen geprefixed werden. Klappt nur wenn actionUri nicht gesetzt ist.
-   :Standard:    Leeres Array
-   :Mandatory:   Ja
+   :Description: Additional variables for the target page. Contrary to 'arguments', these variables won't be prefixed 
+                 with the extension name. This property only takes effect if 'actionUri' isn't set.
+   :Standard:    Empty array
+   :Mandatory:   Yes
 
  - :Property:    absolute
    :Datatype:    Boolean
-   :Description: Nach Aktivierung wird der Zeilseite noch der Domainname und Pfad vorangestellt. Klappt nur wenn actionUri nicht gesetzt ist.
+   :Description: Upon activation, the domain name and full page path will be prefixed to the form action. This property 
+                 only takes effect if 'actionUri' isn't set.
    :Standard:    FALSE
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    addQueryString
    :Datatype:    Boolean
-   :Description: Falls dem Formular bereits Parameter über die URL mitgegeben wurden, könnt Ihr hier nun entscheiden, ob diese Parameter auch mit auf die Zielseite übergeben werden. Klappt nur wenn actionUri nicht gesetzt ist.
+   :Description: This property defines whether query parameters on the page containing the form will be passed on to the 
+                 target page. This property only takes effect if 'actionUri' isn't set.
    :Standard:    FALSE
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    argumentsToBeExcludedFromQueryString
    :Datatype:    Array
-   :Description: Falls Ihr addQueryString aktiviert habt, aber einen oder zwei bestimmte Parameter wieder entfernen wollt, dann tragt Ihr hier diese Parameter ein. Klappt nur wenn actionUri nicht gesetzt ist.
-   :Standard:    Leeres Array
-   :Mandatory:   Ja
+   :Description: If 'addQueryString' is activated, you can use this property to exclude specific query parameters. This 
+                 property only takes effect if 'actionUri' isn't set.
+   :Standard:    Empty array
+   :Mandatory:   Yes
 
  - :Property:    fieldNamePrefix
    :Datatype:    String
-   :Description: Falls ein anderer Prefix gewünscht ist. Macht eigentlich nur Sinn, wenn die Formulardaten von einer anderen Extension abgearbeitet werden müssen.
+   :Description: Use this property if you want to use an alternative string to prefix the form fields. Mainly for use 
+                 if the form submission is handled by a different extension.
    :Standard:    NULL
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    actionUri
    :Datatype:    String
-   :Description: Gebt hier Eure ganz eigene individuelle Zielseiten-URL ein. Viele der oberen Parameter haben aber dann keinen Wirkung mehr.
+   :Description: Define a specific form action URL. Using this option disables many of the other properties (above).
    :Standard:    NULL
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    objectName
    :Datatype:    String
-   :Description: Hier kommt ein Objekt- bzw. Modelname rein, in das die nach Absenden gesammelten Formulardaten gespeichert werden sollen. Hat den Vorteil, dass Ihr nicht in jeder Action die Formulardaten überprüfen, sondern die Überprüfung nur einmalig im Model vornehmen müsst.
+   :Description: An object (Model) name, into which the submitted form data will be saved. This allows the data to be 
+                 validated once in the Model, instead of in every individual action method.
    :Standard:    NULL
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
 
-Beispiel
+Example
 --------
 
 ::
@@ -196,11 +205,11 @@ Beispiel
    <f:form.textarea property="firstName" rows="5" cols="50" />
  </f:form>
 
-Hier eine üngefähre Ausgabe was nun im Seitenquelltext hinzugefügt wurde:
+…will create (approximately) the following output in the form page HTML.
 
 ::
 
- <form action="/typo3_46/index.php?id=6&amp;tx__%5Bcontroller%5D=Standard&amp;cHash=d1469ddb628871564f3257920c1f6ee8" method="post">
+ <form action="/typo3/index.php?id=6&amp;tx__%5Bcontroller%5D=Standard&amp;cHash=d1469ddb628871564f3257920c1f6ee8" method="post">
    <div style="display: none">
      <input type="hidden" name="__referrer[extensionName]" value="" />
      <input type="hidden" name="__referrer[controllerName]" value="Standard" />
@@ -210,16 +219,14 @@ Hier eine üngefähre Ausgabe was nun im Seitenquelltext hinzugefügt wurde:
    <textarea rows="5" cols="50" name="newFeUser[firstName]"></textarea>
  </form>
 
-Hier seht Ihr das Thema Sicherheit. Fluid baut automatisch einen versteckten Bereich mit ein paar Werten in Euer
-Formular ein. Unteranderem befindet sich dort ein __hmac-Wert. Innerhalb diesen Wertes sind alle erlaubten
-Formularfelder nochmals enthalten. Wenn also über bestimmte Webseitenattacken Felder entfernt oder hinzugefügt werden,
-dann kann Extbase später feststellen, dass die Anzahl und/oder Feldnamen nicht übereinstimmen und wirft eine
-Fehlermeldung. Das Formular kann also nicht abgesendet werden.
+If you take a close look at this generated code, you can see the security elements. Fluid builds a hidden section within 
+the form, which contains a few values: amongst them, an '_hmac' value, which contains a reference to all allowed form 
+fields. This means that in the event of a website attack, in which specific fields are added or omitted, Extbase can 
+compare the form data with the _hmac value to see that the form submission is invalid, and stop processing the request 
+immediately with an error message.
 
-Im Beispiel haben wir noch den Objektnamen "newFeUser" angegeben. Wie Ihr seht wurde dieser Wert jedem Feld in meinem
-Formular vorangestellt. Das hat den Vorteil, dass Eure Formularfelder nicht einzeln, sondern gebündelt in einem Array
-an die Zielseite übertragen werden. Dort angekommen könnt Ihr Eurer Action mitteilen, dass der Inhalt diesen Arrays in
-ein Modell portiert werden soll. Bei dieser Portierung werden auch automatisch die enthaltenen Werte auf Gültigkeit
-überprüft, sofern Ihr überhaupt Überprüfungsregeln in Euren Modellen angegeben habt. Nur wenn alle Überprüfungen
-gültig waren, kann das Modell mit den Formulardaten an die Action übergeben werden und dort mit einem Einzeiler in der
-Datenbank gespeichert werden.
+In the earlier example, we've set the object name “newFeUser”. As you can see, this value is prepended to each field. The 
+advantage of this is that all of you form fields are bundled together into an array for the target page. Your action can 
+take this array and port it into a Model object, during which the array entries are validated. (Assuming that the Model 
+contains the appropriate validation definitions.) The form data will only be accepted into the Model if it can be 
+validated, after which a simple, single command could store the data in the database.

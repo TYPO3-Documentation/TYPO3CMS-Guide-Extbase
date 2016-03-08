@@ -8,72 +8,71 @@
 f:groupedFor
 ============
 
-Ein sehr mächtiger ViewHelper im Bereich der Listengenerierung. Übergebt dem ViewHelper ein Array und ein
-Gruppierungskriterium und Ihr erhaltet mit jedem Durchlauf bzw. mit jeder gefundenen Gruppe ein Array mit den
-dazugehörigen Arrayelementen zurück.
+A very powerful ViewHelper in the area of list generation. Pass an array to the ViewHelper with a grouping criterium, 
+and you'll get an array of elements which match the group criterium in each iteration.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    each
    :Datatype:    Array
-   :Description: Array oder Objekt, das durchlaufen werden soll
+   :Description: The array or object to be iterated
    :Standard:
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    as
    :Datatype:    String
-   :Description: Ein Variablenname, der die gruppierten Datensätze enthält
+   :Description: The name of the variable which contains the grouped entries
    :Standard:
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    groupBy
    :Datatype:    String
-   :Description: anhand welcher Eigenschaft soll das Array gruppiert werden
+   :Description: The property by which the array should be grouped.
    :Standard:
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    groupKey
    :Datatype:    String
-   :Description: Innerhalb der f:groupedBy-Tags kann mit dieser Variable auf den gruppierten Wert zugegriffen werden.
+   :Description: The grouped value can be accessed by this key from within each f:groupedBy tag.
    :Standard:
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
-Beispiel
+Example
 --------
 
 ::
 
- <f:alias map="{mitarbeiter: {0: {vorname: 'Stefan', stadt: 'Lindlar'},1: {vorname: 'Petra', stadt: 'Lindlar'},2: {vorname: 'Sascha', stadt: 'Remscheid'},3: {vorname: 'Patrick', stadt: 'Bonn'},4: {vorname: 'Sven', stadt: 'Gummersbach'},5: {vorname: 'Andrea', stadt: 'Wuppertal'}}}">
+ <f:alias map="{employees: {0: {first_name: 'Stefan', city: 'Lindlar'},1: {first_name: 'Petra', city: 'Lindlar'},2: {first_name: 'Sascha', city: 'Remscheid'},3: {first_name: 'Patrick', city: 'Bonn'},4: {first_name: 'Sven', city: 'Gummersbach'},5: {first_name: 'Andrea', city: 'Wuppertal'}}}">
    <table cellpadding="5" cellspacing="0" border="2">
-     <f:groupedFor each="{mitarbeiter}" as="kollegen" groupBy="stadt" groupKey="stadt">
+     <f:groupedFor each="{employees}" as="employeesByCity" groupBy="city" groupKey="city">
        <tr>
-         <th colspan="2">{stadt}</th>
+         <th colspan="2">{city}</th>
        </tr>
-       <f:for each="{kollegen}" as="kollege">
+       <f:for each="{employeesByCity}" as="employee">
          <tr>
-           <td style="color: {color}">{kollege.vorname}</td>
-           <td style="color: {color}">{kollege.stadt}</td>
+           <td>{employee.first_name}</td>
+           <td>{employee.city}</td>
          </tr>
        </f:for>
      </f:groupedFor>
    </table>
  </f:alias>
 
-Hier wieder das Beispiel mit den 6 Mitarbeitern. Wie Ihr sehen könnt gruppiert der f:groupedBy-ViewHelper diese
-Mitarbeiter anhand ihrer Städte (groupBy). Das geübte Auge sieht evtl. sofort, dass die ersten beiden Arrayeinträge
-in Lindlar wohnen. Um innerhalb der f:groupedBy-Tags auf diesen Städtenamen zugreifen zu können, verwendet Ihr den
-Parameter groupKey. Der Wert aus groupBy und groupKey müssen nicht übereinstimmen. Innerhalb von groupKey könntet Ihr
-auch einfach city nehmen.
+Here's an example with six employees. As you can see, the f:groupedBy ViewHelper groups the employees by city. An 
+experienced eye will see that the first employees in the array work in Lindlar.
 
-Über die Variable "as" könnt Ihr nun auf die Elemente der ersten gefundenen Gruppe zugreifen und mit f:for durchlaufen
-lassen.
+So that we can access the city names within the f:groupedBy tags, we'll use the 'groupKey' “city”. (The values 'groupBy' 
+and 'groupKey' don't need to match: you could use 'city' as a groupKey too.
+
+By referring to the variable 'as', you can access the elements of the first city employees and loop through them with 
+a f:for loop.

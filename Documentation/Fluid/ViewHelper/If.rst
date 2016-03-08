@@ -8,83 +8,82 @@
 f:if
 ====
 
-Auch wenn dieser ViewHelper in seiner Ausführung noch etwas eingeschränkt ist gehört er trotzdem zu den ViewHelpern,
-die Ihr auswendig kennen solltet. Wer sich mal den fed:if-ViewHelper aus der fed-Extension angeschaut hat, weiß wovon
-wir reden.
+Even though the usage of this ViewHelper is a little limited, it's one of the ViewHelpers you should be know well. If 
+you're familiar with the old fed:if ViewHelper, you'll know what we're talking about.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    condition
    :Datatype:    Boolean
-   :Description: Hier kommt die Vergleichtsabfrage rein (Siehe Beispiele)
+   :Description: The content of the variable comparison rules. (See the examples.)
    :Standard:    NULL
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
-Folgende Vergleiche sind erlaubt: ==, !=, <, <=, >, >= und %
+The following comparators are allowed: ==, !=, <, <=, >, >= and %
 
-Vergleicht werden können nur Variablen folgenden Typs: Zahlen, Objekteigenschaften, Arrays, Strings (seit v6.2) und
-Ergebnisse aus ViewHelpern
+Only variables of the following types can be compared: numbers, object properties, arrays, strings (since v6.2) and 
+the results of other ViewHelpers.
 
-Einfache Beispiele
-------------------
+Simple examples
+---------------
 
 ::
 
- <f:alias map="{wert1: 1, wert5: 5}">
-   <f:if condition="{wert1}==1">
-     <p>Der Wert ist 1</p>
+ <f:alias map="{value1: 1, value5: 5}">
+   <f:if condition="{value1}==1">
+     <p>The value is 1</p>
    </f:if>
-   <f:if condition="{wert5}==5">
+   <f:if condition="{value5}==5">
      <f:then>
-       <p>Der Wert ist 5</p>
+       <p>The value is 5</p>
      </f:then>
      <f:else>
-       <p>Der Wert ist NICHT 5</p>
+       <p>The value is NOT 5</p>
      </f:else>
    </f:if>
-   <f:if condition="{wert5} % 2">
+   <f:if condition="{value5} % 2">
      <f:then>
-       <p>Die Berechnung liefert einen Restwert von 1.</p>
+       <p>The calculation returns a remainder value of 1.</p>
      </f:then>
      <f:else>
-       <p>Es konnte kein Restwert ermittelt werden</p>
+       <p>The calculation did not return a remainder value.</p>
      </f:else>
    </f:if>
-   <f:if condition="{wert1}!={wert5}">
-     <p>wert1 ist NICHT gleich wert5</p>
+   <f:if condition="{value1}!={value5}">
+     <p>value1 is NOT equal to value5</p>
    </f:if>
-   <f:if condition="{wert1}<{wert5}">
-     <p>wert1 ist kleiner als wert5</p>
+   <f:if condition="{value1}<{value5}">
+     <p>value1 is smaller than value5</p>
    </f:if>
-   <f:if condition="{0:wert1,1:wert5}=={0:1,1:5}">
-     <p>Der erste Array ist gleich mit allen Werten aus dem zweiten Zahlenarray</p>
-   </f:if>
- </f:alias>
- <f:alias map="{elemente: {0: wert1, 1: wert2}}">
-   <f:if condition="{elemente -> f:count()}==2">
-     <p>Vergleich mit ViewHelpern: Das Elementearray beinhaltet 2 Elemente</p>
+   <f:if condition="{0:value1,1:value5}=={0:1,1:5}">
+     <p>Values in the first array are all the same as the values in the second array.</p>
    </f:if>
  </f:alias>
- <f:alias map="{wert1: 'hallo'}">
-   <f:if condition="{wert1} == 'hallo'">
-     <p>Stringvergleiche klappen seit v6.2</p>
+ <f:alias map="{elements: {0: value1, 1: value2}}">
+   <f:if condition="{elements -> f:count()}==2">
+     <p>Comparing with ViewHelpers: the array contains 2 elements.</p>
    </f:if>
-   <f:if condition="{0: wert1} == {0: 'hallo'}">
-     <p>Stringvergleiche vor v6.2 nur als Array</p>
+ </f:alias>
+ <f:alias map="{value1: 'hello'}">
+   <f:if condition="{value1} == 'hello'">
+     <p>String comparison works since v6.2.</p>
    </f:if>
+   <f:if condition="{0: value1} == {0: 'hello'}">
+     <p>String comparisons only work in array syntax before v6.2.</p>
+   </f:if>
+ </f:alias>
 
- </f:alias>
 
-Wenn kein f:then oder f:else-ViewHelper gefunden wurde, dann wird der Inhalt zwischen den f:if-ViewHelpern immer nur
-dann ausgegeben, wenn die Bedingung wahr ist. Wenn komplette WENN->DANN-SONST-Konstrukte erzeugt werden müssen, dann
-müssen auch immer die f:then und f:else-ViewHelper verwendet werden.
+If there are no f:then or f:else ViewHelpers in use, the content between the f:if ViewHelpers will only be output if 
+the comparison returns a positive result. If you need to use the full if-then-else construct, then you'll have to 
+use the f:then / f:else ViewHelpers.

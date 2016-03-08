@@ -8,42 +8,42 @@
 f:cObject
 =========
 
-Dieser ViewHelper stellt eine Verbindung zu TypoScript her. Übergebt einen TypoScript Objekt Pfad (lib.*) und lasst
-TypoScript die Arbeit machen.
+This ViewHelper provides a connection to TypoScript. Pass in a TypoScript object path (lib.*) and let TypoScript 
+do the work.
 
-Eigenschaften
+Properties
 -------------
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    typoscriptObjectPath
    :Datatype:    String
-   :Description: Gebt hier den TypoScript Objektpfad an
+   :Description: The TypoScript object path
    :Standard:
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    data
    :Datatype:    Mixed
-   :Description: Gebt hier den TypoScript Objektpfad an
+   :Description: The TypoScript object path
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    currentValueKey
    :Datatype:    String
-   :Description: Gebt hier den TypoScript Objektpfad an
+   :Description: The TypoScript object path
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
 
-Einfaches Beispiel
-------------------
+Simple example
+--------------
 
 **TypoScript**
 
@@ -54,24 +54,24 @@ Einfaches Beispiel
    value = Text from TypoScript
  }
 
-**Fluid-Template**
+**Fluid template**
 
 ::
 
  <p><f:cObject typoscriptObjectPath="lib.fluidText" /></p>
 
-**Ausgabe**
+**Output**
 
 ::
 
  <p>Text from TypoScript</p>
 
-Beispiel für lokalisierte Datumswerte
--------------------------------------
+Example for a localized date value
+----------------------------------
 
-Der f:format.date ViewHelper arbeitet mit der PHP Funktion date() und kann somit nur englische Monatsnamen ausgeben.
-Besser wäre da schon die Verwendung von strftime. TypoScript bietet strftime formatierte Datumswerte an. Hier ein
-Beispiel unter Verwendung von current:
+The f:format.date ViewHelper works with the PHP function date(), so it can only output English month names. It would 
+be better if we could use strftime: TypoScript provides dates formatted using strftime. Here's an example, using the 
+current date and a German date format.
 
 **TypoScript**
 
@@ -83,19 +83,19 @@ Beispiel unter Verwendung von current:
    strftime = %d. %B %Y
  }
 
-**Fluid-Template**
+**Fluid template**
 
 ::
 
  <p><f:cObject typoscriptObjectPath="lib.formattedDate">{address.dayOfBirth}</f:cObject></p>
 
-**Ausgabe**
+**Output**
 
 ::
 
  <p>17. Januar 2013</p>
 
-Beispiel mit einem Array/Objekt
+Example with an array or object
 -------------------------------
 
 **TypoScript**
@@ -111,13 +111,13 @@ Beispiel mit einem Array/Objekt
    20.value.dataWrap = <p>Full name: {field: firstName} {field: lastName}
  }
 
-**Fluid-Template**
+**Fluid template**
 
 ::
 
  <f:cObject typoscriptObjectPath="lib.address" data="{address}" currentValueKey="firstName" />
 
-**Ausgabe**
+**Output**
 
 ::
 
@@ -125,6 +125,5 @@ Beispiel mit einem Array/Objekt
 
 .. tip::
 
-   Wie oben bereits erklärt, könnt Ihr mit currentValueKey angeben, welcher Wert aus dem Array oder Objekt
-   über current=1 zur Verfügung gestellt werden soll.
-   Auf die anderen Werte eines Arrays oder Objektes könnt Ihr dann wie hier im Beispiel mit "field" zugreifen.
+   As explained above, you can use currentValueKey to define which value should be provided using current=1. You can 
+   access other values from the array using "field", as per the example.

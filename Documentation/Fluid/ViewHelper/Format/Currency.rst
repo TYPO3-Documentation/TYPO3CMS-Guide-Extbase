@@ -8,78 +8,77 @@
 f:format.currency
 =================
 
-Mit diesem ViewHelper könnt Ihr Zahlen als Währung darstellen lassen.
+This ViewHelper allows you to display a number in currency format.
 
-Eigenschaften
+Properties
 -------------
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    currencySign
    :Datatype:    String
-   :Description: Das Währungskennzeichen wie $ oder €. Dieses Zeichen wird immer hinter der Währung angezeigt.
-   :Standard:    Leerer String
-   :Mandatory:   Nein
+   :Description: The currency symbol, for example £ or €. This symbol is usually appended after the numeric value.
+   :Standard:    Empty string
+   :Mandatory:   No
 
- - :Property:    decimalSeperator
+ - :Property:    decimalSeparator
    :Datatype:    String
-   :Description: Welcher Zeichen soll für die Trennung von Euro und Cent verwendet werden. Dezimaltrenner.
+   :Description: Decimal separator, which separates (for example) Euro and Cent.
    :Standard:    ,
-   :Mandatory:   Nein
+   :Mandatory:   No
 
- - :Property:    thousandsSeperator
+ - :Property:    thousandsSeparator
    :Datatype:    String
-   :Description: Welches Zeichen soll als Tausendertrennzeichen verwendet werden.
+   :Description: Character to be used as a thousands separator.
    :Standard:    .
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    prependCurrency
    :Datatype:    Boolean
-   :Description: Soll das Währungssymbol VOR die Währung gesetzt werden?
+   :Description: Set to TRUE to indicate that the currency symbol should be placed before the numeric value.
    :Standard:    FALSE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    separateCurrency
    :Datatype:    Boolean
-   :Description: Soll das Währungssymbol durch ein Leerzeichen von der Währung getrennt werden?
+   :Description: If this property is TRUE, a space character will be placed between the currency symbol and the numeric value.
    :Standard:    TRUE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    decimals
    :Datatype:    Integer
-   :Description: Wie viele Stellen nach dem Komma sollen angezeigt werden?
+   :Description: To how many decimal places should the number be rounded?
    :Standard:    2
-   :Mandatory:   Nein
+   :Mandatory:   No
 
-Zwei wichtige Informationen:
+Two important pieces of information:
 
-Übergebt Ihr an diesen ViewHelper einen leeren Text, dann benötigt die in diesem ViewHelper befindliche Funktion
-number_format knapp 23 Millisekunden. Liefert Ihr dieser Funktion stattdessen direkt ein 0.00 ist die Funktion
-in 1-2 Millisekunden durch. Wichtig wenn Ihr mit langen Listen arbeitet.
+If you pass an empty string to this ViewHelper, it takes 23 milliseconds to return a value. If you pass in 0.00 as a value, 
+then it'll be finished in 1-2 milliseconds. Take care when working with long lists of values.
 
-Ihr dürft diesem ViewHelper keine Zahlen mit einem Komma als Dezimaltrenner mitgeben. Siehe Beispiel.
+This ViewHelper doesn't accept values passed with a comma as a decimal separator. (Common in German and French usage.)
 
-Beispiel
+Examples
 --------
 
 ::
 
- <f:format.currency currencySign="$" decimalSeparator="." thousandsSeparator=",">1122334455.66</f:format.currency>
+ <f:format.currency currencySign="€" decimalSeparator="." thousandsSeparator="," prependCurrency="true">1122334455.66</f:format.currency>
 
-ergibt: 1,122,334,455.66 $
+produces: € 1,122,334,455.66
 
-Beispiel mit nicht float kompatiblen Zahlen
--------------------------------------------
+Non-float value
+###############
 
 ::
 
- <f:format.currency currencySign="$" decimalSeparator="." thousandsSeparator=",">1122334455,66</f:format.currency>
+ <f:format.currency currencySign="€" decimalSeparator="." thousandsSeparator="," prependCurrency="true">1122334455,66</f:format.currency>
 
-ergibt: 1,122,334,455.00 $
+produces: € 1,122,334,455.00

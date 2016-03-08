@@ -8,29 +8,27 @@
 f:base
 ======
 
-Dieser ViewHelper bindet den `base-Tag <http://de.selfhtml.org/html/kopfdaten/basis.htm>`_ in Euer HTML-Template
-ein.
+This ViewHelper embeds the `base-Tag <http://de.selfhtml.org/html/kopfdaten/basis.htm>`_ into your HTML template.
 
-Eigenschaften
--------------
+Properties
+----------
 
-Dieser ViewHelper besitzt keine Eigenschaften
+This ViewHelper doesn't accept any properties.
 
-Beispiel
+Example
 --------
 
 ::
 
  <f:base />
 
-**Ausgabe**
+**Output**
 
 ::
 
- <base href="http://introgit:8080/">
+ <base href="http://introgit:8080/" />
 
 .. tip::
 
-   Dieser ViewHelper macht nur dann Sinn, wenn Ihr Euer Webseitentemplate (inkl. Kopfbereich <head>) mit Hilfe
-   von Fluid aufbaut.
-   Wenn kein <head>-Bereich vorhanden ist, wird dieser HTML-Tag im Bodybereich der Webseite eingebunden, wo er nicht hingehört.
+   Using this ViewHelper only makes sense when you're building a website template - including the <head> - using 
+   Fluid. If there's no <head> in the template, this HTML tag will be added to the <body> and that's not where it belongs.

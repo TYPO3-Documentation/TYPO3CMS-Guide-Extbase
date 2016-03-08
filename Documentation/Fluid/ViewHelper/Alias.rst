@@ -8,29 +8,29 @@
 f:alias
 =======
 
-Dieser ViewHelper erstellt Variablen, die Ihr im weiteren Verlauf wieder verwenden könnt. Ihr könnt den Variablen
-entweder einen eigenen statischen Wert oder aber dynamische Werte aus Objekten und anderen ViewHelpern zuweisen.
+This ViewHelper creates variables that you can use when developing Fluid views. You create variables which contain either 
+static values or dynamic values from objects or other ViewHelpers.
 
-Eigenschaften
--------------
+Details
+-------
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    map
    :Datatype:    Array
-   :Description: Der Key gibt den Namen der neuen Variable an, während der Value den Inhalt wieder spiegelt.
+   :Description: The key is the name by which the variable is known, where the value reflects the content.
    :Standard:
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
-Beispiel für statische Werte
-----------------------------
+Examples for static values
+--------------------------
 
 ::
 
@@ -38,14 +38,14 @@ Beispiel für statische Werte
    <p>Hello, my name is {firstName} {lastName}</p>
  </f:alias>
 
-**Ausgabe**
+**Output**
 
 ::
 
  <p>Hello, my name is Stefan Froemken</p>
 
-Beispiel für Ergebnisse aus ViewHelpern
----------------------------------------
+Example for results from another ViewHelper
+--------------------------------------------
 
 ::
 
@@ -53,14 +53,14 @@ Beispiel für Ergebnisse aus ViewHelpern
    <p>There are {amount} records in database</p>
  </f:alias>
 
-**Ausgabe**
+**Output**
 
 ::
 
  <p>There are 23 records in database</p>
 
-Beispiel für Werte aus Objekten
--------------------------------
+Example for values from an object
+---------------------------------
 
 ::
 
@@ -68,7 +68,7 @@ Beispiel für Werte aus Objekten
    <p>Hello, my name is {firstName} {lastName}</p>
  </f:alias>
 
-**Ausgabe**
+**Output**
 
 ::
 
