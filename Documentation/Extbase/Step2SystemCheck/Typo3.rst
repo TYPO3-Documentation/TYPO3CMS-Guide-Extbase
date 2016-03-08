@@ -4,7 +4,7 @@ TYPO3
 =====
 
 Extbase has been delivered as a system extension since TYPO 4.3.0 and it's developed 
-in parallel with FLOW3. Version numbers of Extbase and Fluid match the version number 
+in parallel with TYPO3 FLOW. Version numbers of Extbase and Fluid match the version number 
 of TYPO3 core since 4.6.0.
 
 Although Extbase is available in TYPO3 since version 4.3.0, we recommend that you use 

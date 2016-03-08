@@ -22,7 +22,7 @@ Should I use Extbase?
 If you develop an extension for TYPO3 you should most definitely use Extbase.
 The days of piBased extensions are numbered. Extbase gives you the benefit of a
 modern, clear and highly structured means of PHP development with a hidden bonus:
-if you know Extbase, getting into FLOW3 will be much, much easier. Another bonus: 
+if you know Extbase, getting into TYPO3 FLOW will be much, much easier. Another bonus: 
 porting Extbase extensions to TYPO3 NEOS will be a walk in the park, whereas
 porting a piBased extension to TYPO3 NEOS will be incredibly laborious. (If it's even 
 possible at all.)
