@@ -1,69 +1,69 @@
 
-Globale Eigenschaften für das HTML-Element
-##########################################
+Global properties of the HTML element
+#####################################
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    class
    :Datatype:    String
-   :Description: CSS-Klasse für dieses HTML-Element
+   :Description: CSS class name for this HTML element
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    dir
    :Datatype:    String
-   :Description: Die Textrichtung. Erlaubte Werte sind: ltr (links nach rechts) und rtl (rechts nach links)
+   :Description: The text direction. Allowed values are 'ltr' (left to right) and 'rtl' (right to left).
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    id
    :Datatype:    String
-   :Description: Ein Bezeichner, der in dem Dokument ein HTML-Element eindeutig identifiziert
+   :Description: An identifier for the element, which must be unique within the current document.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    lang
    :Datatype:    String
-   :Description: Angabe der Sprache nach RFC 1766, die in diesem HTML-Element verwendet wird
+   :Description: Language identifier for this HTML element, in line with RFC 1766.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    style
    :Datatype:    String
-   :Description: Individuelle CSS-Stile, die nur für dieses HTML-Element gültig sein sollen
+   :Description: Individual inline CSS styles, which should only be relevant to the current HTML element.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    title
    :Datatype:    String
-   :Description: Ein Text, der beim berühren mit der Maus als Tooltip erscheinen soll
+   :Description: An advisory text, usually displayed when moving over the element with a mouse pointer.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    accesskey
    :Datatype:    String
-   :Description: Eine Tastenkombination, mit der dieses HTML-Element direkt angesprungen werden kann
+   :Description: A definition of the key combination which will bring focus to this element.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    tabindex
    :Datatype:    Integer
-   :Description: Gibt die TAB-Reihenfolge an
+   :Description: The index number for this element within a keyboard-based tabbing interaction sequence.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    onclick
    :Datatype:    String
-   :Description: JavaScript Code, der bei Klick auf dieses HTML-Element ausgeführt werden soll
+   :Description: A piece of JavaScript code to be executed when the element is clicked or tapped.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    data
    :Datatype:    array
