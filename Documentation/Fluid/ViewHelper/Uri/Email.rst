@@ -32,4 +32,4 @@ Eigenschaften
 Beispiel
 --------
 
-<f:link.email email="meine@mailadresse.tld" />
+{f:uri.email(email: 'meine@mailadresse.tld')}

@@ -123,4 +123,4 @@ Beispiel
 
 ::
 
- <f:link.action action="show">Zeige Details</f:link.action>
+{f:uri.action(action: 'show')}

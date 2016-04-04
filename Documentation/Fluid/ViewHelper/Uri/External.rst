@@ -42,4 +42,4 @@ Eigenschaften
 Beispiel
 --------
 
-<f:link.external uri="www.example.com">Externer Link zu meiner Seite</f:link.external>
+{f:uri.external(uri: 'www.example.com')}
