@@ -8,121 +8,123 @@
 f:be.container
 ==============
 
-Zu allererst solltet Ihr Euch eine grundsätzliche Frage stellen: Willst Du etwas entwickeln ganz im Stile von TYPO3
-oder willst Du etwas völlig Eigenes bauen. Wenn Ihr Euch für etwas völlig Eigenes entscheidet, dann braucht Ihr diesen
-ViewHelper überhaupt nicht. Bindet in diesem Falle Eure benötigten StyleSheets und JavaScripte selbst ein.
+The first question you should ask yourself is whether you want to build something using the existing TYPO3 interface, or 
+build something completely bespoke. If you're making a bespoke interface, then you don't need this ViewHelper at all. 
+In this event, bind your own JavaScript and CSS assets yourself.
 
-Wenn Ihr allerdings etwas bauen wollt, dass sich an das TYPO3-Design anlehnt und möglichst kompatibel sein soll,
-dann solltet Ihr diesen ViewHelper auf jeden Fall verwendet. Das was damals zu Zeiten von MediumDoc und Co.
-eingebunden wurde, benötigt heute nur noch diesen Zweizeiler mit knapp 10 Parametern.
+However, if you want to build something using the standard TYPO3 interface, thereby providing a close integration and 
+compatibility with other modules, then use this ViewHelper. In essence, you only need to use two rows of code and around 
+ten properties.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    pageTitle
    :Datatype:    String
-   :Description: BE-Module werden in einem Frame dargestellt, von daher macht ein Seitentitel wenig sind. Einfach leer lassen
-   :Standard:    Leerer String
-   :Mandatory:   Nein
+   :Description: Backend modules are loaded in an HTML frame, so it's not essential to define an HTML page title. If you 
+                 want to, then this is the property to use.
+   :Standard:    Empty string
+   :Mandatory:   No
 
  - :Property:    enableJumpToUrl
    :Datatype:    Boolean
-   :Description: Lasst diesen Parameter eingeschaltet, wenn Ihr den ActionMenu-ViewHelper verwenden wollt, da dieser die entsprechenden JavaScripte dazu liefert.
+   :Description: Activate this parameter if you want to use the ActionMenu ViewHelper. This loads the necessary 
+                 JavaScript assets.
    :Standard:    TRUE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    enableClickMenu
    :Datatype:    Boolean
-   :Description: Wenn aktiviert, wird das JavaScript für die Contextmenüs eingebunden
+   :Description: When active, this property loads the JavaScript for context menu functionality.
    :Standard:    TRUE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    loadPrototype
    :Datatype:    Boolean
-   :Description: Wenn aktiviert, wird das Prototype-JS-Framework eingebunden
+   :Description: When active, the Prototype JS framework will be loaded.
    :Standard:    TRUE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    loadScriptaculous
    :Datatype:    Boolean
-   :Description: Wenn aktiviert, wird das Zusatzpaket für Prototype eingebunden
+   :Description: When active, the Scriptaculous extension to Prototype JS will be loaded.
    :Standard:    FALSE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    scriptaculousModule
    :Datatype:    String
-   :Description: Ihr könnt hier noch weitere Module für das Scriptaculouspaket aktivieren
-   :Standard:    Leerer String
-   :Mandatory:   Nein
+   :Description: Using this option, you can load additional JavaScript modules for Scriptaculous.
+   :Standard:    Empty string
+   :Mandatory:   No
 
  - :Property:    loadExtJs
    :Datatype:    Boolean
-   :Description: Wenn aktiviert, wird das ExtJS-Framework eingebunden
+   :Description: When active, the ExtJS framework will be loaded.
    :Standard:    FALSE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    loadExtJsTheme
    :Datatype:    Boolean
-   :Description: Wenn aktiviert, werden Vorgaben für die Grafischen Elemente eingebunden.
+   :Description: When active, templates for the graphical elements of the ExtJs framework will be loaded.
    :Standard:    TRUE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    extJsAdapter
    :Datatype:    String
-   :Description: Statt dem Standard ext-base kann hier ein anderer Adapter angegeben werden.
-   :Standard:    Leerer String
-   :Mandatory:   Nein
+   :Description: You can use this property to define a different adaptor instead of the standard, Extbase.
+   :Standard:    Empty string
+   :Mandatory:   No
 
  - :Property:    enableExtJsDebug
    :Datatype:    Boolean
-   :Description: Sollte nur aktiviert werden, wenn man auf Basis von ExtJS entwickelt.
+   :Description: This property should only be activated during a development process involving ExtJS.
    :Standard:    FALSE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    addCssFile
    :Datatype:    String
-   :Description: Eine CSS-Datei einbinden
+   :Description: Bind a specific CSS asset file to the view.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    addJsFile
    :Datatype:    String
-   :Description: Eine JavaScript-Datei einbinden
+   :Description: Bind a specific JavaScript asset file to the view.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    loadJQuery
    :Datatype:    Boolean
-   :Description: Soll jQuery als JavaScript Framework eingebunden werden?
+   :Description: When active, jQuery will be loaded.
    :Standard:    FALSE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    includeCssFiles
    :Datatype:    Array
-   :Description: Während addCssFile nur eine CSS-Datei einbinden kann, können mit dieser Eigenschaft mehrere
-                 CSS-Dateien eingebunden werden.
+   :Description: Using addCssFile will only allow you to bind in a single CSS asset file. Using includeCssFiles allows 
+                 you to bind multiple files.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    includeJsFiles
    :Datatype:    Array
-   :Description: Während addJsFile nur eine JS-Datei einbinden kann, können mit dieser Eigenschaft mehrere
-                 JS-Dateien eingebunden werden.
+   :Description: Using addJsFile will only allow you to bind in a single JavaScript asset file. Using includeCssFiles 
+                 allows you to bind multiple files.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    addJsInlineLabels
    :Datatype:    Array
-   :Description: Jeder Wert in diesem Array muss einem Key aus der locallang.xml/xlf entsprechen. Diese Übersetzung
-                 wird dann im Backend zur Verfügung gestellt.
+   :Description: Each value must correspond to a key from the locallang.xml/xlf file. The matching translation will then 
+                 be available in the backend.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No

@@ -8,11 +8,11 @@
 f:be.pagePath
 =============
 
-Dieser ViewHelper zeigt den Pfad zur aktuell gewählten Seite an. Diese Information ist vor allem bei sehr großen
-Webseiten nützlich, wenn Seiten eher über eine Suche gefunden werden. Dann ist es schon mal schwierig herauszufinden,
-wo sich diese Seite im Wust der ganzen Navigationen und Unterseiten im Seitenbaum überhaupt befindet.
+This ViewHelper displays the path to the currently selected page. This information is most useful in large sites, when 
+a page is most likely to be found via a search request. In this case, it's often difficult for the site user to orient 
+themselves and recognize where the current page sits in the page structure.
 
-Eigenschaften
--------------
+Properties
+----------
 
-Dieser ViewHelper besitzt keine Eigenschaften
+This ViewHelper doesn't accept any properties.

@@ -8,119 +8,125 @@
 f:be.tableList
 ==============
 
-Sehr geiles Teil. Was wir aus dem Modul Web->Liste kennen können wir nun selbst verwenden und super einfach
-konfigurieren, wie die folgenden Beispiele zeigen.
+A very useful ViewHelper. We can use the familiar view from the Web->List module and configure it for our own 
+purposes.
 
-Eigenschaften
+Properties
 -------------
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    tableName
    :Datatype:    String
-   :Description: Der Name der Tabelle
+   :Description: The name of the table.
    :Standard:    NULL
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    storagePid
    :Datatype:    Integer
-   :Description: Die Daten welcher Seite sollen angezeigt werden? Wenn nichts anderen angegeben wurde, werden die Datensätze der Seite angezeigt, die über persistence.storagePid angegeben wurde.
+   :Description: The ID of the page containing the data to be displayed. If this value is not defined, then the records 
+                 from the page with the ID set as persistence.storagePid will be displayed.
    :Standard:    NULL
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    levels
    :Datatype:    Integer
-   :Description: Falls die Seite aus storagePid noch Unterordner enthält, könnt Ihr hier angeben wie viele Ebenen tiefer nach weiteren Datensätzen gesucht werden soll.
+   :Description: If the page with the ID defined in the storagePid property contains subpages, this property defines the 
+                 nesting level from which records should be collated.
    :Standard:    0
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    filter
    :Datatype:    String
-   :Description: Gebt hier ein Suchwort ein, nach dem Eure Datensätze gefiltert werden sollen.
+   :Description: Provide a search term by which the records should be filtered.
    :Standard:    Leerer String
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    recordsPerPage
    :Datatype:    Integer
-   :Description: Wie viele Datensätze dürfen maximal auf einer Seite angezeigt werden.
+   :Description: The maximum number off records which may be displayed on a single page view.
    :Standard:    0
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    sortField
    :Datatype:    String
-   :Description: Nach welchem Feld sollen die gefundenen Datensätze sortiert werden
+   :Description: The field by which the applicable records should be sorted.
    :Standard:    Leerer String
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    sortDescending
    :Datatype:    Boolean
-   :Description: Wenn aktiviert, dann werden die Datensätze rückwärts sortiert.
+   :Description: When active, this property defines that the sequence of records should be sorted in reverse order.
    :Standard:    FALSE
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    readOnly
    :Datatype:    Boolean
-   :Description: Wenn aktiviert, dann werden die Bearbeitungssymbole nicht mehr angezeigt.
+   :Description: When active, the edit icon will not be displayed alongside the records.
    :Standard:    FALSE
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    enableClickMenu
    :Datatype:    Boolean
-   :Description: Wenn aktiviert, dann kann das Contextmenü verwendet werden
+   :Description: When active, the context menu will be activated for the view.
    :Standard:    TRUE
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    clickTitleMode
    :Datatype:    String
-   :Description: Auswahl von "edit", "info" und "show". Falls Ihr show auswählt, dann klappt das nur bei der Tabelle pages und tt_content. Normalerweise müsst Ihr immer erst über das Kontextmenü oder über ein anderes Modul in diese Bereich klicken. Nun reicht ein Klick auf den Titel des Datensatzes.
+   :Description: A choice of “edit”, “info” or “show”. The mode “show” only applies to records from the “pages” or 
+                 ”tt_content” types. Under usual circumstances, you need to either work using the content menu or 
+                 an alternative module. Now, clicking on the record title will be sufficient.
    :Standard:    NULL
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    alternateBackgroundColors
    :Datatype:    Boolean
-   :Description: Wenn aktiviert, wechseln sich die Hintergrundfarben je Datenzeile ab.
+   :Description: When active, the background colour of each table row will be displayed alternately.
    :Standard:    FALSE
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
-Minimalistisches Beispiel
--------------------------
+Minimal example
+---------------
 
-Dieses Beispiel zeigt die Tabelle tt_content mit den beiden Feldern header und bodytext. Die Tabelle wird nur dann
-angezeigt wenn sich auf der Seite, die durch storagePid angegeben wurde auch tatsächlich Datensätze dieser Tabelle
-befinden. Alle Backendmodule, die zumindest über den extension_builder erzeugt wurden bringen ein Extensiontemplete
-mit, das auf der Rootseite eingebunden werden sollte. Über den Konstanteneditor kann nun eine Seiten-UID eingetragen
-werden, die als Fallback dienst, falls wie hier in unserem Beispiel keine storagePid angegeben worden ist.
+The following example shows a table containing the header and bodytext fields of matching tt_content records. The table 
+will only be displayed if there are records of this type available in the page defined by storagePid.
+
+All backend modules - at least, those created using the Extension Builder - come with an extension template which must 
+be bound to the site's root page. You can then define the page uid in the TypoScript constants as a fallback, in the 
+event that storagePid isn't defined. (As is the case in this example.)
 
 ::
 
  <f:be.tableList tableName="tt_content" fieldList="{0: 'header', 1: 'bodytext'}" />
 
-Beispiel: Maximale Datensatzanzahl
+Example: maximum number of records
 ----------------------------------
 
-Obwohl wir hier den Parameter recordsPerPage nicht angegeben haben, werden uns innerhalb des Introductionpackage nur
-100 Datensätz auf der ersten Seite angezeigt von etwas über 150. Denn wenn dieser Parameter nicht angegeben wird, gilt
-erstens der Wert aus dem TCA ($TCA[TabellenName]['interface']['maxSingleDBListItems']) und wenn dieser nicht angegeben
-ist 100. Mit Hilfe von recordsPerPage ist es auch möglich mehr als 100 Datensätze anzeigen zu lassen.
+Although we haven't defined recordsPerPage in the following example, only 100 of more than 150 records will be displayed 
+within the data delivered with the Introduction Package. This is because where the property recordsPerPage isn't 
+defined, the value from TCA ($TCA[TabellenName]['interface']['maxSingleDBListItems']) is applicable. Where this isn't 
+set, then the limit is set to 100. If you need to show more than 100 records (in this example), use the property 
+recordsPerPage.
 
 ::
 
  <f:be.tableList tableName="tt_content" fieldList="{0: 'header', 1: 'bodytext'}" storagePid="1" levels="5" />
 
-Beispiel: Datensatz direkt anzeigen
------------------------------------
+Example: show records directly
+------------------------------
 
-Normalerweise muss man immer über das Modul Web->Anzeigen oder über das Kontextmenü navigieren, um eine erste Preview
-seines gewählten Datensatzes zu erhalten. Viel einfacher geht es, wenn man den Titel eines Datensatzes (Der Wert aus
-der ersten Spalte) mit dieser Möglichkeit verlinkt. Hierfür gibt es den Parameter clickTitleMode, den Ihr auf "show"
-setzen müsst. Zusätzlich habe ich in dieses Beispiel nach einen Wechselnden Hintergrund je Datenzeile implementiert.
+You normally need to switch to the Web->View module or navigate via the context menu to see a preview of a selected 
+record. A much easier option is to link the title of the record in such a way that clicking on it reveals a preview. 
+This is where the property clickTitleMode comes into play, when it's set to “show”. (The following example also 
+contains an example of the use of alternating background colours.)
 
 ::
 

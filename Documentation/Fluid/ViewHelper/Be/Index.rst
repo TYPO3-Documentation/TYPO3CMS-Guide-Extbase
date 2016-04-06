@@ -5,8 +5,8 @@
 
 .. include:: ../../../Includes.txt
 
-ViewHelper: Be
-==============
+ViewHelpers for the TYPO3 backend
+=================================
 
 **Table of Contents**
 
