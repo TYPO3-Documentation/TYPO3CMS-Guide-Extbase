@@ -5,8 +5,8 @@
 
 .. include:: ../../Includes.txt
 
-Bewährte Vorgehensweisen
-========================
+Best practices
+==============
 
 **Table of Contents**
 

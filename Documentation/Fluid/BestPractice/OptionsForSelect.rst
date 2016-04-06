@@ -3,25 +3,21 @@
 
 .. include:: ../../Includes.txt
 
-Statische Optionen für f:form.select
-====================================
+Static options for f:form.select
+================================
 
-Der f:form.select-ViewHelper bringt einige coole Eigenschaften mit wie zum Beispiel optionValueField
-und optionLabelField. Damit ist es möglich, auf bestimmte Eigenschaften eines Objektes zuzugreifen,
-um diese als Value oder auch als Label für die zu generierenden Optionen der Selectbox bereit zu stellen.
+The f:form.select ViewHelper provides a few cool options, for example optionValueField and optionLabelField. Using these 
+makes it possible to access specific properties of an object and use them as the value or label within the generated 
+options of a SELECT element.
 
-Diese beiden Eigenschaften haben aber ein Problem: sie funktionieren nur in Zusammenarbeit mit Objekten. Selbst wenn
-ihr die Struktur in einem Array nachbaut, so scheitert der Versuch bereits hier im f:form.select-ViewHelper::
+These two properties, however, present an problem: they only work with objects. If the data structure is formed of an 
+array, the following test within the f:form.select ViewHelper will fail:
 
    if (is_object($value)) {
 
-Denn nur dort werden diese beiden Eigenschaften verarbeitet.
-
-Natürlich könnten wir uns auch ein kleines Mini-Domainmodel mit zwei Getter- und Setter-Methoden bauen,
-um Label und Value hier abzuspeichern. Das erscheint jedoch als zu aufwändig, nur um einige statische Werte
-bereit zu stellen.
-
-Abhilfe schafft hier die PHP Standardklasse :php:`stdClass`::
+These two properties are only processed within this 'if' statement. We could perhaps build our own mini-domain model 
+with getter and setter methods to handle the label and value. But this is overkill. The better alternative is to make 
+use of the PHP standard class :php:`stdClass`:.
 
  /**
   * action list
@@ -49,7 +45,7 @@ Abhilfe schafft hier die PHP Standardklasse :php:`stdClass`::
    return $categories;
  }
 
-Im Fluid-Template könnt ihr dann wieder ganz normal die beiden Eigenschaften verwenden::
+You can now use the optionValueField and optionLabelField properties within your Fluid template as usual.
 
    <f:form.select name="category" options="{categories}" optionValueField="key" optionLabelField="value" />
 
