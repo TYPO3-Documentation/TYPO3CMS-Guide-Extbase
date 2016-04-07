@@ -56,11 +56,11 @@ Examples
  <f:format.crop maxCharacters="40">A bolt of lightning is going to strike the clock tower at precisely 10:04pm, next Saturday night.</f:format.crop>
 
 If the text is cropped strictly at 40 characters, the end of the string will be in the middle of the word “the”. But 
-the property 'respectWordBoundaries' is set by default, so the cropped text will read::
+the property 'respectWordBoundaries' is set by default, so the cropped text will read:
 
 ::
 
- A bolt of lightning is going to strike…
+A bolt of lightning is going to strike…
 
 Splitting a word
 ################
@@ -73,7 +73,7 @@ produces
 
 ::
 
-    A bolt of light...
+A bolt of light...
 
 Don't respect HTML tags
 #######################
@@ -86,6 +86,6 @@ produces
 
 ::
 
- A bolt of...
+A bolt of...
 
 This last result is produced because the individual characters within the paragraph tag itself are counted as part of the total.
