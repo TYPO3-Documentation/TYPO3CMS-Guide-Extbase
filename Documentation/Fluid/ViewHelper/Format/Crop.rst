@@ -6,43 +6,56 @@ f:format.crop
 
 Crops a string according to the defined properties.
 
-Properties
-----------
+maxCharacters
+-------------
 
-.. t3-field-list-table::
- :header-rows: 1
+:aspect:`Datatype`
+      Integer
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+      The number of characters to which the string should be abbreviated.
 
- - :Property:    maxCharacters
-   :Datatype:    Integer
-   :Description: The number of characters to which the string should be abbreviated.
-   :Standard:
-   :Mandatory:   Yes
+:aspect:`Required`
+      Yes
 
- - :Property:    append
-   :Datatype:    String
-   :Description: A string to be appended to the cropped text.
-   :Standard:    ...
-   :Mandatory:   No
+append
+------
 
- - :Property:    respectWordBoundaries
-   :Datatype:    Boolean
-   :Description: If the value of this property is TRUE, the crop will only happen between complete words. (Before the
-   number of characters has been reached.)
-   :Standard:    TRUE
-   :Mandatory:   Nein
+:aspect:`Datatype`
+      string
 
- - :Property:    respectHtml
-   :Datatype:    Boolean
-   :Description: If the value of this property is TRUE, HTML tags will be taken into account when cropping text. If the
-   value is FALSE, then the text may be cropped in the middle of an HTML tag.
-   :Standard:    TRUE
-   :Mandatory:   No
+:aspect:`Description`
+      A string to be appended to the cropped text.
+
+
+respectWordBoundaries
+---------------------
+
+:aspect:`Datatype`
+      boolean
+
+:aspect:`Description`
+      If the value of this property is TRUE, the crop will only
+      happen between complete words, before the number of
+      characters has been reached.
+
+:aspect:`Default`
+      True
+
+
+respectHtml
+-----------
+
+:aspect:`Datatype`
+      boolean
+
+:aspect:`Description`
+      If the value of this property is TRUE, HTML tags will be taken
+      into account when cropping text. If the value is FALSE, then
+      the text may be cropped in the middle of an HTML tag.
+
+:aspect:`Default`
+      True
 
 
 Examples
