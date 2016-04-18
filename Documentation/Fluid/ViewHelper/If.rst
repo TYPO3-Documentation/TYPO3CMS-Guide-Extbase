@@ -8,7 +8,7 @@
 f:if
 ====
 
-Even though the usage of this ViewHelper is a little limited, it's one of the ViewHelpers you should be know well. If 
+Even though the usage of this ViewHelper is a little limited, it's one of the ViewHelpers you should know well. If 
 you're familiar with the old fed:if ViewHelper, you'll know what we're talking about.
 
 Properties
