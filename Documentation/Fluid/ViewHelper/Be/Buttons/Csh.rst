@@ -8,10 +8,11 @@
 f:be.buttons.csh
 ================
 
-This ViewHelper is rarely used, but very helpful nonetheless. It enables to include hints into Backend forms.
-TYPO3 uses this functionality all over the backend, and it is noticeable by the small question mark images. When
-hovered it reveals the helptext in a little tooltip. It can be activated by mouse click and then display the help
-text in a popup window. There is a setting in the user configuration whether to show the popup or not.
+This ViewHelper is rarely used, but very helpful nonetheless. It enables you to include hints into backend forms.
+
+TYPO3 uses this functionality all over the backend, and it is noticeable by the small “question mark” images. Hovering 
+over the element reveals help text in a small tooltip, whilst clicking on the element displays the help text in a popup 
+window. A user configuration setting is available, to allow or disallow the popup window.
 
 Features
 --------
@@ -20,105 +21,102 @@ Features
  :header-rows: 1
 
  - :Property,20:    Property
-   :Datatype,20:    Datatype
+   :Datatype,20:    Variable type
    :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    table
    :Datatype:    String
-   :Description: table name
+   :Description: Database table name.
    :Standard:    NULL
    :Mandatory:   No
 
  - :Property:    field
    :Datatype:    String
-   :Description: the key from locallang file to use
-   :Standard:    empty string
+   :Description: The key from the locallang file.
+   :Standard:    Empty string
    :Mandatory:   No
 
  - :Property:    iconOnly
    :Datatype:    Boolean
-   :Description: display the icon, but not the text
+   :Description: Display the icon, but not the text.
    :Standard:    FALSE
    :Mandatory:   No
 
  - :Property:    styleAttributes
    :Datatype:    String
-   :Description: additional style attribute, added to the containing table
-   :Standard:    empty string
+   :Description: Additional style attribute to be added to the containing table.
+   :Standard:    Empty string
    :Mandatory:   No
 
-**Hinweis zu einem Sonderfall bei der Eigenschaft "table"**
+**Reference to a special case in the “table” property**
 
-Es gibt einen Sonderfall bei dem die Eigenschaft "table" überhaupt nicht angegeben werden muss. Dieser tritt dann
-ein, wenn es in dem Modul zwar Formularfelder gibt, die aber keine 1zu1-Spalte in der Datenbank besitzen. So werden
-beim scheduler z.B. alle Formularfelder serialisiert in einem DB-Feld abgespeichert (kein 1zu1-Abbild der Felder)
-oder z.B. Textfelder, die für Suchanfragen benötigt werden (keine DB-Speicherung). Diesen besonderen Felder kann mit
-Hilfe eines Eintrages in der ext_tables.php ein csh-Icon zugewiesen werden::
+There's a special instance in which the “table” property doesn't need to be defined. This is the case then there are 
+form fields in the module, but when there is no 1:1 column in the database. For example, in the Scheduler, which 
+stores its information in a serialized format in a single field, or in the case of a search field, whose value isn't 
+sent to the database. Such fields can be assigned a csh icon through the addition of an entry in ext_tables.php.
 
  \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
-   '_MOD_VollständigerModulname',
-   'PfadZuEinerSprachdatei'
+   '_MOD_FullModuleName',
+   'Path to a language file'
  );
 
-Beachtet bitte, dass es sich bei dem Modulnamen um den vollständig ausgeschriebenen Modulnamen handelt. Dieser
-besteht aus Kategorie (z.B. web), Extensionname (upper camel case) und Modulname (upper camel case). In meiner
-Beispielextension "sfextbase" mit dem Modulnamen "extbase" würde der vollständige Name so lauten::
+Note the reference to the fully-formed module name. This is comprised of the category (e.g. “web”), the 
+upper-camel-cased extension name and the upper-camel-cased module name. In the example of an extension named 
+“sfextbase” and a module named “extbase”, the complete name would be::
 
  web_SfextbaseExtbase
 
-Hier eine Möglichkeit, wie es bei Euch aussehen könnte::
+Here's an example of how the configuration might appear::
 
  \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
    '_MOD_web_SfextbaseExtbase',
    'EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_extbase.xlf'
  );
 
-Der Eintrag für die E-Mail-Adresse sieht in meiner xlf-Datei so aus::
+The entry for the email address in the XLF file would be as follows::
 
  <trans-unit id="email.alttitle" xml:space="preserve">
-   <source>E-Mail</source>
+   <source>Email</source>
  </trans-unit>
  <trans-unit id="email.description" xml:space="preserve">
-   <source>Tragen Sie hier Ihre E-Mail-Adresse ein</source>
+   <source>Enter your email address</source>
  </trans-unit>
  <trans-unit id="email.details" xml:space="preserve">
-   <source>Ich bin eine ewig lange Beschreibung, die Ihnen on Detail erklärt, wobei es sich um eine
-   E-Mail-Adress handelt, wo Sie eine her bekommen und was zu beachten ist,
-   um eine valide Adresse in dieses Feld einzutragen</source>
+   <source>I am a really long description, which gives plenty of detail about this field relating to an email address, 
+   as well as what you need to note and that you need to add a valid email address in this field.</source>
  </trans-unit>
 
-Beispiele
+Examples
 ---------
 
 .. caution::
 
- Im Quellcode der csh-API befindet sich eine Abfrage auf die BE-User-Option: edit_showFieldHelp. Diese ist per
- Default nicht gesetzt und verhindert somit grundsätzlich die Ausgabe dieser csh-Hilfetexte. Um diesen ViewHelper in
- Aktion sehen zu können, müsst Ihr entweder in den Benutzer- oder Gruppenoptionen folgende Einstellung in die
- UserTSconfig setzen::
+ There is a request to the backend user option edit_showFieldHelp within the source code of the csh API. This isn't 
+ set by default, which therefore blocks the output of the csh help text. In order to see a working version of this 
+ ViewHelper, you'll need to ensure that the following option is set within the TS config for the active user or user 
+ group.::
 
   setup.override.edit_showFieldHelp = text
 
-Beispiel: Datenbankfelder
-#########################
+Example: database fields
+########################
 
-Usually in the most TYPO3 tables the language file key is the same as the column name::
+In the majority of TYPO3 tables, the language file key is usually the same as the column name::
 
  <f:be.buttons.csh table="tt_content" field="header" />
 
-Beispiel mit Stil
-#################
+Example: style attributes
+#########################
 
 ::
 
  <f:be.buttons.csh table="tt_content" field="header" styleAttributes="background-color: red;" />
 
-Beispiel: Icons für Formularfelder ohne 1zu1-Abbild in der Datenbank
-####################################################################
+Example: Icons for form fields without a 1:1 database structure
+###############################################################
 
-Hier ein Beispiel für den oben beschriebenen Sonderfall, bei dem der Tabellenname nicht angegeben werden darf::
+This example relates to the special case mentioned above, in which the table name may not be indicated.::
 
  <f:be.buttons.csh field="email" />
-
