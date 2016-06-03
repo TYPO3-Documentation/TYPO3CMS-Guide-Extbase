@@ -1,73 +1,143 @@
-
 Global properties of the HTML element
 #####################################
 
-.. t3-field-list-table::
- :header-rows: 1
+class
+~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    CSS class name for this HTML element
 
- - :Property:    class
-   :Datatype:    String
-   :Description: CSS class name for this HTML element
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Default value`
+    NULL
 
- - :Property:    dir
-   :Datatype:    String
-   :Description: The text direction. Allowed values are 'ltr' (left to right) and 'rtl' (right to left).
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Mandatory`
+    No
 
- - :Property:    id
-   :Datatype:    String
-   :Description: An identifier for the element, which must be unique within the current document.
-   :Standard:    NULL
-   :Mandatory:   No
+dir
+~~~
+:aspect:`Variable type`
+    String
 
- - :Property:    lang
-   :Datatype:    String
-   :Description: Language identifier for this HTML element, in line with RFC 1766.
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Description`
+    The text direction. Allowed values are 'ltr' (left to right) and 'rtl' (right to left).
 
- - :Property:    style
-   :Datatype:    String
-   :Description: Individual inline CSS styles, which should only be relevant to the current HTML element.
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Default value`
+    NULL
 
- - :Property:    title
-   :Datatype:    String
-   :Description: An advisory text, usually displayed when moving over the element with a mouse pointer.
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Mandatory`
+    No
 
- - :Property:    accesskey
-   :Datatype:    String
-   :Description: A definition of the key combination which will bring focus to this element.
-   :Standard:    NULL
-   :Mandatory:   No
+id
+~~
+:aspect:`Variable type`
+    String
 
- - :Property:    tabindex
-   :Datatype:    Integer
-   :Description: The index number for this element within a keyboard-based tabbing interaction sequence.
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Description`
+    An identifier for the element, which must be unique within the current document.
 
- - :Property:    onclick
-   :Datatype:    String
-   :Description: A piece of JavaScript code to be executed when the element is clicked or tapped.
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Default value`
+    NULL
 
- - :Property:    data
-   :Datatype:    array
-   :Description: Adds the "data-*" attribute to the tag. New since TYPO3 7 LTS. 
-                 *Example:* `data="{foo:'bar'}"` produces `data-foo="bar"`
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Mandatory`
+    No
+
+lang
+~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Language identifier for this HTML element, in line with RFC 1766.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+style
+~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Individual inline CSS styles, which should only be relevant to the current HTML element.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+title
+~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    An advisory text, usually displayed when moving over the element with a mouse pointer.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+accesskey
+~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    A definition of the key combination which will bring focus to this element.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+tabindex
+~~~~~~~~
+:aspect:`Variable type`
+    Integer
+
+:aspect:`Description`
+    The index number for this element within a keyboard-based tabbing interaction sequence.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+onclick
+~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    A piece of JavaScript code to be executed when the element is clicked or tapped.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+data
+~~~~
+:aspect:`Variable type`
+    array
+
+:aspect:`Description`
+    Adds the "data-*" attribute to the tag. New since TYPO3 7 LTS. 
+    *Example:* `data="{foo:'bar'}"` produces `data-foo="bar"`
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
