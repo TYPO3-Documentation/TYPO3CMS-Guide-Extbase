@@ -52,7 +52,7 @@ Features
 
 
 Special case
-############
+------------
 
 There's a special case in which the “table” property doesn't need to be defined. This is the case then there are 
 form fields in the module, but when there is no 1:1 column in the database. For example, in the Scheduler, which 
@@ -95,7 +95,7 @@ The entry for the email address in the XLF file would be as follows::
 
 
 Examples
----------
+--------
 
 .. caution::
 
