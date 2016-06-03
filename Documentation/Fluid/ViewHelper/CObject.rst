@@ -12,7 +12,7 @@ This ViewHelper provides a connection to TypoScript. Pass in a TypoScript object
 do the work.
 
 Properties
--------------
+----------
 
 .. t3-field-list-table::
  :header-rows: 1

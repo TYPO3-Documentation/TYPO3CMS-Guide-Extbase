@@ -10,8 +10,8 @@ f:uri.action
 
 Dieser ViewHelper erstellt einen Link zu einer anderen aufzurufenden Action
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1

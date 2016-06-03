@@ -11,8 +11,8 @@ f:form.submit
 Dieser ViewHelper besitzt keine eigenen Parameter. Er bindet eine Schaltfläche ein die nach dem Anklicken das Formular
 absendet und somit die eingegebenen Formulardaten an den Server übermittelt
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. include:: ../../UniversalTagAttributes.txt
 

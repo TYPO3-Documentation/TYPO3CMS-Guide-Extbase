@@ -11,7 +11,7 @@ f:layout
 You can use this ViewHelper to select a layout for use by the current template.
 
 Properties
--------------
+----------
 
 Exclusive properties of this ViewHelper
 ########################################

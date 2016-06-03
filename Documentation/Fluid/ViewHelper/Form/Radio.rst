@@ -12,15 +12,15 @@ Mit diesem ViewHelper erstellst Du einen Radiobutton. Normalerweise tauchen dies
 Besucher an sich für EINE Möglichkeit zu entscheiden. Eine Mehrfachauswahl wie bei den Checkboxen ist hier nicht
 möglich.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. include:: ../../UniversalTagAttributes.txt
 
 .. include:: ../../UniversalFormFieldAttributes.txt
 
-Eigenschaften speziell für das HTML-Element
-###########################################
+Exclusive properties for the HTML-Element
+#########################################
 
 .. t3-field-list-table::
  :header-rows: 1

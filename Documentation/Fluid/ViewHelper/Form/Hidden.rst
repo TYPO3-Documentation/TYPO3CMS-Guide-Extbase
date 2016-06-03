@@ -12,8 +12,8 @@ Mit diesem ViewHelper erstellst Du ein verstecktes Feld. Das ist schonmal nützl
 die der Webseitenbesucher nicht zu sehen braucht, aber für Dich wichtig sind, wenn es darum geht, die eingegebenen
 Daten einem Datensatz zuzuordnen, um ihn z.B. zu speichern.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. include:: ../../UniversalTagAttributes.txt
 

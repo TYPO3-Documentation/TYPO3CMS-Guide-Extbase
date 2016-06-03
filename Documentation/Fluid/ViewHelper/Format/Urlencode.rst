@@ -11,8 +11,8 @@ f:format.urlencode
 In Texten und Firmennamen kommen immer wieder Sonderzeichen wie @ & oder % vor. Diese Zeichen sind nicht URL-sicher
 und sollten vor der Übermittlung durch diesen ViewHelper geschleust werden.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1

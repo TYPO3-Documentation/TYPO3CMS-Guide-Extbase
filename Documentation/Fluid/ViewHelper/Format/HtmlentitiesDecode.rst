@@ -10,8 +10,8 @@ f:format.htmlentitiesDecode
 
 htmlEntityDecode
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1

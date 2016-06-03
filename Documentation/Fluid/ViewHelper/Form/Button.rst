@@ -14,15 +14,15 @@ f:form.button
 
 Dieser ViewHelper erzeugt einen Button zum Absenden des Formulars.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. include:: ../../UniversalTagAttributes.txt
 
 .. include:: ../../UniversalFormFieldAttributes.txt
 
-Eigenschaften speziell für das HTML-Element
-###########################################
+Exclusive properties for the HTML-Element
+#########################################
 
 .. t3-field-list-table::
  :header-rows: 1

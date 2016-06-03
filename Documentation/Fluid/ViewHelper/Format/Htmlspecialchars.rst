@@ -12,8 +12,8 @@ Wenn Ihr mit Userdaten (Formulardaten) arbeitet, dann sollte dieser Inhalt zuall
 Denn dieser wandelt alle spitzen Klammern von HTML-Tags in ein nicht mehr interprtierbares Format um. Die HTML-Tags
 können also keinen Schaden mehr verursachen und werden iom FE angezeigt statt verarbeitet.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1

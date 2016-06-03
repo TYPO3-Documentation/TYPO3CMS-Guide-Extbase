@@ -8,8 +8,8 @@
 ViewHelper: Form
 ================
 
-Eigenschaften
--------------
+Properties
+----------
 
 **Table of Contents**
 

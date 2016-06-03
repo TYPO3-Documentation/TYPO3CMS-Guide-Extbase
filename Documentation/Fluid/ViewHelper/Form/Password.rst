@@ -11,8 +11,8 @@ f:form.password
 Mit diesem ViewHelper erstellst Du ein Textfeld dessen Inhalt nicht lesbar ist. Alle Zeichen werden sofort in
 Sternchen umgewandelt.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. include:: ../../UniversalTagAttributes.txt
 

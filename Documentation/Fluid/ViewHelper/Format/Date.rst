@@ -10,8 +10,8 @@ f:format.date
 
 Konvertiert einen Timestamp in einen lesbaren Datumswert.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1

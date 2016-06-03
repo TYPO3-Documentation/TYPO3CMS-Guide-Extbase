@@ -8,7 +8,7 @@
 f:widget.link
 =============
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. include:: ../../UniversalTagAttributes.txt

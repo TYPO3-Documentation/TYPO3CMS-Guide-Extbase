@@ -10,8 +10,8 @@ f:format.padding
 
 Padding
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1

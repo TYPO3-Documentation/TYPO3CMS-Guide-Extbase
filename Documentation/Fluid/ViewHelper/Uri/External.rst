@@ -15,8 +15,8 @@ Dieser ViewHelper erstellt einen Link zu einer externen Seite.
    Wenn Ihr bei uri einen vollständigen Link angebt, also inkl http:// oder ftp://,
    dann braucht Ihr defaultScheme nicht zu setzen.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1

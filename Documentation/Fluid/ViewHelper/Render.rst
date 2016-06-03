@@ -14,7 +14,7 @@ when using them. A table layout containing 700 cells and 15 columns, where each 
 700 * 15 * 5 = 52,500 milliseconds… so nearly a minute!
 
 Properties
--------------
+----------
 
 .. t3-field-list-table::
  :header-rows: 1

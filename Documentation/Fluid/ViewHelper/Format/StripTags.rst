@@ -10,8 +10,8 @@ f:format.stripTags
 
 Dieser ViewHelper entfernt sämtliche HTML-Tags aus einem Text.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1

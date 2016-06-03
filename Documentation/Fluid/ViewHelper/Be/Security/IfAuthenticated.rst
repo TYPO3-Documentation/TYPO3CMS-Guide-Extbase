@@ -16,7 +16,7 @@ currently authenticated as a backend user. A good example of a possible use case
 should only be made available to a validated, logged-in backend user.
 
 Properties
--------------
+----------
 
 This ViewHelper doesn't accept any properties.
 

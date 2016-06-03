@@ -10,8 +10,8 @@ f:form.uploads
 
 Mit diesem ViewHelper erstellst Du ein Uploadfeld, um Dateien an den Server zu senden.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. include:: ../../UniversalTagAttributes.txt
 

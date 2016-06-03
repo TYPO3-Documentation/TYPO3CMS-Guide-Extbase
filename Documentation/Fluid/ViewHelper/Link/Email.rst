@@ -11,13 +11,13 @@ f:link.email
 Mit diesem ViewHelper erstellt Ihr einen Link auf eine E-Mail-Adresse. Falls Ihr mit TypoScript im Bereich "config"
 Angaben zum Verschlüsseln der E-Mail-Adresse gemacht habt, so werden diese Einstellungen auch hier angewendet.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. include:: ../../UniversalTagAttributes.txt
 
-Eigenschaften speziell für das HTML-Element
-###########################################
+Exclusive properties for the HTML-Element
+#########################################
 
 .. t3-field-list-table::
  :header-rows: 1
@@ -52,8 +52,8 @@ Eigenschaften speziell für das HTML-Element
    :Standard:    NULL
    :Mandatory:   No
 
-Eigenschaften speziell für diesen ViewHelper
-############################################
+Exclusive properties of this ViewHelper
+#######################################
 
 .. t3-field-list-table::
  :header-rows: 1

@@ -10,15 +10,15 @@ f:form.select
 
 Mit diesem ViewHelper erstellt Ihr eine Selectbox.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. include:: ../../UniversalTagAttributes.txt
 
 .. include:: ../../UniversalFormFieldAttributes.txt
 
-Eigenschaften speziell für das HTML-Element
-###########################################
+Exclusive properties for the HTML-Element
+#########################################
 
 .. t3-field-list-table::
  :header-rows: 1
@@ -48,8 +48,8 @@ Eigenschaften speziell für das HTML-Element
    :Standard:    NULL
    :Mandatory:   No
 
-Eigenschaften speziell für diesen ViewHelper
-############################################
+Exclusive properties of this ViewHelper
+#######################################
 
 .. t3-field-list-table::
  :header-rows: 1

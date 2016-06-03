@@ -10,8 +10,8 @@ f:format.htmlentities
 
 Mit diesem ViewHelper könnt Ihr die htmlentities Funktion von PHP auf einen Text anwenden.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1

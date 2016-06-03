@@ -10,15 +10,15 @@ f:form.textfield
 
 Mit diesem ViewHelper erstellt Ihr ein Textfeld.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. include:: ../../UniversalTagAttributes.txt
 
 .. include:: ../../UniversalFormFieldAttributes.txt
 
-Eigenschaften speziell für diesen ViewHelper
-############################################
+Exclusive properties of this ViewHelper
+#######################################
 
 .. t3-field-list-table::
  :header-rows: 1

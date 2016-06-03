@@ -13,8 +13,8 @@ aus der Datenbank kommen. Damit die Daten wieder so aussehen, wie wenn Ihr sie m
 Euch dieser ViewHelper weiter. Dieser schnappt sich das Durcheinander und schleift es einmal komplett durch den
 TS-Objektpfad lib.parseFunc_RTE. Danach sollten Eure Daten wieder wie frisch aufbereitet aussehen.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1

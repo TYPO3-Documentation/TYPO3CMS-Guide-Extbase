@@ -11,7 +11,7 @@ f:format.currency
 This ViewHelper allows you to display a number in currency format.
 
 Properties
--------------
+----------
 
 .. t3-field-list-table::
  :header-rows: 1

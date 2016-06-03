@@ -10,8 +10,8 @@ f:format.number
 
 Mit diesem ViewHelper könnt Ihr Zahlen formatieren. Er arbeitet ähnlich dem f:format.currency-ViewHelper
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1

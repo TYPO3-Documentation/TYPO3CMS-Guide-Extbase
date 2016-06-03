@@ -14,8 +14,8 @@ ENTER (CHR(10)) realisiert. HTML sind diese Umbrüche aber völlig egal und wür
 anzeigen. Um das zu verhindern könnt Ihr diesen ViewHelper verwender. Er konvertiert alle CHR(10)-Zeilenumbrüche in
 <br />-Tags und so werden Zeilenumbrüche auch im Browser wieder richtig dargestellt.
 
-Eigenschaften
--------------
+Properties
+----------
 
 Dieser ViewHelper besitzt keine Eigenschaften
 

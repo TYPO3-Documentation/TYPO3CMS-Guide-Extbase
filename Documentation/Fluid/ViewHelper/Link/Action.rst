@@ -10,13 +10,13 @@ f:link.action
 
 Dieser ViewHelper erstellt einen Link zu einer anderen aufzurufenden Action
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. include:: ../../UniversalTagAttributes.txt
 
-Eigenschaften speziell für das HTML-Element
-###########################################
+Exclusive properties for the HTML-Element
+#########################################
 
 .. t3-field-list-table::
  :header-rows: 1
@@ -51,8 +51,8 @@ Eigenschaften speziell für das HTML-Element
    :Standard:    NULL
    :Mandatory:   No
 
-Eigenschaften speziell für diesen ViewHelper
-############################################
+Exclusive properties of this ViewHelper
+#######################################
 
 .. t3-field-list-table::
  :header-rows: 1

@@ -10,8 +10,8 @@ f:format.printf
 
 Mit diesem ViewHelper können Platzhalter in einem Text mit den Werten auf dem Array ersetzt werden.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1
