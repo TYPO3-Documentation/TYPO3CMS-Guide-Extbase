@@ -25,7 +25,7 @@ table
 :aspect:`Description`
     Database table name.
 
-:aspect:`Standard`
+:aspect:`Default value`
      NULL
 
 :aspect:`Required`
@@ -39,7 +39,7 @@ field
 :aspect:`Description`
     The key from the locallang file.
 
-:aspect:`Standard`
+:aspect:`Default value`
      Empty string
 
 :aspect:`Required`
@@ -53,7 +53,7 @@ iconOnly
 :aspect:`Description`
     Display the icon, but not the text.
 
-:aspect:`Standard`
+:aspect:`Default value`
      FALSE
 
 :aspect:`Required`
@@ -67,7 +67,7 @@ styleAttributes
 :aspect:`Description`
     Additional style attribute to be added to the containing table.
 
-:aspect:`Standard`
+:aspect:`Default value`
      Empty string
 
 :aspect:`Required`

@@ -13,32 +13,48 @@ With this ViewHelper, you can generate small linked icons like edit, delete and 
 Features
 --------
 
-.. t3-field-list-table::
- :header-rows: 1
+uri
+~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Target url. Can be created by a f:uri.*-ViewHelper.
 
- - :Property:    uri
-   :Datatype:    String
-   :Description: Target url. Can be created by a f:uri.*-ViewHelper.
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Default value`
+     NULL
 
- - :Property:    icon
-   :Datatype:    String
-   :Description: The name to use.
-   :Standard:    actions-document-close
-   :Mandatory:   No
+:aspect:`Required`
+     No
 
- - :Property:    title
-   :Datatype:    String
-   :Description: Title attribute for the link.
-   :Standard:    empty string
-   :Mandatory:   No
+title
+~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Title attribute for the link.
+
+:aspect:`Default value`
+     empty string
+
+:aspect:`Required`
+     No
+
+icon
+~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The name to use.
+
+:aspect:`Default value`
+     actions-document-close
+
+:aspect:`Required`
+     No
+
 
 There is a predefined set of possible values for the icon parameter. If you're not sure what they are, try inserting 
 a deliberately invalid value. The resultant error message will give you a list of all valid values, for example::
