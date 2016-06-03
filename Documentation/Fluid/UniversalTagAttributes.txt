@@ -130,7 +130,7 @@ onclick
 data
 ~~~~
 :aspect:`Variable type`
-    array
+    Array
 
 :aspect:`Description`
     Adds the "data-*" attribute to the tag. New since TYPO3 7 LTS. 

@@ -22,7 +22,7 @@ append
 ------
 
 :aspect:`Datatype`
-      string
+      String
 
 :aspect:`Description`
       A string to be appended to the cropped text.
