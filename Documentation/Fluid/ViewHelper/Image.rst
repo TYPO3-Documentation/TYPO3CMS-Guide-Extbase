@@ -454,16 +454,17 @@ width
     No
 
 Examples
+--------
 
 Output the image in its original resolution
--------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
  <f:image src="fileadmin/user_upload/landscape.jpg" />
 
 Output a smaller image
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 The proportions of the original image will be respected in this example.
 
@@ -472,7 +473,7 @@ The proportions of the original image will be respected in this example.
  <f:image src="fileadmin/user_upload/landscape.jpg" width="50" />
 
 Re-size and crop an image
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
