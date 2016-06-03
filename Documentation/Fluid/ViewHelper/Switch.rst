@@ -18,20 +18,18 @@ is much simpler than using a series of stacked f:if ViewHelpers.
 Properties
 ---------
 
-.. t3-field-list-table::
- :header-rows: 1
-
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-
  - :Property:    expression
-   :Datatype:    Mixed
-   :Description: A value or variable to use as the basis of a case comparison.
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Variable type`
+    Mixed
+
+:aspect:`Description`
+    A value or variable to use as the basis of a case comparison.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
 Example
 -------

@@ -16,20 +16,18 @@ TS-Objektpfad lib.parseFunc_RTE. Danach sollten Eure Daten wieder wie frisch auf
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
-
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-
  - :Property:    parseFuncTSPath
-   :Datatype:    String
-   :Description: Formatiere einen Text anhand der TS-Konfiguration, die sich hinter dem angegebenen TS-Objektpfad befindet
-   :Standard:    lib.parseFunc_RTE
-   :Mandatory:   No
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Formatiere einen Text anhand der TS-Konfiguration, die sich hinter dem angegebenen TS-Objektpfad befindet
+
+:aspect:`Default value`
+    lib.parseFunc_RTE
+
+:aspect:`Mandatory`
+    No
 
 Beispiel
 --------

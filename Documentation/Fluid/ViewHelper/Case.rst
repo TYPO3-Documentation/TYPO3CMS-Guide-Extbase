@@ -17,20 +17,17 @@ Properties
 Exclusive properties of this ViewHelper
 #######################################
 
-.. t3-field-list-table::
- :header-rows: 1
+value
+~~~~~
+:aspect:`Variable type`
+    Mixed
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-
- - :Property:    value
-   :Datatype:    Mixed
-   :Description: The value against which the value from the f:switch ViewHelper should be compared.
+:aspect:`Description`
+    The value against which the value from the f:switch ViewHelper should be compared.
    :Standard:
-   :Mandatory:   Yes
+
+:aspect:`Mandatory`
+    Yes
 
 Example
 --------

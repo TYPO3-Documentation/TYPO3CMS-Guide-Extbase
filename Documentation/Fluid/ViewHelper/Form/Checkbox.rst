@@ -20,44 +20,48 @@ Properties
 Exclusive properties for the HTML-Element
 #########################################
 
-.. t3-field-list-table::
- :header-rows: 1
+disabled
+~~~~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-
- - :Property:    disabled
-   :Datatype:    String
-   :Description: Die Checkbox wird deaktiviert angezeigt.
+:aspect:`Description`
+    Die Checkbox wird deaktiviert angezeigt.
    :Standard:
-   :Mandatory:   No
+
+:aspect:`Mandatory`
+    No
 
 Exclusive properties of this ViewHelper
 #######################################
 
-.. t3-field-list-table::
- :header-rows: 1
+checked
+~~~~~~~
+:aspect:`Variable type`
+    Boolean
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Wenn aktiviert, dann gilt diese Checkbox als markiert.
 
- - :Property:    checked
-   :Datatype:    Boolean
-   :Description: Wenn aktiviert, dann gilt diese Checkbox als markiert.
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
    
- - :Property:    multiple
-   :Datatype:    Boolean
-   :Description: Spezifiziert ob eine Checkbox zu einer Multiselect-Gruppe gehört.
-   :Standard:    NULL
-   :Mandatory:   No
+multiple
+~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Spezifiziert ob eine Checkbox zu einer Multiselect-Gruppe gehört.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
 Derzeit sind Checkboxen innerhalb von Fluid/Extbase noch eine echte Katastrophe. Es hat mich viel Zeit gekostet eine
 Checkbox überhaupt ans Laufen zu bekommen, da sie ein leeres aber vorhandenes Model erfordern, wenn sie mit Hilfe der

@@ -14,38 +14,49 @@ and you'll get an array of elements which match the group criterium in each iter
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
-
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-
  - :Property:    each
-   :Datatype:    Array
-   :Description: The array or object to be iterated
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    The array or object to be iterated
    :Standard:
-   :Mandatory:   Yes
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    as
-   :Datatype:    String
-   :Description: The name of the variable which contains the grouped entries
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The name of the variable which contains the grouped entries
    :Standard:
-   :Mandatory:   Yes
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    groupBy
-   :Datatype:    String
-   :Description: The property by which the array should be grouped.
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The property by which the array should be grouped.
    :Standard:
-   :Mandatory:   Yes
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    groupKey
-   :Datatype:    String
-   :Description: The grouped value can be accessed by this key from within each f:groupedBy tag.
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The grouped value can be accessed by this key from within each f:groupedBy tag.
    :Standard:
-   :Mandatory:   Yes
+
+:aspect:`Mandatory`
+    Yes
 
 Example
 --------

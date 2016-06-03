@@ -14,32 +14,45 @@ do the work.
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
+typoscriptObjectPath
+~~~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-
- - :Property:    typoscriptObjectPath
-   :Datatype:    String
-   :Description: The TypoScript object path
+:aspect:`Description`
+    The TypoScript object path
    :Standard:
-   :Mandatory:   Yes
 
- - :Property:    data
-   :Datatype:    Mixed
-   :Description: The TypoScript object path
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Mandatory`
+    Yes
 
- - :Property:    currentValueKey
-   :Datatype:    String
-   :Description: The TypoScript object path
-   :Standard:    NULL
-   :Mandatory:   No
+data
+~~~~
+:aspect:`Variable type`
+    Mixed
+
+:aspect:`Description`
+    The TypoScript object path
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+currentValueKey
+~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The TypoScript object path
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
 
 Simple example

@@ -15,38 +15,56 @@ können also keinen Schaden mehr verursachen und werden iom FE angezeigt statt v
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
+value
+~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Der Text der formatiert werden soll
 
- - :Property:    value
-   :Datatype:    String
-   :Description: Der Text der formatiert werden soll
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
  - :Property:    keepQuotes
-   :Datatype:    Boolean
-   :Description: Sollen einfache und doppelte Anführungszeichen auch formatiert werden
-   :Standard:    FALSE
-   :Mandatory:   No
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Sollen einfache und doppelte Anführungszeichen auch formatiert werden
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
 
  - :Property:    encoding
-   :Datatype:    String
+:aspect:`Variable type`
+    String
    :Description:
-   :Standard:    NULL
-   :Mandatory:   No
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
  - :Property:    doubleEncode
-   :Datatype:    Boolean
-   :Description: Mit jedem Aufruf diesen ViewHelpers wird ein bereits htmlspecialchared Text immer und immer wieder gehtmlspecialchared. Auf & wird dann &amp; dann &amp;amp;, dann &amp;amp;amp; und so weiter. Um das zu verhindert, kann dieser Parameter auf FALSE gesetzt werden.
-   :Standard:    TRUE
-   :Mandatory:   No
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Mit jedem Aufruf diesen ViewHelpers wird ein bereits htmlspecialchared Text immer und immer wieder gehtmlspecialchared. Auf & wird dann &amp; dann &amp;amp;, dann &amp;amp;amp; und so weiter. Um das zu verhindert, kann dieser Parameter auf FALSE gesetzt werden.
+
+:aspect:`Default value`
+    TRUE
+
+:aspect:`Mandatory`
+    No
 
 Beispiel
 --------

@@ -14,20 +14,18 @@ you're familiar with the old fed:if ViewHelper, you'll know what we're talking a
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
-
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-
  - :Property:    condition
-   :Datatype:    Boolean
-   :Description: The content of the variable comparison rules. (See the examples.)
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    The content of the variable comparison rules. (See the examples.)
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
 The following comparators are allowed: ==, !=, <, <=, >, >= and %
 

@@ -20,180 +20,330 @@ Properties
 Global properties of this ViewHelper
 ####################################
 
-.. t3-field-list-table::
- :header-rows: 1
-
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-
  - :Property:    enctype
-   :Datatype:    String
-   :Description: The format with which the form data should be encoded and submitted.
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The format with which the form data should be encoded and submitted.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
  - :Property:    method
-   :Datatype:    String
-   :Description: Transfer method - GET or POST.
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Transfer method - GET or POST.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
  - :Property:    name
-   :Datatype:    String
-   :Description: The HTML 'name' attribute of the form.
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The HTML 'name' attribute of the form.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
  - :Property:    onreset
-   :Datatype:    String
-   :Description: The JavaScript to be executed when the reset button in the form is clicked.
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The JavaScript to be executed when the reset button in the form is clicked.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
  - :Property:    onsubmit
-   :Datatype:    String
-   :Description: The JavaScript to be executed when the submit button in the form is clicked.
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The JavaScript to be executed when the submit button in the form is clicked.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
 Exclusive properties of this ViewHelper
 #######################################
 
-.. t3-field-list-table::
- :header-rows: 1
-
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-
  - :Property:    action
-   :Datatype:    String
-   :Description: The action method to be called when the form is submitted.
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The action method to be called when the form is submitted.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    arguments
-   :Datatype:    Array
-   :Description: Additional variables should be sent with each form submission.
-   :Standard:    Empty array
-   :Mandatory:   Yes
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    Additional variables should be sent with each form submission.
+
+:aspect:`Default value`
+    Empty array
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    controller
-   :Datatype:    String
-   :Description: If the action method isn't in the same Controller, then you'll need to specify the appropriate Controller.
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    If the action method isn't in the same Controller, then you'll need to specify the appropriate Controller.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    extensionName
-   :Datatype:    String
-   :Description: If the form submission should be handled by a different extension, this property contains the name of 
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    If the form submission should be handled by a different extension, this property contains the name of 
                  this extension, without the tx\_ prefix and without underline characters.
-   :Standard:    NULL
-   :Mandatory:   Yes
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    pluginName
-   :Datatype:    String
-   :Description: If the form submission should be handled by a different plugin, this property should contain the plugin name.
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    If the form submission should be handled by a different plugin, this property should contain the plugin name.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    pageUid
-   :Datatype:    Integer
-   :Description: Define the page UID if the form submission should be sent to a different page.
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Variable type`
+    Integer
+
+:aspect:`Description`
+    Define the page UID if the form submission should be sent to a different page.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    object
-   :Datatype:    Mixed
-   :Description: Contains an object with properties which mirror the input fields in the form.
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Variable type`
+    Mixed
+
+:aspect:`Description`
+    Contains an object with properties which mirror the input fields in the form.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    pageType
-   :Datatype:    Integer
-   :Description: Use the pageType property to define a non-standard page type to handle the form submission. For example, 
+:aspect:`Variable type`
+    Integer
+
+:aspect:`Description`
+    Use the pageType property to define a non-standard page type to handle the form submission. For example, 
                  where the form submission takes place via AJAX.
-   :Standard:    0
-   :Mandatory:   Yes
+
+:aspect:`Default value`
+    0
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    noCache
-   :Datatype:    Boolean
-   :Description: Can be used to completely deactivate the page cache on the target page.
-   :Standard:    FALSE
-   :Mandatory:   Yes
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Can be used to completely deactivate the page cache on the target page.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    noCacheHash
-   :Datatype:    Boolean
-   :Description: If this property is activated, the link to the target page won't contain a cHash parameter.
-   :Standard:    FALSE
-   :Mandatory:   Yes
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    If this property is activated, the link to the target page won't contain a cHash parameter.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    section
-   :Datatype:    String
-   :Description: Define an anchor on the target page, if the target page contains a large amount of content. The browser 
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Define an anchor on the target page, if the target page contains a large amount of content. The browser 
                  will scroll to the indicated anchor.
-   :Standard:    Empty string
-   :Mandatory:   Yes
+
+:aspect:`Default value`
+    Empty string
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    format
-   :Datatype:    String
-   :Description: The required data format to be delivered on the target page - for example, “xml”. This property only takes 
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The required data format to be delivered on the target page - for example, “xml”. This property only takes 
                  effect if 'actionUri' isn't set.
-   :Standard:    Empty string
-   :Mandatory:   Yes
+
+:aspect:`Default value`
+    Empty string
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    additionalParams
-   :Datatype:    Array
-   :Description: Additional variables for the target page. Contrary to 'arguments', these variables won't be prefixed 
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    Additional variables for the target page. Contrary to 'arguments', these variables won't be prefixed 
                  with the extension name. This property only takes effect if 'actionUri' isn't set.
-   :Standard:    Empty array
-   :Mandatory:   Yes
+
+:aspect:`Default value`
+    Empty array
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    absolute
-   :Datatype:    Boolean
-   :Description: Upon activation, the domain name and full page path will be prefixed to the form action. This property 
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Upon activation, the domain name and full page path will be prefixed to the form action. This property 
                  only takes effect if 'actionUri' isn't set.
-   :Standard:    FALSE
-   :Mandatory:   Yes
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    addQueryString
-   :Datatype:    Boolean
-   :Description: This property defines whether query parameters on the page containing the form will be passed on to the 
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    This property defines whether query parameters on the page containing the form will be passed on to the 
                  target page. This property only takes effect if 'actionUri' isn't set.
-   :Standard:    FALSE
-   :Mandatory:   Yes
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    argumentsToBeExcludedFromQueryString
-   :Datatype:    Array
-   :Description: If 'addQueryString' is activated, you can use this property to exclude specific query parameters. This 
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    If 'addQueryString' is activated, you can use this property to exclude specific query parameters. This 
                  property only takes effect if 'actionUri' isn't set.
-   :Standard:    Empty array
-   :Mandatory:   Yes
+
+:aspect:`Default value`
+    Empty array
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    fieldNamePrefix
-   :Datatype:    String
-   :Description: Use this property if you want to use an alternative string to prefix the form fields. Mainly for use 
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Use this property if you want to use an alternative string to prefix the form fields. Mainly for use 
                  if the form submission is handled by a different extension.
-   :Standard:    NULL
-   :Mandatory:   Yes
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    actionUri
-   :Datatype:    String
-   :Description: Define a specific form action URL. Using this option disables many of the other properties (above).
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Define a specific form action URL. Using this option disables many of the other properties (above).
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    objectName
-   :Datatype:    String
-   :Description: An object (Model) name, into which the submitted form data will be saved. This allows the data to be 
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    An object (Model) name, into which the submitted form data will be saved. This allows the data to be 
                  validated once in the Model, instead of in every individual action method.
-   :Standard:    NULL
-   :Mandatory:   Yes
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
 
 Example

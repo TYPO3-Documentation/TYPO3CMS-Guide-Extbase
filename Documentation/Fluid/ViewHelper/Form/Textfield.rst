@@ -20,32 +20,47 @@ Properties
 Exclusive properties of this ViewHelper
 #######################################
 
-.. t3-field-list-table::
- :header-rows: 1
+required
+~~~~~~~~
+:aspect:`Variable type`
+    Boolean
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Wenn aktiviert, dann handelt es sich um ein Pflichtfeld
 
- - :Property:    required
-   :Datatype:    Boolean
-   :Description: Wenn aktiviert, dann handelt es sich um ein Pflichtfeld
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Default value`
+    NULL
 
- - :Property:    type
-   :Datatype:    String
-   :Description: Als Alternative gibt es noch email, url
-   :Standard:    text
-   :Mandatory:   No
+:aspect:`Mandatory`
+    No
 
- - :Property:    placeholder
-   :Datatype:    String
-   :Description: Ein beliebiger Text, der verschwindet, sobald in dieses Feld reingeklickt wird.
-   :Standard:    NULL
-   :Mandatory:   No
+type
+~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Als Alternative gibt es noch email, url
+
+:aspect:`Default value`
+    text
+
+:aspect:`Mandatory`
+    No
+
+placeholder
+~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Ein beliebiger Text, der verschwindet, sobald in dieses Feld reingeklickt wird.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
 Beispiel
 --------

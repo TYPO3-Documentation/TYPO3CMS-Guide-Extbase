@@ -14,20 +14,18 @@ the same template file.
 Properties
 ---------
 
-.. t3-field-list-table::
- :header-rows: 1
-
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-
  - :Property:    name
-   :Datatype:    String
-   :Description: A name which can be referenced in order to fetch the content contained within the f:section tage.
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    A name which can be referenced in order to fetch the content contained within the f:section tage.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
 Example
 -------

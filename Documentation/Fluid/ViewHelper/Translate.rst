@@ -14,42 +14,61 @@ translation for the current language using a “key” parameter.
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
-
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-
  - :Property:    key
-   :Datatype:    String
-   :Description: The key by which the translation is referenced in the translation file.
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The key by which the translation is referenced in the translation file.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    default
-   :Datatype:    String
-   :Description: If the key canto be matched in the translation file, then use this text instead. If this property isn't 
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    If the key canto be matched in the translation file, then use this text instead. If this property isn't 
    defined, then the value between the opening and closing f:translate tags will be used.
-   :Standard:    NULL
-   :Mandatory:   Yes
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    htmlEscape
-   :Datatype:    Boolean
-   :Description: Strings from the translation files are usually parsed using the PHP function htmlspecialchars, so any 
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Strings from the translation files are usually parsed using the PHP function htmlspecialchars, so any 
    HTML code in the translation file will be converted to an encoded string. Set the value of this property to FALSE to 
    disable this behaviour.
-   :Standard:    TRUE
-   :Mandatory:   Yes
+
+:aspect:`Default value`
+    TRUE
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    arguments
-   :Datatype:    Array
-   :Description: Placeholders can be set in the strings within the translation file, which will be replaced with the 
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    Placeholders can be set in the strings within the translation file, which will be replaced with the 
    content of the array passed in this property.
-   :Standard:    NULL
-   :Mandatory:   Yes
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
 This ViewHelper accesses files in the folder Resources/Private/Language. If you're using FLUIDTEMPLATE, you'll need to 
 use the following path syntax:

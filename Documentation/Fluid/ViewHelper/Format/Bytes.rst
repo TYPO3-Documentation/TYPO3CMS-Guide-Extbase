@@ -13,38 +13,58 @@ This ViewHelper converts a value in bytes (integer) into a readable format.
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
+value
+~~~~~
+:aspect:`Variable type`
+    Integer
 
- - :Property,20:    property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    The integer value (bytes) to be converted.
 
- - :Property:    value
-   :Datatype:    Integer
-   :Description: The integer value (bytes) to be converted.
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
  - :Property:    decimals
-   :Datatype:    Integer
-   :Description: The number of decimals to be shown after the decimal point.
-   :Standard:    0
-   :Mandatory:   No
+:aspect:`Variable type`
+    Integer
+
+:aspect:`Description`
+    The number of decimals to be shown after the decimal point.
+
+:aspect:`Default value`
+    0
+
+:aspect:`Mandatory`
+    No
 
  - :Property:    decimalSeparator
-   :Datatype:    String
-   :Description: The character to use as the decimal separator.
-   :Standard:    .
-   :Mandatory:   No
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The character to use as the decimal separator.
+
+:aspect:`Default value`
+    .
+
+:aspect:`Mandatory`
+    No
 
  - :Property:    thousandsSeparator
-   :Datatype:    String
-   :Description: The character to use as the “thousands” separator.
-   :Standard:    ,
-   :Mandatory:   No
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The character to use as the “thousands” separator.
+
+:aspect:`Default value`
+    ,
+
+:aspect:`Mandatory`
+    No
 
 Example
 -------

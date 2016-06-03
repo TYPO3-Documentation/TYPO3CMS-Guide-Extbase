@@ -13,21 +13,20 @@ This ViewHelper counts the elements in the referenced object or array.
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
+subject
+~~~~~~~
+:aspect:`Variable type`
+    Array
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-
- - :Property:    subject
-   :Datatype:    Array
-   :Description: Provide the array or object containing the entries to be counted. If this value is empty, the ViewHelper 
+:aspect:`Description`
+    Provide the array or object containing the entries to be counted. If this value is empty, the ViewHelper 
    will attempt to interpret the content between the tags as an array, and then count its entries.
-   :Standard:    NULL
-   :Mandatory:   No
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
 Example: array as renderChildren
 --------------------------------

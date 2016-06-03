@@ -13,45 +13,76 @@ The f:for ViewHelper is THE ViewHelper for generating lists. Take a look at the 
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
+each
+~~~~
+:aspect:`Variable type`
+    Array
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    The array or object to be iterated
 
- - :Property:    each
-   :Datatype:    Array
-   :Description: The array or object to be iterated
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Default value`
+    NULL
 
- - :Property:    as
-   :Datatype:    String
-   :Description: The name of the variable which contains the values of the current loop iteration
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Mandatory`
+    Yes
 
- - :Property:    key
-   :Datatype:    String
-   :Description: If you need the key of the current loop iteration, this is the name of the variable containing it.
-   :Standard:    Empty string
-   :Mandatory:   Yes
+as
+~~
+:aspect:`Variable type`
+    String
 
- - :Property:    reverse
-   :Datatype:    Boolean
-   :Description: The loop will backwards
-   :Standard:    FALSE
-   :Mandatory:   Yes
+:aspect:`Description`
+    The name of the variable which contains the values of the current loop iteration
 
- - :Property:    iteration
-   :Datatype:    String
-   :Description: An array variable related to the current iteration, which identifies whether it is in the first or 
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
+
+key
+~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    If you need the key of the current loop iteration, this is the name of the variable containing it.
+
+:aspect:`Default value`
+    Empty string
+
+:aspect:`Mandatory`
+    Yes
+
+reverse
+~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    The loop will backwards
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    Yes
+
+iteration
+~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    An array variable related to the current iteration, which identifies whether it is in the first or 
                  last loop index. This variable also contains values for index, cycle, total, isEven and isOdd
-   :Standard:    NULL
-   :Mandatory:   Yes
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
 Simple example
 --------------

@@ -18,26 +18,29 @@ Dieser ViewHelper erstellt einen Link zu einer externen Seite.
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
-
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-
  - :Property:    uri
-   :Datatype:    String
-   :Description: Die URL zu der externen Zielseite
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Die URL zu der externen Zielseite
    :Standard:
-   :Mandatory:   Yes
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    defaultScheme
-   :Datatype:    String
-   :Description: Hier sind alle gültigen Schemas für Links erlaubt wie z.B. ftp oder https
-   :Standard:    http
-   :Mandatory:   No
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Hier sind alle gültigen Schemas für Links erlaubt wie z.B. ftp oder https
+
+:aspect:`Default value`
+    http
+
+:aspect:`Mandatory`
+    No
 
 Beispiel
 --------

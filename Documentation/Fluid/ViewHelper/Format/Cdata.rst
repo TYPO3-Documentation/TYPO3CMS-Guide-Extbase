@@ -17,20 +17,19 @@ masked using CDATA tags.
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
+value
+~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    The string to be wrapped with CDATA tags.
 
- - :Property:    value
-   :Datatype:    String
-   :Description: The string to be wrapped with CDATA tags.
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
 Examples
 --------

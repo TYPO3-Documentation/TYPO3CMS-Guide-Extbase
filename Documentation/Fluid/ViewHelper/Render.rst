@@ -16,38 +16,57 @@ when using them. A table layout containing 700 cells and 15 columns, where each 
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
-
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-
  - :Property:    section
-   :Datatype:    String
-   :Description: The name of the section to be rendered.
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The name of the section to be rendered.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    partial
-   :Datatype:    String
-   :Description: The path and filename (without .html suffix), starting from the Partials root folder.
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The path and filename (without .html suffix), starting from the Partials root folder.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    arguments
-   :Datatype:    Array
-   :Description: Which variables should be passed into the Partial or into the Layout.
-   :Standard:    Empty array
-   :Mandatory:   Yes
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    Which variables should be passed into the Partial or into the Layout.
+
+:aspect:`Default value`
+    Empty array
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    optional
-   :Datatype:    Boolean
-   :Description: You'll normally see an error message if a section can't be found. Setting this property to TRUE will stop an error from being displayed.
-   :Standard:    FALSE
-   :Mandatory:   Yes
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    You'll normally see an error message if a section can't be found. Setting this property to TRUE will stop an error from being displayed.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    Yes
 
 The Partial files are always stored in pre-defined folders. The usual path within an extension is typo3conf/ext/[ExtensionKey]/Resources/Private/Partials/. 
 If you're working with FLUIDTEMPLATE, you can re-define this path by over-riding the TypoScript property "partialRootPath" (with a trailing slash).

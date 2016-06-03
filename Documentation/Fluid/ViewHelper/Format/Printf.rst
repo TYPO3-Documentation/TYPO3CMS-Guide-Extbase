@@ -13,20 +13,16 @@ Mit diesem ViewHelper können Platzhalter in einem Text mit den Werten auf dem A
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
-
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-
  - :Property:    arguments
-   :Datatype:    Array
-   :Description: Gib hier Werte in Arraynotation ein, die die Platzhalter in dem Text, der sich zwischen den Tags befindet, ersetzt.
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    Gib hier Werte in Arraynotation ein, die die Platzhalter in dem Text, der sich zwischen den Tags befindet, ersetzt.
    :Standard:
-   :Mandatory:   Yes
+
+:aspect:`Mandatory`
+    Yes
 
 Beispiel
 --------

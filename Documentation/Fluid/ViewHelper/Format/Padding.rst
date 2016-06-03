@@ -13,32 +13,42 @@ Padding
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
-
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-
  - :Property:    padLength
-   :Datatype:    Integer
-   :Description: Wie viel Zeichen lang darf der Text inkl. der hinzugefügten Abstandszeichen maximal werden
+:aspect:`Variable type`
+    Integer
+
+:aspect:`Description`
+    Wie viel Zeichen lang darf der Text inkl. der hinzugefügten Abstandszeichen maximal werden
    :Standard:
-   :Mandatory:   Yes
+
+:aspect:`Mandatory`
+    Yes
 
  - :Property:    padString
-   :Datatype:    String
-   :Description: Welches Zeichen soll als Abstand dienen
-   :Standard:    Leerzeichen
-   :Mandatory:   No
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Welches Zeichen soll als Abstand dienen
+
+:aspect:`Default value`
+    Leerzeichen
+
+:aspect:`Mandatory`
+    No
 
  - :Property:    padType
-   :Datatype:    String
-   :Description: Wo sollen die Abstandszeichen eingefügt werden. Zur Auswahl steht right, left und both
-   :Standard:    right
-   :Mandatory:   No
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Wo sollen die Abstandszeichen eingefügt werden. Zur Auswahl steht right, left und both
+
+:aspect:`Default value`
+    right
+
+:aspect:`Mandatory`
+    No
 
 Beispiel zur Funktionsweise
 ---------------------------

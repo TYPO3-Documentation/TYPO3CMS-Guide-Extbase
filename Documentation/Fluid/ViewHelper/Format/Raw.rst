@@ -14,20 +14,19 @@ Es gibt viele ViewHelper, die Inhalte vor der Ausgabe durch htmlspecialchars und
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
+value
+~~~~~
+:aspect:`Variable type`
+    Mixed
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Der Text, der unangetastet/unverändert ausgegeben werden soll
 
- - :Property:    value
-   :Datatype:    Mixed
-   :Description: Der Text, der unangetastet/unverändert ausgegeben werden soll
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
 Beispiel
 --------

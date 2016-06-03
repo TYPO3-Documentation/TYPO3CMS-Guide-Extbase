@@ -22,20 +22,19 @@ Properties
 Exclusive properties for the HTML-Element
 #########################################
 
-.. t3-field-list-table::
- :header-rows: 1
+checked
+~~~~~~~
+:aspect:`Variable type`
+    Boolean
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Wenn aktiviert, dann gilt diese Checkbox als markiert.
 
- - :Property:    checked
-   :Datatype:    Boolean
-   :Description: Wenn aktiviert, dann gilt diese Checkbox als markiert.
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
 Beispiel
 --------
