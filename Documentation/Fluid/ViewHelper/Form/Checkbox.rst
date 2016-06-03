@@ -109,7 +109,7 @@ Beispiel mit property
 ---------------------
 
 Damit Ihr dem Problem von oben entgehen könnt, bindet die Checkboxen an eine Objekteigenschaft, die Ihr im
-f:form-ViewHelper hinterlegt habt:
+`f:form`-ViewHelper hinterlegt habt:
 
 ::
 

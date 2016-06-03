@@ -84,7 +84,7 @@ inline
 
 :aspect:`Description`
     The debug output usually appears at the top of the page output. By setting this property, the output 
-                 will appear at the point where the f:debug ViewHelper is inserted in the code.
+                 will appear at the point where the `f:debug` ViewHelper is inserted in the code.
 
 :aspect:`Default value`
     FALSE

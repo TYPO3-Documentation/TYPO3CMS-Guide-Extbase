@@ -8,7 +8,7 @@
 f:format.number
 ===============
 
-Mit diesem ViewHelper könnt Ihr Zahlen formatieren. Er arbeitet ähnlich dem f:format.currency-ViewHelper
+Mit diesem ViewHelper könnt Ihr Zahlen formatieren. Er arbeitet ähnlich dem `f:format.currency`-ViewHelper
 
 Properties
 ----------

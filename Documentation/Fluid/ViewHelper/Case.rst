@@ -8,8 +8,8 @@
 f:case
 ======
 
-This ViewHelper is part of the use case for f:switch. Where the value of this tag matches the value in the f:switch tag, 
-the content of this tag will be rendered and output.
+This ViewHelper is part of the use case for `f:switch`. Where the value of this tag matches the value in the `f:switch` 
+tag, the content of this tag will be rendered and output.
 
 Properties
 ----------
@@ -23,7 +23,7 @@ value
     Mixed
 
 :aspect:`Description`
-    The value against which the value from the f:switch ViewHelper should be compared.
+    The value against which the value from the `f:switch` ViewHelper should be compared.
 
 :aspect:`Default value`
 
@@ -33,4 +33,4 @@ value
 Example
 --------
 
-A example of the usage of the f:case ViewHelper is in the documentation for the f:switch ViewHelper.
+A example of the usage of the `f:case` ViewHelper is in the documentation for the `f:switch` ViewHelper.

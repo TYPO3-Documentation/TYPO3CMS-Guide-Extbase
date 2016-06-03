@@ -13,7 +13,7 @@ f:switch
 =========
 
 This ViewHelper was introduced in v6.2, to allow a multi-case comparison to be made within a single ViewHelper. This 
-is much simpler than using a series of stacked f:if ViewHelpers.
+is much simpler than using a series of stacked `f:if` ViewHelpers.
 
 Properties
 ---------
@@ -44,7 +44,8 @@ Example
    <f:case default="TRUE">A person with no specified gender</f:case>
  </f:switch>
  
- **Output for a value of 2**
+Output for a value of 2
+~~~~~~~~~~~~~~~~~~~~~~~
  
 ::
 

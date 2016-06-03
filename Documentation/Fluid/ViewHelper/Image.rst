@@ -85,222 +85,373 @@ usemap
 Exclusive properties of this ViewHelper
 ########################################
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-   
- - :Property: absolute
-   :Datatype: boolean
+absolute
+~~~~~~~~
+:aspect:`Variable type`
+    boolean
 
 :aspect:`Description`
     Force an absolute URL, including the protocol, domain name and full image path.
-   :Standard: FALSE
-   :Mandatory: No
 
- - :Property: accesskey
-   :Datatype: string
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+accesskey
+~~~~~~~~~
+:aspect:`Variable type`
+    string
 
 :aspect:`Description`
     Keyboard shortcut to access this element
-   :Standard: Empty string
-   :Mandatory: No
 
- - :Property: additionalAttributes	
-   :Datatype: array
+:aspect:`Default value`
+    Empty string
+
+:aspect:`Mandatory`
+    No
+
+additionalAttributes
+~~~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    array
 
 :aspect:`Description`
     Additional tag attributes. They will be added directly to the resulting HTML tag.
-   :Standard: NULL
-   :Mandatory: No
 
- - :Property: alt	
-   :Datatype: string
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+alt
+~~~
+:aspect:`Variable type`
+    string
 
 :aspect:`Description`
     Specifies an alternate text for an image. If the FAL entry has an alternative text, this will be 
    output automatically.
-   :Standard: Empty string
-   :Mandatory: No
 
- - :Property: class	
-   :Datatype: string
+:aspect:`Default value`
+    Empty string
+
+:aspect:`Mandatory`
+    No
+
+class
+~~~~~
+:aspect:`Variable type`
+    string
 
 :aspect:`Description`
     CSS class(es) for this element
-   :Standard: empty string
-   :Mandatory: No
 
- - :Property: crop	
-   :Datatype: anySimpleType
+:aspect:`Default value`
+    empty string
+
+:aspect:`Mandatory`
+    No
+
+crop
+~~~~
+:aspect:`Variable type`
+    anySimpleType
 
 :aspect:`Description`
     Overrule cropping of image (setting to FALSE disables the cropping set in FileReference)
-   :Standard: NULL
-   :Mandatory: No
 
- - :Property: data	
-   :Datatype: array
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+data
+~~~~
+:aspect:`Variable type`
+    array
 
 :aspect:`Description`
     Additional data-* attributes. They will each be added with a "data-" prefix.
-   :Standard: NULL
-   :Mandatory: No
 
- - :Property: dir	
-   :Datatype: string
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+dir
+~~~
+:aspect:`Variable type`
+    string
 
 :aspect:`Description`
     Text direction for this HTML element. Allowed strings: "ltr" (left to right), "rtl" (right to left)
-   :Standard: empty string
-   :Mandatory: No
 
- - :Property: height	
-   :Datatype: string
+:aspect:`Default value`
+    empty string
+
+:aspect:`Mandatory`
+    No
+
+height
+~~~~~~
+:aspect:`Variable type`
+    string
 
 :aspect:`Description`
     Height of the image. This can be a numeric value representing the fixed height of the image in pixels. But you can also perform simple calculations by adding "m" or "c" to the value. See imgResource.width for possible options.
-   :Standard: NULL
-   :Mandatory: No
 
- - :Property: id	
-   :Datatype: string
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+id
+~~
+:aspect:`Variable type`
+    string
 
 :aspect:`Description`
     Unique (in this file) identifier for this HTML element.
-   :Standard: empty string
-   :Mandatory: No
 
- - :Property: image	
-   :Datatype: anySimpleType
+:aspect:`Default value`
+    empty string
+
+:aspect:`Mandatory`
+    No
+
+image
+~~~~~
+:aspect:`Variable type`
+    anySimpleType
 
 :aspect:`Description`
     A FAL object
-   :Standard: NULL
-   :Mandatory: No
 
- - :Property: ismap	
-   :Datatype: string
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+ismap
+~~~~~
+:aspect:`Variable type`
+    string
 
 :aspect:`Description`
     Specifies an image as a server-side image-map. Rarely used. Look at usemap instead
-   :Standard: empty string
-   :Mandatory: No
 
- - :Property: lang	
-   :Datatype: string
+:aspect:`Default value`
+    empty string
+
+:aspect:`Mandatory`
+    No
+
+lang
+~~~~
+:aspect:`Variable type`
+    string
 
 :aspect:`Description`
     Language for this element. Use short names specified in RFC 1766
-   :Standard: empty string
-   :Mandatory: No
 
- - :Property: longdesc	
-   :Datatype: string
+:aspect:`Default value`
+    empty string
+
+:aspect:`Mandatory`
+    No
+
+longdesc
+~~~~~~~~
+:aspect:`Variable type`
+    string
 
 :aspect:`Description`
     Specifies the URL to a document that contains a long description of an image
-   :Standard: empty string
-   :Mandatory: No
 
- - :Property: maxHeight	
-   :Datatype: integer
+:aspect:`Default value`
+    empty string
+
+:aspect:`Mandatory`
+    No
+
+maxHeight
+~~~~~~~~~
+:aspect:`Variable type`
+    integer
 
 :aspect:`Description`
     The maximum height of the generated image
-   :Standard: NULL
-   :Mandatory: No
 
- - :Property: maxWidth	
-   :Datatype: integer
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+maxWidth
+~~~~~~~~
+:aspect:`Variable type`
+    integer
 
 :aspect:`Description`
     The maximum width of the generated image
-   :Standard: NULL
-   :Mandatory: No
 
- - :Property: minHeight	
-   :Datatype: integer
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+minHeight
+~~~~~~~~~
+:aspect:`Variable type`
+    integer
 
 :aspect:`Description`
     The minimum height of the generated image
-   :Standard: NULL
-   :Mandatory: No
 
- - :Property: minWidth	
-   :Datatype: integer
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+minWidth
+~~~~~~~~
+:aspect:`Variable type`
+    integer
 
 :aspect:`Description`
     The minimum width of the generated image
-   :Standard: NULL
-   :Mandatory: No
 
- - :Property: onclick	
-   :Datatype: string
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+onclick
+~~~~~~~
+:aspect:`Variable type`
+    string
 
 :aspect:`Description`
     JavaScript evaluated against the onclick event
-   :Standard: empty string
-   :Mandatory: No
 
- - :Property: src	
-   :Datatype: string
+:aspect:`Default value`
+    empty string
+
+:aspect:`Mandatory`
+    No
+
+src
+~~~
+:aspect:`Variable type`
+    string
 
 :aspect:`Description`
-    A path to a file, a combined FAL identifier or an UID (int). If $treatIdAsReference is set, the integer 
-   is considered the uid of the sys_file_reference record. Because we're dealing with an IMG_RESOURCE, you can also work 
-   with EXT: paths. If you already have a FAL object, consider using the $image parameter instead.
-   :Standard: NULL
-   :Mandatory: Yes
+    A path to a file, a combined FAL identifier or an UID (int). If `treatIdAsReference` is set, the integer is 
+    considered the uid of the sys_file_reference record. Because we're dealing with an `IMG_RESOURCE`, you can also work 
+    with `EXT:` paths. If you already have a FAL object, consider using the `image` property instead.
 
- - :Property: style	
-   :Datatype: string
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
+
+style
+~~~~~
+:aspect:`Variable type`
+    string
 
 :aspect:`Description`
     Individual CSS styles for this element
-   :Standard: empty string
-   :Mandatory: No
 
- - :Property: tabindex	
-   :Datatype: integer
+:aspect:`Default value`
+    empty string
+
+:aspect:`Mandatory`
+    No
+
+tabindex
+~~~~~~~~
+:aspect:`Variable type`
+    integer
 
 :aspect:`Description`
     Specifies the tab order of this element
-   :Standard: NULL
-   :Mandatory: No
 
- - :Property: title	
-   :Datatype: string
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+title
+~~~~~
+:aspect:`Variable type`
+    string
 
 :aspect:`Description`
     Tooltip text of element
-   :Standard: empty string
-   :Mandatory: No
 
- - :Property: treatIdAsReference	
-   :Datatype: boolean
+:aspect:`Default value`
+    empty string
+
+:aspect:`Mandatory`
+    No
+
+treatIdAsReference
+~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    boolean
 
 :aspect:`Description`
-    Given src argument is a sysfilereference record
-   :Standard: FALSE
-   :Mandatory: No
+    Given src argument is a sys_file_reference record
 
- - :Property: usemap	
-   :Datatype: string
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+usemap
+~~~~~~
+:aspect:`Variable type`
+    string
 
 :aspect:`Description`
     Specifies an image as a client-side image-map
-   :Standard: FALSE
-   :Mandatory: No
 
- - :Property: width	
-   :Datatype: string
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+width
+~~~~~
+:aspect:`Variable type`
+    string
 
 :aspect:`Description`
-    Width of the image. This can be a numeric value representing the fixed width of the image in pixels. But you can also perform simple calculations by adding "m" or "c" to the value. See imgResource.width for possible options.
-   :Standard: NULL
-   :Mandatory: No
+    Width of the image. This can be a numeric value representing the fixed width of the image in pixels. But you can 
+    also perform simple calculations by adding "m" or "c" to the value. See `imgResource.width` for possible options.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
 Examples
 

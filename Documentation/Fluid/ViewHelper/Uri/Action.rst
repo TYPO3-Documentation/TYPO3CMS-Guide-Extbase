@@ -240,6 +240,4 @@ argumentsToBeExcludedFromQueryString
 Beispiel
 --------
 
-::
-
-{f:uri.action(action: 'show')}
+ {f:uri.action(action: 'show')}

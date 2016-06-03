@@ -8,7 +8,7 @@
 f:else
 ======
 
-The use of this ViewHelper is explained in the documentation for f:if, as it can only be used within that ViewHelper.
+The use of this ViewHelper is explained in the documentation for `f:if`, as it can only be used within that ViewHelper.
 
 Properties
 ----------

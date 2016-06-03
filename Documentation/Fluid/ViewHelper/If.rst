@@ -83,6 +83,6 @@ Simple examples
  </f:alias>
 
 
-If there are no f:then or f:else ViewHelpers in use, the content between the f:if ViewHelpers will only be output if 
+If there are no `f:then` or `f:else` ViewHelpers in use, the content between the `f:if` ViewHelpers will only be output if 
 the comparison returns a positive result. If you need to use the full if-then-else construct, then you'll have to 
-use the f:then / f:else ViewHelpers.
+use the `f:then` / `f:else` ViewHelpers.

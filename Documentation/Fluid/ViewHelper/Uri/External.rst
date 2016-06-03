@@ -48,4 +48,4 @@ defaultScheme
 Beispiel
 --------
 
-{f:uri.external(uri: 'www.example.com')}
+ {f:uri.external(uri: 'www.example.com')}

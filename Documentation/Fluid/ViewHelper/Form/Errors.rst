@@ -8,4 +8,4 @@
 f:form.errors
 ===============
 
-Deprecated. Please use ValidationResults-ViewHelper instead.
+Deprecated. Please use the `f:form.validationResults`-ViewHelper.

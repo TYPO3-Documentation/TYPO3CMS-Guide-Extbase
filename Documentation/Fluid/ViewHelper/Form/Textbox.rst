@@ -8,4 +8,4 @@
 f:form.textbox
 ==============
 
-Deprecated. Please use f:form.textfield instead!
+Deprecated. Please use `f:form.textfield`.

@@ -8,7 +8,7 @@
 f:for
 =====
 
-The f:for ViewHelper is THE ViewHelper for generating lists. Take a look at the extensive examples.
+The `f:for` ViewHelper is THE ViewHelper for generating lists. Take a look at the extensive examples.
 
 Properties
 ----------
@@ -168,4 +168,4 @@ Example with iterator information
  </f:alias>
 
 iterator.cycle is - just like iterator.index - simply a counter. It has nothing to do with the separate ViewHelper 
-f:cycle.
+`f:cycle`.

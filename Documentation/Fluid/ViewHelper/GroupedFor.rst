@@ -59,7 +59,7 @@ groupKey
     String
 
 :aspect:`Description`
-    The grouped value can be accessed by this key from within each f:groupedBy tag.
+    The grouped value can be accessed by this key from within each `f:groupedBy` tag.
 
 :aspect:`Default value`
 
@@ -87,11 +87,11 @@ Example
    </table>
  </f:alias>
 
-Here's an example with six employees. As you can see, the f:groupedBy ViewHelper groups the employees by city. An 
+Here's an example with six employees. As you can see, the `f:groupedBy` ViewHelper groups the employees by city. An 
 experienced eye will see that the first employees in the array work in Lindlar.
 
-So that we can access the city names within the f:groupedBy tags, we'll use the 'groupKey' “city”. (The values 'groupBy' 
+So that we can access the city names within the `f:groupedBy` tags, we'll use the 'groupKey' “city”. (The values 'groupBy' 
 and 'groupKey' don't need to match: you could use 'city' as a groupKey too.
 
 By referring to the variable 'as', you can access the elements of the first city employees and loop through them with 
-a f:for loop.
+a `f:for` loop.

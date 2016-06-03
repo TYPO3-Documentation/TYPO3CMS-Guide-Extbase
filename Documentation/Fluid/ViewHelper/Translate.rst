@@ -8,7 +8,7 @@
 f:translate
 ===========
 
-The f:translate ViewHelper connects to a standard translation file - most often locallang.xlf - and provides a defined 
+This ViewHelper connects to a standard translation file - most often locallang.xlf - and provides a defined 
 translation for the current language using a “key” parameter.
 
 Properties
@@ -35,7 +35,7 @@ default
 
 :aspect:`Description`
     If the key canto be matched in the translation file, then use this text instead. If this property isn't 
-   defined, then the value between the opening and closing f:translate tags will be used.
+   defined, then the value between the opening and closing `f:translate` tags will be used.
 
 :aspect:`Default value`
     NULL

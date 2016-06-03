@@ -8,8 +8,10 @@
 f:format.raw
 ============
 
-f:format.rawworks since 1.4
-Es gibt viele ViewHelper, die Inhalte vor der Ausgabe durch htmlspecialchars und anderen Methoden und Funktionen schleusen. Dies zu verhindern stellt auf jeden Fall ein Sicherheitsrisiko dar, kann aber mit diesem ViewHelper erreicht werden. Ich denke gerade im Bereich von Formulardaten kann dieser ViewHelper evtl. Verwendung finden.
+`f:format.raw` seit v1.4. Es gibt viele ViewHelper, die Inhalte vor der Ausgabe durch htmlspecialchars und anderen 
+Methoden und Funktionen schleusen. Dies zu verhindern stellt auf jeden Fall ein Sicherheitsrisiko dar, kann aber mit 
+diesem ViewHelper erreicht werden. Ich denke gerade im Bereich von Formulardaten kann dieser ViewHelper evtl. 
+Verwendung finden.
 
 Properties
 ----------

@@ -16,10 +16,16 @@ Properties
 Exclusive properties of this ViewHelper
 ########################################
 
- - :Property: name
-   :Datatype: String
+name
+~~~~
+:aspect:`Variable type`
+    String
 
 :aspect:`Description`
     Name of the layout to be used. If no name is provided, the “Default” layout will be used.
-   :Standard: Default
-   :Mandatory: Yes
+
+:aspect:`Default value`
+    Default
+
+:aspect:`Mandatory`
+    Yes

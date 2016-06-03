@@ -20,7 +20,7 @@ name
     String
 
 :aspect:`Description`
-    A name which can be referenced in order to fetch the content contained within the f:section tage.
+    A name which can be referenced in order to fetch the content contained within the `f:section` tags.
 
 :aspect:`Default value`
     NULL
