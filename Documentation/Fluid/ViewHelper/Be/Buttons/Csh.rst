@@ -55,7 +55,7 @@ Features
 There's a special instance in which the “table” property doesn't need to be defined. This is the case then there are 
 form fields in the module, but when there is no 1:1 column in the database. For example, in the Scheduler, which 
 stores its information in a serialized format in a single field, or in the case of a search field, whose value isn't 
-sent to the database. Such fields can be assigned a csh icon through the addition of an entry in ext_tables.php.
+sent to the database. Such fields can be assigned a csh icon through the addition of an entry in ext_tables.php.::
 
  \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
    '_MOD_FullModuleName',
