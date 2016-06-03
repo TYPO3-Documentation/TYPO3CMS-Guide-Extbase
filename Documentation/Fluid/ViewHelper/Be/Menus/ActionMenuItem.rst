@@ -14,38 +14,61 @@ ViewHelper must be placed within a `f:be.menus.actionMenu` ViewHelper.
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
+label
+~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    The name to display in the menu
 
- - :Property:    label
-   :Datatype:    String
-   :Description: The name to display in the menu
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Default value`
+     NULL
 
- - :Property:    controller
-   :Datatype:    String
-   :Description: The Controller in which the appropriate Action lies.
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Required`
+     Yes
 
- - :Property:    action
-   :Datatype:    String
-   :Description: Which Action should be called when this menu entry is selected.
-   :Standard:    NULL
-   :Mandatory:   Yes
+controller
+~~~~~~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property:    arguments
-   :Datatype:    Array
-   :Description: Parameters to be passed to the Action.
-   :Standard:    Empty array
-   :Mandatory:   Yes
+:aspect:`Description`
+    The Controller in which the appropriate Action lies.
+
+:aspect:`Default value`
+     NULL
+
+:aspect:`Required`
+     Yes
+
+action
+~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Which Action should be called when this menu entry is selected.
+
+:aspect:`Default value`
+     NULL
+
+:aspect:`Required`
+     Yes
+
+arguments
+~~~~~~~~~
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    Parameters to be passed to the Action.
+
+:aspect:`Default value`
+     Empty array
+
+:aspect:`Required`
+     Yes
 
 Example
 -------

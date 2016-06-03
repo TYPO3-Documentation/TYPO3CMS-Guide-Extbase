@@ -19,7 +19,7 @@ uri
     String
 
 :aspect:`Description`
-    Target url. Can be created by a f:uri.*-ViewHelper.
+        Target url. Can be created by a `f:uri.*`-ViewHelper.
 
 :aspect:`Default value`
      NULL
@@ -33,7 +33,7 @@ title
     String
 
 :aspect:`Description`
-    Title attribute for the link.
+        Title attribute for the link.
 
 :aspect:`Default value`
      empty string
@@ -47,7 +47,7 @@ icon
     String
 
 :aspect:`Description`
-    The name to use.
+        The name to use.
 
 :aspect:`Default value`
      actions-document-close

@@ -16,20 +16,19 @@ parsed.
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
+role
+~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Either the (case-sensitive) user group name or (preferentially) the user group UID.
 
- - :Property:    role
-   :Datatype:    String
-   :Description: Either the (case-sensitive) user group name or (preferentially) the user group UID.
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Default value`
+     NULL
+
+:aspect:`Required`
+     Yes
 
 Examples
 --------

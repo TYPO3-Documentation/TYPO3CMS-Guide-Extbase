@@ -12,86 +12,165 @@ A very useful ViewHelper. We can use the familiar view from the Web->List module
 purposes.
 
 Properties
--------------
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+tableName
+~~~~~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    The name of the table.
 
- - :Property:    tableName
-   :Datatype:    String
-   :Description: The name of the table.
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Default value`
+     NULL
 
- - :Property:    storagePid
-   :Datatype:    Integer
-   :Description: The ID of the page containing the data to be displayed. If this value is not defined, then the records 
+:aspect:`Required`
+     Yes
+
+storagePid
+~~~~~~~~~~
+:aspect:`Variable type`
+    Integer
+
+:aspect:`Description`
+    The ID of the page containing the data to be displayed. If this value is not defined, then the records 
                  from the page with the ID set as persistence.storagePid will be displayed.
-   :Standard:    NULL
-   :Mandatory:   Yes
 
- - :Property:    levels
-   :Datatype:    Integer
-   :Description: If the page with the ID defined in the storagePid property contains subpages, this property defines the 
+:aspect:`Default value`
+     NULL
+
+:aspect:`Required`
+     Yes
+
+levels
+~~~~~~
+:aspect:`Variable type`
+    Integer
+
+:aspect:`Description`
+    If the page with the ID defined in the storagePid property contains subpages, this property defines the 
                  nesting level from which records should be collated.
-   :Standard:    0
-   :Mandatory:   Yes
 
- - :Property:    filter
-   :Datatype:    String
-   :Description: Provide a search term by which the records should be filtered.
-   :Standard:    Leerer String
-   :Mandatory:   Yes
+:aspect:`Default value`
+     0
 
- - :Property:    recordsPerPage
-   :Datatype:    Integer
-   :Description: The maximum number off records which may be displayed on a single page view.
-   :Standard:    0
-   :Mandatory:   Yes
+:aspect:`Required`
+     Yes
 
- - :Property:    sortField
-   :Datatype:    String
-   :Description: The field by which the applicable records should be sorted.
-   :Standard:    Leerer String
-   :Mandatory:   Yes
+filter
+~~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property:    sortDescending
-   :Datatype:    Boolean
-   :Description: When active, this property defines that the sequence of records should be sorted in reverse order.
-   :Standard:    FALSE
-   :Mandatory:   Yes
+:aspect:`Description`
+    Provide a search term by which the records should be filtered.
 
- - :Property:    readOnly
-   :Datatype:    Boolean
-   :Description: When active, the edit icon will not be displayed alongside the records.
-   :Standard:    FALSE
-   :Mandatory:   Yes
+:aspect:`Default value`
+     Leerer String
 
- - :Property:    enableClickMenu
-   :Datatype:    Boolean
-   :Description: When active, the context menu will be activated for the view.
-   :Standard:    TRUE
-   :Mandatory:   Yes
+:aspect:`Required`
+     Yes
 
- - :Property:    clickTitleMode
-   :Datatype:    String
-   :Description: A choice of “edit”, “info” or “show”. The mode “show” only applies to records from the “pages” or 
+recordsPerPage
+~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Integer
+
+:aspect:`Description`
+    The maximum number off records which may be displayed on a single page view.
+
+:aspect:`Default value`
+     0
+
+:aspect:`Required`
+     Yes
+
+sortField
+~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The field by which the applicable records should be sorted.
+
+:aspect:`Default value`
+     Leerer String
+
+:aspect:`Required`
+     Yes
+
+sortDescending
+~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    When active, this property defines that the sequence of records should be sorted in reverse order.
+
+:aspect:`Default value`
+     FALSE
+
+:aspect:`Required`
+     Yes
+
+readOnly
+~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    When active, the edit icon will not be displayed alongside the records.
+
+:aspect:`Default value`
+     FALSE
+
+:aspect:`Required`
+     Yes
+
+enableClickMenu
+~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    When active, the context menu will be activated for the view.
+
+:aspect:`Default value`
+     TRUE
+
+:aspect:`Required`
+     Yes
+
+clickTitleMode
+~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    A choice of “edit”, “info” or “show”. The mode “show” only applies to records from the “pages” or 
                  ”tt_content” types. Under usual circumstances, you need to either work using the content menu or 
                  an alternative module. Now, clicking on the record title will be sufficient.
-   :Standard:    NULL
-   :Mandatory:   Yes
 
- - :Property:    alternateBackgroundColors
-   :Datatype:    Boolean
-   :Description: When active, the background colour of each table row will be displayed alternately.
-   :Standard:    FALSE
-   :Mandatory:   Yes
+:aspect:`Default value`
+     NULL
+
+:aspect:`Required`
+     Yes
+
+alternateBackgroundColors
+~~~~~~~~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    When active, the background colour of each table row will be displayed alternately.
+
+:aspect:`Default value`
+     FALSE
+
+:aspect:`Required`
+     Yes
 
 Minimal example
 ---------------

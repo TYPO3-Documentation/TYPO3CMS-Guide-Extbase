@@ -14,68 +14,102 @@ records on each page, and to define where and how the navigation between the pag
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
+objects
+~~~~~~~
+:aspect:`Variable type`
+    QueryResultInterface
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
-
- - :Property:    objects
-   :Datatype:    QueryResultInterface
-   :Description: Not the result objects themselves, but the object from the Repository which contains the data needed 
+:aspect:`Description`
+    Not the result objects themselves, but the object from the Repository which contains the data needed 
                  to reproduce the SQL command. The SQL statement object and the SQL command aren't allowed here, as 
                  Extbase won't be able to work out how to implement the LIMIT attribute which controls the division of 
                  the data into paginated results.
-   :Standard:
-   :Mandatory:   Yes
+   :Default value:
 
- - :Property:    as
-   :Datatype:    String
-   :Description: The name of the variable in which the reduced object is made available.
-   :Standard:
-   :Mandatory:   Yes
+:aspect:`Required`
+     Yes
 
- - :Property:    configuration
-   :Datatype:    Array
-   :Description: Configuration of the page navigation
-   :Standard:    See "Configuration of the page navigation"
-   :Mandatory:   No
+as
+~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The name of the variable in which the reduced object is made available.
+   :Default value:
+
+:aspect:`Required`
+     Yes
+
+configuration
+~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    Configuration of the page navigation
+
+:aspect:`Default value`
+     See "Configuration of the page navigation"
+
+:aspect:`Required`
+     No
 
 Configuration of the page navigation
 ------------------------------------
 
-.. t3-field-list-table::
- :header-rows: 1
+itemsPerPage
+~~~~~~~~~~~~
+:aspect:`Variable type`
+    QueryResultInterface
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    The number of objects which may be associated with each page in the series.
 
- - :Property:    itemsPerPage
-   :Datatype:    QueryResultInterface
-   :Description: The number of objects which may be associated with each page in the series.
-   :Standard:    10
-   :Mandatory:   No
+:aspect:`Default value`
+     10
 
- - :Property:    insertAbove
-   :Datatype:    Boolean
-   :Description: Display the page navigation above the results.
-   :Standard:    FALSE
-   :Mandatory:   No
+:aspect:`Required`
+     No
 
- - :Property:    insertBelow
-   :Datatype:    Boolean
-   :Description: Display the page navigation below the results.
-   :Standard:    TRUE
-   :Mandatory:   No
+insertAbove
+~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
 
- - :Property:    recordsLabel
-   :Datatype:    String
-   :Description: An optional text to replace the standard descriptor “Records 1 - xy”.
-   :Standard:    Empty string
-   :Mandatory:   No
+:aspect:`Description`
+    Display the page navigation above the results.
+
+:aspect:`Default value`
+     FALSE
+
+:aspect:`Required`
+     No
+
+insertBelow
+~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Display the page navigation below the results.
+
+:aspect:`Default value`
+     TRUE
+
+:aspect:`Required`
+     No
+
+recordsLabel
+~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    An optional text to replace the standard descriptor “Records 1 - xy”.
+
+:aspect:`Default value`
+     Empty string
+
+:aspect:`Required`
+     No

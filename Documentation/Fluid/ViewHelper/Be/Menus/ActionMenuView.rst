@@ -14,20 +14,19 @@ select box with options, which will lead to an appropriate view when they are se
 Properties
 ----------
 
-.. t3-field-list-table::
- :header-rows: 1
+defaultController
+~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Provide the name of the Controller to be used in the event that the Controller name isn't provided in the individual ActionMenuItem ViewHelper. As the Controller parameter is required for the ActionMenuItem ViewHelper anyway, you're better off not setting this property in this ViewHelper.
 
- - :Property:    defaultController
-   :Datatype:    String
-   :Description: Provide the name of the Controller to be used in the event that the Controller name isn't provided in the individual ActionMenuItem ViewHelper. As the Controller parameter is required for the ActionMenuItem ViewHelper anyway, you're better off not setting this property in this ViewHelper.
-   :Standard:    NULL
-   :Mandatory:   Yes
+:aspect:`Default value`
+     NULL
+
+:aspect:`Required`
+     Yes
 
 Example
 -------
