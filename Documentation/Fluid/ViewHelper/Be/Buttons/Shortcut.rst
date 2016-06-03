@@ -8,7 +8,7 @@
 f:be.buttons.shortcut
 =====================
 
-This ViewHelper provides the bookmark function used in backend.
+This ViewHelper provides the bookmark function used in the backend.
 
 Features
 --------
@@ -17,21 +17,21 @@ Features
  :header-rows: 1
 
  - :Property,20:    Property
-   :Datatype,20:    Datatype
+   :Datatype,20:    Variable type
    :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    getVars
    :Datatype:    Array
-   :Description: if empty, page-UID, module and module arguments to save with the bookmark
-   :Standard:    empty array
+   :Description: If empty, the page UID, module and module arguments to save with the bookmark.
+   :Standard:    Empty array
    :Mandatory:   No
 
  - :Property:    setVars
    :Datatype:    Array
-   :Description: see template::makeShortcutIcon(), usually not used for extbase extensions
-   :Standard:    empty array
+   :Description: See template::makeShortcutIcon(). Usually not used for Extbase extensions.
+   :Standard:    Empty array
    :Mandatory:   No
 
 Example
