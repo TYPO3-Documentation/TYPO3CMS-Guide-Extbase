@@ -14,46 +14,54 @@ and you'll get an array of elements which match the group criterium in each iter
 Properties
 ----------
 
- - :Property:    each
+each
+~~~~
 :aspect:`Variable type`
     Array
 
 :aspect:`Description`
     The array or object to be iterated
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes
 
- - :Property:    as
+as
+~~
 :aspect:`Variable type`
     String
 
 :aspect:`Description`
     The name of the variable which contains the grouped entries
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes
 
- - :Property:    groupBy
+groupBy
+~~~~~~~
 :aspect:`Variable type`
     String
 
 :aspect:`Description`
     The property by which the array should be grouped.
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes
 
- - :Property:    groupKey
+groupKey
+~~~~~~~~
 :aspect:`Variable type`
     String
 
 :aspect:`Description`
     The grouped value can be accessed by this key from within each f:groupedBy tag.
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes

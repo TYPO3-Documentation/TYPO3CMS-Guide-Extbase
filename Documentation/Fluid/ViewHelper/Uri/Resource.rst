@@ -11,19 +11,22 @@ f:uri.resource
 Properties
 ----------
 
- - :Property:    path
+path
+~~~~
 :aspect:`Variable type`
     String
 
 :aspect:`Description`
     Der Pfad inkl. Dateiname zu der Datei. Die Angabe erfolgt relativ zum Resource-Verzeichnis der
                  aktuellen Extension.
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes
 
- - :Property:    extensionName
+extensionName
+~~~~~~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -38,7 +41,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    absolute
+absolute
+~~~~~~~~
 :aspect:`Variable type`
     Boolean
 

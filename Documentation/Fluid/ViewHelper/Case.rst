@@ -24,7 +24,8 @@ value
 
 :aspect:`Description`
     The value against which the value from the f:switch ViewHelper should be compared.
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes

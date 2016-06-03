@@ -13,13 +13,15 @@ Mit diesem ViewHelper können Platzhalter in einem Text mit den Werten auf dem A
 Properties
 ----------
 
- - :Property:    arguments
+arguments
+~~~~~~~~~
 :aspect:`Variable type`
     Array
 
 :aspect:`Description`
     Gib hier Werte in Arraynotation ein, die die Platzhalter in dem Text, der sich zwischen den Tags befindet, ersetzt.
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes

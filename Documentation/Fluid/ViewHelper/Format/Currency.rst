@@ -13,7 +13,8 @@ This ViewHelper allows you to display a number in currency format.
 Properties
 ----------
 
- - :Property:    currencySign
+currencySign
+~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -26,7 +27,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    decimalSeparator
+decimalSeparator
+~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -39,7 +41,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    thousandsSeparator
+thousandsSeparator
+~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -52,7 +55,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    prependCurrency
+prependCurrency
+~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -65,7 +69,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    separateCurrency
+separateCurrency
+~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -78,7 +83,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    decimals
+decimals
+~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Integer
 

@@ -73,7 +73,8 @@ options
 
 :aspect:`Description`
     Welche Optionen sollen in der Auswahlliste erscheinen.
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes
@@ -85,7 +86,8 @@ optionValueField
 
 :aspect:`Description`
     Wenn options Objekte enthält, dann könnt Ihr hier angeben welche Eigenschaft als zu übergebenden Wert verwendet werden soll
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     No
@@ -97,7 +99,8 @@ optionLabelField
 
 :aspect:`Description`
     Wenn options Objekte enthält, dann könnt Ihr hier angeben welche Eigenschaft als anzuzeigender Titel verwendet werden soll
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     No
@@ -152,7 +155,8 @@ prependOptionLabel
 
 :aspect:`Description`
     Erzeugt eine weitere Option ganz am Anfang der Auflistung mit dem angegebenen Text.
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     No
@@ -164,7 +168,8 @@ prependOptionValue
 
 :aspect:`Description`
     Erzeugt eine weitere Option ganz am Anfang der Auflistung mit dem angegebenen Wert.
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     No

@@ -21,7 +21,8 @@ typoscriptObjectPath
 
 :aspect:`Description`
     The TypoScript object path
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes

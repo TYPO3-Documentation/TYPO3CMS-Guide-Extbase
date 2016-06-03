@@ -18,18 +18,21 @@ Dieser ViewHelper erstellt einen Link zu einer externen Seite.
 Properties
 ----------
 
- - :Property:    uri
+uri
+~~~
 :aspect:`Variable type`
     String
 
 :aspect:`Description`
     Die URL zu der externen Zielseite
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes
 
- - :Property:    defaultScheme
+defaultScheme
+~~~~~~~~~~~~~
 :aspect:`Variable type`
     String
 

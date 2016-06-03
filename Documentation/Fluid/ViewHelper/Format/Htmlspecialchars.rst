@@ -29,7 +29,8 @@ value
 :aspect:`Mandatory`
     No
 
- - :Property:    keepQuotes
+keepQuotes
+~~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -42,7 +43,8 @@ value
 :aspect:`Mandatory`
     No
 
- - :Property:    encoding
+encoding
+~~~~~~~~
 :aspect:`Variable type`
     String
    :Description:
@@ -53,7 +55,8 @@ value
 :aspect:`Mandatory`
     No
 
- - :Property:    doubleEncode
+doubleEncode
+~~~~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 

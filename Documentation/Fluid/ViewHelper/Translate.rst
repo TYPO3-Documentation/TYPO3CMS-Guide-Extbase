@@ -14,7 +14,8 @@ translation for the current language using a “key” parameter.
 Properties
 ----------
 
- - :Property:    key
+key
+~~~
 :aspect:`Variable type`
     String
 
@@ -27,7 +28,8 @@ Properties
 :aspect:`Mandatory`
     Yes
 
- - :Property:    default
+default
+~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -41,7 +43,8 @@ Properties
 :aspect:`Mandatory`
     Yes
 
- - :Property:    htmlEscape
+htmlEscape
+~~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -56,7 +59,8 @@ Properties
 :aspect:`Mandatory`
     Yes
 
- - :Property:    arguments
+arguments
+~~~~~~~~~
 :aspect:`Variable type`
     Array
 

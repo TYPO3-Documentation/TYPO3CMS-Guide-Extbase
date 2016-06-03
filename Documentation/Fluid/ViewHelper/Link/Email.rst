@@ -19,7 +19,8 @@ Properties
 Exclusive properties for the HTML-Element
 #########################################
 
- - :Property:    name
+name
+~~~~
 :aspect:`Variable type`
     String
 
@@ -32,7 +33,8 @@ Exclusive properties for the HTML-Element
 :aspect:`Mandatory`
     No
 
- - :Property:    rel
+rel
+~~~
 :aspect:`Variable type`
     String
 
@@ -45,7 +47,8 @@ Exclusive properties for the HTML-Element
 :aspect:`Mandatory`
     No
 
- - :Property:    rev
+rev
+~~~
 :aspect:`Variable type`
     String
 
@@ -58,7 +61,8 @@ Exclusive properties for the HTML-Element
 :aspect:`Mandatory`
     No
 
- - :Property:    target
+target
+~~~~~~
 :aspect:`Variable type`
     String
 
@@ -74,13 +78,15 @@ Exclusive properties for the HTML-Element
 Exclusive properties of this ViewHelper
 #######################################
 
- - :Property:    email
+email
+~~~~~
 :aspect:`Variable type`
     String
 
 :aspect:`Description`
     Die zu verlinkende E-Mail-Adresse
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes

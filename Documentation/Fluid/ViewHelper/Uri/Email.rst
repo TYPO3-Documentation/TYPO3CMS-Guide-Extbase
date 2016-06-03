@@ -14,13 +14,15 @@ Angaben zum Verschlüsseln der E-Mail-Adresse gemacht habt, so werden diese Eins
 Properties
 ----------
 
- - :Property:    email
+email
+~~~~~
 :aspect:`Variable type`
     String
 
 :aspect:`Description`
     Die zu verlinkende E-Mail-Adresse
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes

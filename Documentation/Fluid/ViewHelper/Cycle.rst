@@ -15,12 +15,6 @@ the other entries.
 Properties
 ----------
 
- - :Property,20:    Properties
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Default value
-   :Mandatory,10:   Mandatory
-
 values
 ~~~~~~
 :aspect:`Variable type`
@@ -28,7 +22,8 @@ values
 
 :aspect:`Description`
     Input in array notation. (See example for details.)
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes
@@ -40,7 +35,8 @@ as
 
 :aspect:`Description`
     The name of the new variable for subsequent use in your template.
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes

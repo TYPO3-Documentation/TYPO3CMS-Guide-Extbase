@@ -13,7 +13,8 @@ Konvertiert einen Timestamp in einen lesbaren Datumswert.
 Properties
 ----------
 
- - :Property:    date
+date
+~~~~
 :aspect:`Variable type`
     Mixed
 
@@ -26,7 +27,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    format
+format
+~~~~~~
 :aspect:`Variable type`
     String
 

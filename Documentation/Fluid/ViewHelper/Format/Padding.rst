@@ -13,18 +13,21 @@ Padding
 Properties
 ----------
 
- - :Property:    padLength
+padLength
+~~~~~~~~~
 :aspect:`Variable type`
     Integer
 
 :aspect:`Description`
     Wie viel Zeichen lang darf der Text inkl. der hinzugefügten Abstandszeichen maximal werden
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes
 
- - :Property:    padString
+padString
+~~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -37,7 +40,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    padType
+padType
+~~~~~~~
 :aspect:`Variable type`
     String
 

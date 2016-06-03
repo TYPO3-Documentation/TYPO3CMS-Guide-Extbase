@@ -23,7 +23,8 @@ Properties
 Exclusive properties for the HTML-Element
 #########################################
 
- - :Property:    name
+name
+~~~~
 :aspect:`Variable type`
     String
 
@@ -36,7 +37,8 @@ Exclusive properties for the HTML-Element
 :aspect:`Mandatory`
     No
 
- - :Property:    rel
+rel
+~~~
 :aspect:`Variable type`
     String
 
@@ -49,7 +51,8 @@ Exclusive properties for the HTML-Element
 :aspect:`Mandatory`
     No
 
- - :Property:    rev
+rev
+~~~
 :aspect:`Variable type`
     String
 
@@ -62,7 +65,8 @@ Exclusive properties for the HTML-Element
 :aspect:`Mandatory`
     No
 
- - :Property:    target
+target
+~~~~~~
 :aspect:`Variable type`
     String
 
@@ -78,18 +82,21 @@ Exclusive properties for the HTML-Element
 Exclusive properties of this ViewHelper
 #######################################
 
- - :Property:    uri
+uri
+~~~
 :aspect:`Variable type`
     String
 
 :aspect:`Description`
     Die URL zu der externen Zielseite
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes
 
- - :Property:    defaultScheme
+defaultScheme
+~~~~~~~~~~~~~
 :aspect:`Variable type`
     String
 

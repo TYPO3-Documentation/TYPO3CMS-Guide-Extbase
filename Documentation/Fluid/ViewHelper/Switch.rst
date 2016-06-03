@@ -18,7 +18,8 @@ is much simpler than using a series of stacked f:if ViewHelpers.
 Properties
 ---------
 
- - :Property:    expression
+expression
+~~~~~~~~~~
 :aspect:`Variable type`
     Mixed
 

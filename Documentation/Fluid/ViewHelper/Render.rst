@@ -16,7 +16,8 @@ when using them. A table layout containing 700 cells and 15 columns, where each 
 Properties
 ----------
 
- - :Property:    section
+section
+~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -29,7 +30,8 @@ Properties
 :aspect:`Mandatory`
     Yes
 
- - :Property:    partial
+partial
+~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -42,7 +44,8 @@ Properties
 :aspect:`Mandatory`
     Yes
 
- - :Property:    arguments
+arguments
+~~~~~~~~~
 :aspect:`Variable type`
     Array
 
@@ -55,7 +58,8 @@ Properties
 :aspect:`Mandatory`
     Yes
 
- - :Property:    optional
+optional
+~~~~~~~~
 :aspect:`Variable type`
     Boolean
 

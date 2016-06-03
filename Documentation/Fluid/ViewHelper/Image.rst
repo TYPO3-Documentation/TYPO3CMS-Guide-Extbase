@@ -27,18 +27,21 @@ Inline usage example
 Exclusive properties of the HTML tag
 ####################################
 
- - :Property:    alt
+alt
+~~~
 :aspect:`Variable type`
     String
 
 :aspect:`Description`
     An alternative text to be used in browsers which cannot display the image for any reason.
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes
 
- - :Property:    ismap
+ismap
+~~~~~
 :aspect:`Variable type`
     String
 
@@ -51,7 +54,8 @@ Exclusive properties of the HTML tag
 :aspect:`Mandatory`
     No
 
- - :Property:    longdesc
+longdesc
+~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -64,7 +68,8 @@ Exclusive properties of the HTML tag
 :aspect:`Mandatory`
     No
 
- - :Property:    usemap
+usemap
+~~~~~~
 :aspect:`Variable type`
     String
 

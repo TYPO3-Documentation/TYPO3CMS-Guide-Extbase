@@ -11,19 +11,22 @@ f:uri.image
 Properties
 ----------
 
- - :Property:    src
+src
+~~~
 :aspect:`Variable type`
     String
 
 :aspect:`Description`
     Path and file name to the source image. The path must be relative to the project's webroot folder. 
                  You can also use paths which feature the EXT: convention.
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes
 
- - :Property:    width
+width
+~~~~~
 :aspect:`Variable type`
     String
 
@@ -37,7 +40,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    height
+height
+~~~~~~
 :aspect:`Variable type`
     String
 
@@ -51,7 +55,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    minWidth
+minWidth
+~~~~~~~~
 :aspect:`Variable type`
     Integer
 
@@ -65,7 +70,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    minHeight
+minHeight
+~~~~~~~~~
 :aspect:`Variable type`
     Integer
 
@@ -79,7 +85,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    maxWidth
+maxWidth
+~~~~~~~~
 :aspect:`Variable type`
     Integer
 
@@ -93,7 +100,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    maxHeight
+maxHeight
+~~~~~~~~~
 :aspect:`Variable type`
     Integer
 
@@ -107,7 +115,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    treatIdAsReference
+treatIdAsReference
+~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 

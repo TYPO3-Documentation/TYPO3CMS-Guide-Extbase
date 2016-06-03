@@ -14,7 +14,8 @@ you're familiar with the old fed:if ViewHelper, you'll know what we're talking a
 Properties
 ----------
 
- - :Property:    condition
+condition
+~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 

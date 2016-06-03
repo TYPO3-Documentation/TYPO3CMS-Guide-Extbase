@@ -27,7 +27,8 @@ disabled
 
 :aspect:`Description`
     Die Checkbox wird deaktiviert angezeigt.
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     No

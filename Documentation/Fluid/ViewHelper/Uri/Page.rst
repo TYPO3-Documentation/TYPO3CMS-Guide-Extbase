@@ -11,7 +11,8 @@ f:uri.page
 Properties
 ----------
 
- - :Property:    pageUid
+pageUid
+~~~~~~~
 :aspect:`Variable type`
     Integer|NULL
 
@@ -24,7 +25,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    additionalParams
+additionalParams
+~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Array
 
@@ -37,7 +39,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    pageType
+pageType
+~~~~~~~~
 :aspect:`Variable type`
     Integer
 
@@ -50,7 +53,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    noCache
+noCache
+~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -63,7 +67,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    noCacheHash
+noCacheHash
+~~~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -76,7 +81,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    section
+section
+~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -89,7 +95,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    linkAccessRestrictedPages
+linkAccessRestrictedPages
+~~~~~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -102,7 +109,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    absolute
+absolute
+~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -115,7 +123,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    addQueryString
+addQueryString
+~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -128,7 +137,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    argumentsToBeExcludedFromQueryString
+argumentsToBeExcludedFromQueryString
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Array
 

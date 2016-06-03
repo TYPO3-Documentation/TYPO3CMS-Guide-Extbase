@@ -20,7 +20,8 @@ Properties
 Global properties of this ViewHelper
 ####################################
 
- - :Property:    enctype
+enctype
+~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -33,7 +34,8 @@ Global properties of this ViewHelper
 :aspect:`Mandatory`
     No
 
- - :Property:    method
+method
+~~~~~~
 :aspect:`Variable type`
     String
 
@@ -46,7 +48,8 @@ Global properties of this ViewHelper
 :aspect:`Mandatory`
     No
 
- - :Property:    name
+name
+~~~~
 :aspect:`Variable type`
     String
 
@@ -59,7 +62,8 @@ Global properties of this ViewHelper
 :aspect:`Mandatory`
     No
 
- - :Property:    onreset
+onreset
+~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -72,7 +76,8 @@ Global properties of this ViewHelper
 :aspect:`Mandatory`
     No
 
- - :Property:    onsubmit
+onsubmit
+~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -88,7 +93,8 @@ Global properties of this ViewHelper
 Exclusive properties of this ViewHelper
 #######################################
 
- - :Property:    action
+action
+~~~~~~
 :aspect:`Variable type`
     String
 
@@ -101,7 +107,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    arguments
+arguments
+~~~~~~~~~
 :aspect:`Variable type`
     Array
 
@@ -114,7 +121,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    controller
+controller
+~~~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -127,7 +135,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    extensionName
+extensionName
+~~~~~~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -141,7 +150,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    pluginName
+pluginName
+~~~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -154,7 +164,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    pageUid
+pageUid
+~~~~~~~
 :aspect:`Variable type`
     Integer
 
@@ -167,7 +178,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    object
+object
+~~~~~~
 :aspect:`Variable type`
     Mixed
 
@@ -180,7 +192,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    pageType
+pageType
+~~~~~~~~
 :aspect:`Variable type`
     Integer
 
@@ -194,7 +207,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    noCache
+noCache
+~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -207,7 +221,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    noCacheHash
+noCacheHash
+~~~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -220,7 +235,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    section
+section
+~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -234,7 +250,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    format
+format
+~~~~~~
 :aspect:`Variable type`
     String
 
@@ -248,7 +265,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    additionalParams
+additionalParams
+~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Array
 
@@ -262,7 +280,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    absolute
+absolute
+~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -276,7 +295,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    addQueryString
+addQueryString
+~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -290,7 +310,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    argumentsToBeExcludedFromQueryString
+argumentsToBeExcludedFromQueryString
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Array
 
@@ -304,7 +325,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    fieldNamePrefix
+fieldNamePrefix
+~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -318,7 +340,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    actionUri
+actionUri
+~~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -331,7 +354,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     Yes
 
- - :Property:    objectName
+objectName
+~~~~~~~~~~
 :aspect:`Variable type`
     String
 

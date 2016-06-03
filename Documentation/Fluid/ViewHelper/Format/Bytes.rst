@@ -27,7 +27,8 @@ value
 :aspect:`Mandatory`
     No
 
- - :Property:    decimals
+decimals
+~~~~~~~~
 :aspect:`Variable type`
     Integer
 
@@ -40,7 +41,8 @@ value
 :aspect:`Mandatory`
     No
 
- - :Property:    decimalSeparator
+decimalSeparator
+~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -53,7 +55,8 @@ value
 :aspect:`Mandatory`
     No
 
- - :Property:    thousandsSeparator
+thousandsSeparator
+~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     String
 

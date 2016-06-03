@@ -13,7 +13,8 @@ Mit diesem ViewHelper könnt Ihr Zahlen formatieren. Er arbeitet ähnlich dem f:
 Properties
 ----------
 
- - :Property:    decimals
+decimals
+~~~~~~~~
 :aspect:`Variable type`
     Integer
 
@@ -26,7 +27,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    decimalSeparator
+decimalSeparator
+~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -39,7 +41,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    thousandsSeparator
+thousandsSeparator
+~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     String
 

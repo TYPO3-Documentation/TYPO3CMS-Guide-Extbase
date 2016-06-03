@@ -13,7 +13,8 @@ Dieser ViewHelper erstellt einen Link zu einer anderen aufzurufenden Action
 Properties
 ----------
 
- - :Property:    action
+action
+~~~~~~
 :aspect:`Variable type`
     String
 
@@ -26,7 +27,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    arguments
+arguments
+~~~~~~~~~
 :aspect:`Variable type`
     Array
 
@@ -39,7 +41,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    controller
+controller
+~~~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -52,7 +55,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    extensionName
+extensionName
+~~~~~~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -65,7 +69,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    pluginName
+pluginName
+~~~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -78,7 +83,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    pageUid
+pageUid
+~~~~~~~
 :aspect:`Variable type`
     Integer
 
@@ -91,7 +97,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    pageType
+pageType
+~~~~~~~~
 :aspect:`Variable type`
     Integer
 
@@ -104,7 +111,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    noCache
+noCache
+~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -117,7 +125,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    noCacheHash
+noCacheHash
+~~~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -130,7 +139,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    section
+section
+~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -143,7 +153,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    format
+format
+~~~~~~
 :aspect:`Variable type`
     String
 
@@ -156,7 +167,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    linkAccessRestrictedPages
+linkAccessRestrictedPages
+~~~~~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -169,7 +181,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    additionalParams
+additionalParams
+~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Array
 
@@ -182,7 +195,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    absolute
+absolute
+~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -195,7 +209,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    addQueryString
+addQueryString
+~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -208,7 +223,8 @@ Properties
 :aspect:`Mandatory`
     No
 
- - :Property:    argumentsToBeExcludedFromQueryString
+argumentsToBeExcludedFromQueryString
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Array
 

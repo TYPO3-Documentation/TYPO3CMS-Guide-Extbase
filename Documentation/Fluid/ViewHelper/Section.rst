@@ -14,7 +14,8 @@ the same template file.
 Properties
 ---------
 
- - :Property:    name
+name
+~~~~
 :aspect:`Variable type`
     String
 

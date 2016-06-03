@@ -21,7 +21,8 @@ map
 
 :aspect:`Description`
     The key is the name by which the variable is known, where the value reflects the content.
-   :Standard:
+
+:aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes

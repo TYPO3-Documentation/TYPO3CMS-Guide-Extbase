@@ -16,7 +16,8 @@ TS-Objektpfad lib.parseFunc_RTE. Danach sollten Eure Daten wieder wie frisch auf
 Properties
 ----------
 
- - :Property:    parseFuncTSPath
+parseFuncTSPath
+~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     String
 

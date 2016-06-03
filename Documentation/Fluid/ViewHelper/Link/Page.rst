@@ -18,7 +18,8 @@ Properties
 Exclusive properties for the HTML-Element
 #########################################
 
- - :Property:    target
+target
+~~~~~~
 :aspect:`Variable type`
     String
 
@@ -31,7 +32,8 @@ Exclusive properties for the HTML-Element
 :aspect:`Mandatory`
     No
 
- - :Property:    rel
+rel
+~~~
 :aspect:`Variable type`
     String
 
@@ -47,7 +49,8 @@ Exclusive properties for the HTML-Element
 Exclusive properties of this ViewHelper
 #######################################
 
- - :Property:    pageUid
+pageUid
+~~~~~~~
 :aspect:`Variable type`
     Integer|NULL
 
@@ -60,7 +63,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     No
 
- - :Property:    additionalParams
+additionalParams
+~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Array
 
@@ -73,7 +77,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     No
 
- - :Property:    pageType
+pageType
+~~~~~~~~
 :aspect:`Variable type`
     Integer
 
@@ -86,7 +91,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     No
 
- - :Property:    noCache
+noCache
+~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -99,7 +105,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     No
 
- - :Property:    noCacheHash
+noCacheHash
+~~~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -112,7 +119,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     No
 
- - :Property:    section
+section
+~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -125,7 +133,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     No
 
- - :Property:    linkAccessRestrictedPages
+linkAccessRestrictedPages
+~~~~~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -138,7 +147,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     No
 
- - :Property:    absolute
+absolute
+~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -151,7 +161,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     No
 
- - :Property:    addQueryString
+addQueryString
+~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Boolean
 
@@ -164,7 +175,8 @@ Exclusive properties of this ViewHelper
 :aspect:`Mandatory`
     No
 
- - :Property:    argumentsToBeExcludedFromQueryString
+argumentsToBeExcludedFromQueryString
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Array
 
