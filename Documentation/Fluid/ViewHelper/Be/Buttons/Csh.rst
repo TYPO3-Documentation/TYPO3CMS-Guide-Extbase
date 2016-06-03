@@ -50,9 +50,11 @@ Features
    :Standard:    Empty string
    :Mandatory:   No
 
-**Reference to a special case in the “table” property**
 
-There's a special instance in which the “table” property doesn't need to be defined. This is the case then there are 
+Special case
+############
+
+There's a special case in which the “table” property doesn't need to be defined. This is the case then there are 
 form fields in the module, but when there is no 1:1 column in the database. For example, in the Scheduler, which 
 stores its information in a serialized format in a single field, or in the case of a search field, whose value isn't 
 sent to the database. Such fields can be assigned a csh icon through the addition of an entry in ext_tables.php.::
@@ -62,11 +64,13 @@ sent to the database. Such fields can be assigned a csh icon through the additio
    'Path to a language file'
  );
 
+
 Note the reference to the fully-formed module name. This is comprised of the category (e.g. “web”), the 
 upper-camel-cased extension name and the upper-camel-cased module name. In the example of an extension named 
 “sfextbase” and a module named “extbase”, the complete name would be::
 
  web_SfextbaseExtbase
+
 
 Here's an example of how the configuration might appear::
 
@@ -74,6 +78,7 @@ Here's an example of how the configuration might appear::
    '_MOD_web_SfextbaseExtbase',
    'EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_extbase.xlf'
  );
+
 
 The entry for the email address in the XLF file would be as follows::
 
@@ -88,6 +93,7 @@ The entry for the email address in the XLF file would be as follows::
    as well as what you need to note and that you need to add a valid email address in this field.</source>
  </trans-unit>
 
+
 Examples
 ---------
 
@@ -100,6 +106,7 @@ Examples
 
   setup.override.edit_showFieldHelp = text
 
+
 Example: database fields
 ########################
 
@@ -107,12 +114,14 @@ In the majority of TYPO3 tables, the language file key is usually the same as th
 
  <f:be.buttons.csh table="tt_content" field="header" />
 
+
 Example: style attributes
 #########################
 
 ::
 
  <f:be.buttons.csh table="tt_content" field="header" styleAttributes="background-color: red;" />
+
 
 Example: Icons for form fields without a 1:1 database structure
 ###############################################################
