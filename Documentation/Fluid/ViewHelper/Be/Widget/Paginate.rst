@@ -8,75 +8,74 @@
 f:be.widget.paginate
 ====================
 
-Dieser ViewHelper hilft Euch dabei eine große Anzahl an Daten auf mehrere Seiten mit Seitennavigation zu erstellen,
-dabei könnt Ihr selbst fest legen wo sich die Navigation befinden soll und auch wie viele Datensätze pro Seite
-angezeigt werden sollen.
+This ViewHelper allows you to split a large amount of data into chunks across multiple pages, to define the number of 
+records on each page, and to define where and how the navigation between the pages should appear.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    objects
    :Datatype:    QueryResultInterface
-   :Description: Hierbei handelt es sich nicht um die Ergebnisobjekte an sich, sondern um das Objekt aus dem
-                 Repository, dass Daten enthält, die für das Zusammenstellen des SQL-Befehls benötigt werden. Das
-                 SQL-Statementobjekt und SQL-Behle sind hier nicht erlaubt, da Extbase hier nicht weiß wie und wo es
-                 den LIMIT-Befehl einbauen soll.
+   :Description: Not the result objects themselves, but the object from the Repository which contains the data needed 
+                 to reproduce the SQL command. The SQL statement object and the SQL command aren't allowed here, as 
+                 Extbase won't be able to work out how to implement the LIMIT attribute which controls the division of 
+                 the data into paginated results.
    :Standard:
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    as
    :Datatype:    String
-   :Description: Wie soll die Variable heißen, in der die reduzierten Objekte zur Verfügung gestellt werden sollen?
+   :Description: The name of the variable in which the reduced object is made available.
    :Standard:
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    configuration
    :Datatype:    Array
-   :Description: Konfiguration der Seitennavigation
-   :Standard:    Siehe "Konfiguration der Seitennavigation"
-   :Mandatory:   Nein
+   :Description: Configuration of the page navigation
+   :Standard:    See "Configuration of the page navigation"
+   :Mandatory:   No
 
-Konfiguration der Seitennavigation
-----------------------------------
+Configuration of the page navigation
+------------------------------------
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    itemsPerPage
    :Datatype:    QueryResultInterface
-   :Description: Wie viele Objekte sollen pro Seite angezeigt werden?
+   :Description: The number of objects which may be associated with each page in the series.
    :Standard:    10
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    insertAbove
    :Datatype:    Boolean
-   :Description: Seitennavigator oberhalb anzeigen?
+   :Description: Display the page navigation above the results.
    :Standard:    FALSE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    insertBelow
    :Datatype:    Boolean
-   :Description: Seitennavigator unterhalb anzeigen?
+   :Description: Display the page navigation below the results.
    :Standard:    TRUE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    recordsLabel
    :Datatype:    String
-   :Description: Hier könnt Ihr einen eigenen Text einbinden, der den Schriftzug "Datensätze 1 - xy" überschreibt.
-   :Standard:    Leerer String
-   :Mandatory:   Nein
+   :Description: An optional text to replace the standard descriptor “Records 1 - xy”.
+   :Standard:    Empty string
+   :Mandatory:   No
