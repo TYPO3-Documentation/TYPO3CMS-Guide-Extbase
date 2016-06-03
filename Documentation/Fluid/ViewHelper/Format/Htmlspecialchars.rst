@@ -18,9 +18,9 @@ Eigenschaften
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Default value
    :Mandatory,10:   Mandatory
 
@@ -28,25 +28,25 @@ Eigenschaften
    :Datatype:    String
    :Description: Der Text der formatiert werden soll
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    keepQuotes
    :Datatype:    Boolean
    :Description: Sollen einfache und doppelte Anführungszeichen auch formatiert werden
    :Standard:    FALSE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    encoding
    :Datatype:    String
    :Description:
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    doubleEncode
    :Datatype:    Boolean
    :Description: Mit jedem Aufruf diesen ViewHelpers wird ein bereits htmlspecialchared Text immer und immer wieder gehtmlspecialchared. Auf & wird dann &amp; dann &amp;amp;, dann &amp;amp;amp; und so weiter. Um das zu verhindert, kann dieser Parameter auf FALSE gesetzt werden.
    :Standard:    TRUE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
 Beispiel
 --------

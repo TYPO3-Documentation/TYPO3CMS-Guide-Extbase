@@ -16,9 +16,9 @@ Eigenschaften
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Default value
    :Mandatory,10:   Mandatory
 
@@ -26,19 +26,19 @@ Eigenschaften
    :Datatype:    Integer
    :Description: Wie viel Zeichen lang darf der Text inkl. der hinzugefügten Abstandszeichen maximal werden
    :Standard:
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    padString
    :Datatype:    String
    :Description: Welches Zeichen soll als Abstand dienen
    :Standard:    Leerzeichen
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    padType
    :Datatype:    String
    :Description: Wo sollen die Abstandszeichen eingefügt werden. Zur Auswahl steht right, left und both
    :Standard:    right
-   :Mandatory:   Nein
+   :Mandatory:   No
 
 Beispiel zur Funktionsweise
 ---------------------------

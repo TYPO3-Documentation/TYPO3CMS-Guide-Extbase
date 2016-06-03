@@ -16,9 +16,9 @@ Eigenschaften
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Default value
    :Mandatory,10:   Mandatory
 
@@ -26,13 +26,13 @@ Eigenschaften
    :Datatype:    Mixed
    :Description: Entweder ein Objekt vom Typ DateTime oder eine Text/Datum, das in ein DateTime-Objekt konvertiert werden kann. Z.B. 17.01.1979 geht. 17.01.79 geht nicht.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    format
    :Datatype:    String
    :Description: Wie soll das Datum ausgegeben werden? Format-Syntax ist identisch mit PHPs strftime-Funktion (https://secure.php.net/manual/de/function.strftime.php).
    :Standard:    Y-m-d
-   :Mandatory:   Nein
+   :Mandatory:   No
 
 So schön wie das mit den ganzen DateTime-Objekten ist, prüft die Wert bitte ganz genau. Besucht
 Online-Timestamp-Konverter oder gleicht die Wert mit denen in Eurer Datenbank ab. So steht in der Doku z.B. Wenn Ihr

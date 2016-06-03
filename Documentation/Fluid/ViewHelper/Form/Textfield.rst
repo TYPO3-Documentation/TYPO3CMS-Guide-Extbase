@@ -23,9 +23,9 @@ Eigenschaften speziell für diesen ViewHelper
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Default value
    :Mandatory,10:   Mandatory
 
@@ -33,19 +33,19 @@ Eigenschaften speziell für diesen ViewHelper
    :Datatype:    Boolean
    :Description: Wenn aktiviert, dann handelt es sich um ein Pflichtfeld
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    type
    :Datatype:    String
    :Description: Als Alternative gibt es noch email, url
    :Standard:    text
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    placeholder
    :Datatype:    String
    :Description: Ein beliebiger Text, der verschwindet, sobald in dieses Feld reingeklickt wird.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
 Beispiel
 --------

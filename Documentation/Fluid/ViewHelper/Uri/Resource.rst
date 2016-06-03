@@ -14,9 +14,9 @@ Eigenschaften
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Default value
    :Mandatory,10:   Mandatory
 
@@ -25,7 +25,7 @@ Eigenschaften
    :Description: Der Pfad inkl. Dateiname zu der Datei. Die Angabe erfolgt relativ zum Resource-Verzeichnis der
                  aktuellen Extension.
    :Standard:
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
  - :Property:    extensionName
    :Datatype:    String
@@ -33,12 +33,12 @@ Eigenschaften
                  kann hier der entsprechende Extensionname angegeben werden. Auch hier muss die Pfad relativ zum
                  Resourceverzeichnis angegeben werden.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    absolute
    :Datatype:    Boolean
    :Description: Wenn dieser Wert auf TRUE gesetzt wird, wird ein absoluter Pfad zurück geliefert.
    :Standard:    FALSE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
 

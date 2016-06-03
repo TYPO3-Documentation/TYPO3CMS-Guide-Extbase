@@ -16,9 +16,9 @@ Eigenschaften
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Default value
    :Mandatory,10:   Mandatory
 
@@ -26,7 +26,7 @@ Eigenschaften
    :Datatype:    String
    :Description: Der Text aus dem die HTML-Tags entfernt werden sollen
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
 Beispiel
 --------

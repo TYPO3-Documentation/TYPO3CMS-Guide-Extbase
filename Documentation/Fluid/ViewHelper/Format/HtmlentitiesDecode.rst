@@ -16,9 +16,9 @@ Eigenschaften
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Default value
    :Mandatory,10:   Mandatory
 
@@ -26,19 +26,19 @@ Eigenschaften
    :Datatype:    String
    :Description: Der Text der dekodiert werden soll
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    keepQuotes
    :Datatype:    Boolean
    :Description: Sollen einfache und doppelte Anführungsstriche auch dekodiert werden?
    :Standard:    FALSE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
  - :Property:    encoding
    :Datatype:    String
    :Description: Wir sind hier im Bereich TYPO3 und da sollte der Zeichensatz auf UTF-8 und nix anderes stehen. Sollte wiedererwartend ein anderer Zeichensatz gewünscht sein, kann dieser hier angegeben werden. Siehe auch Info auf php.net.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
 Beispiel
 --------

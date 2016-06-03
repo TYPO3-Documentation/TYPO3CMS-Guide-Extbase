@@ -30,7 +30,7 @@ Properties
    :Datatype:    String
    :Description: The string to be wrapped with CDATA tags.
    :Standard:    NULL
-   :Mandatory:   Nein
+   :Mandatory:   No
 
 Examples
 --------

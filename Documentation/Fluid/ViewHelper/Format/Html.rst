@@ -19,9 +19,9 @@ Eigenschaften
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Default value
    :Mandatory,10:   Mandatory
 
@@ -29,7 +29,7 @@ Eigenschaften
    :Datatype:    String
    :Description: Formatiere einen Text anhand der TS-Konfiguration, die sich hinter dem angegebenen TS-Objektpfad befindet
    :Standard:    lib.parseFunc_RTE
-   :Mandatory:   Nein
+   :Mandatory:   No
 
 Beispiel
 --------
