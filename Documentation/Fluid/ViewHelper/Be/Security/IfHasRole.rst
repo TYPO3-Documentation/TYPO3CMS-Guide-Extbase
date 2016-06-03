@@ -8,48 +8,51 @@
 f:be.security.ifHasRole
 =======================
 
-Dieser ViewHelper prüft, ob ein im Backend angemeldeter User der im Parameter role angegebenen Benutzergruppe angehört.
-Wie schon bei dem f:if-ViewHelper wird bei Gültigkeit der Inhalt zwischen den Tags oder, wenn vorhanden, der Inhalt aus
-dem f:then-ViewHelper angezeigt. Falls gewünscht, kann auch der f:else-ViewHelper angegeben werden, der immer dann
-angezeigt werden soll, falls der User nicht der angegebenen Benutzergruppe angehört.
+This ViewHelper checks to see whether a logged-in backend user has been assigned the indicated role, through use of a 
+user group. The general use is the same as with the `f:if` ViewHelper: if the check is true, then the code within the 
+subsidiary `f:then` ViewHelper will be parsed. If not, then the content of the optional `f:else` ViewHelper will be 
+parsed.
 
-Eigenschaften
--------------
+Properties
+----------
 
 .. t3-field-list-table::
  :header-rows: 1
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
+ - :Property,20:    Property
+   :Datatype,20:    Variable type
+   :Description,40: Description
    :Standard,10:    Standard
    :Mandatory,10:   Mandatory
 
  - :Property:    role
    :Datatype:    String
-   :Description: Entweder der Gruppenname (Groß- und Kleinschreibung beachten) oder die Gruppen-UID
+   :Description: Either the (case-sensitive) user group name or (preferentially) the user group UID.
    :Standard:    NULL
-   :Mandatory:   Ja
+   :Mandatory:   Yes
 
-Beispiel WENN->DANN->SONST
---------------------------
+Examples
+--------
+
+IF->THEN->ELSE
+~~~~~~~~~~~~~~
 
 ::
 
  <f:be.security.ifHasRole role="Administrator">
    <f:then>
-     Sie dürfen diese Daten ändern
+     You have permission to edit this content.
    </f:then>
    <f:else>
-     Du nix Admin
+     Only backend users with administration rights may edit this content.
    </f:else>
  </f:be.security.ifHasRole>
 
-Beispiel, wenn angemeldet
--------------------------
+Status-dependent content
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
  <f:be.security.ifHasRole role="2">
-   Willkommen in der Gruppe der BE-Administratoren
+   Welcome, Administrator.
  </f:be.security.ifHasRole>

@@ -8,37 +8,41 @@
 f:be.security.ifAuthenticated
 =============================
 
-Dieser ViewHelper prüft, ob ein Backenduser sich authentifiziert hat oder nicht. Je nach dem wird der Inhalt aus dem
-f:then oder f:else-ViewHelper geladen.
+This ViewHelper checks to see whether the current page visitor (backend user) is authenticated or not. According to the 
+result of the check, the content of the subsidiary `f:then` or `f:else` ViewHelper will be parsed.
 
-Dieser ViewHelper wird überwiegend aus dem Frontend heraus benötigt. So könnt Ihr bestimmen, welche Inhalte nur
-angezeigt werden, wenn ein User im BE angemeldet ist.Ich denke Frontend-Bearbeitung wäre eine gute Anlaufstelle für
-diesen ViewHelper.
+This feature is predominantly used in the front end of the website: you can check whether the website visitor is 
+currently authenticated as a backend user. A good example of a possible use case is for a front end editing tool, which 
+should only be made available to a validated, logged-in backend user.
 
-Eigenschaften
+Properties
 -------------
 
-Dieser ViewHelper besitzt keine Eigenschaften
+This ViewHelper doesn't accept any properties.
 
-Beispiel WENN->DANN->SONST
---------------------------
+Examples
+--------
+
+IF->THEN->ELSE
+~~~~~~~~~~~~~~
 
 ::
 
  <f:be.security.ifAuthenticated>
    <f:then>
-     Sie haben das Recht diesen Inhalt zu bearbeiten
+     You have permission to edit this content.
    </f:then>
    <f:else>
-     Sie muessen sich zuvor anmelden
+     You must log in if you want to edit this content.
    </f:else>
  </f:be.security.ifAuthenticated>
 
-Beispiel, wenn angemeldet
--------------------------
+
+Status-dependent content
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
  <f:be.security.ifAuthenticated>
-   Hier kommt der Inhalt hin, den nur angemeldete Backend-Benutzer sehen.
+   You are seeing this message because you are logged in as a backend user.
  </f:be.security.ifAuthenticated>
