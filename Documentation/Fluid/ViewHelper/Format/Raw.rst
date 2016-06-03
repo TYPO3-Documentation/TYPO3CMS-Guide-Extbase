@@ -20,7 +20,7 @@ Eigenschaften
  - :Property,20:    Eigenschaft
    :Datatype,20:    Datentyp
    :Description,40: Beschreibung
-   :Standard,10:    Standard
+   :Standard,10:    Default value
    :Mandatory,10:   Mandatory
 
  - :Property:    value

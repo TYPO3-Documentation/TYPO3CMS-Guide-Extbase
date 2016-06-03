@@ -20,7 +20,7 @@ Details
  - :Property,20:    Property
    :Datatype,20:    Variable type
    :Description,40: Description
-   :Standard,10:    Standard
+   :Standard,10:    Default value
    :Mandatory,10:   Mandatory
 
  - :Property:    map

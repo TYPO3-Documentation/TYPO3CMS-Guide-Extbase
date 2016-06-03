@@ -29,7 +29,7 @@ Eigenschaften speziell für das HTML-Element
  - :Property,20:    Eigenschaft
    :Datatype,20:    Datentyp
    :Description,40: Beschreibung
-   :Standard,10:    Standard
+   :Standard,10:    Default value
    :Mandatory,10:   Mandatory
 
  - :Property:    name
@@ -65,7 +65,7 @@ Eigenschaften speziell für diesen ViewHelper
  - :Property,20:    Eigenschaft
    :Datatype,20:    Datentyp
    :Description,40: Beschreibung
-   :Standard,10:    Standard
+   :Standard,10:    Default value
    :Mandatory,10:   Mandatory
 
  - :Property:    uri
