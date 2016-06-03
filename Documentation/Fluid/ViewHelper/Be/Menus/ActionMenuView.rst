@@ -29,12 +29,13 @@ Properties
    :Standard:    NULL
    :Mandatory:   Yes
 
-
 Example
 -------
 
 The following menu contains a Select element with two menu entries. Further details of the ActionMenuItem ViewHelper 
 are in its own documentation.
+
+::
 
  <f:be.menus.actionMenu>
    <f:be.menus.actionMenuItem label="New" controller="Fluid" action="new" />

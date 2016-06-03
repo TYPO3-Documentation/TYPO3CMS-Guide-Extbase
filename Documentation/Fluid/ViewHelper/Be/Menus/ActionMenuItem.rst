@@ -11,7 +11,6 @@ f:be.menus.actionMenuItem
 You can use this ViewHelper to create a menu entry for your backend module. For this to work, the call to this 
 ViewHelper must be placed within a `f:be.menus.actionMenu` ViewHelper.
 
-
 Properties
 ----------
 
@@ -49,7 +48,7 @@ Properties
    :Mandatory:   Yes
 
 Example
---------
+-------
 
 The following menu contains a Select element with two menu entries. Selecting an entry calls the indicated Action within 
 the indicated Controller. As you can see, you can either define the menu entry label directly, or (better) through the 
