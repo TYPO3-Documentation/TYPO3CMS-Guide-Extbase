@@ -25,8 +25,7 @@ pageTitle
     String
 
 :aspect:`Description`
-    Backend modules are loaded in an HTML frame, so it's not essential to define an HTML page title. If you want to, 
-    then this is the property to use.
+    Backend modules are loaded in an HTML frame, so it's not essential to define an HTML page title. If you want to, then this is the property to use.
 
 :aspect:`Default value`
      Empty string
@@ -209,8 +208,7 @@ includeCssFiles
     Array
 
 :aspect:`Description`
-    Using addCssFile will only allow you to bind in a single CSS asset file. Using includeCssFiles allows 
-                 you to bind multiple files.
+    Using addCssFile will only allow you to bind in a single CSS asset file. Using includeCssFiles allows you to bind multiple files.
 
 :aspect:`Default value`
      NULL
@@ -224,8 +222,7 @@ includeJsFiles
     Array
 
 :aspect:`Description`
-    Using addJsFile will only allow you to bind in a single JavaScript asset file. Using includeCssFiles 
-                 allows you to bind multiple files.
+    Using addJsFile will only allow you to bind in a single JavaScript asset file. Using includeCssFiles allows you to bind multiple files.
 
 :aspect:`Default value`
      NULL
@@ -239,8 +236,7 @@ addJsInlineLabels
     Array
 
 :aspect:`Description`
-    Each value must correspond to a key from the locallang.xml/xlf file. The matching translation will then 
-                 be available in the backend.
+    Each value must correspond to a key from the locallang.xml/xlf file. The matching translation will then be available in the backend.
 
 :aspect:`Default value`
      NULL
