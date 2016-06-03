@@ -3,34 +3,48 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-Globale Eigenschaften für Formularelemente
-##########################################
+Global properties for form elements
+###################################
 
-.. t3-field-list-table::
- :header-rows: 1
+name
+~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    The name of the form element
 
- - :Property:    name
-   :Datatype:    String
-   :Description: Der Name für das Formularelement
-   :Standard:
-   :Mandatory:   Nein
+:aspect:`Default value`
+    
 
- - :Property:    value
-   :Datatype:    String
-   :Description: Der Wert, der mit dem Abschicken des Formular übertragen werden soll
-   :Standard:
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    No
 
- - :Property:    property
-   :Datatype:    String
-   :Description: Anstatt mit name und value zu arbeiten, kann das Formularfeld mit einer Eigenschaft eines im f:form
-                 angegebenen Objektes verknüpft werden. Die Attribute name und value werden dann automatisch
-                 generiert.
-   :Standard:
-   :Mandatory:   Nein
+value
+~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The value which should be send when transmitting the form.
+
+:aspect:`Default value`
+    
+    
+:aspect:`Mandatory`
+    No
+
+property
+~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    As an alternative to working with a field name and field value, the field can be provided with a property in the 
+    format of an `f:form` object. The “name” and ”value” properties are then set automatically.
+
+:aspect:`Default value`
+    
+    
+:aspect:`Mandatory`
+    No
