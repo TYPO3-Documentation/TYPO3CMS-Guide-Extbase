@@ -14,41 +14,64 @@ TYPO3 uses this functionality all over the backend, and it is noticeable by the 
 over the element reveals help text in a small tooltip, whilst clicking on the element displays the help text in a popup 
 window. A user configuration setting is available, to allow or disallow the popup window.
 
-Features
---------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+table
+~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Property
-   :Datatype,20:    Variable type
-   :Description,40: Description
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Database table name.
 
- - :Property:    table
-   :Datatype:    String
-   :Description: Database table name.
-   :Standard:    NULL
-   :Mandatory:   No
+:aspect:`Standard`
+     NULL
 
- - :Property:    field
-   :Datatype:    String
-   :Description: The key from the locallang file.
-   :Standard:    Empty string
-   :Mandatory:   No
+:aspect:`Required`
+     No
 
- - :Property:    iconOnly
-   :Datatype:    Boolean
-   :Description: Display the icon, but not the text.
-   :Standard:    FALSE
-   :Mandatory:   No
+field
+~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property:    styleAttributes
-   :Datatype:    String
-   :Description: Additional style attribute to be added to the containing table.
-   :Standard:    Empty string
-   :Mandatory:   No
+:aspect:`Description`
+    The key from the locallang file.
+
+:aspect:`Standard`
+     Empty string
+
+:aspect:`Required`
+     No
+
+iconOnly
+~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Display the icon, but not the text.
+
+:aspect:`Standard`
+     FALSE
+
+:aspect:`Required`
+     No
+
+styleAttributes
+~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Additional style attribute to be added to the containing table.
+
+:aspect:`Standard`
+     Empty string
+
+:aspect:`Required`
+     No
 
 
 Special case
