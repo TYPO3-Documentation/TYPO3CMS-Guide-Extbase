@@ -20,13 +20,15 @@ defaultController
     String
 
 :aspect:`Description`
-    Provide the name of the Controller to be used in the event that the Controller name isn't provided in the individual ActionMenuItem ViewHelper. As the Controller parameter is required for the ActionMenuItem ViewHelper anyway, you're better off not setting this property in this ViewHelper.
+    Provide the name of the Controller to be used in the event that the Controller name isn't provided in the 
+    individual ActionMenuItem ViewHelper. As the Controller parameter is required for the ActionMenuItem ViewHelper 
+    anyway, you're better off not setting this property in this ViewHelper.
 
 :aspect:`Default value`
-     NULL
+    NULL
 
 :aspect:`Required`
-     Yes
+    Yes
 
 Example
 -------

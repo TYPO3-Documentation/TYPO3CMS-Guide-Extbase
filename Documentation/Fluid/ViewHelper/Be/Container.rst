@@ -25,13 +25,14 @@ pageTitle
     String
 
 :aspect:`Description`
-    Backend modules are loaded in an HTML frame, so it's not essential to define an HTML page title. If you want to, then this is the property to use.
+    Backend modules are loaded in an HTML frame, so it's not essential to define an HTML page title. If you want to, 
+    then this is the property to use.
 
 :aspect:`Default value`
-     Empty string
+    Empty string
 
 :aspect:`Required`
-     No
+    No
 
 enableJumpToUrl
 ~~~~~~~~~~~~~~~
@@ -39,14 +40,13 @@ enableJumpToUrl
     Boolean
 
 :aspect:`Description`
-    Activate this parameter if you want to use the ActionMenu ViewHelper. This loads the necessary 
-                 JavaScript assets.
+    Activate this parameter if you want to use the ActionMenu ViewHelper. This loads the necessary JavaScript assets.
 
 :aspect:`Default value`
-     TRUE
+    TRUE
 
 :aspect:`Required`
-     No
+    No
 
 enableClickMenu
 ~~~~~~~~~~~~~~~
@@ -57,10 +57,10 @@ enableClickMenu
     When active, this property loads the JavaScript for context menu functionality.
 
 :aspect:`Default value`
-     TRUE
+    TRUE
 
 :aspect:`Required`
-     No
+    No
 
 loadPrototype
 ~~~~~~~~~~~~~
@@ -71,10 +71,10 @@ loadPrototype
     When active, the Prototype JS framework will be loaded.
 
 :aspect:`Default value`
-     TRUE
+    TRUE
 
 :aspect:`Required`
-     No
+    No
 
 loadScriptaculous
 ~~~~~~~~~~~~~~~~~
@@ -85,10 +85,10 @@ loadScriptaculous
     When active, the Scriptaculous extension to Prototype JS will be loaded.
 
 :aspect:`Default value`
-     FALSE
+    FALSE
 
 :aspect:`Required`
-     No
+    No
 
 scriptaculousModule
 ~~~~~~~~~~~~~~~~~~~
@@ -99,10 +99,10 @@ scriptaculousModule
     Using this option, you can load additional JavaScript modules for Scriptaculous.
 
 :aspect:`Default value`
-     Empty string
+    Empty string
 
 :aspect:`Required`
-     No
+    No
 
 loadExtJs
 ~~~~~~~~~
@@ -113,10 +113,10 @@ loadExtJs
     When active, the ExtJS framework will be loaded.
 
 :aspect:`Default value`
-     FALSE
+    FALSE
 
 :aspect:`Required`
-     No
+    No
 
 loadExtJsTheme
 ~~~~~~~~~~~~~~
@@ -127,10 +127,10 @@ loadExtJsTheme
     When active, templates for the graphical elements of the ExtJs framework will be loaded.
 
 :aspect:`Default value`
-     TRUE
+    TRUE
 
 :aspect:`Required`
-     No
+    No
 
 extJsAdapter
 ~~~~~~~~~~~~
@@ -141,10 +141,10 @@ extJsAdapter
     You can use this property to define a different adaptor instead of the standard, Extbase.
 
 :aspect:`Default value`
-     Empty string
+    Empty string
 
 :aspect:`Required`
-     No
+    No
 
 enableExtJsDebug
 ~~~~~~~~~~~~~~~~
@@ -155,10 +155,10 @@ enableExtJsDebug
     This property should only be activated during a development process involving ExtJS.
 
 :aspect:`Default value`
-     FALSE
+    FALSE
 
 :aspect:`Required`
-     No
+    No
 
 addCssFile
 ~~~~~~~~~~
@@ -169,10 +169,10 @@ addCssFile
     Bind a specific CSS asset file to the view.
 
 :aspect:`Default value`
-     NULL
+    NULL
 
 :aspect:`Required`
-     No
+    No
 
 addJsFile
 ~~~~~~~~~
@@ -183,10 +183,10 @@ addJsFile
     Bind a specific JavaScript asset file to the view.
 
 :aspect:`Default value`
-     NULL
+    NULL
 
 :aspect:`Required`
-     No
+    No
 
 loadJQuery
 ~~~~~~~~~~
@@ -197,10 +197,10 @@ loadJQuery
     When active, jQuery will be loaded.
 
 :aspect:`Default value`
-     FALSE
+    FALSE
 
 :aspect:`Required`
-     No
+    No
 
 includeCssFiles
 ~~~~~~~~~~~~~~~
@@ -208,13 +208,14 @@ includeCssFiles
     Array
 
 :aspect:`Description`
-    Using addCssFile will only allow you to bind in a single CSS asset file. Using includeCssFiles allows you to bind multiple files.
+    Using addCssFile will only allow you to bind in a single CSS asset file. Using includeCssFiles allows you to bind 
+    multiple files.
 
 :aspect:`Default value`
-     NULL
+    NULL
 
 :aspect:`Required`
-     No
+    No
 
 includeJsFiles
 ~~~~~~~~~~~~~~
@@ -222,13 +223,14 @@ includeJsFiles
     Array
 
 :aspect:`Description`
-    Using addJsFile will only allow you to bind in a single JavaScript asset file. Using includeCssFiles allows you to bind multiple files.
+    Using addJsFile will only allow you to bind in a single JavaScript asset file. Using includeCssFiles allows you to 
+    bind multiple files.
 
 :aspect:`Default value`
-     NULL
+    NULL
 
 :aspect:`Required`
-     No
+    No
 
 addJsInlineLabels
 ~~~~~~~~~~~~~~~~~
@@ -236,10 +238,11 @@ addJsInlineLabels
     Array
 
 :aspect:`Description`
-    Each value must correspond to a key from the locallang.xml/xlf file. The matching translation will then be available in the backend.
+    Each value must correspond to a key from the locallang.xml/xlf file. The matching translation will then be 
+    available in the backend.
 
 :aspect:`Default value`
-     NULL
+    NULL
 
 :aspect:`Required`
-     No
+    No

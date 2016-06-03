@@ -25,10 +25,10 @@ role
     Either the (case-sensitive) user group name or (preferentially) the user group UID.
 
 :aspect:`Default value`
-     NULL
+    NULL
 
 :aspect:`Required`
-     Yes
+    Yes
 
 Examples
 --------
@@ -40,10 +40,10 @@ IF->THEN->ELSE
 
  <f:be.security.ifHasRole role="Administrator">
    <f:then>
-     You have permission to edit this content.
+    You have permission to edit this content.
    </f:then>
    <f:else>
-     Only backend users with administration rights may edit this content.
+    Only backend users with administration rights may edit this content.
    </f:else>
  </f:be.security.ifHasRole>
 

@@ -23,13 +23,13 @@ table
     String
 
 :aspect:`Description`
-        Database table name.
+    Database table name.
 
 :aspect:`Default value`
-     NULL
+    NULL
 
 :aspect:`Required`
-     No
+    No
 
 field
 ~~~~~
@@ -37,13 +37,13 @@ field
     String
 
 :aspect:`Description`
-        The key from the locallang file.
+    The key from the locallang file.
 
 :aspect:`Default value`
-     Empty string
+    Empty string
 
 :aspect:`Required`
-     No
+    No
 
 iconOnly
 ~~~~~~~~
@@ -51,13 +51,13 @@ iconOnly
     Boolean
 
 :aspect:`Description`
-        Display the icon, but not the text.
+    Display the icon, but not the text.
 
 :aspect:`Default value`
-     FALSE
+    FALSE
 
 :aspect:`Required`
-     No
+    No
 
 styleAttributes
 ~~~~~~~~~~~~~~~
@@ -65,13 +65,13 @@ styleAttributes
     String
 
 :aspect:`Description`
-        Additional style attribute to be added to the containing table.
+    Additional style attribute to be added to the containing table.
 
 :aspect:`Default value`
-     Empty string
+    Empty string
 
 :aspect:`Required`
-     No
+    No
 
 
 Special case

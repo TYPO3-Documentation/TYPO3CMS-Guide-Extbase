@@ -19,13 +19,13 @@ getVars
     Array
 
 :aspect:`Description`
-        If empty, the page UID, module and module arguments to save with the bookmark.
+    If empty, the page UID, module and module arguments to save with the bookmark.
 
 :aspect:`Default value`
-     Empty array
+    Empty array
 
 :aspect:`Required`
-     No
+    No
 
 setVars
 ~~~~~~~
@@ -33,13 +33,13 @@ setVars
     Array
 
 :aspect:`Description`
-        See template::makeShortcutIcon(). Usually not used for Extbase extensions.
+    See template::makeShortcutIcon(). Usually not used for Extbase extensions.
 
 :aspect:`Default value`
-     Empty array
+    Empty array
 
 :aspect:`Required`
-     No
+    No
 
 Example
 -------

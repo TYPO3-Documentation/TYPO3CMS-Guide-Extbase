@@ -20,14 +20,15 @@ objects
     QueryResultInterface
 
 :aspect:`Description`
-    Not the result objects themselves, but the object from the Repository which contains the data needed 
-                 to reproduce the SQL command. The SQL statement object and the SQL command aren't allowed here, as 
-                 Extbase won't be able to work out how to implement the LIMIT attribute which controls the division of 
-                 the data into paginated results.
-   :Default value:
+    Not the result objects themselves, but the object from the Repository which contains the data needed to reproduce 
+    the SQL command. The SQL statement object and the SQL command aren't allowed here, as Extbase won't be able to 
+    work out how to implement the LIMIT attribute which controls the division of the data into paginated results.
+
+:aspect:`Default value`
+
 
 :aspect:`Required`
-     Yes
+    Yes
 
 as
 ~~
@@ -39,7 +40,7 @@ as
    :Default value:
 
 :aspect:`Required`
-     Yes
+    Yes
 
 configuration
 ~~~~~~~~~~~~~
@@ -50,10 +51,10 @@ configuration
     Configuration of the page navigation
 
 :aspect:`Default value`
-     See "Configuration of the page navigation"
+    See "Configuration of the page navigation"
 
 :aspect:`Required`
-     No
+    No
 
 Configuration of the page navigation
 ------------------------------------
@@ -67,10 +68,10 @@ itemsPerPage
     The number of objects which may be associated with each page in the series.
 
 :aspect:`Default value`
-     10
+    10
 
 :aspect:`Required`
-     No
+    No
 
 insertAbove
 ~~~~~~~~~~~
@@ -81,10 +82,10 @@ insertAbove
     Display the page navigation above the results.
 
 :aspect:`Default value`
-     FALSE
+    FALSE
 
 :aspect:`Required`
-     No
+    No
 
 insertBelow
 ~~~~~~~~~~~
@@ -95,10 +96,10 @@ insertBelow
     Display the page navigation below the results.
 
 :aspect:`Default value`
-     TRUE
+    TRUE
 
 :aspect:`Required`
-     No
+    No
 
 recordsLabel
 ~~~~~~~~~~~~
@@ -109,7 +110,7 @@ recordsLabel
     An optional text to replace the standard descriptor “Records 1 - xy”.
 
 :aspect:`Default value`
-     Empty string
+    Empty string
 
 :aspect:`Required`
-     No
+    No

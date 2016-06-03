@@ -30,10 +30,10 @@ IF->THEN->ELSE
 
  <f:be.security.ifAuthenticated>
    <f:then>
-     You have permission to edit this content.
+    You have permission to edit this content.
    </f:then>
    <f:else>
-     You must log in if you want to edit this content.
+    You must log in if you want to edit this content.
    </f:else>
  </f:be.security.ifAuthenticated>
 

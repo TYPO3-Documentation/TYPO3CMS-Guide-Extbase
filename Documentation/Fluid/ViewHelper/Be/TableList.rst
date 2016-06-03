@@ -8,8 +8,7 @@
 f:be.tableList
 ==============
 
-A very useful ViewHelper. We can use the familiar view from the Web->List module and configure it for our own 
-purposes.
+A very useful ViewHelper. We can use the familiar view from the Web->List module and configure it for our own purposes.
 
 Properties
 ----------
@@ -23,10 +22,10 @@ tableName
     The name of the table.
 
 :aspect:`Default value`
-     NULL
+    NULL
 
 :aspect:`Required`
-     Yes
+    Yes
 
 storagePid
 ~~~~~~~~~~
@@ -34,14 +33,14 @@ storagePid
     Integer
 
 :aspect:`Description`
-    The ID of the page containing the data to be displayed. If this value is not defined, then the records 
-                 from the page with the ID set as persistence.storagePid will be displayed.
+    The ID of the page containing the data to be displayed. If this value is not defined, then the records from the 
+    page with the ID set as persistence.storagePid will be displayed.
 
 :aspect:`Default value`
-     NULL
+    NULL
 
 :aspect:`Required`
-     Yes
+    Yes
 
 levels
 ~~~~~~
@@ -49,14 +48,14 @@ levels
     Integer
 
 :aspect:`Description`
-    If the page with the ID defined in the storagePid property contains subpages, this property defines the 
-                 nesting level from which records should be collated.
+    If the page with the ID defined in the storagePid property contains subpages, this property defines the nesting 
+    level from which records should be collated.
 
 :aspect:`Default value`
-     0
+    0
 
 :aspect:`Required`
-     Yes
+    Yes
 
 filter
 ~~~~~~
@@ -67,10 +66,10 @@ filter
     Provide a search term by which the records should be filtered.
 
 :aspect:`Default value`
-     Leerer String
+    Leerer String
 
 :aspect:`Required`
-     Yes
+    Yes
 
 recordsPerPage
 ~~~~~~~~~~~~~~
@@ -81,10 +80,10 @@ recordsPerPage
     The maximum number off records which may be displayed on a single page view.
 
 :aspect:`Default value`
-     0
+    0
 
 :aspect:`Required`
-     Yes
+    Yes
 
 sortField
 ~~~~~~~~~
@@ -95,10 +94,10 @@ sortField
     The field by which the applicable records should be sorted.
 
 :aspect:`Default value`
-     Leerer String
+    Leerer String
 
 :aspect:`Required`
-     Yes
+    Yes
 
 sortDescending
 ~~~~~~~~~~~~~~
@@ -109,10 +108,10 @@ sortDescending
     When active, this property defines that the sequence of records should be sorted in reverse order.
 
 :aspect:`Default value`
-     FALSE
+    FALSE
 
 :aspect:`Required`
-     Yes
+    Yes
 
 readOnly
 ~~~~~~~~
@@ -123,10 +122,10 @@ readOnly
     When active, the edit icon will not be displayed alongside the records.
 
 :aspect:`Default value`
-     FALSE
+    FALSE
 
 :aspect:`Required`
-     Yes
+    Yes
 
 enableClickMenu
 ~~~~~~~~~~~~~~~
@@ -137,10 +136,10 @@ enableClickMenu
     When active, the context menu will be activated for the view.
 
 :aspect:`Default value`
-     TRUE
+    TRUE
 
 :aspect:`Required`
-     Yes
+    Yes
 
 clickTitleMode
 ~~~~~~~~~~~~~~
@@ -148,15 +147,15 @@ clickTitleMode
     String
 
 :aspect:`Description`
-    A choice of “edit”, “info” or “show”. The mode “show” only applies to records from the “pages” or 
-                 ”tt_content” types. Under usual circumstances, you need to either work using the content menu or 
-                 an alternative module. Now, clicking on the record title will be sufficient.
+    A choice of “edit”, “info” or “show”. The mode “show” only applies to records from the “pages” or ”tt_content” 
+    types. Under usual circumstances, you need to either work using the content menu or an alternative module. Now, 
+    clicking on the record title will be sufficient.
 
 :aspect:`Default value`
-     NULL
+    NULL
 
 :aspect:`Required`
-     Yes
+    Yes
 
 alternateBackgroundColors
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -167,10 +166,10 @@ alternateBackgroundColors
     When active, the background colour of each table row will be displayed alternately.
 
 :aspect:`Default value`
-     FALSE
+    FALSE
 
 :aspect:`Required`
-     Yes
+    Yes
 
 Minimal example
 ---------------

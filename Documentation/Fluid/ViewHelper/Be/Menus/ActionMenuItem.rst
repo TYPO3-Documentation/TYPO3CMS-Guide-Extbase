@@ -23,10 +23,10 @@ label
     The name to display in the menu
 
 :aspect:`Default value`
-     NULL
+    NULL
 
 :aspect:`Required`
-     Yes
+    Yes
 
 controller
 ~~~~~~~~~~
@@ -37,10 +37,10 @@ controller
     The Controller in which the appropriate Action lies.
 
 :aspect:`Default value`
-     NULL
+    NULL
 
 :aspect:`Required`
-     Yes
+    Yes
 
 action
 ~~~~~~
@@ -51,10 +51,10 @@ action
     Which Action should be called when this menu entry is selected.
 
 :aspect:`Default value`
-     NULL
+    NULL
 
 :aspect:`Required`
-     Yes
+    Yes
 
 arguments
 ~~~~~~~~~
@@ -65,10 +65,10 @@ arguments
     Parameters to be passed to the Action.
 
 :aspect:`Default value`
-     Empty array
+    Empty array
 
 :aspect:`Required`
-     Yes
+    Yes
 
 Example
 -------
