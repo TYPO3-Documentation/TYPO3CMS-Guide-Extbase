@@ -74,9 +74,8 @@ Workaround for an invalid Form object
     current or relevant in more up-to-date versions of Fluid/Extbase.
 
 Checkbox handling is a catastrophe in Fluid/Extbase. It took me quite a bit of time to get checkboxes working, because 
-their use requires an empty but available Model if they are to bye bound to an object by means of a property.
+their use requires an empty but available Model if they are to be bound to an object by means of a property.::
 
-::
 No value found for key "Tx_Fluid_ViewHelpers_FormViewHelper->formObject"
 
 In order to get rid of an error message like this one, you'll need to ensure that the object isn't NULL. You'll need to 
@@ -117,6 +116,7 @@ name, in order to ensure that the group is maintained and so that the values are
  <f:form.checkbox name="myExtName[pizza][]" checked="{data.hawaii}" value="Hawaii" />
  <f:form.checkbox name="myExtName[pizza][]" checked="{data.tuna}" value="Tuna" />
 
+
 Example with a property
 -----------------------
 
@@ -126,6 +126,7 @@ in the encompassing `f:form` ViewHelper. Then, your code will look like this.::
  <f:form.checkbox property="pizza" value="Salami" />
  <f:form.checkbox property="pizza" value="Hawaii" />
  <f:form.checkbox property="pizza" value="Tuna" />
+
 
 Somewhat more elegant, I'm sure you'll agree.
 
@@ -152,6 +153,7 @@ The form will then remain as in the former examples.::
  <f:form.checkbox property="colour" value="brown" multiple="1" /> brown<br />
  <f:form.checkbox property="colour" value="blue" multiple="1" /> blue<br />
 
+
 Because you can't save an Array directly to the database, you'll have to convert the values which come from the form to 
 a string. For example, by using the `serialize()` function. The accompanying function `unserialize()` will convert the 
 values back to an Array when reading the values from the database. Each of these functions can be applied in the 
@@ -176,6 +178,7 @@ appropriate “getter” and “setter” functions in your Model. ::
  }
 
 
+
 Add a constructor to the Model, too.::
 
  /**
@@ -192,6 +195,7 @@ Add a constructor to the Model, too.::
    $this->setAccident($accident);
    $this->setColour($colour);
  }
+
 
 Your group will only be converted to a grouped set of multiple checkboxes through the use of this constructor. Take a 
 look at the generated HTML code.::

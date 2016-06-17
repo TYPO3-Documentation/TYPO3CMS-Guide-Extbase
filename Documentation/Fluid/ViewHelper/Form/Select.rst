@@ -86,7 +86,8 @@ optionValueField
 
 :aspect:`Description`
     When the element contains options, then this property allows you to define which of the related records' properties 
-    are used as the option value. (This will be sent to the server.)
+    are used as the option value. (This will be sent to the server.) This property only works when using data related 
+    to an Object.
 
 :aspect:`Default value`
 
@@ -100,7 +101,7 @@ optionLabelField
 
 :aspect:`Description`
     When the element contains options, then this property allows you to define which of the related records' properties 
-    are used as the visible text in the SELECT element.
+    are used as the visible text in the SELECT element. This property only works when using data related to an Object.
 
 :aspect:`Default value`
 
@@ -187,6 +188,7 @@ Examples
 ::
 
  <f:form.select name="myExtName[country]" options="{data.countries}" />
+
 
 or
 
