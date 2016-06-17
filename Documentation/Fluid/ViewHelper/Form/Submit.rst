@@ -8,8 +8,8 @@
 f:form.submit
 =============
 
-Dieser ViewHelper besitzt keine eigenen Parameter. Er bindet eine Schaltfläche ein die nach dem Anklicken das Formular
-absendet und somit die eingegebenen Formulardaten an den Server übermittelt
+This ViewHelper has no unique properties (apart from the standard `value` property). It allows you to add a button to 
+an HMTL form, which submits the form when the website visitor clicks the button.
 
 Properties
 ----------
@@ -18,9 +18,9 @@ Properties
 
 .. include:: ../../UniversalFormFieldAttributes.txt
 
-Beispiel
---------
+Example
+-------
 
 ::
 
- <f:form.submit value="Absenden" />
+ <f:form.submit value="Send" />

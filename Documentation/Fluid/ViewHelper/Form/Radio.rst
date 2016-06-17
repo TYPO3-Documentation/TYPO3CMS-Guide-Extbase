@@ -8,9 +8,9 @@
 f:form.radio
 ============
 
-Mit diesem ViewHelper erstellst Du einen Radiobutton. Normalerweise tauchen diese immer in Gruppen auf und bieten dem
-Besucher an sich für EINE Möglichkeit zu entscheiden. Eine Mehrfachauswahl wie bei den Checkboxen ist hier nicht
-möglich.
+This ViewHelper allows you to create a radio button element for use in an HTML form. Radio button fields are usually 
+used in groups, and only a single radio button in a group may be active at one time. A multiple selection - like the one 
+we see when using checkboxes - isn't possible with radio buttons.
 
 Properties
 ----------
@@ -28,7 +28,7 @@ checked
     Boolean
 
 :aspect:`Description`
-    Wenn aktiviert, dann gilt diese Checkbox als markiert.
+    When active, the radio button field will appear in a checked (active) state.
 
 :aspect:`Default value`
     NULL
@@ -36,7 +36,7 @@ checked
 :aspect:`Mandatory`
     No
 
-Beispiel
+Examples
 --------
 
 ::
@@ -45,7 +45,7 @@ Beispiel
  <f:form.radio name="myExtName[age]" value="11-40" />
  <f:form.radio name="myExtName[age]" value="41-99" />
 
-oder
+or
 
 ::
 

@@ -8,7 +8,7 @@
 f:form.select
 =============
 
-Mit diesem ViewHelper erstellt Ihr eine Selectbox.
+This ViewHelper enables you to create a SELECT element for an HTML form.
 
 Properties
 ----------
@@ -26,8 +26,7 @@ multiple
     String
 
 :aspect:`Description`
-    Wenn aktiviert, dann können mehrere Optionen gleichzeitig gewählt werden. In diesem Falle macht es
-                 Sinn den Wert size auf >=3 zu setzen.
+    When this option is selected, the website visitor can concurrently select more than one option.
 
 :aspect:`Default value`
     NULL
@@ -41,7 +40,7 @@ size
     String
 
 :aspect:`Description`
-    Die Größe der Selectbox. Wie viele Optionen sollen gleichzeitig angezeigt werden?
+    Defines the number of options which are displayed at the same time.
 
 :aspect:`Default value`
     NULL
@@ -55,7 +54,8 @@ disabled
     String
 
 :aspect:`Description`
-    Wenn aktiviert, dann ist die Selectbox beim Laden des Formulars deaktiviert.
+    When this option is selected, the SELECT element is deactivated in the browser, and no options can be selected by 
+    the website visitor.
 
 :aspect:`Default value`
     NULL
@@ -72,7 +72,7 @@ options
     Array
 
 :aspect:`Description`
-    Welche Optionen sollen in der Auswahlliste erscheinen.
+    The options which are to be displayed in the SELECT element.
 
 :aspect:`Default value`
 
@@ -85,7 +85,8 @@ optionValueField
     String
 
 :aspect:`Description`
-    Wenn options Objekte enthält, dann könnt Ihr hier angeben welche Eigenschaft als zu übergebenden Wert verwendet werden soll
+    When the element contains options, then this property allows you to define which of the related records' properties 
+    are used as the option value. (This will be sent to the server.)
 
 :aspect:`Default value`
 
@@ -98,7 +99,8 @@ optionLabelField
     String
 
 :aspect:`Description`
-    Wenn options Objekte enthält, dann könnt Ihr hier angeben welche Eigenschaft als anzuzeigender Titel verwendet werden soll
+    When the element contains options, then this property allows you to define which of the related records' properties 
+    are used as the visible text in the SELECT element.
 
 :aspect:`Default value`
 
@@ -111,7 +113,7 @@ sortByOptionLabel
     Boolean
 
 :aspect:`Description`
-    Soll nach dem anzuzeigenden Titel sortiert werden?
+    Should the list of available options be sorted alphabetically, according to the visible text?
 
 :aspect:`Default value`
     FALSE
@@ -125,7 +127,8 @@ selectAllByDefault
     Boolean
 
 :aspect:`Description`
-    Damit alle Optionen direkt vorausgewählt sind, muss das Attribut multiple und die size größer 1 gesetzt sein.
+    If the `multiple` property is active and the `size` of the field is larger than 1, using this property allows you 
+    to define that all of the available options are selected by default.
 
 :aspect:`Default value`
     FALSE
@@ -139,8 +142,7 @@ errorClass
     String
 
 :aspect:`Description`
-    Eine CSS-Klasse, die gesetzt werden soll, wenn der Validator für dieses Feld einen Fehler
-                 gemeldet hat.
+    A CSS class name which can be assigned when the validator for this field identifies an error.
 
 :aspect:`Default value`
     f3-form-error
@@ -154,7 +156,7 @@ prependOptionLabel
     String
 
 :aspect:`Description`
-    Erzeugt eine weitere Option ganz am Anfang der Auflistung mit dem angegebenen Text.
+    The visible text of an additional option which will be prepended to the list.
 
 :aspect:`Default value`
 
@@ -167,7 +169,7 @@ prependOptionValue
     String
 
 :aspect:`Description`
-    Erzeugt eine weitere Option ganz am Anfang der Auflistung mit dem angegebenen Wert.
+    The value of an additional option which will be prepended to the list.
 
 :aspect:`Default value`
 
@@ -176,21 +178,17 @@ prependOptionValue
 
 .. tip::
 
-   Die Eigenschaften optionValueField und optionLabelField funktionieren nur, wenn es sich bei den Daten für eine
-   Option, um ein Objekt handelt.
+    The properties `optionValueField` and `optionLabelField` only work when using data related to an Object.
 
-.. tip::
 
-   Die Eigenschaften selectAllByDefault klappt nur, wenn auch die Eigenschaft multiple gesetzt ist.
-
-Beispiel
+Examples
 --------
 
 ::
 
  <f:form.select name="myExtName[country]" options="{data.countries}" />
 
-oder
+or
 
 ::
 

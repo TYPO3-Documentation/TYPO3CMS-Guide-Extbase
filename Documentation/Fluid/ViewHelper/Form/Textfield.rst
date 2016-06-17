@@ -8,7 +8,7 @@
 f:form.textfield
 ================
 
-Mit diesem ViewHelper erstellt Ihr ein Textfeld.
+This ViewHelper allows you to create a simple text input field.
 
 Properties
 ----------
@@ -26,7 +26,8 @@ required
     Boolean
 
 :aspect:`Description`
-    Wenn aktiviert, dann handelt es sich um ein Pflichtfeld
+    If this property is used, then the field is marked as being obligatory, so that a third party or browser-embedded 
+    validator can be appropriately implemented.
 
 :aspect:`Default value`
     NULL
@@ -40,7 +41,8 @@ type
     String
 
 :aspect:`Description`
-    Als Alternative gibt es noch email, url
+    The usual type is “text”, but several other types are available under the HTML5 definition. For example, `url`, 
+    `email`, `date`.
 
 :aspect:`Default value`
     text
@@ -54,7 +56,7 @@ placeholder
     String
 
 :aspect:`Description`
-    Ein beliebiger Text, der verschwindet, sobald in dieses Feld reingeklickt wird.
+    A helpful, short piece of text, which disappears when a value is entered to the field.
 
 :aspect:`Default value`
     NULL
@@ -62,15 +64,17 @@ placeholder
 :aspect:`Mandatory`
     No
 
-Beispiel
+Examples
 --------
 
 ::
 
- <f:form.textfield name="myExtName[strasse]" />
+ <f:form.textfield property="address" />
 
-oder
+or
 
 ::
 
- <f:form.textfield property="strasse" />
+ <f:form.textfield name="myExtName[address]" />
+ <f:form.textfield name="myExtName[email]" type="email" required="TRUE" />
+

@@ -8,8 +8,9 @@
 f:form.textarea
 ===============
 
-Mit diesem ViewHelper erstellst Du ein Memofeld. Memofelder könnt Ihr für die Eingabe mehrzeiliger Texte verwenden.
-Gut geeignet z.B. für das Nachrichtenfeld im Kontaktformular.
+This ViewHelper allows you to add a TEXTAREA (text input field) to an HTML form, which allows a website visitor to enter 
+text on multiple lines. For example, this type of field is usually seen in a contact form, where the website visitor 
+can enter the text of his or her message.
 
 Properties
 ----------
@@ -18,15 +19,15 @@ Properties
 
 .. include:: ../../UniversalFormFieldAttributes.txt
 
-Beispiele:
-----------
+Examples
+--------
 
 ::
 
- <f:form.textarea name="myExtName[nachricht]" />
+ <f:form.textarea name="myExtName[message]" />
 
-oder
+or
 
 ::
 
- <f:form.textarea property="nachricht" />
+ <f:form.textarea property="message" />

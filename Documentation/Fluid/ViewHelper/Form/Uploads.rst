@@ -8,7 +8,8 @@
 f:form.uploads
 ==============
 
-Mit diesem ViewHelper erstellst Du ein Uploadfeld, um Dateien an den Server zu senden.
+This ViewHelper allows you to add an HTML file upload field to an HTML form, which allows the website user to upload a 
+file to the web server.
 
 Properties
 ----------
@@ -17,14 +18,14 @@ Properties
 
 .. include:: ../../UniversalFormFieldAttributes.txt
 
-Beispiel
+Examples
 --------
 
 ::
 
  <f:form.upload name="myExtName[image]" />
 
-oder
+or
 
 ::
 

@@ -5,14 +5,10 @@
 
 .. include:: ../../../Includes.txt
 
-**Link for german translation**
-
-http://docs.typo3.org/typo3cms/drafts/github/froemken/ExtbaseGuideDE/Fluid/ViewHelper/Form/Button.html
-
 f:form.button
 =============
 
-Dieser ViewHelper erzeugt einen Button zum Absenden des Formulars.
+This ViewHelper creates a button element in a form, for example the one which allows the form to be submitted.
 
 Properties
 ----------
@@ -30,7 +26,7 @@ type
     String
 
 :aspect:`Description`
-    Gibt den Typ des Buttons an. Mögliche Werte sind: "button", "reset" oder "submit"
+    The type of button to create. Allowed options are "button", "reset" and "submit"
 
 :aspect:`Default value`
     NULL
@@ -38,12 +34,13 @@ type
 :aspect:`Mandatory`
     No
 
-Beispiel
+Examples
 --------
 
 ::
 
  <f:form.button>Send Mail</f:form.button>
+
  
 ::
 
