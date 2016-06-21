@@ -1,4 +1,4 @@
-.. ÄÖÜäöüß 
+.. include:: ../../Includes.txt 
 
 PHP
 ===

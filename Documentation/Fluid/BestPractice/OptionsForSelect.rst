@@ -1,6 +1,3 @@
-
-.. -*- coding: utf-8 -*- ÄÖÜäöüß
-
 .. include:: ../../Includes.txt
 
 Static options for f:form.select
