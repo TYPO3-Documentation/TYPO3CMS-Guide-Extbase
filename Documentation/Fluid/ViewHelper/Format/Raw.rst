@@ -3,10 +3,7 @@
 f:format.raw
 ============
 
-`f:format.raw` seit v1.4. Es gibt viele ViewHelper, die Inhalte vor der Ausgabe durch htmlspecialchars und anderen 
-Methoden und Funktionen schleusen. Dies zu verhindern stellt auf jeden Fall ein Sicherheitsrisiko dar, kann aber mit 
-diesem ViewHelper erreicht werden. Ich denke gerade im Bereich von Formulardaten kann dieser ViewHelper evtl. 
-Verwendung finden.
+By default, variable contents are escaped when emitted within a fluid template. This prevents dangerous HTML/JavaScript ("XSS") within user-specified content. If you are certain that contents of a variable can be shown as-is, you can use the `f:format.raw` ViewHelper.
 
 Properties
 ----------
@@ -17,7 +14,7 @@ value
     Mixed
 
 :aspect:`Description`
-    Der Text, der unangetastet/unverändert ausgegeben werden soll
+    Text that shall not be escaped. Most useful when you reference a variable here.
 
 :aspect:`Default value`
     NULL
@@ -25,9 +22,9 @@ value
 :aspect:`Mandatory`
     No
 
-Beispiel
+Example
 --------
 
 ::
 
- <f:format.raw value="{formData.nachricht}" />
+ <f:format.raw value="{formData.signature}" />
