@@ -3,7 +3,7 @@
 f:comment
 =========
 
-Evrything inside an `f:comment` ViewHelper will be removed. ViewHelpers within an `f:comment` block will not be executed. 
+Everything inside an `f:comment` ViewHelper will be removed. ViewHelpers within an `f:comment` block will not be executed. 
 This ViewHelper is most useful when debugging a website: for example, you can temporarily wrap a `f:for` loop with an 
 `f:comment` ViewHelper to stop it from being executed.
 
