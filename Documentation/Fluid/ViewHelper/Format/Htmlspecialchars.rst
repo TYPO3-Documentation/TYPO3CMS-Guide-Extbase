@@ -5,7 +5,7 @@ f:format.htmlspecialchars
 
 Wenn Ihr mit Userdaten (Formulardaten) arbeitet, dann sollte dieser Inhalt zuallererst durch diesen ViewHelper.
 Denn dieser wandelt alle spitzen Klammern von HTML-Tags in ein nicht mehr interprtierbares Format um. Die HTML-Tags
-können also keinen Schaden mehr verursachen und werden iom FE angezeigt statt verarbeitet.
+können also keinen Schaden mehr verursachen und werden im FE angezeigt statt verarbeitet.
 
 Properties
 ----------
