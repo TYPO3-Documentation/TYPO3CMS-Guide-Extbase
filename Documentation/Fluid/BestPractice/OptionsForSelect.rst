@@ -11,6 +11,7 @@ These two properties, however, present an problem: they only work with objects. 
 array, the following test within the f:form.select ViewHelper will fail:
 
 ::
+
    if (is_object($value)) {
 
 These two properties are only processed within this 'if' statement. We could perhaps build our own mini-domain model 
