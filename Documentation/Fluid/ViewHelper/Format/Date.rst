@@ -14,7 +14,7 @@ date
     Mixed
 
 :aspect:`Description`
-    Entweder ein Objekt vom Typ DateTime oder eine Text/Datum, das in ein DateTime-Objekt konvertiert werden kann. Z.B. 17.01.1979 geht. 17.01.79 geht nicht.
+    Either an object of type DateTime, or a text/date which can be converted to a DateTime object. e.g. 17.01.1979 is acceptable, 17.01.79 isn't.
 
 :aspect:`Default value`
     NULL
@@ -28,7 +28,7 @@ format
     String
 
 :aspect:`Description`
-    Wie soll das Datum ausgegeben werden? Format-Syntax ist identisch mit PHPs strftime-Funktion (https://secure.php.net/manual/de/function.strftime.php).
+    How should the date be output? The format syntax is identical to the strftime function in PHP (https://secure.php.net/manual/en/function.strftime.php).
 
 :aspect:`Default value`
     Y-m-d
@@ -36,34 +36,34 @@ format
 :aspect:`Mandatory`
     No
 
-So schön wie das mit den ganzen DateTime-Objekten ist, prüft die Wert bitte ganz genau. Besucht
-Online-Timestamp-Konverter oder gleicht die Wert mit denen in Eurer Datenbank ab. So steht in der Doku z.B. Wenn Ihr
-einen Timestamp in ein DateTime-Objekt konvertieren wollt, dann fügt einfach ein @-Zeichen vorne an. Ich hoffe ich
-erzähl jetzt nichts Falsches, aber dieser Timestamp wird nach dem RFC2822 konvertiert und das ist Zeitzone 0. In
-Deutschland würden wir dem resultierenden DateTimewert also immer hinterherhinken. Die DateTime-Objekt sollten besser
-nach ISO8601 konvertiert werden. Dann klappts auch mit der richtigen Zeitzone. Ich für meinen Teil hab mir einen
-eigenen ViewHelper geschrieben der sich daran hält und auch Extbase arbeitet intern mit diesem ISO-Format. Siehe:
+Although the process with DateTime objects is pretty good, make sure that the value is checked precisely. You can use 
+online tools like a timestamp convertor, or validate the value by comparison with the value in your database. The 
+documentation cites that if you want to convert a timestamp to a DateTime object, then prefix it with an @ character. 
+I hope that I'm not explaining this incorrectly, but the timestamp will be converted according to RFC2822 in time zone 
+zero (0). In Germany, for example, the resultant DateTime value will always be “behind” (as Germany is in a different 
+time zone). You're better off converting the timestamp using ISO8601, so that the correct time zone is used. For my 
+part, I wrote my own ViewHelper to use this method: Extbase uses this ISO format internally too. See:
 
 ::
 
  DataMapper->mapDateTime()
 
-Zitat: return new DateTime(date('c', $timestamp));
+Excerpt: return new DateTime(date('c', $timestamp));
 
-Warum das in den ViewHelper noch nicht eingeflossen ist, kann ich mir nicht erklären.
+I'm not quite sure why this hasn't been implemented in this ViewHelper.
 
-Beispiel
+Example
 --------
 
 ::
 
  <f:format.date date="17.01.1979" format="d/m/y" />
 
-Beispiel Timestamp
-------------------
+Example using a timestamp
+-------------------------
 
 ::
 
  <f:format.date format="d.m.Y">@1334439765</f:format.date>
 
-Wie schon gesagt: Je nach Land/Kontinent bitte mit Vorsicht zu behandeln.
+As mentioned: take care to take your national/continental time zone into account when using this ViewHelper.
