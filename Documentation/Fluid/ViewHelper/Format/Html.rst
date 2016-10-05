@@ -3,10 +3,10 @@
 f:format.html
 =============
 
-Wenn Ihr ein Modell für die Tabelle tt_content erstellt habt, dann erhaltet Ihr im Frontend die nackten Daten, wie sie
-aus der Datenbank kommen. Damit die Daten wieder so aussehen, wie wenn Ihr sie mit styles.content.get ausgebt, hilft
-Euch dieser ViewHelper weiter. Dieser schnappt sich das Durcheinander und schleift es einmal komplett durch den
-TS-Objektpfad lib.parseFunc_RTE. Danach sollten Eure Daten wieder wie frisch aufbereitet aussehen.
+When you've created a Model for the `tt_content` table, data that you receive for the front end is raw and 
+unformatted: just as it's stored in the database. So that you can parse this data and output it as you would by 
+using `styles.content.get` in TypoScript, you can use this ViewHelper. It takes the unformatted content and runs it 
+through the `lib.parseFunc_RTE` parser, providing you with the formatted output you need.
 
 Properties
 ----------
@@ -17,7 +17,7 @@ parseFuncTSPath
     String
 
 :aspect:`Description`
-    Formatiere einen Text anhand der TS-Konfiguration, die sich hinter dem angegebenen TS-Objektpfad befindet
+    Format a piece of text according to the configuration behind this TypoScript object path.
 
 :aspect:`Default value`
     lib.parseFunc_RTE
@@ -25,15 +25,17 @@ parseFuncTSPath
 :aspect:`Mandatory`
     No
 
-Beispiel
---------
+Example
+-------
 
 ::
 
  <f:format.html>{content.bodytext}</f:format.html>
 
-Beispiel/Trick mit abgeschalteten htmlspecialchars
+Example with an alternative TypoScript object path
 --------------------------------------------------
+
+This specific alternative will format the text in the variable without passing it through `htmlspecialchars`.
 
 ::
 
