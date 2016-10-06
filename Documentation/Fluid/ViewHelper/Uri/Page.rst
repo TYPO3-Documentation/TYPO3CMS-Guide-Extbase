@@ -3,6 +3,14 @@
 f:uri.page
 ==========
 
+Example
+-------
+
+.. code-block:: html
+
+   <f:uri.page pageUid="1" additionalParams="{foo: 'bar'}">page link</f:uri.page>
+
+
 Properties
 ----------
 
