@@ -3,8 +3,7 @@
 f:uri.email
 ===========
 
-Mit diesem ViewHelper erstellt Ihr einen Link auf eine E-Mail-Adresse. Falls Ihr mit TypoScript im Bereich "config"
-Angaben zum Verschlüsseln der E-Mail-Adresse gemacht habt, so werden diese Einstellungen auch hier angewendet.
+With this ViewHelper you can link to an email address. If you enabled the email encryption in TypoScript, it will be recognized here, too.
 
 Properties
 ----------
@@ -15,14 +14,20 @@ email
     String
 
 :aspect:`Description`
-    Die zu verlinkende E-Mail-Adresse
+    The email address to link to
 
 :aspect:`Default value`
 
 :aspect:`Mandatory`
     Yes
 
-Beispiel
+Example
 --------
 
- {f:uri.email(email: 'meine@mailadresse.tld')}
+::
+
+ {f:uri.email(email: 'my@email.tld')}
+ 
+::
+
+  <f:uri.email email="my@email.tld">Email</f:uri.email>
