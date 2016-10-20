@@ -14,3 +14,4 @@ ViewHelper: Link
    Email
    External
    Page
+   Typolink
