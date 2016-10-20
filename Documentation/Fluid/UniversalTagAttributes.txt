@@ -1,3 +1,7 @@
+
+.. _UniversalTagAttributes:
+
+
 Global properties of the HTML element
 #####################################
 
@@ -133,7 +137,7 @@ data
     Array
 
 :aspect:`Description`
-    Adds the "data-*" attribute to the tag. New since TYPO3 7 LTS. 
+    Adds the "data-*" attribute to the tag. New since TYPO3 7 LTS.
     *Example:* `data="{foo:'bar'}"` produces `data-foo="bar"`
 
 :aspect:`Default value`

@@ -1,25 +1,29 @@
 .. include:: ../../../Includes.txt
 
 f:link.typolink
-===========
+===============
 
-Rendert einen Typolink - basierend auf dem Linkwizzard im Backend.
+Render a link using the builtin "Typolink method"
+
 
 Properties
 ----------
 
-.. include:: ../../UniversalTagAttributes.txt
+The UniversalTagAttributes :ref:`UniversalTagAttributes`
+
+Plus:
 
 Exclusive properties for the HTML-Element
 #########################################
 
 target
 ~~~~~~
+
 :aspect:`Variable type`
     String
 
 :aspect:`Description`
-    In welchem Fenster soll der Link geöffnet werden?
+    What Window shall be used to open the link?
 
 :aspect:`Default value`
     NULL
@@ -32,12 +36,15 @@ Exclusive properties of this ViewHelper
 #######################################
 
 parameter
-~~~~~~~
+~~~~~~~~~
+
 :aspect:`Variable type`
     String
 
 :aspect:`Description`
-    Auf welche Seiten-UID soll verlinkt werden. Es wird die Syntax aus dem Backend Linkwizzard (z.B. bei Verlinkungen per RTE) erwartet. Beispiel: 19 _blank
+    UID of the target page to link to.
+    TypoScript-Syntax is expected like `19 _blank`.
+    See :ref:`t3tsref:stdwrap-typolink`
 
 :aspect:`Default value`
     NULL
@@ -45,13 +52,16 @@ parameter
 :aspect:`Mandatory`
     Yes
 
+
 additionalParams
 ~~~~~~~~~~~~~~~~
+
 :aspect:`Variable type`
     String
 
 :aspect:`Description`
-    Fügt weitere Parameter der Zielseite an. Im Gegensatz zu arguments, können hiermit Variablen hinzugefügt werden die nicht mit dem Extensionnamen geprefixed werden.
+    Add more parameters to the link. Opposed to `arguments` these names will not be
+    prefixed with the extension name.
 
 :aspect:`Default value`
     NULL
@@ -59,37 +69,46 @@ additionalParams
 :aspect:`Mandatory`
     No
 
+
 additionalAttributes
-~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
+
 :aspect:`Variable type`
     Array
 
 :aspect:`Description`
-	Fügt zusätzliche Parameter für das "ATag" ein. Das Array wird automatisch in die TypoScript Syntax Param1=Wert Param2=Wert umgewandelt
+   To add attributes to the 'ATag'. The array will automatically be converted to TypoScript syntax Param1=Wert Param2=Wert
 
 :aspect:`Default value`
-    Leeres Array
+    Empty array
 
 :aspect:`Mandatory`
     No
 
 
+.. highlight:: html
 
-Beispiel
---------
+Example
+-------
 
-::
+Fluid::
 
-<f:link.typolink parameter="{link}">Linktext</f:link.typolink>
+   <f:link.typolink parameter="{link}">Linktext</f:link.typolink>
 
-Dabei enthält {link} folgenden Wert "19 _blank - "testtitle with whitespace" &X=y" (wird z.B. im Backend im Linkwizzard verwendet)
+We assume that :html:`{link}` has the string value `19 _blank - "testtitle with whitespace" &X=y`.
+The linkwizzard in the backend for example uses strings like this.
 
-Ausgabe:
+Result::
 
-a href="index.php?id=19&X=y" title="testtitle with whitespace" target="_blank">Linktext</a>
+   <a href="index.php?id=19&X=y" title="testtitle with whitespace" target="_blank">Linktext</a>
 
-Volle Konfiguration
- <f:link.typolink parameter="{link}" target="_blank" class="ico-class" title="some title" additionalParams="&u=b" additionalAttributes="{type:'button'}">Linktext</f:link.typolink>
+Full configuration::
 
-Ausgabe
-a href="index.php?id=19&X=y&u=b" title="some title" target="_blank" class="ico-class" type="button">Linktext</a>
+   <f:link.typolink parameter="{link}" target="_blank" class="ico-class"
+    title="some title" additionalParams="&u=b" additionalAttributes="{type:'button'}"
+    >Linktext</f:link.typolink>
+
+Result::
+
+   <a href="index.php?id=19&X=y&u=b" title="some title" target="_blank"
+   class="ico-class" type="button">Linktext</a>
