@@ -14,13 +14,15 @@ action
     String
 
 :aspect:`Description`
-    Here you set the action name without appending "Action" (if not, current action will be used)
+    Here you set the action name without appending "Action".
+    If not given the *current* action will be used.
 
 :aspect:`Default value`
     NULL
 
 :aspect:`Mandatory`
     No
+
 
 arguments
 ~~~~~~~~~
@@ -28,7 +30,8 @@ arguments
     Array
 
 :aspect:`Description`
-    Additional parameters for the link (will be prefixed with the plugin name)
+    Additional parameters for the link.
+    They will be prefixed with the plugin name.
 
 :aspect:`Default value`
     Empty array
@@ -36,19 +39,22 @@ arguments
 :aspect:`Mandatory`
     No
 
+
 controller
 ~~~~~~~~~~
 :aspect:`Variable type`
     String
 
 :aspect:`Description`
-    Here you can set a controller (if not, current controller will be used)
+    Here you can set a controller. If it's not specified,
+    the current controller will be used.
 
 :aspect:`Default value`
     NULL
 
 :aspect:`Mandatory`
     No
+
 
 extensionName
 ~~~~~~~~~~~~~
@@ -56,13 +62,15 @@ extensionName
     String
 
 :aspect:`Description`
-    Here you can set an extension name (if not, current extension name will be used)
+    Here you can set an extension name.
+    If not given the *current* extension name will be used.
 
 :aspect:`Default value`
     NULL
 
 :aspect:`Mandatory`
     No
+
 
 pluginName
 ~~~~~~~~~~
@@ -70,13 +78,15 @@ pluginName
     String
 
 :aspect:`Description`
-    Here you can set a plugin name (if not, current plugin name will be used)
+    Here you can set a plugin name.
+    If not given the *current* plugin name will be used.
 
 :aspect:`Default value`
     NULL
 
 :aspect:`Mandatory`
     No
+
 
 pageUid
 ~~~~~~~
@@ -84,7 +94,8 @@ pageUid
     Integer
 
 :aspect:`Description`
-    Here you can set a page UID (if not, it will stay on the current page)
+    Here you can set a page UID.
+    If not specified the action will return to the *current* page.
 
 :aspect:`Default value`
     NULL
@@ -92,13 +103,14 @@ pageUid
 :aspect:`Mandatory`
     No
 
+
 pageType
 ~~~~~~~~
 :aspect:`Variable type`
     Integer
 
 :aspect:`Description`
-    Here you can set a page type
+    Here you can set a page type.
 
 :aspect:`Default value`
     0
@@ -106,19 +118,21 @@ pageType
 :aspect:`Mandatory`
     No
 
+
 noCache
 ~~~~~~~
 :aspect:`Variable type`
     Boolean
 
 :aspect:`Description`
-    Sets the ?no_cache=1 parameter
+    Sets the `?no_cache=1` parameter
 
 :aspect:`Default value`
     FALSE
 
 :aspect:`Mandatory`
     No
+
 
 noCacheHash
 ~~~~~~~~~~~
@@ -126,7 +140,7 @@ noCacheHash
     Boolean
 
 :aspect:`Description`
-    If set there is no cHash parameter added to the link
+    If set then the *cHash parameter* will not be added to the link.
 
 :aspect:`Default value`
     FALSE
@@ -134,19 +148,21 @@ noCacheHash
 :aspect:`Mandatory`
     No
 
+
 section
 ~~~~~~~
 :aspect:`Variable type`
     String
 
 :aspect:`Description`
-    Here you can set an anchor to be linked on
+    Here you can set an anchor to be linked to.
 
 :aspect:`Default value`
     Empty string
 
 :aspect:`Mandatory`
     No
+
 
 format
 ~~~~~~
@@ -162,6 +178,7 @@ format
 :aspect:`Mandatory`
     No
 
+
 linkAccessRestrictedPages
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
@@ -176,19 +193,22 @@ linkAccessRestrictedPages
 :aspect:`Mandatory`
     No
 
+
 additionalParams
 ~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Array
 
 :aspect:`Description`
-    Adds parameters to the link. The difference to `arguments` is that these parameters are not prefixed with the plugin name.
+    Adds parameters to the link. The difference to `arguments` is that
+    these parameters are not prefixed with the plugin name.
 
 :aspect:`Default value`
     Empty array
 
 :aspect:`Mandatory`
     No
+
 
 absolute
 ~~~~~~~~
@@ -196,13 +216,14 @@ absolute
     Boolean
 
 :aspect:`Description`
-    If set the link will be absolute (with scheme and domain)
+    If set the link will be absolute including scheme and domain.
 
 :aspect:`Default value`
     FALSE
 
 :aspect:`Mandatory`
     No
+
 
 addQueryString
 ~~~~~~~~~~~~~~
@@ -210,7 +231,7 @@ addQueryString
     Boolean
 
 :aspect:`Description`
-    If set the current parameters of the URL will be adopted to the generated link.
+    If set the current parameters of the URL will be appended to the generated link.
 
 :aspect:`Default value`
     FALSE
@@ -218,13 +239,14 @@ addQueryString
 :aspect:`Mandatory`
     No
 
+
 argumentsToBeExcludedFromQueryString
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     Array
 
 :aspect:`Description`
-    If set and `addQueryString` activated, the given parameters will be removed.
+    If set and `addQueryString` activated, the listed parameters will be removed.
 
 :aspect:`Default value`
     Empty array
@@ -232,9 +254,11 @@ argumentsToBeExcludedFromQueryString
 :aspect:`Mandatory`
     No
 
+
 Example
---------
+-------
 
-::
+.. code-block:: html
 
- {f:uri.action(action: 'show', arguments: '{foo: \'bar\'}')}
+   {f:uri.action(action: 'show', arguments: '{foo: \'bar\'}')}
+
