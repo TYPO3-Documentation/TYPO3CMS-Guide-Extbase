@@ -3,12 +3,11 @@
 f:uri.external
 ==============
 
-Dieser ViewHelper erstellt einen Link zu einer externen Seite.
+This ViewHelper creates a link to an external page
 
 .. tip::
 
-   Wenn Ihr bei uri einen vollständigen Link angebt, also inkl http:// oder ftp://,
-   dann braucht Ihr defaultScheme nicht zu setzen.
+   If you set an absolute URL (e.g. with http:// or ftp://) you don't need to set ``defaultScheme``
 
 Properties
 ----------
@@ -19,7 +18,7 @@ uri
     String
 
 :aspect:`Description`
-    Die URL zu der externen Zielseite
+    URL to the targe page
 
 :aspect:`Default value`
 
@@ -32,7 +31,7 @@ defaultScheme
     String
 
 :aspect:`Description`
-    Hier sind alle gültigen Schemas für Links erlaubt wie z.B. ftp oder https
+    You can set the scheme for this link, e.g. ftp or https
 
 :aspect:`Default value`
     http
@@ -40,7 +39,9 @@ defaultScheme
 :aspect:`Mandatory`
     No
 
-Beispiel
+Example
 --------
 
- {f:uri.external(uri: 'www.example.com')}
+:: 
+
+ {f:uri.external(uri: 'www.example.com', defaultScheme: 'https')}
