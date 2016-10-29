@@ -3,67 +3,167 @@
 f:format.date
 =============
 
-Konvertiert einen Timestamp in einen lesbaren Datumswert.
+This `f:format.date` viewhelper can produce date-time strings in a variety of formats.
 
 Properties
 ----------
 
 date
 ~~~~
-:aspect:`Variable type`
-    Mixed
+:aspect:`Type`
+   `date` either needs to be an object of `DateTime` or a string with the textual
+   representation of a `DateTime` instance that can be converted to a `DateTime` object.
 
 :aspect:`Description`
-    Either an object of type DateTime, or a text/date which can be converted to a DateTime object. e.g. 17.01.1979 is acceptable, 17.01.79 isn't.
+
+   `'17.01.1979'` for example is accepted whereas `'17.01.79'` will not work.
+
+   `date` can as well be a textual relative time description ((means what?)).
+
+   If `date` is `null` the ViewHelper returns an empty string.
+
+   As of TYPO3 CMS 7 `date` defaults to `now` if it is an empty string.
+
+   If `date` is an integer it is considered to be a Unix timestamp that gets converted to a `DateTime` object
+   with the PHP default timezone applied. The timezone is determined by the PHP
+   function :php:`date_default_timezone_get()`. Recommended reading:
+   `PHP: Getting the default timezone <http://php.net/manual/en/function.date-default-timezone-get.php>`__.
 
 :aspect:`Default value`
-    NULL
+   NULL
 
 :aspect:`Mandatory`
-    No
+   No
 
 format
 ~~~~~~
-:aspect:`Variable type`
-    String
+:aspect:`Type`
+   String
 
 :aspect:`Description`
-    How should the date be output? The format syntax is identical to the strftime function in PHP (https://secure.php.net/manual/en/function.strftime.php).
+   `format` is a string that describes the desired form of the produced date-time string.
+   If there is at least one % character in the format string the rules of PHP's `strftime()
+   <https://secure.php.net/manual/en/function.strftime.php>`__ will be used.
+   Otherwise the rules of PHP's `date() function <http://php.net/manual/en/function.date.php>`__
+   will be applied.
+
 
 :aspect:`Default value`
-    Y-m-d
+   The basic default is `'Y-m-d'`
+
+   This can be overridden by setting :php:`$GLOBALS['TYPO3_CONF_VARS']['SYS']['ddmmyy'] = 'Y-m-d';`.
 
 :aspect:`Mandatory`
     No
 
-Although the process with DateTime objects is pretty good, make sure that the value is checked precisely. You can use 
-online tools like a timestamp convertor, or validate the value by comparison with the value in your database. The 
-documentation cites that if you want to convert a timestamp to a DateTime object, then prefix it with an @ character. 
-I hope that I'm not explaining this incorrectly, but the timestamp will be converted according to RFC2822 in time zone 
-zero (0). In Germany, for example, the resultant DateTime value will always be “behind” (as Germany is in a different 
-time zone). You're better off converting the timestamp using ISO8601, so that the correct time zone is used. For my 
-part, I wrote my own ViewHelper to use this method: Extbase uses this ISO format internally too. See:
+base
+~~~~
+:aspect:`Type`
+   `base`must be a `DateTime` object, or a string that can be converted to a `DateTime` object, or
+   an integer Unix timestamp.
 
-::
+:aspect:`Description`
+   As of TYPO3 CMS 7 this ViewHelper uses `base` as :php:`$now` parameter in
+   PHP's `strtotime() function <http://php.net/manual/en/function.strtotime.php>`__.
+   In that case `base` constitutes the start time for calculations of textual relative time descriptions.
 
- DataMapper->mapDateTime()
+:aspect:`Default value`
+   The :php:`now()` equivalent.
 
-Excerpt: return new DateTime(date('c', $timestamp));
+:aspect:`Mandatory`
+    No
 
-I'm not quite sure why this hasn't been implemented in this ViewHelper.
 
-Example
+.. highlight:: html
+
+Examples
 --------
 
+Day Month Year
+~~~~~~~~~~~~~~
+
+Convert `dd.mm.yyyy`to `d/m/y`::
+
+   <f:format.date date="17.01.1979" format="d/m/y" />
+
+Now
+~~~
+
 ::
 
- <f:format.date date="17.01.1979" format="d/m/y" />
+   <f:format.date date="now" format="d/m/y" />
 
-Example using a timestamp
--------------------------
+
+Format Unix timestamps
+~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
- <f:format.date format="d.m.Y">@1334439765</f:format.date>
+   <f:format.date format="d.m.Y">@1334439765</f:format.date>
+   <f:format.date format="d.m.Y">1334439765</f:format.date>
 
-As mentioned: take care to take your national/continental time zone into account when using this ViewHelper.
+
+Format and base defaults
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   <f:format.date>{dateObject}</f:format.date>
+   <f:format.date>now</f:format.date>
+
+
+Hours:minutes
+~~~~~~~~~~~~~
+
+::
+
+   <f:format.date format="H:i">{dateObject}</f:format.date>
+
+
+A year before base time
+~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   <f:format.date format="Y" base="{dateObject}">-1 year</f:format.date>
+   <f:format.date format="Y-m-d" base="2016-06-06">-1 year</f:format.date>
+   <f:format.date format="Y-m-d" base="yesterday">-1 year</f:format.date>
+   <f:format.date format="Y-m-d H:i:s" base="1334439765">-1 year</f:format.date>
+   <f:format.date format="Y-m-d H:i:s" base="@1334439765">-1 year</f:format.date>
+
+
+A more complex textual relative time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   <f:format.date format="d.m.Y - H:i:s">+1 week 2 days 4 hours 2 seconds</f:format.date>
+
+
+Localized time using strftime syntax
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   <f:format.date format="%d. %B %Y">{dateObject}</f:format.date>
+   <f:format.date format="%d. %B %Y">now</f:format.date>
+
+
+Inline notation
+~~~~~~~~~~~~~~~
+
+::
+
+   {f:format.date(date: dateObject)}
+   {f:format.date(date: dateObject format: "%d. %B %Y")}
+   {f:format.date(date: "now" format: "%c")}
+
+
+More inline notation
+~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   {dateObject -> f:format.date()}
+   {dateObject -> f:format.date(format: 'Y-m-d H:i:s')}
+
