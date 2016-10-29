@@ -3,128 +3,167 @@
 f:format.date
 =============
 
-This Format/DateViewHelper produces date-time strings in a variety of formats.
+This `f:format.date` viewhelper can produce date-time strings in a variety of formats.
 
 Properties
 ----------
 
 date
 ~~~~
-:aspect:`Variable type`
-    Mixed
+:aspect:`Type`
+   `date` either needs to be an object of `DateTime` or a string with the textual
+   representation of a `DateTime` instance that can be converted to a `DateTime` object.
 
 :aspect:`Description`
-    A DateTime object or a string this ViewHelper converts to a DateTime object. This date can be a textual relative time description. If date is null, this ViewHelper returns an empty string. If date is an empty string as of TYPO3 CMS 7, this ViewHelper treats date as 'now'. If date is an integer, this ViewHelper interprets the integer as a Unix timestamp, converts it to a DateTime object, then applies the default timezone from the PHP function date_default_timezone_get() (http://php.net/manual/en/function.date-default-timezone-get.php).
+
+   `'17.01.1979'` for example is accepted whereas `'17.01.79'` will not work.
+
+   `date` can as well be a textual relative time description ((means what?)).
+
+   If `date` is `null` the ViewHelper returns an empty string.
+
+   As of TYPO3 CMS 7 `date` defaults to `now` if it is an empty string.
+
+   If `date` is an integer it is considered to be a Unix timestamp that gets converted to a `DateTime` object
+   with the PHP default timezone applied. The timezone is determined by the PHP
+   function :php:`date_default_timezone_get()`. Recommended reading:
+   `PHP: Getting the default timezone <http://php.net/manual/en/function.date-default-timezone-get.php>`__.
 
 :aspect:`Default value`
-    NULL
+   NULL
 
 :aspect:`Mandatory`
-    No
+   No
 
 format
 ~~~~~~
-:aspect:`Variable type`
-    String
+:aspect:`Type`
+   String
 
 :aspect:`Description`
-    The desired form of the produced time string. If there is at least one % character in the format string, this ViewHelper will use the rules of PHP's strftime() function (https://secure.php.net/manual/en/function.strftime.php). Otherwise, this ViewHelper will use the rules of PHP's date() function (http://php.net/manual/en/function.date.php).
+   `format` is a string that describes the desired form of the produced date-time string.
+   If there is at least one % character in the format string the rules of PHP's `strftime()
+   <https://secure.php.net/manual/en/function.strftime.php>`__ will be used.
+   Otherwise the rules of PHP's `date() function <http://php.net/manual/en/function.date.php>`__
+   will be applied.
+
 
 :aspect:`Default value`
-    Firstly the value in $GLOBALS['TYPO3_CONF_VARS']['SYS']['ddmmyy'] or lastly 'Y-m-d'.
+   The basic default is `'Y-m-d'`
+
+   This can be overridden by setting :php:`$GLOBALS['TYPO3_CONF_VARS']['SYS']['ddmmyy'] = 'Y-m-d';`.
 
 :aspect:`Mandatory`
     No
 
 base
 ~~~~
-:aspect:`Variable type`
-    Mixed
+:aspect:`Type`
+   `base`must be a `DateTime` object, or a string that can be converted to a `DateTime` object, or
+   an integer Unix timestamp.
 
 :aspect:`Description`
-    A DateTime object or a string this ViewHelper converts to a DateTime object. This base can be an integer meant to represent a Unix timestamp. As of TYPO3 CMS 7, this ViewHelper uses base as the $now parameter in PHP's strtotime() function (http://php.net/manual/en/function.strtotime.php), where base provides a starting time for calculating textual relative time descriptions.
+   As of TYPO3 CMS 7 this ViewHelper uses `base` as :php:`$now` parameter in
+   PHP's `strtotime() function <http://php.net/manual/en/function.strtotime.php>`__.
+   In that case `base` constitutes the start time for calculations of textual relative time descriptions.
 
 :aspect:`Default value`
-    Now
+   The :php:`now()` equivalent.
 
 :aspect:`Mandatory`
     No
 
+
+.. highlight:: html
+
 Examples
 --------
 
-In these examples, dateObject could also be a string or integer. For instance, try 'now' for dateObject.
+Day Month Year
+~~~~~~~~~~~~~~
 
-Day/month/year produced from day.month.year
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Convert `dd.mm.yyyy`to `d/m/y`::
 
-::
+   <f:format.date date="17.01.1979" format="d/m/y" />
 
- <f:format.date date="17.01.1979" format="d/m/y" />
-
-Unix timestamp into day.month.year
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Now
+~~~
 
 ::
 
- <f:format.date format="d.m.Y">@1334439765</f:format.date>
- <f:format.date format="d.m.Y">1334439765</f:format.date>
+   <f:format.date date="now" format="d/m/y" />
+
+
+Format Unix timestamps
+~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   <f:format.date format="d.m.Y">@1334439765</f:format.date>
+   <f:format.date format="d.m.Y">1334439765</f:format.date>
+
 
 Format and base defaults
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
- <f:format.date>{dateObject}</f:format.date>
- <f:format.date>now</f:format.date>
+   <f:format.date>{dateObject}</f:format.date>
+   <f:format.date>now</f:format.date>
+
 
 Hours:minutes
 ~~~~~~~~~~~~~
 
 ::
 
- <f:format.date format="H:i">{dateObject}</f:format.date>
+   <f:format.date format="H:i">{dateObject}</f:format.date>
 
-A year ago from the base time
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A year before base time
+~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
- <f:format.date format="Y" base="{dateObject}">-1 year</f:format.date>
- <f:format.date format="Y-m-d" base="2016-06-06">-1 year</f:format.date>
- <f:format.date format="Y-m-d" base="yesterday">-1 year</f:format.date>
- <f:format.date format="Y-m-d H:i:s" base="1334439765">-1 year</f:format.date>
- <f:format.date format="Y-m-d H:i:s" base="@1334439765">-1 year</f:format.date>
+   <f:format.date format="Y" base="{dateObject}">-1 year</f:format.date>
+   <f:format.date format="Y-m-d" base="2016-06-06">-1 year</f:format.date>
+   <f:format.date format="Y-m-d" base="yesterday">-1 year</f:format.date>
+   <f:format.date format="Y-m-d H:i:s" base="1334439765">-1 year</f:format.date>
+   <f:format.date format="Y-m-d H:i:s" base="@1334439765">-1 year</f:format.date>
+
 
 A more complex textual relative time
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
- <f:format.date format="d.m.Y - H:i:s">+1 week 2 days 4 hours 2 seconds</f:format.date>
+   <f:format.date format="d.m.Y - H:i:s">+1 week 2 days 4 hours 2 seconds</f:format.date>
+
 
 Localized time using strftime syntax
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
- <f:format.date format="%d. %B %Y">{dateObject}</f:format.date>
- <f:format.date format="%d. %B %Y">now</f:format.date>
+   <f:format.date format="%d. %B %Y">{dateObject}</f:format.date>
+   <f:format.date format="%d. %B %Y">now</f:format.date>
+
 
 Inline notation
 ~~~~~~~~~~~~~~~
 
 ::
 
- {f:format.date(date: dateObject)}
- {f:format.date(date: dateObject format: "%d. %B %Y")}
- {f:format.date(date: "now" format: "%c")}
+   {f:format.date(date: dateObject)}
+   {f:format.date(date: dateObject format: "%d. %B %Y")}
+   {f:format.date(date: "now" format: "%c")}
 
-Another inline notation
-~~~~~~~~~~~~~~~~~~~~~~~
+
+More inline notation
+~~~~~~~~~~~~~~~~~~~~
 
 ::
 
- {dateObject -> f:format.date()}
- {dateObject -> f:format.date(format: 'Y-m-d H:i:s')}
+   {dateObject -> f:format.date()}
+   {dateObject -> f:format.date(format: 'Y-m-d H:i:s')}
 
