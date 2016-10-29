@@ -6,4 +6,4 @@ f:widget.link
 Properties
 ----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`

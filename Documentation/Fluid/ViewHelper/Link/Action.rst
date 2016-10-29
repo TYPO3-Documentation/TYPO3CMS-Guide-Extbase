@@ -8,7 +8,7 @@ Dieser ViewHelper erstellt einen Link zu einer anderen aufzurufenden Action
 Properties
 ----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
 Exclusive properties for the HTML-Element
 #########################################

@@ -9,7 +9,7 @@ Angaben zum Verschlüsseln der E-Mail-Adresse gemacht habt, so werden diese Eins
 Properties
 ----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
 Exclusive properties for the HTML-Element
 #########################################

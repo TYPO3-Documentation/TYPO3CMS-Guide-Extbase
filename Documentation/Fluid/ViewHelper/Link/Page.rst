@@ -8,7 +8,7 @@ Dieser ViewHelper erstellt einen Link zu einer anderen Seiten-UID
 Properties
 ----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
 Exclusive properties for the HTML-Element
 #########################################
@@ -190,7 +190,7 @@ Beispiel
 ::
 
  <f:link.page pageUid="134">Linkname für die Seite 134</f:link.page>
- 
+
  <f:link.page pageUid="134" additionalParams="{L:1}">
  /index.php?id=134&L=1
 
@@ -199,4 +199,4 @@ Beispiel
 
  <f:link.page pageUid="134" additionalParams="{param: '{name: \'test\'}'}">
  /index.php?id=134&param[name]=test
- 
+

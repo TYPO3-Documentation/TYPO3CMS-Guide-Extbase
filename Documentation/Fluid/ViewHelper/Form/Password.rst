@@ -3,15 +3,15 @@
 f:form.password
 ===============
 
-This ViewHelper allows you to create a field in an HTML form, whose content is optically masked by the browser. (e.g. 
+This ViewHelper allows you to create a field in an HTML form, whose content is optically masked by the browser. (e.g.
 the value in the field is replaced by a series of star characters.
 
 Properties
 ----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-.. include:: ../../UniversalFormFieldAttributes.txt
+All the :ref:`universal form field attributes <UniversalFormFieldAttributes>`
 
 Examples
 --------

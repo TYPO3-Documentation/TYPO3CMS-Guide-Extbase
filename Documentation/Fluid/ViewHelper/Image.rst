@@ -3,13 +3,13 @@
 f:image
 =======
 
-The work which was formerly carried out in an extension or in TypoScript is now available as a complete ViewHelper. 
+The work which was formerly carried out in an extension or in TypoScript is now available as a complete ViewHelper.
 You don't have to just compress your images: you can re-size them on the server using PHP's GDlib or using ImageMagick.
 
 Properties
 ----------
 
-.. include:: ../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
 Inline usage example
 --------------------
@@ -20,7 +20,7 @@ Inline usage example
 
 
 Exclusive properties of the HTML tag
-####################################
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 alt
 ~~~
@@ -128,7 +128,7 @@ alt
     string
 
 :aspect:`Description`
-    Specifies an alternate text for an image. If the FAL entry has an alternative text, this will be 
+   Specifies an alternate text for an image. If the FAL entry has an alternative text, this will be
    output automatically.
 
 :aspect:`Default value`
@@ -353,8 +353,8 @@ src
     string
 
 :aspect:`Description`
-    A path to a file, a combined FAL identifier or an UID (int). If `treatIdAsReference` is set, the integer is 
-    considered the uid of the sys_file_reference record. Because we're dealing with an `IMG_RESOURCE`, you can also work 
+    A path to a file, a combined FAL identifier or an UID (int). If `treatIdAsReference` is set, the integer is
+    considered the uid of the sys_file_reference record. Because we're dealing with an `IMG_RESOURCE`, you can also work
     with `EXT:` paths. If you already have a FAL object, consider using the `image` property instead.
 
 :aspect:`Default value`
@@ -439,7 +439,7 @@ width
     string
 
 :aspect:`Description`
-    Width of the image. This can be a numeric value representing the fixed width of the image in pixels. But you can 
+    Width of the image. This can be a numeric value representing the fixed width of the image in pixels. But you can
     also perform simple calculations by adding "m" or "c" to the value. See `imgResource.width` for possible options.
 
 :aspect:`Default value`
@@ -474,6 +474,6 @@ Re-size and crop an image
 
  <f:image src="fileadmin/user_upload/landscape.jpg" alt="Landscape" width="100c" height="100c" />
 
-The shorter side of the image will be set to 100px and the longer side will be cropped to 100px. Cropping takes place 
-from the centre of the image by default. Use 100c-100 to crop from the top (or left), or 100c+100 to crop from the right 
+The shorter side of the image will be set to 100px and the longer side will be cropped to 100px. Cropping takes place
+from the centre of the image by default. Use 100c-100 to crop from the top (or left), or 100c+100 to crop from the right
 (or bottom). In these examples, the value '100' after the 'c' is a percentage value.

@@ -3,15 +3,15 @@
 f:form.uploads
 ==============
 
-This ViewHelper allows you to add an HTML file upload field to an HTML form, which allows the website user to upload a 
+This ViewHelper allows you to add an HTML file upload field to an HTML form, which allows the website user to upload a
 file to the web server.
 
 Properties
 ----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-.. include:: ../../UniversalFormFieldAttributes.txt
+All the :ref:`universal form field attributes <UniversalFormFieldAttributes>`
 
 Examples
 --------

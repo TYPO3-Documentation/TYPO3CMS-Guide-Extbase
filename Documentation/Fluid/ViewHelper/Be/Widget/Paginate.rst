@@ -3,7 +3,7 @@
 f:be.widget.paginate
 ====================
 
-This ViewHelper allows you to split a large amount of data into chunks across multiple pages, to define the number of 
+This ViewHelper allows you to split a large amount of data into chunks across multiple pages, to define the number of
 records on each page, and to define where and how the navigation between the pages should appear.
 
 Properties
@@ -15,8 +15,8 @@ objects
     QueryResultInterface
 
 :aspect:`Description`
-    Not the result objects themselves, but the object from the Repository which contains the data needed to reproduce 
-    the SQL command. The SQL statement object and the SQL command aren't allowed here, as Extbase won't be able to 
+    Not the result objects themselves, but the object from the Repository which contains the data needed to reproduce
+    the SQL command. The SQL statement object and the SQL command aren't allowed here, as Extbase won't be able to
     work out how to implement the LIMIT attribute which controls the division of the data into paginated results.
 
 :aspect:`Default value`
@@ -32,7 +32,6 @@ as
 
 :aspect:`Description`
     The name of the variable in which the reduced object is made available.
-   :Default value:
 
 :aspect:`Required`
     Yes

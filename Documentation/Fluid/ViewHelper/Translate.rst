@@ -3,7 +3,7 @@
 f:translate
 ===========
 
-This ViewHelper connects to a standard translation file - most often locallang.xlf - and provides a defined 
+This ViewHelper connects to a standard translation file - most often locallang.xlf - and provides a defined
 translation for the current language using a “key” parameter.
 
 Properties
@@ -29,7 +29,7 @@ default
     String
 
 :aspect:`Description`
-    If the key canto be matched in the translation file, then use this text instead. If this property isn't 
+   If the key canto be matched in the translation file, then use this text instead. If this property isn't
    defined, then the value between the opening and closing `f:translate` tags will be used.
 
 :aspect:`Default value`
@@ -44,8 +44,8 @@ htmlEscape
     Boolean
 
 :aspect:`Description`
-    Strings from the translation files are usually parsed using the PHP function htmlspecialchars, so any 
-   HTML code in the translation file will be converted to an encoded string. Set the value of this property to FALSE to 
+   Strings from the translation files are usually parsed using the PHP function htmlspecialchars, so any
+   HTML code in the translation file will be converted to an encoded string. Set the value of this property to FALSE to
    disable this behaviour.
 
 :aspect:`Default value`
@@ -60,7 +60,7 @@ arguments
     Array
 
 :aspect:`Description`
-    Placeholders can be set in the strings within the translation file, which will be replaced with the 
+   Placeholders can be set in the strings within the translation file, which will be replaced with the
    content of the array passed in this property.
 
 :aspect:`Default value`
@@ -69,25 +69,23 @@ arguments
 :aspect:`Mandatory`
     Yes
 
-This ViewHelper accesses files in the folder Resources/Private/Language. If you're using FLUIDTEMPLATE, you'll need to 
-use the following path syntax:
+This ViewHelper accesses files in the folder Resources/Private/Language. If you're using FLUIDTEMPLATE, you'll need to
+use the following path syntax::
 
-::
 
- LLL:fileadmin/templates/locallang.xlf:domain_model_whatever.title
 
-…or, in the case of an extension,…
+   LLL:fileadmin/templates/locallang.xlf:domain_model_whatever.title
 
-::
+or, in the case of an extension::
 
- LLL:EXT:myExtension/Resources/Private/Language/locallang.xml:domain_model_whatever.title
+   LLL:EXT:myExtension/Resources/Private/Language/locallang.xml:domain_model_whatever.title
 
-FLUIDTEMPLATE users can make their lives easier by applying the following settings via TypoScript. 
+FLUIDTEMPLATE users can make their lives easier by applying the following settings via TypoScript:
 
-::
+.. code-block:: typoscript
 
- extbase.pluginName = Pi1
- extbase.controllerExtensionName = MyExtension
+   extbase.pluginName = Pi1
+   extbase.controllerExtensionName = MyExtension
 
 Then it's enough to just use the key, without the entire LLL path.
 
@@ -95,48 +93,40 @@ Examples
 --------
 
 Basic
-#####
+~~~~~
 
 ::
 
  <f:translate key="domain_model.title" htmlEscape="false" />
 
 With full file path
-###################
+~~~~~~~~~~~~~~~~~~~
 
 ::
 
  <f:translate key="LLL:fileadmin/lang/locallang.xlf:domain_model.title" />
 
 With placeholders
-#################
+~~~~~~~~~~~~~~~~~
 
-In the template:
-
-::
+In the template::
 
  <f:translate key="LLL:fileadmin/lang/locallang.xml:domain_model.bestfilm" arguments="{0: 'Back to the Future}" />
 
-In locallang.xlf:
+In locallang.xlf::
 
-::
+   <trans-unit id="domain_model.bestfilm" approved="yes">
+      <source>Best film ever: %s</source>
+   </trans-unit>
 
- <trans-unit id="domain_model.bestfilm" approved="yes">
-   <source>Best film ever: %s</source>
- </trans-unit>
+%s will be replaced with the first array entry. If %s is used more than once, then each array entry will be applied
+sequentially. In order to be more specific about which placeholders are replaced by which array values, use the more
+specific placeholder syntax::
 
-%s will be replaced with the first array entry. If %s is used more than once, then each array entry will be applied 
-sequentially. In order to be more specific about which placeholders are replaced by which array values, use the more 
-specific placeholder syntax:
+   <f:translate key="LLL:fileadmin/lang/locallang.xml:domain_model.bestfilm" arguments="{0: 'Back to the Future, 1: '1985'}" />
 
-::
+and::
 
- <f:translate key="LLL:fileadmin/lang/locallang.xml:domain_model.bestfilm" arguments="{0: 'Back to the Future, 1: '1985'}" />
-
-…and…
-
-::
-
- <label index="domain_model.bestfilm">Best film ever: %1$s from %2$s.</label>
+   <label index="domain_model.bestfilm">Best film ever: %1$s from %2$s.</label>
 
 You can find more information about placeholder replacement in sprintf() documentation (e.g. at php.net).

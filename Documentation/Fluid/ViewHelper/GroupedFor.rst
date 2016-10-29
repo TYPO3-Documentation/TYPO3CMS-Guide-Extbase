@@ -57,23 +57,23 @@ groupKey
 Example
 -------
 
-.. code-block:: xhtml
+.. code-block:: html
 
- <f:alias map="{employees: {0: {first_name: 'Stefan', city: 'Lindlar'},1: {first_name: 'Petra', city: 'Lindlar'},2: {first_name: 'Sascha', city: 'Remscheid'},3: {first_name: 'Patrick', city: 'Bonn'},4: {first_name: 'Sven', city: 'Gummersbach'},5: {first_name: 'Andrea', city: 'Wuppertal'}}}">
-   <table cellpadding="5" cellspacing="0" border="2">
-     <f:groupedFor each="{employees}" as="employeesByCity" groupBy="city" groupKey="city">
-       <tr>
-         <th colspan="2">{city}</th>
-       </tr>
-       <f:for each="{employeesByCity}" as="employee">
-         <tr>
-           <td>{employee.first_name}</td>
-           <td>{employee.city}</td>
-         </tr>
-       </f:for>
-     </f:groupedFor>
-   </table>
- </f:alias>
+   <f:alias map="{employees: {0: {first_name: 'Stefan', city: 'Lindlar'},1: {first_name: 'Petra', city: 'Lindlar'},2: {first_name: 'Sascha', city: 'Remscheid'},3: {first_name: 'Patrick', city: 'Bonn'},4: {first_name: 'Sven', city: 'Gummersbach'},5: {first_name: 'Andrea', city: 'Wuppertal'}}}">
+      <table cellpadding="5" cellspacing="0" border="2">
+         <f:groupedFor each="{employees}" as="employeesByCity" groupBy="city" groupKey="city">
+            <tr>
+               <th colspan="2">{city}</th>
+            </tr>
+            <f:for each="{employeesByCity}" as="employee">
+               <tr>
+                  <td>{employee.first_name}</td>
+                  <td>{employee.city}</td>
+               </tr>
+            </f:for>
+         </f:groupedFor>
+      </table>
+   </f:alias>
 
 Here's an example with six employees. As you can see, the `f:groupedFor` ViewHelper groups the employees by city. An
 experienced eye will see that the first employees in the array work in Lindlar.

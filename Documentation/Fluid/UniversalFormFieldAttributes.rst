@@ -1,45 +1,49 @@
+
+
+.. _UniversalFormFieldAttributes:
+
+Universal Form Field Attributes
+===============================
+
 Global properties for form elements
-###################################
+
 
 name
-~~~~
+----
+
 :aspect:`Variable type`
-    String
+   String
 
 :aspect:`Description`
-    The name of the form element
+   The name of the form element
 
-:aspect:`Default value`
-    
 
 :aspect:`Mandatory`
-    No
+   No
 
 value
-~~~~~
+-----
+
 :aspect:`Variable type`
-    String
+   String
 
 :aspect:`Description`
-    The value which should be send when transmitting the form.
+   The value which should be send when transmitting the form.
 
-:aspect:`Default value`
-    
-    
+
 :aspect:`Mandatory`
     No
 
 property
-~~~~~~~~
+--------
+
 :aspect:`Variable type`
     String
 
 :aspect:`Description`
-    As an alternative to working with a field name and field value, the field can be provided with a property in the 
+    As an alternative to working with a field name and field value, the field can be provided with a property in the
     format of an `f:form` object. The â€œnameâ€� and â€�valueâ€� properties are then set automatically.
 
-:aspect:`Default value`
-    
-    
+
 :aspect:`Mandatory`
     No

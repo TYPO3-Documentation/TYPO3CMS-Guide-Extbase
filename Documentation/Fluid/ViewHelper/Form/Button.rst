@@ -8,9 +8,9 @@ This ViewHelper creates a button element in a form, for example the one which al
 Properties
 ----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-.. include:: ../../UniversalFormFieldAttributes.txt
+All the :ref:`universal form field attributes <UniversalFormFieldAttributes>`
 
 Exclusive properties for the HTML-Element
 #########################################
@@ -36,7 +36,7 @@ Examples
 
  <f:form.button>Send Mail</f:form.button>
 
- 
+
 ::
 
  <f:form.button type="reset" name="buttonName" value="buttonValue" disabled="disabled" formmethod="post" formnovalidate="formnovalidate">Cancel</f:form.button>

@@ -9,7 +9,8 @@ Properties
 ----------
 
 currencySign
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+
 :aspect:`Variable type`
     String
 
@@ -23,7 +24,8 @@ currencySign
     No
 
 decimalSeparator
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
+
 :aspect:`Variable type`
     String
 
@@ -37,7 +39,8 @@ decimalSeparator
     No
 
 thousandsSeparator
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+
 :aspect:`Variable type`
     String
 
@@ -51,7 +54,8 @@ thousandsSeparator
     No
 
 prependCurrency
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+
 :aspect:`Variable type`
     Boolean
 
@@ -65,7 +69,8 @@ prependCurrency
     No
 
 separateCurrency
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
+
 :aspect:`Variable type`
     Boolean
 
@@ -79,7 +84,8 @@ separateCurrency
     No
 
 decimals
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+
 :aspect:`Variable type`
     Integer
 
@@ -94,25 +100,26 @@ decimals
 
 Two important pieces of information:
 
-If you pass an empty string to this ViewHelper, it takes 23 milliseconds to return a value. If you pass in 0.00 as a value, 
+If you pass an empty string to this ViewHelper, it takes 23 milliseconds to return a value. If you pass in 0.00 as a value,
 then it'll be finished in 1-2 milliseconds. Take care when working with long lists of values.
 
 This ViewHelper doesn't accept values passed with a comma as a decimal separator. (Common in German and French usage.)
+
 
 Examples
 --------
 
 ::
 
- <f:format.currency currencySign="€" decimalSeparator="." thousandsSeparator="," prependCurrency="true">1122334455.66</f:format.currency>
+   <f:format.currency currencySign="€" decimalSeparator="." thousandsSeparator="," prependCurrency="true">1122334455.66</f:format.currency>
 
 produces: € 1,122,334,455.66
 
 Non-float value
-###############
+~~~~~~~~~~~~~~~
 
 ::
 
- <f:format.currency currencySign="€" decimalSeparator="." thousandsSeparator="," prependCurrency="true">1122334455,66</f:format.currency>
+   <f:format.currency currencySign="€" decimalSeparator="." thousandsSeparator="," prependCurrency="true">1122334455,66</f:format.currency>
 
-produces: € 1,122,334,455.00
+produces: `€ 1,122,334,455.00`

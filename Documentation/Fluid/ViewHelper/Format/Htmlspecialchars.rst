@@ -42,7 +42,6 @@ encoding
 ~~~~~~~~
 :aspect:`Variable type`
     String
-   :Description:
 
 :aspect:`Default value`
     NULL

@@ -8,9 +8,9 @@ This ViewHelper enables you to create a SELECT element for an HTML form.
 Properties
 ----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-.. include:: ../../UniversalFormFieldAttributes.txt
+All the :ref:`universal form field attributes <UniversalFormFieldAttributes>`
 
 Exclusive properties for the HTML-Element
 #########################################
@@ -49,7 +49,7 @@ disabled
     String
 
 :aspect:`Description`
-    When this option is selected, the SELECT element is deactivated in the browser, and no options can be selected by 
+    When this option is selected, the SELECT element is deactivated in the browser, and no options can be selected by
     the website visitor.
 
 :aspect:`Default value`
@@ -80,8 +80,8 @@ optionValueField
     String
 
 :aspect:`Description`
-    When the element contains options, then this property allows you to define which of the related records' properties 
-    are used as the option value. (This will be sent to the server.) This property only works when using data related 
+    When the element contains options, then this property allows you to define which of the related records' properties
+    are used as the option value. (This will be sent to the server.) This property only works when using data related
     to an Object.
 
 :aspect:`Default value`
@@ -95,7 +95,7 @@ optionLabelField
     String
 
 :aspect:`Description`
-    When the element contains options, then this property allows you to define which of the related records' properties 
+    When the element contains options, then this property allows you to define which of the related records' properties
     are used as the visible text in the SELECT element. This property only works when using data related to an Object.
 
 :aspect:`Default value`
@@ -123,7 +123,7 @@ selectAllByDefault
     Boolean
 
 :aspect:`Description`
-    If the `multiple` property is active and the `size` of the field is larger than 1, using this property allows you 
+    If the `multiple` property is active and the `size` of the field is larger than 1, using this property allows you
     to define that all of the available options are selected by default.
 
 :aspect:`Default value`

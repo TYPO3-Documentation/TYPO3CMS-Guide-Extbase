@@ -3,14 +3,14 @@
 f:form
 ======
 
-The `f:form` ViewHelper looks pretty mighty, when you look at how many parameters it takes. But once you realize that 11 
-of them generate the form target page, you'll see that there are only a few others remaining. The big advantages of this 
+The `f:form` ViewHelper looks pretty mighty, when you look at how many parameters it takes. But once you realize that 11
+of them generate the form target page, you'll see that there are only a few others remaining. The big advantages of this
 ViewHelper are security and a lighter workload. We'll take a look at these in the following examples.
 
 Properties
 ----------
 
-.. include:: ../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
 Global properties of this ViewHelper
 ####################################
@@ -136,7 +136,7 @@ extensionName
     String
 
 :aspect:`Description`
-    If the form submission should be handled by a different extension, this property contains the name of 
+    If the form submission should be handled by a different extension, this property contains the name of
                  this extension, without the tx\_ prefix and without underline characters.
 
 :aspect:`Default value`
@@ -193,7 +193,7 @@ pageType
     Integer
 
 :aspect:`Description`
-    Use the pageType property to define a non-standard page type to handle the form submission. For example, 
+    Use the pageType property to define a non-standard page type to handle the form submission. For example,
                  where the form submission takes place via AJAX.
 
 :aspect:`Default value`
@@ -236,7 +236,7 @@ section
     String
 
 :aspect:`Description`
-    Define an anchor on the target page, if the target page contains a large amount of content. The browser 
+    Define an anchor on the target page, if the target page contains a large amount of content. The browser
                  will scroll to the indicated anchor.
 
 :aspect:`Default value`
@@ -251,7 +251,7 @@ format
     String
 
 :aspect:`Description`
-    The required data format to be delivered on the target page - for example, “xml”. This property only takes 
+    The required data format to be delivered on the target page - for example, “xml”. This property only takes
                  effect if 'actionUri' isn't set.
 
 :aspect:`Default value`
@@ -266,7 +266,7 @@ additionalParams
     Array
 
 :aspect:`Description`
-    Additional variables for the target page. Contrary to 'arguments', these variables won't be prefixed 
+    Additional variables for the target page. Contrary to 'arguments', these variables won't be prefixed
                  with the extension name. This property only takes effect if 'actionUri' isn't set.
 
 :aspect:`Default value`
@@ -281,7 +281,7 @@ absolute
     Boolean
 
 :aspect:`Description`
-    Upon activation, the domain name and full page path will be prefixed to the form action. This property 
+    Upon activation, the domain name and full page path will be prefixed to the form action. This property
                  only takes effect if 'actionUri' isn't set.
 
 :aspect:`Default value`
@@ -296,7 +296,7 @@ addQueryString
     Boolean
 
 :aspect:`Description`
-    This property defines whether query parameters on the page containing the form will be passed on to the 
+    This property defines whether query parameters on the page containing the form will be passed on to the
                  target page. This property only takes effect if 'actionUri' isn't set.
 
 :aspect:`Default value`
@@ -311,7 +311,7 @@ argumentsToBeExcludedFromQueryString
     Array
 
 :aspect:`Description`
-    If 'addQueryString' is activated, you can use this property to exclude specific query parameters. This 
+    If 'addQueryString' is activated, you can use this property to exclude specific query parameters. This
                  property only takes effect if 'actionUri' isn't set.
 
 :aspect:`Default value`
@@ -326,7 +326,7 @@ fieldNamePrefix
     String
 
 :aspect:`Description`
-    Use this property if you want to use an alternative string to prefix the form fields. Mainly for use 
+    Use this property if you want to use an alternative string to prefix the form fields. Mainly for use
                  if the form submission is handled by a different extension.
 
 :aspect:`Default value`
@@ -355,7 +355,7 @@ objectName
     String
 
 :aspect:`Description`
-    An object (Model) name, into which the submitted form data will be saved. This allows the data to be 
+    An object (Model) name, into which the submitted form data will be saved. This allows the data to be
                  validated once in the Model, instead of in every individual action method.
 
 :aspect:`Default value`
@@ -388,14 +388,14 @@ Example
    <textarea rows="5" cols="50" name="newFeUser[firstName]"></textarea>
  </form>
 
-If you take a close look at this generated code, you can see the security elements. Fluid builds a hidden section within 
-the form, which contains a few values: amongst them, an '_hmac' value, which contains a reference to all allowed form 
-fields. This means that in the event of a website attack, in which specific fields are added or omitted, Extbase can 
-compare the form data with the _hmac value to see that the form submission is invalid, and stop processing the request 
+If you take a close look at this generated code, you can see the security elements. Fluid builds a hidden section within
+the form, which contains a few values: amongst them, an '_hmac' value, which contains a reference to all allowed form
+fields. This means that in the event of a website attack, in which specific fields are added or omitted, Extbase can
+compare the form data with the _hmac value to see that the form submission is invalid, and stop processing the request
 immediately with an error message.
 
-In the earlier example, we've set the object name “newFeUser”. As you can see, this value is prepended to each field. The 
-advantage of this is that all of you form fields are bundled together into an array for the target page. Your action can 
-take this array and port it into a Model object, during which the array entries are validated. (Assuming that the Model 
-contains the appropriate validation definitions.) The form data will only be accepted into the Model if it can be 
+In the earlier example, we've set the object name “newFeUser”. As you can see, this value is prepended to each field. The
+advantage of this is that all of you form fields are bundled together into an array for the target page. Your action can
+take this array and port it into a Model object, during which the array entries are validated. (Assuming that the Model
+contains the appropriate validation definitions.) The form data will only be accepted into the Model if it can be
 validated, after which a simple, single command could store the data in the database.

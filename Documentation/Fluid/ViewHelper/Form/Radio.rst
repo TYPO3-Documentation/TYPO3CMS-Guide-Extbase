@@ -3,16 +3,16 @@
 f:form.radio
 ============
 
-This ViewHelper allows you to create a radio button element for use in an HTML form. Radio button fields are usually 
-used in groups, and only a single radio button in a group may be active at one time. A multiple selection - like the one 
+This ViewHelper allows you to create a radio button element for use in an HTML form. Radio button fields are usually
+used in groups, and only a single radio button in a group may be active at one time. A multiple selection - like the one
 we see when using checkboxes - isn't possible with radio buttons.
 
 Properties
 ----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-.. include:: ../../UniversalFormFieldAttributes.txt
+All the :ref:`universal form field attributes <UniversalFormFieldAttributes>`
 
 Exclusive properties for the HTML-Element
 #########################################

@@ -8,9 +8,9 @@ This ViewHelper allows you to create a simple text input field.
 Properties
 ----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-.. include:: ../../UniversalFormFieldAttributes.txt
+All the :ref:`universal form field attributes <UniversalFormFieldAttributes>`
 
 Exclusive properties of this ViewHelper
 #######################################
@@ -21,7 +21,7 @@ required
     Boolean
 
 :aspect:`Description`
-    If this property is used, then the field is marked as being obligatory, so that a third party or browser-embedded 
+    If this property is used, then the field is marked as being obligatory, so that a third party or browser-embedded
     validator can be appropriately implemented.
 
 :aspect:`Default value`
@@ -36,7 +36,7 @@ type
     String
 
 :aspect:`Description`
-    The usual type is “text”, but several other types are available under the HTML5 definition. For example, `url`, 
+    The usual type is “text”, but several other types are available under the HTML5 definition. For example, `url`,
     `email`, `date`.
 
 :aspect:`Default value`

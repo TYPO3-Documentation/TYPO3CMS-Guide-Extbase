@@ -3,10 +3,11 @@
 
 
 Global properties of the HTML element
-#####################################
+=====================================
 
 class
-~~~~~
+-----
+
 :aspect:`Variable type`
     String
 
@@ -20,7 +21,8 @@ class
     No
 
 dir
-~~~
+---
+
 :aspect:`Variable type`
     String
 
@@ -34,7 +36,8 @@ dir
     No
 
 id
-~~
+--
+
 :aspect:`Variable type`
     String
 
@@ -48,7 +51,8 @@ id
     No
 
 lang
-~~~~
+----
+
 :aspect:`Variable type`
     String
 
@@ -62,7 +66,8 @@ lang
     No
 
 style
-~~~~~
+-----
+
 :aspect:`Variable type`
     String
 
@@ -75,8 +80,10 @@ style
 :aspect:`Mandatory`
     No
 
+
 title
-~~~~~
+-----
+
 :aspect:`Variable type`
     String
 
@@ -90,7 +97,8 @@ title
     No
 
 accesskey
-~~~~~~~~~
+---------
+
 :aspect:`Variable type`
     String
 
@@ -104,7 +112,8 @@ accesskey
     No
 
 tabindex
-~~~~~~~~
+--------
+
 :aspect:`Variable type`
     Integer
 
@@ -118,7 +127,8 @@ tabindex
     No
 
 onclick
-~~~~~~~
+-------
+
 :aspect:`Variable type`
     String
 
@@ -132,7 +142,8 @@ onclick
     No
 
 data
-~~~~
+----
+
 :aspect:`Variable type`
     Array
 
