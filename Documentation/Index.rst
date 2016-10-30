@@ -14,10 +14,11 @@ A TYPO3 Extbase and Fluid Guide
       en
 
 :Copyright:
-      2000-2013
+      since 2000
 
 :Author:
-      Stefan Frömken
+      Originally by Stefan Frömken, translated and updated
+      by many contributors of the TYPO3 community
 
 :Email:
       documentation@typo3.org
@@ -34,18 +35,12 @@ The content of this document is related to TYPO3,
 a GNU/GPL CMS/Framework available from `www.typo3.org
 <http://www.typo3.org/>`_
 
-Under Construction
-==================
 
-This page is currently under construction.
-
-**Table of Contents**
 
 .. toctree::
-   :maxdepth: 2
-   :titlesonly:
-   :glob:
+   :hidden:
 
+   Sitemap/Index
    Extbase/Index
    Fluid/Index
-   Targets
+   Linktargets
