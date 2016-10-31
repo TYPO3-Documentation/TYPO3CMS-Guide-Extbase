@@ -11,14 +11,14 @@ Properties
 date
 ~~~~
 :aspect:`Type`
-   `date` either needs to be an object of `DateTime` or a string with the textual
-   representation of a `DateTime` instance that can be converted to a `DateTime` object.
+   `date` must be a `DateTime` object, or a string that can be converted to a `DateTime` object, or
+   an integer Unix timestamp.
 
 :aspect:`Description`
 
    `'17.01.1979'` for example is accepted whereas `'17.01.79'` will not work.
 
-   `date` can as well be a textual relative time description ((means what?)).
+   `date` can be a textual relative time description such as `'now'` or `'-1 year'` or `'next Thursday'`.
 
    If `date` is `null` the ViewHelper returns an empty string.
 
@@ -42,7 +42,7 @@ format
 
 :aspect:`Description`
    `format` is a string that describes the desired form of the produced date-time string.
-   If there is at least one % character in the format string the rules of PHP's `strftime()
+   If there is at least one % character in the format string, the rules of PHP's `strftime()
    <https://secure.php.net/manual/en/function.strftime.php>`__ will be used.
    Otherwise the rules of PHP's `date() function <http://php.net/manual/en/function.date.php>`__
    will be applied.
@@ -51,7 +51,7 @@ format
 :aspect:`Default value`
    The basic default is `'Y-m-d'`
 
-   This can be overridden by setting :php:`$GLOBALS['TYPO3_CONF_VARS']['SYS']['ddmmyy'] = 'Y-m-d';`.
+   This can be overridden by setting :php:`$GLOBALS['TYPO3_CONF_VARS']['SYS']['ddmmyy'] = 'd-m-Y';` , for example.
 
 :aspect:`Mandatory`
     No
@@ -59,11 +59,11 @@ format
 base
 ~~~~
 :aspect:`Type`
-   `base`must be a `DateTime` object, or a string that can be converted to a `DateTime` object, or
+   `base` must be a `DateTime` object, or a string that can be converted to a `DateTime` object, or
    an integer Unix timestamp.
 
 :aspect:`Description`
-   As of TYPO3 CMS 7 this ViewHelper uses `base` as :php:`$now` parameter in
+   As of TYPO3 CMS 7 this ViewHelper uses `base` as the :php:`$now` parameter in
    PHP's `strtotime() function <http://php.net/manual/en/function.strtotime.php>`__.
    In that case `base` constitutes the start time for calculations of textual relative time descriptions.
 
