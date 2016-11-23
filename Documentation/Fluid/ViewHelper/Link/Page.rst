@@ -164,7 +164,9 @@ addQueryString
 :aspect:`Description`
     Falls der aktuellen Seite bereits Parameter über die URL mitgegeben wurden, könnt Ihr hier nun entscheiden, ob diese Parameter auch mit auf die Zielseite übergeben werden.
     
-    **Hinweis:** Dies sollte nur in Teilen verwendet werden, die nicht gecached werden oder wenn ein gültiger cHash angegeben wurde, da sonst eine URL mit beliebigen Parametern im Cache landet. Dies kann auch ein Problem sein, wenn eine Seite noch nicht im Cache ist und mit einem beliebigen Parameter aufgerufen wird, wodurch dieser im Cache gespeichert wird und bei allen darauffolgenden Seitenaufrufen ohne Parameter trotzdem erscheint.
+    **Note:** This option should not be used in a part which will be cached or only if it was called with a valid cHash, otherwise
+              the parameters of the first page hit after the cache was cleared will be stored in 
+              the cache and rendered in subsequent requests.
 
 :aspect:`Default value`
     FALSE
