@@ -25,10 +25,10 @@ value
 -----
 
 :aspect:`Variable type`
-   String
+   String / Array
 
 :aspect:`Description`
-   The value which should be send when transmitting the form.
+   The field's prefill value (string) or the selected values for a multiple select field (array).
 
 
 :aspect:`Mandatory`
