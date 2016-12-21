@@ -218,7 +218,7 @@ includeJsFiles
     Array
 
 :aspect:`Description`
-    Using addJsFile will only allow you to bind in a single JavaScript asset file. Using includeCssFiles allows you to 
+    Using addJsFile will only allow you to bind in a single JavaScript asset file. Using includeJsFiles allows you to 
     bind multiple files.
 
 :aspect:`Default value`
