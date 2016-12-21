@@ -36,6 +36,9 @@ enableJumpToUrl
 
 :aspect:`Description`
     Activate this parameter if you want to use the ActionMenu ViewHelper. This loads the necessary JavaScript assets.
+    
+    This property has been marked as deprecated in TYPO3 6.2 and was removed in TYPO3 7.0.
+    
 
 :aspect:`Default value`
     TRUE
@@ -162,6 +165,8 @@ addCssFile
 
 :aspect:`Description`
     Bind a specific CSS asset file to the view.
+    
+    This property has been marked as deprecated in TYPO3 6.2 and was removed in TYPO3 7.0. Please use the `includeCssFiles` instead.
 
 :aspect:`Default value`
     NULL
@@ -176,6 +181,8 @@ addJsFile
 
 :aspect:`Description`
     Bind a specific JavaScript asset file to the view.
+    
+    This property has been marked as deprecated in TYPO3 6.2 and was removed in TYPO3 7.0. Please use the `includeJsFiles` instead.
 
 :aspect:`Default value`
     NULL
