@@ -28,6 +28,8 @@ width
 :aspect:`Description`
     Width of the image. In addition to a numeric value (pixels), you can also add the suffix “c” or “m” in 
                  order to crop or scale the generated image. (Check out the imgResource documentation for details.)
+                 Cropping is changed since Typo3 7.2! Use crop="offsetX,offsetY,width,height" to crop images instead of suffix "c".
+                 <a href="https://docs.typo3.org/typo3cms/extensions/core/Changelog/7.2/Feature-65584-AddImageCropping.html">Learn more</a>
 
 :aspect:`Default value`
     NULL
@@ -43,6 +45,8 @@ height
 :aspect:`Description`
     Height of the image. In addition to a numeric value (pixels), you can also add the suffix “c” or “m” in 
                  order to crop or scale the generated image. (Check out the imgResource documentation for details.)
+                  Cropping is changed since Typo3 7.2! Use crop="offsetX,offsetY,width,height" to crop images instead of suffix "c".
+                 <a href="https://docs.typo3.org/typo3cms/extensions/core/Changelog/7.2/Feature-65584-AddImageCropping.html">Learn more</a>
 
 :aspect:`Default value`
     NULL
