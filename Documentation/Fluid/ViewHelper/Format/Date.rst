@@ -56,24 +56,6 @@ format
 :aspect:`Mandatory`
     No
 
-base
-~~~~
-:aspect:`Type`
-   `base` must be a `DateTime` object, or a string that can be converted to a `DateTime` object, or
-   an integer Unix timestamp.
-
-:aspect:`Description`
-   As of TYPO3 CMS 7 this ViewHelper uses `base` as the :php:`$now` parameter in
-   PHP's `strtotime() function <http://php.net/manual/en/function.strtotime.php>`__.
-   In that case `base` constitutes the start time for calculations of textual relative time descriptions.
-
-:aspect:`Default value`
-   The :php:`now()` equivalent.
-
-:aspect:`Mandatory`
-    No
-
-
 .. highlight:: html
 
 Examples
@@ -103,7 +85,7 @@ Format Unix timestamps
    <f:format.date format="d.m.Y">1334439765</f:format.date>
 
 
-Format and base defaults
+Format defaults
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
@@ -119,17 +101,6 @@ Hours:minutes
 
    <f:format.date format="H:i">{dateObject}</f:format.date>
 
-
-A year before base time
-~~~~~~~~~~~~~~~~~~~~~~~
-
-::
-
-   <f:format.date format="Y" base="{dateObject}">-1 year</f:format.date>
-   <f:format.date format="Y-m-d" base="2016-06-06">-1 year</f:format.date>
-   <f:format.date format="Y-m-d" base="yesterday">-1 year</f:format.date>
-   <f:format.date format="Y-m-d H:i:s" base="1334439765">-1 year</f:format.date>
-   <f:format.date format="Y-m-d H:i:s" base="@1334439765">-1 year</f:format.date>
 
 
 A more complex textual relative time
