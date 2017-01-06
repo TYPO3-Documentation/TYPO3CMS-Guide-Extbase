@@ -1,7 +1,7 @@
 .. include:: ../../../Includes.txt
 
-f:form.uploads
-==============
+f:form.upload
+=============
 
 This ViewHelper allows you to add an HTML file upload field to an HTML form, which allows the website user to upload a
 file to the web server.
