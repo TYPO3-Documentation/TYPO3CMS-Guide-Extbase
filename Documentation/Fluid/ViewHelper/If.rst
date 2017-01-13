@@ -28,6 +28,36 @@ The following comparators are allowed: ==, !=, <, <=, >, >= and %
 Only variables of the following types can be compared: numbers, object properties, arrays, strings (since v6.2) and 
 the results of other ViewHelpers.
 
+Complex conditional statements
+------------------------------
+From TYPO3 8.0 on Fluid supports any degree of complex conditional statements with
+nesting and grouping:
+
+::
+
+  <f:if condition="({variableOne} && {variableTwo}) || {variableThree} || {variableFour}">
+    // Done if both variable one and two evaluate to true,
+    // or if either variable three or four do.
+  </f:if>
+
+In addition, f:else has been tted with an "elseif"-like behavior:
+
+::
+
+    <f:if condition="{variableOne}">
+        <f:then>Do this</f:then>
+        <f:else if="{variableTwo}">
+            Do this instead if variable two evals true
+        </f:else>
+        <f:else if="{variableThree}">
+            Or do this if variable three evals true
+        </f:else>
+        <f:else>
+            Or do this if nothing above is true
+        </f:else>
+    </f:if> 
+    
+
 Simple examples
 ---------------
 
