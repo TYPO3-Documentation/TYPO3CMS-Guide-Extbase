@@ -42,7 +42,7 @@ currentValueKey
     String
 
 :aspect:`Description`
-    Key of the value mapped as current in the data. It will be used when using current=1
+    Key of the value mapped as current in the data. It will be used when using :ts:`current=1`
 
 :aspect:`Default value`
     NULL
