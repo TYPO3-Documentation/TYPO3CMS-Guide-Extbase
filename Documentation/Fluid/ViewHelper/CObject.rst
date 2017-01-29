@@ -28,7 +28,7 @@ data
     Mixed
 
 :aspect:`Description`
-    The TypoScript object path
+    Iterable variable containing values to use inside the object
 
 :aspect:`Default value`
     NULL
@@ -42,7 +42,7 @@ currentValueKey
     String
 
 :aspect:`Description`
-    The TypoScript object path
+    Key of the value mapped as current in the data. It will be used when using current=1
 
 :aspect:`Default value`
     NULL
