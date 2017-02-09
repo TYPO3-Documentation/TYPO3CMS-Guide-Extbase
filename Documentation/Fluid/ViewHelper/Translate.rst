@@ -111,7 +111,7 @@ With placeholders
 
 In the template::
 
- <f:translate key="LLL:fileadmin/lang/locallang.xml:domain_model.bestfilm" arguments="{0: 'Back to the Future}" />
+ <f:translate key="LLL:fileadmin/lang/locallang.xml:domain_model.bestfilm" arguments="{0: 'Back to the Future'}" />
 
 In locallang.xlf::
 
