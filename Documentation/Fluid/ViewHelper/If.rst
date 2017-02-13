@@ -40,7 +40,7 @@ nesting and grouping:
     // or if either variable three or four do.
   </f:if>
 
-In addition, f:else has been tted with an "elseif"-like behavior:
+In addition, `f:else` has been outfitted with an "elseif"-like behavior:
 
 ::
 
