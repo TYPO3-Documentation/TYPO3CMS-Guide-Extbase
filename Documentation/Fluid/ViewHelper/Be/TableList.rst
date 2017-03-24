@@ -14,7 +14,7 @@ tableName
     String
 
 :aspect:`Description`
-    The name of the table.
+    The name of the database table.
 
 :aspect:`Default value`
     NULL
@@ -22,14 +22,28 @@ tableName
 :aspect:`Required`
     Yes
 
+fieldList
+~~~~~~~~~
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    List of fields to be displayed. If empty, only the title column (configured in $TCA[$tableName]['ctrl']['title']) is shown.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Required`
+    No
+
 storagePid
 ~~~~~~~~~~
 :aspect:`Variable type`
     Integer
 
 :aspect:`Description`
-    The ID of the page containing the data to be displayed. If this value is not defined, then the records from the 
-    page with the ID set as persistence.storagePid will be displayed.
+    By default, records are fetched from the storage PID configured in persistence.storagePid. With this argument,
+    the storage PID can be overwritten.
 
 :aspect:`Default value`
     NULL
@@ -43,8 +57,8 @@ levels
     Integer
 
 :aspect:`Description`
-    If the page with the ID defined in the storagePid property contains subpages, this property defines the nesting 
-    level from which records should be collated.
+    Corresponds to the level selector of the TYPO3 list module.
+    By default only records from the current storagePid are fetched.
 
 :aspect:`Default value`
     0
@@ -58,13 +72,14 @@ filter
     String
 
 :aspect:`Description`
-    Provide a search term by which the records should be filtered.
+    Corresponds to the "Search String" textbox of the TYPO3 list module.
+    If not empty, only records matching the string will be fetched.
 
 :aspect:`Default value`
-    Leerer String
+    Empty String
 
 :aspect:`Required`
-    Yes
+    No
 
 recordsPerPage
 ~~~~~~~~~~~~~~
@@ -72,13 +87,14 @@ recordsPerPage
     Integer
 
 :aspect:`Description`
-    The maximum number off records which may be displayed on a single page view.
+    The amount of records to be displayed at once.
+    Defaults to $TCA[$tableName]['interface']['maxSingleDBListItems'] or (if that's not set) to 100.
 
 :aspect:`Default value`
     0
 
 :aspect:`Required`
-    Yes
+    No
 
 sortField
 ~~~~~~~~~
@@ -86,10 +102,10 @@ sortField
     String
 
 :aspect:`Description`
-    The field by which the applicable records should be sorted.
+    The table field by which the applicable records should be sorted.
 
 :aspect:`Default value`
-    Leerer String
+    Empty String
 
 :aspect:`Required`
     Yes
@@ -100,13 +116,13 @@ sortDescending
     Boolean
 
 :aspect:`Description`
-    When active, this property defines that the sequence of records should be sorted in reverse order.
+    If set to TRUE, the records will be sorted in descending order.
 
 :aspect:`Default value`
     FALSE
 
 :aspect:`Required`
-    Yes
+    No
 
 readOnly
 ~~~~~~~~
@@ -114,13 +130,14 @@ readOnly
     Boolean
 
 :aspect:`Description`
-    When active, the edit icon will not be displayed alongside the records.
+    If set to TRUE, the edit icons won't be shown.
+    Otherwise edit icons will be shown, if the current BE user has edit rights for the specified table!
 
 :aspect:`Default value`
     FALSE
 
 :aspect:`Required`
-    Yes
+    No
 
 enableClickMenu
 ~~~~~~~~~~~~~~~
@@ -134,7 +151,7 @@ enableClickMenu
     TRUE
 
 :aspect:`Required`
-    Yes
+    No
 
 clickTitleMode
 ~~~~~~~~~~~~~~
@@ -150,21 +167,7 @@ clickTitleMode
     NULL
 
 :aspect:`Required`
-    Yes
-
-alternateBackgroundColors
-~~~~~~~~~~~~~~~~~~~~~~~~~
-:aspect:`Variable type`
-    Boolean
-
-:aspect:`Description`
-    When active, the background colour of each table row will be displayed alternately.
-
-:aspect:`Default value`
-    FALSE
-
-:aspect:`Required`
-    Yes
+    No
 
 Minimal example
 ---------------
@@ -178,7 +181,7 @@ event that storagePid isn't defined. (As is the case in this example.)
 
 ::
 
- <f:be.tableList tableName="tt_content" fieldList="{0: 'header', 1: 'bodytext'}" />
+    <f:be.tableList tableName="tt_content" fieldList="{0: 'header', 1: 'bodytext'}" />
 
 Example: maximum number of records
 ----------------------------------
@@ -191,7 +194,7 @@ recordsPerPage.
 
 ::
 
- <f:be.tableList tableName="tt_content" fieldList="{0: 'header', 1: 'bodytext'}" storagePid="1" levels="5" />
+    <f:be.tableList tableName="tt_content" fieldList="{0: 'header', 1: 'bodytext'}" storagePid="1" levels="5" />
 
 Example: show records directly
 ------------------------------
@@ -203,4 +206,4 @@ contains an example of the use of alternating background colours.)
 
 ::
 
- <f:be.tableList tableName="tt_content" fieldList="{0: 'header', 1: 'bodytext'}" storagePid="1" levels="5" alternateBackgroundColors="TRUE" clickTitleMode="show" />
+    <f:be.tableList tableName="tt_content" fieldList="{0: 'header', 1: 'bodytext'}" storagePid="1" levels="5" clickTitleMode="show" />
