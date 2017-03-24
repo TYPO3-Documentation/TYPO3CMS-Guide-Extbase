@@ -1,8 +1,3 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:link.external
@@ -15,70 +10,99 @@ Dieser ViewHelper erstellt einen Link zu einer externen Seite.
    Wenn Ihr bei uri einen vollständigen Link angebt, also inkl. http:// oder ftp://,
    dann braucht Ihr defaultScheme nicht zu setzen.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-Eigenschaften speziell für das HTML-Element
-###########################################
+Exclusive properties for the HTML-Element
+#########################################
 
-.. t3-field-list-table::
- :header-rows: 1
+name
+~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Der name des Links
 
- - :Property:    name
-   :Datatype:    String
-   :Description: Der name des Links
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
 
- - :Property:    rel
-   :Datatype:    String
-   :Description: Gibt die Beziehung zwischen dem aktuellen Dokument und dem verknüpften Dokument an
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    No
 
- - :Property:    rev
-   :Datatype:    String
-   :Description: Gibt die Beziehung zwischen dem verknüpften Dokument und dem aktuellen Dokument an
-   :Standard:    NULL
-   :Mandatory:   Nein
+rel
+~~~
+:aspect:`Variable type`
+    String
 
- - :Property:    target
-   :Datatype:    String
-   :Description: In welchem Fenster soll der Link geöffnet werden?
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Description`
+    Gibt die Beziehung zwischen dem aktuellen Dokument und dem verknüpften Dokument an
 
-Eigenschaften speziell für diesen ViewHelper
-############################################
+:aspect:`Default value`
+    NULL
 
-.. t3-field-list-table::
- :header-rows: 1
+:aspect:`Mandatory`
+    No
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+rev
+~~~
+:aspect:`Variable type`
+    String
 
- - :Property:    uri
-   :Datatype:    String
-   :Description: Die URL zu der externen Zielseite
-   :Standard:
-   :Mandatory:   Ja
+:aspect:`Description`
+    Gibt die Beziehung zwischen dem verknüpften Dokument und dem aktuellen Dokument an
 
- - :Property:    defaultScheme
-   :Datatype:    String
-   :Description: Hier sind alle gültigen Schemas für Links erlaubt wie z.B. ftp oder https
-   :Standard:    http
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+target
+~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    In welchem Fenster soll der Link geöffnet werden?
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+Exclusive properties of this ViewHelper
+#######################################
+
+uri
+~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Die URL zu der externen Zielseite
+
+:aspect:`Default value`
+
+:aspect:`Mandatory`
+    Yes
+
+defaultScheme
+~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Hier sind alle gültigen Schemas für Links erlaubt wie z.B. ftp oder https
+
+:aspect:`Default value`
+    http
+
+:aspect:`Mandatory`
+    No
 
 Beispiel
 --------

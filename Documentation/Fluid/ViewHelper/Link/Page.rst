@@ -1,8 +1,3 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:link.page
@@ -10,106 +5,184 @@ f:link.page
 
 Dieser ViewHelper erstellt einen Link zu einer anderen Seiten-UID
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-Eigenschaften speziell für das HTML-Element
-###########################################
+Exclusive properties for the HTML-Element
+#########################################
 
-.. t3-field-list-table::
- :header-rows: 1
+target
+~~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    In welchem Fenster soll der Link geöffnet werden?
 
- - :Property:    target
-   :Datatype:    String
-   :Description: In welchem Fenster soll der Link geöffnet werden?
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
 
- - :Property:    rel
-   :Datatype:    String
-   :Description: Gibt die Beziehung zwischen dem aktuellen Dokument und dem verknüpften Dokument an
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    No
 
-Eigenschaften speziell für diesen ViewHelper
-############################################
+rel
+~~~
+:aspect:`Variable type`
+    String
 
-.. t3-field-list-table::
- :header-rows: 1
+:aspect:`Description`
+    Gibt die Beziehung zwischen dem aktuellen Dokument und dem verknüpften Dokument an
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Default value`
+    NULL
 
- - :Property:    pageUid
-   :Datatype:    Integer|NULL
-   :Description: Auf welche Seiten-UID soll verlinkt werden
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    No
 
- - :Property:    additionalParams
-   :Datatype:    Array
-   :Description: Fügt weitere Parameter der Zielseite an. Im Gegensatz zu arguments, können hiermit Variablen hinzugefügt werden die nicht mit dem Extensionnamen geprefixed werden.
-   :Standard:    Leeres Array
-   :Mandatory:   Nein
+Exclusive properties of this ViewHelper
+#######################################
 
- - :Property:    pageType
-   :Datatype:    Integer
-   :Description: Auf welche Seitentyp ID soll verlinkt werden.
-   :Standard:    0
-   :Mandatory:   Nein
+pageUid
+~~~~~~~
+:aspect:`Variable type`
+    Integer|NULL
 
- - :Property:    noCache
-   :Datatype:    Boolean
-   :Description: Verhindert das Caching der aufzurufenden Seite
-   :Standard:    FALSE
-   :Mandatory:   Nein
+:aspect:`Description`
+    Auf welche Seiten-UID soll verlinkt werden
 
- - :Property:    noCacheHash
-   :Datatype:    Boolean
-   :Description: Verhindert, dass der cHash-Parameter nicht mit an die URL angehangen wird.
-   :Standard:    FALSE
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
 
- - :Property:    section
-   :Datatype:    String
-   :Description: Auf welchen Anker soll die Zielseite springen (#anker)
-   :Standard:    Leerer String
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    No
 
- - :Property:    linkAccessRestrictedPages
-   :Datatype:    Boolean
-   :Description: Normalerweise werden Links auf geschützte Seiten nicht erzeugt. Hier mit kann man die Linkgeneration erzwingen.
-   :Standard:    FALSE
-   :Mandatory:   Nein
+additionalParams
+~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Array
 
- - :Property:    absolute
-   :Datatype:    Boolean
-   :Description: Nach Aktivierung wird der Zeilseite noch der Domainname und Pfad vorangestellt.
-   :Standard:    FALSE
-   :Mandatory:   Nein
+:aspect:`Description`
+    Fügt weitere Parameter der Zielseite an. Im Gegensatz zu arguments, können hiermit Variablen hinzugefügt werden die nicht mit dem Extensionnamen geprefixed werden.
 
- - :Property:    addQueryString
-   :Datatype:    Boolean
-   :Description: Falls der aktuellen Seite bereits Parameter über die URL mitgegeben wurden, könnt Ihr hier nun entscheiden, ob diese Parameter auch mit auf die Zielseite übergeben werden.
-   :Standard:    FALSE
-   :Mandatory:   Nein
+:aspect:`Default value`
+    Leeres Array
 
- - :Property:    argumentsToBeExcludedFromQueryString
-   :Datatype:    Array
-   :Description: Falls Ihr addQueryString aktiviert habt, aber einen oder zwei bestimmte Parameter wieder entfernen wollt, dann tragt Ihr hier diese Parameter ein.
-   :Standard:    Leeres Array
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    No
+
+pageType
+~~~~~~~~
+:aspect:`Variable type`
+    Integer
+
+:aspect:`Description`
+    Auf welche Seitentyp ID soll verlinkt werden.
+
+:aspect:`Default value`
+    0
+
+:aspect:`Mandatory`
+    No
+
+noCache
+~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Verhindert das Caching der aufzurufenden Seite
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+noCacheHash
+~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Verhindert, dass der ``cHash``-Parameter mit an die URL angehangen wird.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+section
+~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Auf welchen Anker soll die Zielseite springen (#anker)
+
+:aspect:`Default value`
+    Leerer String
+
+:aspect:`Mandatory`
+    No
+
+linkAccessRestrictedPages
+~~~~~~~~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Normalerweise werden Links auf geschützte Seiten nicht erzeugt. Hier mit kann man die Linkgeneration erzwingen.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+absolute
+~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Nach Aktivierung wird der Zeilseite noch der Domainname und Pfad vorangestellt.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+addQueryString
+~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Falls der aktuellen Seite bereits Parameter über die URL mitgegeben wurden, könnt Ihr hier nun entscheiden, ob diese Parameter auch mit auf die Zielseite übergeben werden.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+argumentsToBeExcludedFromQueryString
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    Falls Ihr addQueryString aktiviert habt, aber einen oder zwei bestimmte Parameter wieder entfernen wollt, dann tragt Ihr hier diese Parameter ein.
+
+:aspect:`Default value`
+    Leeres Array
+
+:aspect:`Mandatory`
+    No
 
 Beispiel
 --------
@@ -117,3 +190,13 @@ Beispiel
 ::
 
  <f:link.page pageUid="134">Linkname für die Seite 134</f:link.page>
+
+ <f:link.page pageUid="134" additionalParams="{L:1}">
+ /index.php?id=134&L=1
+
+ <f:link.page pageUid="134" additionalParams="{param: 'test'}">
+ /index.php?id=134&param=test
+
+ <f:link.page pageUid="134" additionalParams="{param: '{name: \'test\'}'}">
+ /index.php?id=134&param[name]=test
+

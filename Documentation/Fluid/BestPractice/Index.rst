@@ -1,12 +1,7 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../Includes.txt
 
-Bewährte Vorgehensweisen
-========================
+Best practices
+==============
 
 **Table of Contents**
 

@@ -1,100 +1,140 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../Includes.txt
 
 f:debug
 =======
 
-Falls eine Eurer Variablen wieder erwartend nichts ausgeben sollte, könnt Ihr mit Hilfe diesen ViewHelpers die
-Inhalte Eurer Variablen anzeigen lassen. In der Ausgabe seht Ihr dann, ob Euer gewünschter Wert überhaupt
-gefüllt ist oder nicht.
+This ViewHelper allows you to output the value of a variable or a set of variables (e.g. array) to the screen. This can 
+be helpful when debugging, to make sure that the value of the variable is as you would expect it to be. Individual nested 
+array or object attributes can be individually expanded.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+title
+~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    You can use this property to give the debug output a title, so that it can more readily be identified. 
+                 (For example, if you're going to output multiple debug blocks during the same request.)
 
- - :Property:    title
-   :Datatype:    String
-   :Description: Mit dieser Eigenschaft könnt Ihr der Degugausgabe einen Titel geben,
-                 um die Ausgabe zwischen evtl. weiteren vorhandenen Ausgaben schneller identifizieren zu können.
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
 
- - :Property:    maxDepth
-   :Datatype:    Integer
-   :Description: Zu Zeiten vor TYPO3 4.7 wurden Arrays und Objekte immer komplett dargestellt. Je nach Objektgröße
-                 und Verschachtelung brach diese Darstellung jedoch ab. Mit dieser Eigenschaft werden die Arrays und
-                 Objekte nur noch bis zu einer Tiefe von 8 Verschachtelungen dargestellt,
-                 um dieses Problem zu umgehen. Je nach Rechnerleistung und Ausführungszeitraum,
-                 könnt Ihr die Tiefe entsprechend anpassen.
-   :Standard:    8
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    Yes
 
- - :Property:    plainText
-   :Datatype:    Boolean
-   :Description: Für den CLI-Modus könnt Ihr hier die Debugausgabe als reinen Text ausgeben lassen.
-   :Standard:    FALSE
-   :Mandatory:   Nein
+maxDepth
+~~~~~~~~
+:aspect:`Variable type`
+    Integer
 
- - :Property:    ansiColors
-   :Datatype:    Boolean
-   :Description: Bestimmte Shells unterstützen die farbliche Hervorhebung von Wörtern in einem Text. Nach Aktivierung
-                 werden der Debugausgabe ein paar zusätzliche Steuerzeichen hinzugefügt,
-                 damit die Shell die Hervorhebung vornehmen kann. Diese Eigenschaft klappt nur,
-                 wenn plainText aktiviert wurde.
-   :Standard:    FALSE
-   :Mandatory:   Nein
+:aspect:`Description`
+    Extremely large arrays or deeply-nested objects can lead to TYPO3 being unable to build a complete view 
+                 of the entire structure. By using the 'maxDepth' property, you can adjust the depth of the output to a 
+                 maximum of 8 levels, in order to get around this problem. You can fine-tune the value of the property 
+                 according to the performance of the server and the maximum processing time available.
 
- - :Property:    inline
-   :Datatype:    Boolean
-   :Description: Normalerweise wird die Debugausgabe oberhalb der Webseite ausgegeben. Nach Aktivierung dieser Option
-                 findet die Ausgabe genau dort statt, wo Ihr den f:debug-ViewHelper platziert habt.
-   :Standard:    FALSE
-   :Mandatory:   Nein
+:aspect:`Default value`
+    8
 
- - :Property:    blacklistedClassNames
-   :Datatype:    Array
-   :Description: Mit dieser Eigenschaft können ganz bestimmte Klassen hervorgehoben werden. Zur Zeit klappt diese
-                 Eigenschaft nicht in Zusammenhang mit Namespaces
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    No
 
- - :Property:    blacklistedPropertyNames
-   :Datatype:    Array
-   :Description: Mit dieser Eigenschaft können ganz bestimmte Objekteigenschaften hervorgehoben werden. Zur
-                 Zeit klappt diese Eigenschaft nicht in Zusammenhang mit Namespaces
-   :Standard:    NULL
-   :Mandatory:   Nein
+plainText
+~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    If you're using the CLI mode, using this property will switch the output into plain text mode.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+ansiColors
+~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Some shell environments allow syntax highlighting - by activating the ansiColors mode, the debug 
+                 output will be extended with control characters, so that the shell can implement highlighting. This 
+                 option only works when 'plainText' mode is active.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+inline
+~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    The debug output usually appears at the top of the page output. By setting this property, the output 
+                 will appear at the point where the `f:debug` ViewHelper is inserted in the code.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+blacklistedClassNames
+~~~~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    The use of this property highlights specific classes. It currently (?) doesn't work when Namespaces 
+                 are in use.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+blacklistedPropertyNames
+~~~~~~~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    The use of this property highlights specific object properties. It currently (?) doesn't work when 
+                 Namespaces are in use.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
 .. tip::
 
-   Das Debuggen von Aggregate-Root-Objekten führte in früheren Versionen immer wieder zu Problemen. Viele Objekte sind
-   sehr tief verschachtelt oder sind rekursiv aufrufbar. Dies führte in vielen Fällen zur Überschreitung der in php.ini
-   definierten memory_limit oder auch zur Überschreitung der max_execution_time. In solchen Fällen hat es geholfen nur
-   einen Teil des Objektes zu debuggen oder das komplette Objekt in ein Array zu konvertieren.
+   Debugging aggregate root objects in earlier versions often lead to problems. Many objects are deeply nested or even 
+   built recursively. This lead in many instances to the system exceeding the memory_limit or max_execution_time in 
+   php.ini. In such cases, it's recommended to only debug a part of the object in question, or to first convert it to 
+   an array.
 
-Beispiel
+Examples
 --------
 
 ::
 
- <f:debug title="Results of customers">{customers}</f:debug>
+   <f:debug title="Results of customers query">{customers}</f:debug>
 
 ::
 
- {customers -> f:debug(title="Results of customers")}
+   {customers -> f:debug(title="Results of customers query")}
 
 ::
 
- {f:debug(subject: customers, title: "Results od customers")}
+   {f:debug(subject: customers, title: "Results of customers query")}

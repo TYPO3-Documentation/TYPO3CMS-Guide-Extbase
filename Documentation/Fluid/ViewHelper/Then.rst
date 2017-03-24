@@ -1,16 +1,11 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../Includes.txt
 
 f:then
 ======
 
-Dieser ViewHelper wird im Bereich f:if erklärt, da er nur dort verwendet werden kann.
+This ViewHelper is explained as part of `f:if`, as it can only be used in that context.
 
-Eigenschaften
--------------
+Properties
+----------
 
-Dieser ViewHelper besitzt keine Eigenschaften
+This ViewHelper doesn't accept any properties.

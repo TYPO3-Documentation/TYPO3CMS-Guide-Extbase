@@ -1,16 +1,11 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:be.pageInfo
 =============
 
-Dieser ViewHelper zeigt das Icon der aktuellen Seite an mit der Information, um welche pid es sich dabei handelt.
+This ViewHelper provides the icon and the 'pid' of the current page.
 
-Eigenschaften
--------------
+Properties
+----------
 
-Dieser ViewHelper besitzt keine Eigenschaften
+This ViewHelper doesn't accept any properties.

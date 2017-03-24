@@ -1,26 +1,21 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:form.submit
 =============
 
-Dieser ViewHelper besitzt keine eigenen Parameter. Er bindet eine Schaltfläche ein die nach dem Anklicken das Formular
-absendet und somit die eingegebenen Formulardaten an den Server übermittelt
+This ViewHelper has no unique properties (apart from the standard `value` property). It allows you to add a button to
+an HMTL form, which submits the form when the website visitor clicks the button.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-.. include:: ../../UniversalFormFieldAttributes.txt
+All the :ref:`universal form field attributes <UniversalFormFieldAttributes>`
 
-Beispiel
---------
+Example
+-------
 
 ::
 
- <f:form.submit value="Absenden" />
+ <f:form.submit value="Send" />

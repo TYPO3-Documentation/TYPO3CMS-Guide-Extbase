@@ -1,14 +1,9 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM. ÄÖÜäöüß
-
 .. include:: ../../Includes.txt
 
-Schritt 2 - Systemcheck
-=======================
+Step 2 - System check
+=====================
 
-**Inhaltsverzeichnis**
+**Table of Contents**
 
 .. toctree::
    :maxdepth: 1

@@ -1,67 +1,169 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:format.date
 =============
 
-Konvertiert einen Timestamp in einen lesbaren Datumswert.
+This `f:format.date` viewhelper can produce date-time strings in a variety of formats.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+date
+~~~~
+:aspect:`Type`
+   `date` must be a `DateTime` object, or a string that can be converted to a `DateTime` object, or
+   an integer Unix timestamp.
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
 
- - :Property:    date
-   :Datatype:    Mixed
-   :Description: Entweder ein Objekt vom Typ DateTime oder eine Text/Datum, das in ein DateTime-Objekt konvertiert werden kann. Z.B. 17.01.1979 geht. 17.01.79 geht nicht.
-   :Standard:    NULL
-   :Mandatory:   Nein
+   `'17.01.1979'` for example is accepted whereas `'17.01.79'` will not work.
 
- - :Property:    format
-   :Datatype:    String
-   :Description: Wie soll das Datum ausgegeben werden?
-   :Standard:    Y-m-d
-   :Mandatory:   Nein
+   `date` can be a textual relative time description such as `'now'` or `'-1 year'` or `'next Thursday'`.
 
-So schön wie das mit den ganzen DateTime-Objekten ist, prüft die Wert bitte ganz genau. Besucht
-Online-Timestamp-Konverter oder gleicht die Wert mit denen in Eurer Datenbank ab. So steht in der Doku z.B. Wenn Ihr
-einen Timestamp in ein DateTime-Objekt konvertieren wollt, dann fügt einfach ein @-Zeichen vorne an. Ich hoffe ich
-erzähl jetzt nichts Falsches, aber dieser Timestamp wird nach dem RFC2822 konvertiert und das ist Zeitzone 0. In
-Deutschland würden wir dem resultierenden DateTimewert also immer hinterherhinken. Die DateTime-Objekt sollten besser
-nach ISO8601 konvertiert werden. Dann klappts auch mit der richtigen Zeitzone. Ich für meinen Teil hab mir einen
-eigenen ViewHelper geschrieben der sich daran hält und auch Extbase arbeitet intern mit diesem ISO-Format. Siehe:
+   If `date` is `null` the ViewHelper returns an empty string.
 
-::
+   As of TYPO3 CMS 7 `date` defaults to `now` if it is an empty string.
 
- DataMapper->mapDateTime()
+   If `date` is an integer it is considered to be a Unix timestamp that gets converted to a `DateTime` object
+   with the PHP default timezone applied. The timezone is determined by the PHP
+   function :php:`date_default_timezone_get()`. Recommended reading:
+   `PHP: Getting the default timezone <http://php.net/manual/en/function.date-default-timezone-get.php>`__.
 
-Zitat: return new DateTime(date('c', $timestamp));
+:aspect:`Default value`
+   NULL
 
-Warum das in den ViewHelper noch nicht eingeflossen ist, kann ich mir nicht erklären.
+:aspect:`Mandatory`
+   No
 
-Beispiel
+format
+~~~~~~
+:aspect:`Type`
+   String
+
+:aspect:`Description`
+   `format` is a string that describes the desired form of the produced date-time string.
+   If there is at least one % character in the format string, the rules of PHP's `strftime()
+   <https://secure.php.net/manual/en/function.strftime.php>`__ will be used.
+   Otherwise the rules of PHP's `date() function <http://php.net/manual/en/function.date.php>`__
+   will be applied.
+
+
+:aspect:`Default value`
+   The basic default is `'Y-m-d'`
+
+   This can be overridden by setting :php:`$GLOBALS['TYPO3_CONF_VARS']['SYS']['ddmmyy'] = 'd-m-Y';` , for example.
+
+:aspect:`Mandatory`
+    No
+
+base
+~~~~
+:aspect:`Type`
+   `base` must be a `DateTime` object, or a string that can be converted to a `DateTime` object, or
+   an integer Unix timestamp.
+
+:aspect:`Description`
+   As of TYPO3 CMS 7 this ViewHelper uses `base` as the :php:`$now` parameter in
+   PHP's `strtotime() function <http://php.net/manual/en/function.strtotime.php>`__.
+   In that case `base` constitutes the start time for calculations of textual relative time descriptions.
+
+:aspect:`Default value`
+   The :php:`now()` equivalent.
+
+:aspect:`Mandatory`
+    No
+
+
+.. highlight:: html
+
+Examples
 --------
 
+Day Month Year
+~~~~~~~~~~~~~~
+
+Convert `dd.mm.yyyy`to `d/m/y`::
+
+   <f:format.date date="17.01.1979" format="d/m/y" />
+
+Now
+~~~
+
 ::
 
- <f:format.date date="17.01.1979" format="d/m/y" />
+   <f:format.date date="now" format="d/m/y" />
 
-Beispiel Timestamp
-------------------
+
+Format Unix timestamps
+~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
- <f:format.date format="d.m.Y">@1334439765</f:format.date>
+   <f:format.date format="d.m.Y">@1334439765</f:format.date>
+   <f:format.date format="d.m.Y">1334439765</f:format.date>
 
-Wie schon gesagt: Je nach Land/Kontinent bitte mit Vorsicht zu behandeln.
+
+Format and base defaults
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   <f:format.date>{dateObject}</f:format.date>
+   <f:format.date>now</f:format.date>
+
+
+Hours:minutes
+~~~~~~~~~~~~~
+
+::
+
+   <f:format.date format="H:i">{dateObject}</f:format.date>
+
+
+A year before base time
+~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   <f:format.date format="Y" base="{dateObject}">-1 year</f:format.date>
+   <f:format.date format="Y-m-d" base="2016-06-06">-1 year</f:format.date>
+   <f:format.date format="Y-m-d" base="yesterday">-1 year</f:format.date>
+   <f:format.date format="Y-m-d H:i:s" base="1334439765">-1 year</f:format.date>
+   <f:format.date format="Y-m-d H:i:s" base="@1334439765">-1 year</f:format.date>
+
+
+A more complex textual relative time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   <f:format.date format="d.m.Y - H:i:s">+1 week 2 days 4 hours 2 seconds</f:format.date>
+
+
+Localized time using strftime syntax
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   <f:format.date format="%d. %B %Y">{dateObject}</f:format.date>
+   <f:format.date format="%d. %B %Y">now</f:format.date>
+
+
+Inline notation
+~~~~~~~~~~~~~~~
+
+::
+
+   {f:format.date(date: dateObject)}
+   {f:format.date(date: dateObject format: "%d. %B %Y")}
+   {f:format.date(date: "now" format: "%c")}
+
+
+More inline notation
+~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   {dateObject -> f:format.date()}
+   {dateObject -> f:format.date(format: 'Y-m-d H:i:s')}
+

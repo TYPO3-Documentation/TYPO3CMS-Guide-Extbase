@@ -1,57 +1,54 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../Includes.txt
 
-Statische Optionen für f:form.select
-====================================
+Static options for f:form.select
+================================
 
-Der f:form.select-ViewHelper bringt ein paar coole Eigenschaften mit wie z.B. optionValueField und optionLabelField.
-Damit ist es Euch möglich auf bestimmte Eigenschaften eines Objektes zuzugreifen, um diese als value oder auch label
-für die zu generierenden Optionen der Selectbox zu erzeugen.
+The f:form.select ViewHelper provides a few cool options, for example optionValueField and optionLabelField. Using these 
+makes it possible to access specific properties of an object and use them as the value or label within the generated 
+options of a SELECT element.
 
-Diese beiden Eigenschaften haben aber ein Problem. Sie funktionieren nur in Zusammenarbeit mit Objekten. Selbst wenn
-Ihr Euch die Struktur in einem Array nachbaut, so scheitert allein der Versuch an der Zeile im
-f:form.select-ViewHelper::
+These two properties, however, present an problem: they only work with objects. If the data structure is formed of an 
+array, the following test within the f:form.select ViewHelper will fail:
 
- if (is_object($value)) {
+::
 
-Denn nur dort werden diese beiden Eigenschaften überhaupt verarbeitet.
+   if (is_object($value)) {
 
-Natürlich könnten wir uns auch ein kleines Mini-Domainmodel mit 2 getter und setter-Methoden bauen,
-um den Label und Value hier abzuspeichern. Etwas zu umfangreich, um "mal eben" ein paar statische Werte hinzuzufügen.
+These two properties are only processed within this 'if' statement. We could perhaps build our own mini-domain model 
+with getter and setter methods to handle the label and value. But this is overkill. The better alternative is to make 
+use of the PHP standard class :php:`stdClass`.
 
-Abhilfe schafft hier die PHP Standardklasse: stdClass::
+::
 
- /**
-  * action list
-  *
-  * @return void
-  */
- public function listAction() {
-   $this->view->assign('categories', $this->getCategories());
- }
+    /**
+    * action list
+    *
+    * @return void
+    */
+    public function listAction() {
+        $this->view->assign('categories', $this->getCategories());
+    }
+    
+    /**
+    * prepare categories for select box
+    *
+    * @return array
+    */
+    public function getCategories() {
+        $categories = array();
+        $entries = array('car', 'bike', 'train');
+        foreach ($entries as $entry) {
+            $category = new stdClass();
+            $category->key = $entry;
+            $category->value = LocalizationUtility::translate('category.' . $entry, 'myExtName');
+            $categories[] = $category;
+        }
+        return $categories;
+    }
 
- /**
-  * get categories for select box
-  *
-  * @return array
-  */
- public function getCategories() {
-   $categories = array();
-   $entries = array('car', 'bike', 'train');
-   foreach ($entries as $entry) {
-     $category = new stdClass();
-     $category->key = $entry;
-     $category->value = LocalizationUtility::translate('category.' . $entry, 'myExtName');
-     $categories[] = $category;
-   }
-   return $categories;
- }
+You can now use the optionValueField and optionLabelField properties within your Fluid template as usual.
 
-Im Fluid-Template könnt Ihr dann wieder ganz normal die beiden Eigenschaften verwenden::
+::
 
- <f:form.select name="category" options="{categories}" optionValueField="key" optionLabelField="value" />
+    <f:form.select name="category" options="{categories}" optionValueField="key" optionLabelField="value" />
 

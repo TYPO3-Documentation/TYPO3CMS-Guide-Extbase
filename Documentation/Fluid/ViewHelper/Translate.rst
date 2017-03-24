@@ -1,110 +1,132 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../Includes.txt
 
 f:translate
 ===========
 
-Mit dem f:translate-ViewHelper greift Ihr auf eine beliebige Sprachdatei (meist locallang.xml) zu und holt Euch die
-entsprechende Übersetzung mit Hilfe der Angabe im Parameter "key".
+This ViewHelper connects to a standard translation file - most often locallang.xlf - and provides a defined
+translation for the current language using a “key” parameter.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+key
+~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    The key by which the translation is referenced in the translation file.
 
- - :Property:    key
-   :Datatype:    String
-   :Description: Der key, mit dem man die Übersetzung aus dem Sprachdateien auslesen kann
-   :Standard:    NULL
-   :Mandatory:   Ja
+:aspect:`Default value`
+    NULL
 
- - :Property:    default
-   :Datatype:    String
-   :Description: Wenn der Key in der Sprachdatei nicht gefunden werden kann, dann verwende diesen Text. Wenn default nicht gesetzt ist, wird der Inhalt zwischen den Tags verwendet.
-   :Standard:    NULL
-   :Mandatory:   Ja
+:aspect:`Mandatory`
+    Yes
 
- - :Property:    htmlEscape
-   :Datatype:    Boolean
-   :Description: Alle Übersetzungen aus den Sprachdateien werden durch htmlspecialchars geschleust, was es unmöglich macht, HTML-Tags in den Übersetzungen anzeigen zu lassen. Setzt diesen Wert auf FALSE, um dieses Vorgehen zu unterbinden.
-   :Standard:    TRUE
-   :Mandatory:   Ja
+default
+~~~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property:    arguments
-   :Datatype:    Array
-   :Description: In den Übersetzungen können Platzhalter definiert werden, die dann mit den Inhalten diesen Arrays gefüllt werden.
-   :Standard:    NULL
-   :Mandatory:   Ja
+:aspect:`Description`
+   If the key canto be matched in the translation file, then use this text instead. If this property isn't
+   defined, then the value between the opening and closing `f:translate` tags will be used.
 
-Innerhalb von Extensions wird immer auf die locallang.xml im Verzeichnis Resources/Private/Language/ zugegriffen.
-Im Bereich FLUIDTEMPLATE müsste Ihr hier die Pfadsyntax verwenden:
+:aspect:`Default value`
+    NULL
 
-::
+:aspect:`Mandatory`
+    Yes
 
- LLL:fileadmin/templates/locallang.xml:domain_model_irgendwas.titel
+htmlEscape
+~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
 
-bzw:
+:aspect:`Description`
+   Strings from the translation files are usually parsed using the PHP function htmlspecialchars, so any
+   HTML code in the translation file will be converted to an encoded string. Set the value of this property to FALSE to
+   disable this behaviour.
 
-::
+:aspect:`Default value`
+    TRUE
 
- LLL:EXT:meineExtension/Resources/Private/Language/locallang.xml:domain_model_irgendwas.titel
+:aspect:`Mandatory`
+    Yes
 
-Diese "LLL:" Prefixe müssen bei der Pfadnotation immer gesetzt sein!!! Etwas einfacher machen es sich die
-FLUIDTEMPLATE-User, wenn sie im TS zuvor angeben auf welche locallang.xml welcher Extension sie zugreifen wollen:
+arguments
+~~~~~~~~~
+:aspect:`Variable type`
+    Array
 
-::
+:aspect:`Description`
+   Placeholders can be set in the strings within the translation file, which will be replaced with the
+   content of the array passed in this property.
 
- extbase.pluginName = Pi1
- extbase.controllerExtensionName = MeineExtension
+:aspect:`Default value`
+    NULL
 
-Dann reicht es auch wieder nur den "key" anzugeben OHNE den ganzen Pfad
+:aspect:`Mandatory`
+    Yes
 
-Beispiel
+This ViewHelper accesses files in the folder Resources/Private/Language. If you're using FLUIDTEMPLATE, you'll need to
+use the following path syntax::
+
+
+
+   LLL:fileadmin/templates/locallang.xlf:domain_model_whatever.title
+
+or, in the case of an extension::
+
+   LLL:EXT:myExtension/Resources/Private/Language/locallang.xml:domain_model_whatever.title
+
+FLUIDTEMPLATE users can make their lives easier by applying the following settings via TypoScript:
+
+.. code-block:: typoscript
+
+   extbase.pluginName = Pi1
+   extbase.controllerExtensionName = MyExtension
+
+Then it's enough to just use the key, without the entire LLL path.
+
+Examples
 --------
+
+Basic
+~~~~~
 
 ::
 
  <f:translate key="domain_model.title" htmlEscape="false" />
 
-Beispiel mit Pfad
------------------
+With full file path
+~~~~~~~~~~~~~~~~~~~
 
 ::
 
- <f:translate key="LLL:fileadmin/lang/locallang.xml:domain_model.title" />
+ <f:translate key="LLL:fileadmin/lang/locallang.xlf:domain_model.title" />
 
-Beispiel mit Platzhaltern
--------------------------
+With placeholders
+~~~~~~~~~~~~~~~~~
 
-In unserem Template:
+In the template::
 
-::
+ <f:translate key="LLL:fileadmin/lang/locallang.xml:domain_model.bestfilm" arguments="{0: 'Back to the Future'}" />
 
- <f:translate key="LLL:fileadmin/lang/locallang.xml:domain_model.title" arguments="{0: 'Herr der Ringe'}" />
+In locallang.xlf::
 
-In der locallang.xml
+   <trans-unit id="domain_model.bestfilm" approved="yes">
+      <source>Best film ever: %s</source>
+   </trans-unit>
 
-::
+%s will be replaced with the first array entry. If %s is used more than once, then each array entry will be applied
+sequentially. In order to be more specific about which placeholders are replaced by which array values, use the more
+specific placeholder syntax::
 
- <label index="domain_model.title">Title of: %s</label>
+   <f:translate key="LLL:fileadmin/lang/locallang.xml:domain_model.bestfilm" arguments="{0: 'Back to the Future, 1: '1985'}" />
 
-Mit %s wird auf den ersten Wert des übergebenen Arrays zugegriffen. Kommt %s nochmals vor, dann wird auf den zweiten
-Arrayeintrag zugegriffen. Um das unabhängig von der Reihenfolge zu machen empfehlen wir noch folgende Notation:
+and::
 
-::
+   <label index="domain_model.bestfilm">Best film ever: %1$s from %2$s.</label>
 
- <label index="domain_model.title">Titel von: %1$s</label>
-
-Mit %1 greift Ihr auf den ersten Eintrag zu und sagt diesem, dass er als String/Text interpretiert werden soll ($s).
-Auf php.net findet Ihr heraus wofür diese ganzen Kürzel stehen.
+You can find more information about placeholder replacement in sprintf() documentation (e.g. at php.net).

@@ -1,35 +1,36 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:uri.email
 ===========
 
-Mit diesem ViewHelper erstellt Ihr einen Link auf eine E-Mail-Adresse. Falls Ihr mit TypoScript im Bereich "config"
-Angaben zum Verschlüsseln der E-Mail-Adresse gemacht habt, so werden diese Einstellungen auch hier angewendet.
+With this ViewHelper you can link to an email address. If you enabled
+email encryption in TypoScript that will be recognized here too.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+email
+~~~~~
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Variable type`
+    String
 
- - :Property:    email
-   :Datatype:    String
-   :Description: Die zu verlinkende E-Mail-Adresse
-   :Standard:
-   :Mandatory:   Ja
+:aspect:`Description`
+    The email address to link to
 
-Beispiel
+:aspect:`Mandatory`
+    Yes
+
+
+.. highlight:: html
+
+Examples
 --------
 
-<f:link.email email="meine@mailadresse.tld" />
+Just the email::
+
+   {f:uri.email(email: 'my@email.tld')}
+
+With custom linktext::
+
+   <f:uri.email email="my@email.tld">Email</f:uri.email>

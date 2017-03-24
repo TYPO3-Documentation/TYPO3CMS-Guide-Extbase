@@ -1,17 +1,12 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM. ÄÖÜäöüß
-
 .. include:: ../Includes.txt
 
 Bootstrap
 =========
 
-Der Bootstrap Mechanismus kümmert sich darum, die Konfiguration auszulesen, die Reflectionklassen zu laden,
-die Caches aufzuwärmen und die Persistenzschicht zu aktivieren.
+The Bootstrap mechanism concerns itself with reading configuration, loading the Reflection classes, warming up the 
+caches, and the activation of the persistence layer.
 
-Dieser Initiierungsprozess wird über die ext_localconf.php vorbereitet::
+This initialisation process is prepared in ext_localconf.php::
 
  Tx_Extbase_Utility_Extension::configurePlugin(
    $_EXTKEY,
@@ -26,8 +21,8 @@ Dieser Initiierungsprozess wird über die ext_localconf.php vorbereitet::
    )
  );
 
-Die Methode *configurePlugin* fügt dann mit Hilfe von *t3lib_extMgm::addTypoScript* dieses TypoScript in das globale
-TS-Template ein::
+The method *configurePlugin* adds the following TypoScript - with help from *t3lib_extMgm::addTypoScript* - into the 
+global TypoScript template::
 
  # Setting Productoverview plugin TypoScript
  tt_content.list.20.productoverview_products = USER
@@ -37,10 +32,9 @@ TS-Template ein::
    pluginName = Products
  }
 
-Sobald Ihr nun dieses Extbaseplugin auf einer Seite einbindet, wird die Methode *run* aus der Klasse
-*tx_extbase_core_bootstrap* aufgerufen. Damit die weiß, um welche Extension und Plugin es sich handelt,
-werden diese Informationen mit *extensionName* und *pluginName* an die run-Methode übergeben.
-Hier findet der eigentliche Bootstrap statt::
+As soon as you add this Extbase plugin to a page, the method *run* in the class *tx_extbase_core_bootstrap* is 
+exectued. So that it knows wich extension and plugin we're dealing with, information about the *extensionName* and 
+*pluginName* are passed to the method. This is where the actual bootstrapping takes place.::
 
  $this->initializeObjectManager();
  $this->initializeConfiguration($configuration);
@@ -50,4 +44,5 @@ Hier findet der eigentliche Bootstrap statt::
  $this->initializePersistence();
  $this->initializeBackwardsCompatibility();
 
-Die letzte Aufgabe des Bootsraps ist die Übergabe der gesammelten Daten an den Dispatcher
+
+The final task of the bootstrap is to pass all of the collected data to the *Dispatcher*.

@@ -1,8 +1,3 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:format.stripTags
@@ -10,23 +5,22 @@ f:format.stripTags
 
 Dieser ViewHelper entfernt sämtliche HTML-Tags aus einem Text.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+value
+~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Der Text aus dem die HTML-Tags entfernt werden sollen
 
- - :Property:    value
-   :Datatype:    String
-   :Description: Der Text aus dem die HTML-Tags entfernt werden sollen
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
 Beispiel
 --------

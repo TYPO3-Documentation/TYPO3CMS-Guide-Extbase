@@ -1,83 +1,81 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../Includes.txt
 
 f:count
 =======
 
-Dieser ViewHelper zählt die Elemente in dem angegebenen Objekt oder Array.
+This ViewHelper counts the elements in the referenced object or array.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+subject
+~~~~~~~
+:aspect:`Variable type`
+   Array
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+   Provide the array or object containing the entries to be counted. If this value is empty, the ViewHelper
+   will attempt to interpret the content between the tags as an array, and then count its entries.
 
- - :Property:    subject
-   :Datatype:    Array
-   :Description: Gebt hier das Array oder Objekt an, das gezählt werden soll. Wenn dieser Wert leergelassen wird,
-                 dann versucht der ViewHelper, den Inhalt zwischen den Tags als Array zu interpretieren und zählt
-                 diesen.
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Default value`
+   NULL
 
-Beispiel: Array als renderChildren
-----------------------------------
+:aspect:`Mandatory`
+   No
 
-::
 
- <p>There are <f:count>{addresses}</f:count> records in our database</p>
 
-**Ausgabe**
+.. highlight:: html
+
+
+Example: array as renderChildren
+--------------------------------
 
 ::
 
- <p>There are 23 records in our database</p>
+   <p>There are <f:count>{addresses}</f:count> records in our database</p>
 
-Beispiel: Array über subject
-----------------------------
-
-::
-
- <p>There are <f:count subject="{addresses}" /> records in our database</p>
-
-**Ausgabe**
+**Output**
 
 ::
 
- <p>There are 23 records in our database</p>
+   <p>There are 23 records in our database</p>
 
-Beispiel: Inlinenotation
+Example: array by subject
+-------------------------
+
+::
+
+   <p>There are <f:count subject="{addresses}" /> records in our database</p>
+
+**Output**
+
+::
+
+   <p>There are 23 records in our database</p>
+
+Example: inline notation
 ------------------------
 
 ::
 
- <p>There are {f:count(subject: addresses)} records in our database</p>
+   <p>There are {f:count(subject: addresses)} records in our database</p>
 
-**Ausgabe**
-
-::
-
- <p>There are 23 records in our database</p>
-
-Beispiel: Die bessere Inlinenotation
-------------------------------------
+**Output**
 
 ::
 
- <p>There are {addresses -> f:count()} records in our database</p>
+   <p>There are 23 records in our database</p>
 
-**Ausgabe**
+Example: better inline notation
+-------------------------------
 
 ::
 
- <p>There are 23 records in our database</p>
+   <p>There are {addresses -> f:count()} records in our database</p>
+
+**Output**
+
+::
+
+   <p>There are 23 records in our database</p>

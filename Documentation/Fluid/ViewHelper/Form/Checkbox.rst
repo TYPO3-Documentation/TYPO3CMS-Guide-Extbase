@@ -1,185 +1,206 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:form.checkbox
 ===============
 
-Dieser ViewHelper erzeugt eine Checkbox.
+This ViewHelper creates a checkbox element for use in an HTML form.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-.. include:: ../../UniversalFormFieldAttributes.txt
+All the :ref:`universal form field attributes <UniversalFormFieldAttributes>`
 
-Eigenschaften speziell für das HTML-Element
-###########################################
+Exclusive properties for the HTML-Element
+#########################################
 
-.. t3-field-list-table::
- :header-rows: 1
+disabled
+~~~~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Allows the checkbox to appear in an inactive (non-responsive) state.
 
- - :Property:    disabled
-   :Datatype:    String
-   :Description: Die Checkbox wird deaktiviert angezeigt.
-   :Standard:
-   :Mandatory:   Nein
+:aspect:`Default value`
 
-Eigenschaften speziell für diesen ViewHelper
-############################################
+:aspect:`Mandatory`
+    No
 
-.. t3-field-list-table::
- :header-rows: 1
+Exclusive properties of this ViewHelper
+#######################################
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+checked
+~~~~~~~
+:aspect:`Variable type`
+    Boolean
 
- - :Property:    checked
-   :Datatype:    Boolean
-   :Description: Wenn aktiviert, dann gilt diese Checkbox als markiert.
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Description`
+    When active, the checkbox will appear in a checked (active) state.
 
-Derzeit sind Checkboxen innerhalb von Fluid/Extbase noch eine echte Katastrophe. Es hat mich viel Zeit gekostet eine
-Checkbox überhaupt ans Laufen zu bekommen, da sie ein leeres aber vorhandenes Model erfordern, wenn sie mit Hilfe der
-Property-Eigenschaft an ein Objekt gebunden werden:
+:aspect:`Default value`
+    NULL
 
-No value found for key "Tx_Fluid_ViewHelpers_FormViewHelper->formObject"
+:aspect:`Mandatory`
+    No
 
-Um diesen Fehler weg zu bekommen, darf das Objekt nicht NULL sein. In der entsprechenden Action muss ein leeres Objekt
-erstellt werden. Könnte dann z.B. so aussehen (Auszug aus dem extension_builder):
+multiple
+~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Specifies whether the checkbox belongs to a grouped set of multiple checkboxes.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+
+
+Workaround for an invalid Form object
+-------------------------------------
+
+.. tip::
+
+   The following text was pre-existing at the time of this page's translation to English. It may no longer be
+   current or relevant in more up-to-date versions of Fluid/Extbase.
+
+Checkbox handling is a catastrophe in Fluid/Extbase. It took me quite a bit of time to get checkboxes working, because
+their use requires an empty but available Model if they are to be bound to an object by means of a property::
+
+   No value found for key `Tx_Fluid_ViewHelpers_FormViewHelper->formObject`
+
+In order to get rid of an error message like this one, you'll need to ensure that the object isn't NULL. You'll need to
+create an empty object in the relevant Action. You could achieve this using code according to the following example,
+which is taken from the extension_builder.
 
 ::
 
  /**
   * action new
   *
-  * @param $newAuto
-  * @dontvalidate $newAuto
+  * @param $newCar
+  * @dontvalidate $newCar
   * @return void
   */
- public function newAction(Tx_Sffluid_Domain_Model_Auto $newAuto = NULL) {
-   if ($newAuto == NULL) { // workaround for fluid bug ##5636
-     $newAuto = t3lib_div::makeInstance('Tx_Sffluid_Domain_Model_Auto');
+ public function newAction(Tx_Sffluid_Domain_Model_Car $newCar = NULL) {
+   if ($newCar == NULL) { // workaround for fluid bug ##5636
+     $newCar = t3lib_div::makeInstance('Tx_Sffluid_Domain_Model_Car');
    }
-   $this->view->assign('newAuto', $newAuto);
+   $this->view->assign('newCar', $newCar);
  }
 
-Erst nach dieser Änderung erscheint überhaupt mal eine Checkbox.
+The checkbox will only appear once this amendment is in place.
 
-Beispiel ohne property
-----------------------
+Example without a property
+---------------------------
 
-Das Problem bei dieser Variante: Ihr müsst Euch selbst darum kümmern zu prüfen, ob die Checkbox markiert ist oder
-nicht. Ihr müsst die Werte schon innerhalb Eures Controllers gesetzt haben und mit Hilfe des Checked-Attributes
-zuweisen. Erlaubt ist nur TRUE oder FALSE bzw. 1 oder 0. Ihr müsst hier auch die leeren eckigen Klammern setzen,
-damit die markierten Werte später als Array (Mehrfachauswahl) übergeben werden können.
+The problem with this method is that you'll have to find out yourself if the checkbox is active or not. You will need
+to have already set the values in your Controller, and then apply the state by means of the `checked` attribute. Valid
+values at this point are either TRUE (or 1) or  FALSE (or 0).
+
+As this example uses a grouped set of multiple checkboxes, you'll need to add the empty square brackets to the field
+name, in order to ensure that the group is maintained and so that the values are submitted as a grouped Array.
 
 ::
 
  <f:form.checkbox name="myExtName[pizza][]" checked="{data.salami}" value="Salami" />
  <f:form.checkbox name="myExtName[pizza][]" checked="{data.hawaii}" value="Hawaii" />
- <f:form.checkbox name="myExtName[pizza][]" checked="{data.tonno}" value="Tonno" />
+ <f:form.checkbox name="myExtName[pizza][]" checked="{data.tuna}" value="Tuna" />
 
-Beispiel mit property
----------------------
 
-Damit Ihr dem Problem von oben entgehen könnt, bindet die Checkboxen an eine Objekteigenschaft, die Ihr im
-f:form-ViewHelper hinterlegt habt:
+Example with a property
+-----------------------
 
-::
+If you want to avoid the problem above - you should - then bind the checkboxes to an Object property you've defined
+in the encompassing `f:form` ViewHelper. Then, your code will look like this.::
 
  <f:form.checkbox property="pizza" value="Salami" />
  <f:form.checkbox property="pizza" value="Hawaii" />
- <f:form.checkbox property="pizza" value="Tonno" />
+ <f:form.checkbox property="pizza" value="Tuna" />
 
-Schaut schon eine ganze Ecke kürzer aus.
 
-Beispiel Multiselect
---------------------
+Somewhat more elegant, I'm sure you'll agree.
 
-Der extension_builder kann bis lang nur EINE Checkbox erstellen. Nämlich dann, wenn der Typ "Boolean" gewählt wurde.
-Wollt Ihr aber wie in den oberen Beispielen mehrere Checkboxen gleichzeitig setzen, dann müsst Ihr Euch vom Typ
-"Boolean" verabschieden. Mit dem alten kickstarter von TYPO3 können bis zu 10 gruppierte Checkboxen erstellt werden
-in dem die Checkboxen binär in der Datenbank abgespeichert wurden. Jede Stelle dieser "Zahl" spiegelte eine Checkbox
-wieder. 0 für deaktiviert. 1 für aktiviert. Ich will Euch heute eine Möglichkeit zeigen, wie Ihr über 10 Checkboxen
-abspeichern könnt.
+Example of grouped checkboxes
+-----------------------------
 
-Innerhalb des extension_builder wählt Ihr nun den Typ "Text" aus. Damit wird in der Datenbank eine Spalte erstellt,
-die etwas über 65.000 Zeichen abspeichern kann. Vergesst nicht über Database Analyser den neuen Typ in die Datenbank
-zu schreiben.
+At the present time, the extension_builder can only create individual checkboxes. This happens when you choose the
+field type “Boolean”. If you want to create multiple checkboxes which act together as a group, as in the examples
+above, then you'll have to move away from the boolean field type.
 
-Das Formular bleibt ähnlich den oberen Beispielen:
+This might be a good point to think about whether your code would be better served by creating a relation to a
+separate table, and managing the options for the checkboxes in that table. If not - if you want to simply build a group
+of checkboxes directly - then you can save the values together in a single database field. Using a grouped set of
+multiple checkboxes will mean that you won't be able to edit the data in the Backend. The Backend doesn't currently
+allow for a grouped set of multiple checkboxes.
 
-::
+When you create your field in the extension_builder, use the field type “Text”. This creates a field in the database
+which can store 65,000 individual characters. Don't forget to write the new type to the database, by means of the
+Database Analyzer.
 
- <f:form.checkbox property="farbe" value="gelb" />&nbsp:gelb<br />
- <f:form.checkbox property="farbe" value="braun" />&nbsp:braun<br /> <f:form.checkbox property="farbe" value="blau" />&nbsp:blau<br />
+The form will then remain as in the former examples.::
 
-Da Ihr ein Array nicht in der Datenbank abspeichern könnt, müsst Ihr das Array, das von den Checkboxen kommt in einen
-String konvertieren. Das könnt Ihr zum Beispiel mit serialize() und unserialize() realisieren. Bearbeitet dazu in Eurem
-Model den getter und setter für die Checkboxen:
+ <f:form.checkbox property="colour" value="yellow" multiple="1" /> yellow<br />
+ <f:form.checkbox property="colour" value="brown" multiple="1" /> brown<br />
+ <f:form.checkbox property="colour" value="blue" multiple="1" /> blue<br />
 
-::
+
+Because you can't save an Array directly to the database, you'll have to convert the values which come from the form to
+a string. For example, by using the `serialize()` function. The accompanying function `unserialize()` will convert the
+values back to an Array when reading the values from the database. Each of these functions can be applied in the
+appropriate “getter” and “setter” functions in your Model. ::
 
  /**
   * @var string
   */
- protected $farbe;
+ protected $colour;
  /**
-  * @return array $farbe
+  * @return array $colour
   */
- public function getFarbe() {
-   return unserialize($this->farbe);
+ public function getColour() {
+   return unserialize($this->colour);
  }
  /**
-  * @param array $farbe
+  * @param array $colour
   * @return void
   */
- public function setFarbe(array $farbe) {
-   $this->farbe = serialize($farbe);
+ public function setColour(array $colour) {
+   $this->colour = serialize($colour);
  }
 
-und fügt einen Konstruktor im Model hinzu:
 
-::
+
+Add a constructor to the Model, too.::
 
  /**
   * initializes this object
   *
-  * @param string $marke
-  * @param string $beschreibung
-  * @param boolean $unfall
-  * @param array $farbe
+  * @param string $make
+  * @param string $description
+  * @param boolean $accident
+  * @param array $colour
   */
- public function __construct($marke = '', $beschreibung = '', $unfall = false, array $farbe = array()) {
-   $this->setMarke($marke);
-   $this->setBeschreibung($beschreibung);
-   $this->setUnfall($unfall);
-   $this->setFarbe($farbe);
+ public function __construct($make = '', $description = '', $accident = false, array $colour = array()) {
+   $this->setMake($make);
+   $this->setDescription($description);
+   $this->setAccident($accident);
+   $this->setColour($colour);
  }
 
-Nur mit diesem Konstruktor wird Eure Gruppe von Checkboxen überhaupt zur Mehrfachauswahl. Schaut Euch auch den
-Quellcode an:
 
-::
+Your group will only be converted to a grouped set of multiple checkboxes through the use of this constructor. Take a
+look at the generated HTML code.::
 
- <input type="checkbox" name="tx_sffluid_sffluid[newAuto][farbe][]" value="gelb" /><br /> <input type="checkbox" name="tx_sffluid_sffluid[newAuto][farbe][]" value="braun" /><br /> <input type="checkbox" name="tx_sffluid_sffluid[newAuto][farbe][]" value="blau" /><br />
 
-An Hand der leeren eckigen Klammern kann man schön erkennen, dass nun die Mehrfachauswahl möglich ist. Auch das
-Bearbeiten vorhandener Datensätze klappt mit dieser Methode problemlos.
+ <input type="checkbox" name="tx_sffluid_sffluid[newCar][colour][]" value="yellow" /><br />
+ <input type="checkbox" name="tx_sffluid_sffluid[newCar][colour][]" value="brown" /><br />
+ <input type="checkbox" name="tx_sffluid_sffluid[newCar][colour][]" value="blue" /><br />
 
-Einziger Nachteil: Im Backend lassen sich die Checkboxen nicht mehr setzen.
+
+You can see, by the empty square brackets, that the `colour` field is a grouped set of multiple checkboxes. This also
+allows users to edit existing data with no problem at all.

@@ -1,39 +1,25 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM. ÄÖÜäöüß
-
 .. include:: ../Includes.txt
 
 Dependency Injection
 ====================
 
-Sehr häufig kommt es vor, dass Objekte von anderen Objekten abhängig sind. So sind
-z.B. Objekte, die für Inhaltselemente zuständig sind abhängig von Seitenobjekten.
-Also immer wenn wir ein Inhaltsobjekt instanziieren, muss auch das abhängige
-Seitenobjekt instanziiert werden. Innerhalb des abhängigen Objektes, in unserem Fall
-das Seitenobjekt, sieht man immer wieder einen Konstruktor, der das Objekt
-initialisiert. Nicht selten wurden in solchen Konstruktoren weitere abhängige Objekte
-eingebunden. Solch ein Objekt könnte zum Beispiel ein Seitenbaumobjekte oder eine Art
-Rootlineobjekt sein.
+In development environments, objects are very often dependent upon other objects. 
+For example, content elements are dependent upon pages. This means that when we 
+instantiate a content element, we also need to instantiate the dependent page object. 
+This happens through a constructor on the dependent object, which may also control 
+further initialisation objects. In our example of a *Page*, this could be a *page tree* 
+or a *rootline object*.
 
-Egal wie Ihr diese abhängigen Objekte nun einbindet, sei es mit new oder
-t3lib_div::makeInstance(), spätestens beim Testen Eurer Software werdet Ihr auf
-Probleme stoßen. Wollt Ihr innerhalb des Seitenobjektes eine Methode testen, dann
-seit Ihr schon bei der Instanziierung diesen Objektes dazu gezwungen auch ein
-Seitenbaumobjekt und ein Rootlineobjekt einzubinden, weil diese fest im Konstruktor
-verankert sind.
+Because of these fixed dependencies, you would have formerly run into problems when you 
+tried to test individual methods within the page object - without a related page tree 
+object, you couldn't run your tests. This problem has been overcome through the 
+implementation of *dependency injections*. Many constructors have been removed or 
+re-written for Extbase, and relationships to other classes moved out into smaller, 
+dedicated methods. This means that an object can be instantiated without always needing 
+to instantiate the dependent objects.
 
-Dieses Problem lässt sich mit Hilfe von Dependency Injections lösen. Innerhalb von
-Extbase wurden sämtliche Konstruktore entfernt bzw. überarbeitet und die Einbindung
-von abhängigen Klassen wurde in eigene kleine Methoden ausgelagert. Ab jetzt konnte
-man das aktuelle Objekt instanziieren OHNE eine Abhängigkeit zu anderen Objekten
-herstellen zu müssen.
-
-In Bezug auf phpUnit gibt es sogar noch einen weiteren Vorteil: Ihr könnt nun ein
-völlig fremdes Objekt als abhängiges Objekt für Euer Seitenbaumobjekt einbinden. Hier
-noch ein besseres Beispiel: Falls Euer abhängiges Objekt ein Datenbankobjekt ist,
-könntet Ihr nun phpUnit anweisen z.B. ein Datenbankobjekt einzubinden, dass sich die
-Daten aus einer RAM-Tabelle zieht und auch dort wieder zurückschreiben kann. Auf
-diese Weise würdet Ihr nicht in die Versuchung kommen beim Testen Eures Programmes
-mit den Echtdaten in Kontakt zu kommen.
+There is an additional advantage when it comes to phpUnit: you have the ability to bind 
+a completely separate object to your page tree. For example, if you're working with a 
+database object, you can instruct phpUnit to bind a database object which reads from and writes 
+to RAM-based tables. This allows you to run tests on your system without running 
+into the danger of accessing and potentially corrupting “real” data.

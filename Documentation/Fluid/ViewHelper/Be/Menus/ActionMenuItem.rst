@@ -1,62 +1,80 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../../Includes.txt
 
 f:be.menus.actionMenuItem
 =========================
 
-Mit diesem ViewHelper könnt Ihr einen Menüeintrag für Euer BE-Modul erstellen. Damit das funktioniert müssen sich
-diese ViewHelper innerhalb des f:be.menus.actionMenu-ViewHelper befinden.
+You can use this ViewHelper to create a menu entry for your backend module. For this to work, the call to this 
+ViewHelper must be placed within a `f:be.menus.actionMenu` ViewHelper.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+label
+~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    The name to display in the menu
 
- - :Property:    label
-   :Datatype:    String
-   :Description: Der anzuzeigende Name des Menüeintrages
-   :Standard:    NULL
-   :Mandatory:   Ja
+:aspect:`Default value`
+    NULL
 
- - :Property:    controller
-   :Datatype:    String
-   :Description: In welchem Controller liegt die aufzurufende Action
-   :Standard:    NULL
-   :Mandatory:   Ja
+:aspect:`Required`
+    Yes
 
- - :Property:    action
-   :Datatype:    String
-   :Description: Welche Action soll nach Auswahl aufgerufen werden
-   :Standard:    NULL
-   :Mandatory:   Ja
+controller
+~~~~~~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property:    arguments
-   :Datatype:    Array
-   :Description: Welche Parameter sollen an die aufzurufende Action übergeben werden
-   :Standard:    Leeres Array
-   :Mandatory:   Ja
+:aspect:`Description`
+    The Controller in which the appropriate Action lies.
 
-Beispiel
---------
+:aspect:`Default value`
+    NULL
 
-Dieses Menü beinhaltet eine Selectbox mit 2 Menüeinträgen, die nach Auswahl die hinterlegte Action des hinterlegten
-Controllers direkt aufrufen. Wie Ihr seht, könnt Ihr die Labels entweder direkt oder noch besser als Sprach-ViewHelper
-realisieren.
+:aspect:`Required`
+    Yes
+
+action
+~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Which Action should be called when this menu entry is selected.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Required`
+    Yes
+
+arguments
+~~~~~~~~~
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    Parameters to be passed to the Action.
+
+:aspect:`Default value`
+    Empty array
+
+:aspect:`Required`
+    Yes
+
+Example
+-------
+
+The following menu contains a Select element with two menu entries. Selecting an entry calls the indicated Action within 
+the indicated Controller. As you can see, you can either define the menu entry label directly, or (better) through the 
+use of the `f:translate` ViewHelper.
 
 ::
 
  <f:be.menus.actionMenu>
-   <f:be.menus.actionMenuItem label="Neu" controller="Fluid" action="new" />
-   <f:be.menus.actionMenuItem label="{f:translate(key='list')}" controller="Fluid" action="list" />
+   <f:be.menus.actionMenuItem label="New" controller="Fluid" action="new" />
+   <f:be.menus.actionMenuItem label="{f:translate(key='List')}" controller="Fluid" action="list" />
  </f:be.menus.actionMenu>

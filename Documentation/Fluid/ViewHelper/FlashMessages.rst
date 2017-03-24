@@ -1,49 +1,42 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../Includes.txt
 
 f:flashMessages
 ===============
 
-Dieser ViewHelper macht nur im Bereich selbstprogrammierter Extensions Sinn. Denn nur hier können Fehler auftauchen,
-die dem Webseitenbesucher mitgeteilt werden müssen. Hat der User z.B. vergessen bei einem Loginformular seinen
-Usernamen anzugeben und die dafür zuständige Action/Methode wurde so programmiert, dass der Username eine
-Pflichtangabe ist, dann wird dies dem Validator gemeldet, der daraufhin eine errorAction-Methode aufruft, die dann
-wiederum Fehlermeldungen zuerst sammelt und dann als "Bündel" an der Stelle ausgibt, an der Ihr diesen ViewHelper-Tag
-platziert habt.
+This ViewHelper is for use in extensions you programme yourself, as it is intended to output error messages which are
+shown to the website user. For example, a user has forgotten to fill out a required field and the relevant Action method
+is connected to a server-side validator. The input is passed to an errorAction method, which collates each error
+messages as a 'Flash Message' in turn, then outputs them all as a “bundle” at the place where you have inserted this
+ViewHelper.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. include:: ../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-.. t3-field-list-table::
- :header-rows: 1
+renderMode
+~~~~~~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Should the error messages be displayed as a list (UL) or wrapped in a container (DIV)?
 
- - :Property:    renderMode
-   :Datatype:    String
-   :Description: Sollen die Fehlermeldungen als Liste (ul) oder als Container (div) gerendert werden
-   :Standard:    NULL
-   :Mandatory:   Ja
+:aspect:`Default value`
+    NULL
 
-Beispiel Standard
------------------
+:aspect:`Mandatory`
+    Yes
+
+Example
+-------
 
 ::
 
  <f:flashMessages />
 
-Beispiel als Container
-----------------------
+Example with output contained in a DIV
+--------------------------------------
 
 ::
 

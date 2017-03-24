@@ -1,8 +1,3 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:format.htmlentities
@@ -10,41 +5,64 @@ f:format.htmlentities
 
 Mit diesem ViewHelper könnt Ihr die htmlentities Funktion von PHP auf einen Text anwenden.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+value
+~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Der Text der dekodiert werden soll
 
- - :Property:    value
-   :Datatype:    String
-   :Description: Der Text der dekodiert werden soll
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
 
- - :Property:    keepQuotes
-   :Datatype:    Boolean
-   :Description: Sollen einfache und doppelte Anführungsstriche auch dekodiert werden?
-   :Standard:    FALSE
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    No
 
- - :Property:    encoding
-   :Datatype:    String
-   :Description: Wir sind hier im Bereich TYPO3 und da sollte der Zeichensatz auf UTF-8 und nix anderes stehen. Sollte wiedererwartend ein anderer Zeichensatz gewünscht sein, kann dieser hier angegeben werden. Siehe auch Info auf php.net.
-   :Standard:    NULL
-   :Mandatory:   Nein
+keepQuotes
+~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
 
- - :Property:    doubleEncode
-   :Datatype:    Boolean
-   :Description: Bei TRUE (Standard) wird alles kodiert. Bei FALSE, werden bereits kodierte Werte nicht erneut kodiert.
-   :Standard:    TRUE
-   :Mandatory:   Nein
+:aspect:`Description`
+    Sollen einfache und doppelte Anführungsstriche auch dekodiert werden?
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+encoding
+~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Wir sind hier im Bereich TYPO3 und da sollte der Zeichensatz auf UTF-8 und nix anderes stehen. Sollte wiedererwartend ein anderer Zeichensatz gewünscht sein, kann dieser hier angegeben werden. Siehe auch Info auf php.net.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+doubleEncode
+~~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Bei TRUE (Standard) wird alles kodiert. Bei FALSE, werden bereits kodierte Werte nicht erneut kodiert.
+
+:aspect:`Default value`
+    TRUE
+
+:aspect:`Mandatory`
+    No
 
 Beispiel
 --------

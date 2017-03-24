@@ -1,128 +1,250 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:be.container
 ==============
 
-Zu allererst solltet Ihr Euch eine grundsätzliche Frage stellen: Willst Du etwas entwickeln ganz im Stile von TYPO3
-oder willst Du etwas völlig Eigenes bauen. Wenn Ihr Euch für etwas völlig Eigenes entscheidet, dann braucht Ihr diesen
-ViewHelper überhaupt nicht. Bindet in diesem Falle Eure benötigten StyleSheets und JavaScripte selbst ein.
+The first question you should ask yourself is whether you want to build something using the existing TYPO3 interface, or 
+build something completely bespoke. If you're making a bespoke interface, then you don't need this ViewHelper at all. 
+In this event, bind your own JavaScript and CSS assets yourself.
 
-Wenn Ihr allerdings etwas bauen wollt, dass sich an das TYPO3-Design anlehnt und möglichst kompatibel sein soll,
-dann solltet Ihr diesen ViewHelper auf jeden Fall verwendet. Das was damals zu Zeiten von MediumDoc und Co.
-eingebunden wurde, benötigt heute nur noch diesen Zweizeiler mit knapp 10 Parametern.
+However, if you want to build something using the standard TYPO3 interface, thereby providing a close integration and 
+compatibility with other modules, then use this ViewHelper. In essence, you only need to use two rows of code and around 
+ten properties.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+pageTitle
+~~~~~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Backend modules are loaded in an HTML frame, so it's not essential to define an HTML page title. If you want to, 
+    then this is the property to use.
 
- - :Property:    pageTitle
-   :Datatype:    String
-   :Description: BE-Module werden in einem Frame dargestellt, von daher macht ein Seitentitel wenig sind. Einfach leer lassen
-   :Standard:    Leerer String
-   :Mandatory:   Nein
+:aspect:`Default value`
+    Empty string
 
- - :Property:    enableJumpToUrl
-   :Datatype:    Boolean
-   :Description: Lasst diesen Parameter eingeschaltet, wenn Ihr den ActionMenu-ViewHelper verwenden wollt, da dieser die entsprechenden JavaScripte dazu liefert.
-   :Standard:    TRUE
-   :Mandatory:   Nein
+:aspect:`Required`
+    No
 
- - :Property:    enableClickMenu
-   :Datatype:    Boolean
-   :Description: Wenn aktiviert, wird das JavaScript für die Contextmenüs eingebunden
-   :Standard:    TRUE
-   :Mandatory:   Nein
+enableJumpToUrl
+~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
 
- - :Property:    loadPrototype
-   :Datatype:    Boolean
-   :Description: Wenn aktiviert, wird das Prototype-JS-Framework eingebunden
-   :Standard:    TRUE
-   :Mandatory:   Nein
+:aspect:`Description`
+    Activate this parameter if you want to use the ActionMenu ViewHelper. This loads the necessary JavaScript assets.
+    
+    This property has been marked as deprecated in TYPO3 6.2 and was removed in TYPO3 7.0.
+    
 
- - :Property:    loadScriptaculous
-   :Datatype:    Boolean
-   :Description: Wenn aktiviert, wird das Zusatzpaket für Prototype eingebunden
-   :Standard:    FALSE
-   :Mandatory:   Nein
+:aspect:`Default value`
+    TRUE
 
- - :Property:    scriptaculousModule
-   :Datatype:    String
-   :Description: Ihr könnt hier noch weitere Module für das Scriptaculouspaket aktivieren
-   :Standard:    Leerer String
-   :Mandatory:   Nein
+:aspect:`Required`
+    No
 
- - :Property:    loadExtJs
-   :Datatype:    Boolean
-   :Description: Wenn aktiviert, wird das ExtJS-Framework eingebunden
-   :Standard:    FALSE
-   :Mandatory:   Nein
+enableClickMenu
+~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
 
- - :Property:    loadExtJsTheme
-   :Datatype:    Boolean
-   :Description: Wenn aktiviert, werden Vorgaben für die Grafischen Elemente eingebunden.
-   :Standard:    TRUE
-   :Mandatory:   Nein
+:aspect:`Description`
+    When active, this property loads the JavaScript for context menu functionality.
 
- - :Property:    extJsAdapter
-   :Datatype:    String
-   :Description: Statt dem Standard ext-base kann hier ein anderer Adapter angegeben werden.
-   :Standard:    Leerer String
-   :Mandatory:   Nein
+:aspect:`Default value`
+    TRUE
 
- - :Property:    enableExtJsDebug
-   :Datatype:    Boolean
-   :Description: Sollte nur aktiviert werden, wenn man auf Basis von ExtJS entwickelt.
-   :Standard:    FALSE
-   :Mandatory:   Nein
+:aspect:`Required`
+    No
 
- - :Property:    addCssFile
-   :Datatype:    String
-   :Description: Eine CSS-Datei einbinden
-   :Standard:    NULL
-   :Mandatory:   Nein
+loadPrototype
+~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
 
- - :Property:    addJsFile
-   :Datatype:    String
-   :Description: Eine JavaScript-Datei einbinden
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Description`
+    When active, the Prototype JS framework will be loaded.
 
- - :Property:    loadJQuery
-   :Datatype:    Boolean
-   :Description: Soll jQuery als JavaScript Framework eingebunden werden?
-   :Standard:    FALSE
-   :Mandatory:   Nein
+:aspect:`Default value`
+    TRUE
 
- - :Property:    includeCssFiles
-   :Datatype:    Array
-   :Description: Während addCssFile nur eine CSS-Datei einbinden kann, können mit dieser Eigenschaft mehrere
-                 CSS-Dateien eingebunden werden.
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Required`
+    No
 
- - :Property:    includeJsFiles
-   :Datatype:    Array
-   :Description: Während addJsFile nur eine JS-Datei einbinden kann, können mit dieser Eigenschaft mehrere
-                 JS-Dateien eingebunden werden.
-   :Standard:    NULL
-   :Mandatory:   Nein
+loadScriptaculous
+~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
 
- - :Property:    addJsInlineLabels
-   :Datatype:    Array
-   :Description: Jeder Wert in diesem Array muss einem Key aus der locallang.xml/xlf entsprechen. Diese Übersetzung
-                 wird dann im Backend zur Verfügung gestellt.
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Description`
+    When active, the Scriptaculous extension to Prototype JS will be loaded.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Required`
+    No
+
+scriptaculousModule
+~~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Using this option, you can load additional JavaScript modules for Scriptaculous.
+
+:aspect:`Default value`
+    Empty string
+
+:aspect:`Required`
+    No
+
+loadExtJs
+~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    When active, the ExtJS framework will be loaded.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Required`
+    No
+
+loadExtJsTheme
+~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    When active, templates for the graphical elements of the ExtJs framework will be loaded.
+
+:aspect:`Default value`
+    TRUE
+
+:aspect:`Required`
+    No
+
+extJsAdapter
+~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    You can use this property to define a different adaptor instead of the standard, Extbase.
+
+:aspect:`Default value`
+    Empty string
+
+:aspect:`Required`
+    No
+
+enableExtJsDebug
+~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    This property should only be activated during a development process involving ExtJS.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Required`
+    No
+
+addCssFile
+~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Bind a specific CSS asset file to the view.
+    
+    This property has been marked as deprecated in TYPO3 6.2 and was removed in TYPO3 7.0. Please use the `includeCssFiles` instead.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Required`
+    No
+
+addJsFile
+~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Bind a specific JavaScript asset file to the view.
+    
+    This property has been marked as deprecated in TYPO3 6.2 and was removed in TYPO3 7.0. Please use the `includeJsFiles` instead.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Required`
+    No
+
+loadJQuery
+~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    When active, jQuery will be loaded.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Required`
+    No
+
+includeCssFiles
+~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    Using addCssFile will only allow you to bind in a single CSS asset file. Using includeCssFiles allows you to bind 
+    multiple files.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Required`
+    No
+
+includeJsFiles
+~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    Using addJsFile will only allow you to bind in a single JavaScript asset file. Using includeJsFiles allows you to 
+    bind multiple files.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Required`
+    No
+
+addJsInlineLabels
+~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    Each value must correspond to a key from the locallang.xml/xlf file. The matching translation will then be 
+    available in the backend.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Required`
+    No

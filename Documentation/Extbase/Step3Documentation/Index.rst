@@ -1,14 +1,9 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM. ÄÖÜäöüß
-
 .. include:: ../../Includes.txt
 
-Schritt 3 - Dokumentation
-=========================
+Step 3 - Documentation
+======================
 
-**Inhaltsverzeichnis**
+**Table of Contents**
 
 .. toctree::
    :maxdepth: 1

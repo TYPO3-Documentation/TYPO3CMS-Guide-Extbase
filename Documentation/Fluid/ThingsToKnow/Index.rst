@@ -1,14 +1,9 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../Includes.txt
 
-Things to know
-==============
+Things worth knowing
+====================
 
-Here are some important informations around Fluid
+Some important information about Fluid.
 
 **Table of Contents**
 

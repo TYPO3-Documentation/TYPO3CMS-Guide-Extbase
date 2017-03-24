@@ -1,82 +1,110 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../../Includes.txt
 
 f:be.widget.paginate
 ====================
 
-Dieser ViewHelper hilft Euch dabei eine große Anzahl an Daten auf mehrere Seiten mit Seitennavigation zu erstellen,
-dabei könnt Ihr selbst fest legen wo sich die Navigation befinden soll und auch wie viele Datensätze pro Seite
-angezeigt werden sollen.
+This ViewHelper allows you to split a large amount of data into chunks across multiple pages, to define the number of
+records on each page, and to define where and how the navigation between the pages should appear.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+objects
+~~~~~~~
+:aspect:`Variable type`
+    QueryResultInterface
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Not the result objects themselves, but the object from the Repository which contains the data needed to reproduce
+    the SQL command. The SQL statement object and the SQL command aren't allowed here, as Extbase won't be able to
+    work out how to implement the LIMIT attribute which controls the division of the data into paginated results.
 
- - :Property:    objects
-   :Datatype:    QueryResultInterface
-   :Description: Hierbei handelt es sich nicht um die Ergebnisobjekte an sich, sondern um das Objekt aus dem
-                 Repository, dass Daten enthält, die für das Zusammenstellen des SQL-Befehls benötigt werden. Das
-                 SQL-Statementobjekt und SQL-Behle sind hier nicht erlaubt, da Extbase hier nicht weiß wie und wo es
-                 den LIMIT-Befehl einbauen soll.
-   :Standard:
-   :Mandatory:   Ja
+:aspect:`Default value`
 
- - :Property:    as
-   :Datatype:    String
-   :Description: Wie soll die Variable heißen, in der die reduzierten Objekte zur Verfügung gestellt werden sollen?
-   :Standard:
-   :Mandatory:   Ja
 
- - :Property:    configuration
-   :Datatype:    Array
-   :Description: Konfiguration der Seitennavigation
-   :Standard:    Siehe "Konfiguration der Seitennavigation"
-   :Mandatory:   Nein
+:aspect:`Required`
+    Yes
 
-Konfiguration der Seitennavigation
-----------------------------------
+as
+~~
+:aspect:`Variable type`
+    String
 
-.. t3-field-list-table::
- :header-rows: 1
+:aspect:`Description`
+    The name of the variable in which the reduced object is made available.
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Required`
+    Yes
 
- - :Property:    itemsPerPage
-   :Datatype:    QueryResultInterface
-   :Description: Wie viele Objekte sollen pro Seite angezeigt werden?
-   :Standard:    10
-   :Mandatory:   Nein
+configuration
+~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Array
 
- - :Property:    insertAbove
-   :Datatype:    Boolean
-   :Description: Seitennavigator oberhalb anzeigen?
-   :Standard:    FALSE
-   :Mandatory:   Nein
+:aspect:`Description`
+    Configuration of the page navigation
 
- - :Property:    insertBelow
-   :Datatype:    Boolean
-   :Description: Seitennavigator unterhalb anzeigen?
-   :Standard:    TRUE
-   :Mandatory:   Nein
+:aspect:`Default value`
+    See "Configuration of the page navigation"
 
- - :Property:    recordsLabel
-   :Datatype:    String
-   :Description: Hier könnt Ihr einen eigenen Text einbinden, der den Schriftzug "Datensätze 1 - xy" überschreibt.
-   :Standard:    Leerer String
-   :Mandatory:   Nein
+:aspect:`Required`
+    No
+
+Configuration of the page navigation
+------------------------------------
+
+itemsPerPage
+~~~~~~~~~~~~
+:aspect:`Variable type`
+    QueryResultInterface
+
+:aspect:`Description`
+    The number of objects which may be associated with each page in the series.
+
+:aspect:`Default value`
+    10
+
+:aspect:`Required`
+    No
+
+insertAbove
+~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Display the page navigation above the results.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Required`
+    No
+
+insertBelow
+~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Display the page navigation below the results.
+
+:aspect:`Default value`
+    TRUE
+
+:aspect:`Required`
+    No
+
+recordsLabel
+~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    An optional text to replace the standard descriptor “Records 1 - xy”.
+
+:aspect:`Default value`
+    Empty string
+
+:aspect:`Required`
+    No

@@ -1,126 +1,264 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:uri.action
 ============
 
-Dieser ViewHelper erstellt einen Link zu einer anderen aufzurufenden Action
+This ViewHelper creates a link to a given action.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+action
+~~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Here you set the action name without appending "Action".
+    If not given the *current* action will be used.
 
- - :Property:    action
-   :Datatype:    String
-   :Description: Auf welche Actionmethode soll der Link zeigen
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
 
- - :Property:    arguments
-   :Datatype:    Array
-   :Description: Welche Argumente/Parameter sollen dem Link angehängt werden
-   :Standard:    Leeres Array
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    No
 
- - :Property:    controller
-   :Datatype:    String
-   :Description: Auf welchen Controller soll der Link zeigen
-   :Standard:    NULL
-   :Mandatory:   Nein
 
- - :Property:    extensionName
-   :Datatype:    String
-   :Description: Auf welchen Controller und/oder Action welcher Extension soll der Link zeigen
-   :Standard:    NULL
-   :Mandatory:   Nein
+arguments
+~~~~~~~~~
+:aspect:`Variable type`
+    Array
 
- - :Property:    pluginName
-   :Datatype:    String
-   :Description: Auf welchen Controller und/oder Action welchen Plugins soll der Link zeigen
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Description`
+    Additional parameters for the link.
+    They will be prefixed with the plugin name.
 
- - :Property:    pageUid
-   :Datatype:    Integer
-   :Description: Auf welche Seiten-UID soll verlinkt werden
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Default value`
+    Empty array
 
- - :Property:    pageType
-   :Datatype:    Integer
-   :Description: Auf welche Seitentyp ID soll verlinkt werden.
-   :Standard:    0
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    No
 
- - :Property:    noCache
-   :Datatype:    Boolean
-   :Description: Verhindert das Caching der aufzurufenden Seite
-   :Standard:    FALSE
-   :Mandatory:   Nein
 
- - :Property:    noCacheHash
-   :Datatype:    Boolean
-   :Description: Verhindert, dass der cHash-Parameter nicht mit an die URL angehangen wird.
-   :Standard:    FALSE
-   :Mandatory:   Nein
+controller
+~~~~~~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property:    section
-   :Datatype:    String
-   :Description: Auf welchen Anker soll die Zielseite springen (#anker)
-   :Standard:    Leerer String
-   :Mandatory:   Nein
+:aspect:`Description`
+    Here you can set a controller. If it's not specified,
+    the current controller will be used.
 
- - :Property:    format
-   :Datatype:    String
-   :Description: Gibt an um welches Format es sich bei der Zielseite handelt. Alternativ gibt es noch "xml"
-   :Standard:    Leerer String
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
 
- - :Property:    linkAccessRestrictedPages
-   :Datatype:    Boolean
-   :Description: Normalerweise werden Links auf geschützte Seiten nicht erzeugt. Hier mit kann man die Linkgeneration erzwingen.
-   :Standard:    FALSE
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    No
 
- - :Property:    additionalParams
-   :Datatype:    Array
-   :Description: Fügt weitere Parameter der Zielseite an. Im Gegensatz zu arguments, können hiermit Variablen hinzugefügt werden die nicht mit dem Extensionnamen geprefixed werden.
-   :Standard:    Leeres Array
-   :Mandatory:   Nein
 
- - :Property:    absolute
-   :Datatype:    Boolean
-   :Description: Nach Aktivierung wird der Zeilseite noch der Domainname und Pfad vorangestellt.
-   :Standard:    FALSE
-   :Mandatory:   Nein
+extensionName
+~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property:    addQueryString
-   :Datatype:    Boolean
-   :Description: Falls der aktuellen Seite bereits Parameter über die URL mitgegeben wurden, könnt Ihr hier nun entscheiden, ob diese Parameter auch mit auf die Zielseite übergeben werden.
-   :Standard:    FALSE
-   :Mandatory:   Nein
+:aspect:`Description`
+    Here you can set an extension name.
+    If not given the *current* extension name will be used.
 
- - :Property:    argumentsToBeExcludedFromQueryString
-   :Datatype:    Array
-   :Description: Falls Ihr addQueryString aktiviert habt, aber einen oder zwei bestimmte Parameter wieder entfernen wollt, dann tragt Ihr hier diese Parameter ein.
-   :Standard:    Leeres Array
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
 
-Beispiel
---------
+:aspect:`Mandatory`
+    No
 
-::
 
- <f:link.action action="show">Zeige Details</f:link.action>
+pluginName
+~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Here you can set a plugin name.
+    If not given the *current* plugin name will be used.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+
+pageUid
+~~~~~~~
+:aspect:`Variable type`
+    Integer
+
+:aspect:`Description`
+    Here you can set a page UID.
+    If not specified the action will return to the *current* page.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+
+pageType
+~~~~~~~~
+:aspect:`Variable type`
+    Integer
+
+:aspect:`Description`
+    Here you can set a page type.
+
+:aspect:`Default value`
+    0
+
+:aspect:`Mandatory`
+    No
+
+
+noCache
+~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Sets the `?no_cache=1` parameter
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+
+noCacheHash
+~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    If set then the *cHash parameter* will not be added to the link.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+
+section
+~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Here you can set an anchor to be linked to.
+
+:aspect:`Default value`
+    Empty string
+
+:aspect:`Mandatory`
+    No
+
+
+format
+~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Sets the format of the target page. It can be set to "xml" alternatively.
+
+:aspect:`Default value`
+    Empty string
+
+:aspect:`Mandatory`
+    No
+
+
+linkAccessRestrictedPages
+~~~~~~~~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    If set the link will be set to restricted pages even if the user is not logged in.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+
+additionalParams
+~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    Adds parameters to the link. The difference to `arguments` is that
+    these parameters are not prefixed with the plugin name.
+
+:aspect:`Default value`
+    Empty array
+
+:aspect:`Mandatory`
+    No
+
+
+absolute
+~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    If set the link will be absolute including scheme and domain.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+
+addQueryString
+~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    If set the current parameters of the URL will be appended to the generated link.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+
+argumentsToBeExcludedFromQueryString
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    If set and `addQueryString` activated, the listed parameters will be removed.
+
+:aspect:`Default value`
+    Empty array
+
+:aspect:`Mandatory`
+    No
+
+
+Example
+-------
+
+.. code-block:: html
+
+   {f:uri.action(action: 'show', arguments: '{foo: \'bar\'}')}
+

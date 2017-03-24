@@ -1,119 +1,114 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM. ÄÖÜäöüß
-
 .. include:: Includes.txt
 
-Erstellen einer Extbase Extension
+Creating an Extbase extension
 =================================
 
-Die erste Extension - Schritt fuer Schritt
-------------------------------------------
+Your first extension - step by step
+-----------------------------------
 
-Ihr müsst Euch zu aller erst von dem Gedanken der alten piBase-Programmierung lösen und begreifen,
-dass die Programmierung auf Extbase nicht direkt mit Quellcode beginnt, sondern schon während dem Gespräch mit dem
-Kunden. Als Programmierer muss klar sein, was der Kunde will. Je besser Ihr ihn versteht,
-desto besser könnt Ihr planen und Planung ist für Extbaseprogrammierung das A und O.
+First of all, you'll need to put aside your knowledge of piBase programming to understand that programming
+in Extbase doesn't begin with code, but in discussions with the client. As a programmer, you need to be clear 
+on the client's requirements. The more clarity you achieve at the concept stage, the better you can plan - 
+and planning is the alpha and omega of programming for Extbase.
 
-Im folgenden Verlauf werdet Ihr eine Produktübersicht erstellen, bei der auf der ersten Seite die Produkte
-als Liste dargestellt werden und nach einem Klick auf den Produkttitel in die Detailansicht gewechselt wird. Da die
-Anzahl der Produkte stark variieren kann, wird es eine Seitennavigation geben, mit der der Webseitenbesucher durch die
-Produkte navigieren kann.
+In the following process, you'll create a product overview. On the first page, a list of products, containing links 
+to individual detail view pages. Because the number of products can vary a great deal, we'll make a page navigation 
+to allow the website visitor to browse through the product catalogue.
 
 .. tip::
 
-   Auf Grund von Mehrsprachigkeit solltet Ihr alle Datenbankspalten in englischer Sprache anlegen. Spalten wie
-   *ist_gefraessig* sind einfach sehr schlecht zu lesen.
+   To ensure that the extension can easily be translated from an English base, and in order to avoid issues with 
+   special characters, we'll create all of the database column names in English.
 
-Den Extension Builder installieren
-----------------------------------
+Install the Extension Builder
+-----------------------------
 
-Um eine Extension auf Basis von Extbase zu erstellen, müsst Ihr den Extension Builder (extension_builder) über den
-Extension Manager installieren. Ihr erhaltet nach der Aktivierung dieser Extension einen neuen Eintrag *Extension
-Builder* in der linken Menüleiste des TYPO3-Backends. Nach einem Klick auf diesen neuen Eintrag landet Ihr auf der
-Einstiegsseite des *Extension Builders*, die Euch erst mal ein paar grundsätzliche Dinge erklärt. Über die Selectbox
-oben könnt Ihr zwischen der *Einstiegsseite* und dem *Domain Modelling* wechseln.
+In order to create a new extension for Extbase, install the Extension Builder (extension_builder) extension using 
+the Extension Manager. Once this extension has been activated, a new menu entry *Extension Builder* will appear 
+in the backend menu. Click on the new menu entry and you'll be presented with the start page of the *Extension 
+Builder*, which explains the first few basic points. At the top of this page, you can switch between the *Introduction* 
+and the *Domain Modelling* pages, using the pull-down menu.
 
-Informationen zur Extension eingeben
-------------------------------------
+Information about your extension
+--------------------------------
 
-Nach der Auswahl von *Domain Modelling* aus der Selectbox, erscheint nun ein Formular in dem Ihr weitere
-Informationen zu der Extension angeben könnt und eine weiße karierte Fläche.
+Having switched to the *Domain Modelling* screen, you'll see a form on the left of the screen, which you can fill 
+out with the information about the extension you want to create. To the right is a large, checkered area, which 
+we'll explain in a moment.
 
-Tragt nun folgende Daten in das Formular ein:
+For the extension we're working on here, add the following information to the form.
 
 - Name: Product Overview
 
 - Key: productoverview
 
-- description: This extension shows a paginated product overview including a simple single view
+- Description: This extension shows a paginated product overview including a simple single view
 
-- persons: Tragt hier Eure Daten ein.
+- Persons: [Add your own personal information.]
 
-- Frontend Plugin:
+- Frontend plugin:
 
   * Name: Products
 
   * Key: products
 
-Den Pluginnamem findet Ihr später in der Selectbox für die Plugins innerhalb der Seiteninhalte wieder. Der Pluginkey
-wird von Extbase mit dem Extensionkey zusammengesetzt und bildet so einen TYPO3 weiten eindeutigen Bezeichner:
-productoverview_products
+You'll find the plugin name later in the select box, when you're adding it as page content. The plugin key will be 
+combined with the extension key by Extbase, in order to create a unique identifier: productoverview_products.
 
-Domain Modelle anlegen
-----------------------
+Create the domain model
+-----------------------
 
-Das Formular für die Extensionkonfiguration könnt Ihr mit dem kleinen Pfeil oben rechts im Formular schließen. Nun
-steht Euch die komplette kariente Fläche zur weiteren Bearbeitung zur Verfügung. Per Drag and Drop könnt Ihr nun
-aus dem Kasten "New Model Object" ein eigenes Domainmodel herausziehen und auf der weißen Fläche platzieren. Dieses
-Model nennt Ihr "Product". Nach dem Aufklappen der *Domain Object Settings* aktiviert Ihr die Checkbox *Is
-Aggregate Root* und setzt die Beschreibung auf "Product".
+You can collapse the extension configuration form using the small arrow (top right of the form) if you like. This 
+will reduce the visible area to the checkered section of the page. Drag the small box *New Model Object* and drop it 
+anywhere on the checkered background: this will create a new domain model for you to complete. (This is the basis 
+of the data you'll be creating, which will contain information about the products you'll create later.)
 
-Aktiviert bei den *Default Actions" die beiden Checkboxen: *list* und *show*
+Click on the text “click to edit” and give the domain model its name: Product. Open the *Domain object settings* section 
+and activate the checkbox *Is aggregate root?*. The optional description can be completed too.
 
-Legt 2 Eigenschaften vom Typ *String* an: title und price
+Close *Domain object settings* and open *Default actions*, then choose *list* and *show*. These are the different views 
+you'll need for outputting the product information in the frontend of the website.
 
-Für die Verknüpfung zu den Kategorien müsst Ihr noch eine Relation anlegen. Klickt auf *Add* und tragt als name
-"categories" ein. Da mehrere Kategorien möglich sein sollen wählt Ihr auf der Selectbox "1:N" aus.
+Add 2 new *properties* of type *String*: title and price.
 
-Legt nun ein weiteres Domainmodel an und benennt es "Category". Im Bereich der "Domain Object Settings" vergebt Ihr
-diesmal nur eine description aber lasst die Checkbox "Aggregate Root" unmarkiert. Auch Actions werden für dieses
-Domainmodel nicht benötigt.
+So that the products can be categorised, you'll need to create a new relationship, which will connect the product with its 
+categories. Beneath the option *Relations*, add a new entry with the name “categories”. Because the relationship may 
+enable multiple categories for each products, choose the option “1:n”.
 
-Legt 1 Eigenschaft vom Typ String an: category
+Create a new domain model by dragging and dropping *New Model Object* again, and call it “Category”. Optionally add 
+a description, but don't activate the option *Is aggregate root?* this time. We won't need any “actions” for this 
+domain object.
 
-Im Domainmodel *Product* könnt Ihr nun von der Relation *category* eine Linie zu dem Model *Category* ziehen.
+Add a new property of type *String* to the new domain model, named “category”.
+
+You can now drag a line from the category property of the model *Product* to the model *Category*
 
 .. figure:: Images/Domainmodelling.jpg
    :alt: Domainmodelling
    :width: 700
 
-Extension aktivieren
---------------------
+Activate the extension
+----------------------
 
-Geht nun in den Extension Manager und aktiviert die Extension *productoverview*. Bei diesem Vorgang werden auch die
-fehlenden Datenbanktabellen erstellt.
+Go to the Extension Manager and activate the extension *productoverview*. Activating the extension will add the necessary  
+fields to the database. (If you later deactivate the extension, the database fields and any data you've added won't be 
+deleted auomatically.)
 
-Plugin einbinden
-----------------
+Add the plugin to a page
+------------------------
 
-Legt eine neue Seite an und bindet das neu erstellte Plugin mit dem Namen "Product" auf Eurer Seite ein. Wenn alles
-geklappt hat, dann erscheint im Frontend eine leere Tabelle mit den beiden Tabellen-Überschriften *title* und *price*.
+Add a new content element of type “General plugin” to a TYPO3 page, and select the option *Product* from the pulldown. If all is well, 
+you'll see an empty table with the table headers *title* and *price* in the frontend.
 
-Datensätze anlegen
-------------------
-
-Legt im TYPO3-Seitenbaum eine neue Seite vom Typ *Ordner* an. Auf dieser Seite könnt Ihr nun neue Datensätze vom Typ
-*Product* erstellen. Damit diese Daten in Eurem Plugin angezeigt werden, müsst Ihr diesem mitteilen,
-wo sich die Daten befinden. Geht dazu in Euer Plugin auf den Tab *Verhalten*. Tragt im Bereich *Datensatzsammlung*
-die uid der Seite mit den Product-Datensätze ein. Nun erscheinen die Datensätze auch im Frontend
-
-Designanpassungen
+Add a data record
 -----------------
 
-Jede Extension, die über den Extension Builder erstellt wurde bringt ein kleines CSS mit. Derzeit sind die
-Tabellenspalten extremst eng beieinander. Erstellt nun ein +extTemplate für Eure Seite und bindet das Extension
-Template von Eurer Extension ein. Danach erscheint Eure Tabelle ein wenig aufgeräumter.
+In the TYPO3 backend, create a new page of type *folder*. You can create new Product records in this folder: most easily by switching 
+to the backend *List* view.
 
-Viel Spaß mit Eurer ersten Extbase Extension
+So that the products appear in the frontend, you'll need to tell the plugin where your records are stored. Edit the plugin (content 
+element) and switch to the *Plugin* tab - you can select the new page (of type *folder*) you've created in the *record storage page* field.
+
+Your product entries will now appear in the frontend.
+
+Have fun with your first Extbase extension!

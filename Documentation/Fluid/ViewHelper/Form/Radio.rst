@@ -1,43 +1,37 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:form.radio
 ============
 
-Mit diesem ViewHelper erstellst Du einen Radiobutton. Normalerweise tauchen diese immer in Gruppen auf und bieten dem
-Besucher an sich für EINE Möglichkeit zu entscheiden. Eine Mehrfachauswahl wie bei den Checkboxen ist hier nicht
-möglich.
+This ViewHelper allows you to create a radio button element for use in an HTML form. Radio button fields are usually
+used in groups, and only a single radio button in a group may be active at one time. A multiple selection - like the one
+we see when using checkboxes - isn't possible with radio buttons.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-.. include:: ../../UniversalFormFieldAttributes.txt
+All the :ref:`universal form field attributes <UniversalFormFieldAttributes>`
 
-Eigenschaften speziell für das HTML-Element
-###########################################
+Exclusive properties for the HTML-Element
+#########################################
 
-.. t3-field-list-table::
- :header-rows: 1
+checked
+~~~~~~~
+:aspect:`Variable type`
+    Boolean
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    When active, the radio button field will appear in a checked (active) state.
 
- - :Property:    checked
-   :Datatype:    Boolean
-   :Description: Wenn aktiviert, dann gilt diese Checkbox als markiert.
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
 
-Beispiel
+:aspect:`Mandatory`
+    No
+
+Examples
 --------
 
 ::
@@ -46,7 +40,8 @@ Beispiel
  <f:form.radio name="myExtName[age]" value="11-40" />
  <f:form.radio name="myExtName[age]" value="41-99" />
 
-oder
+
+or
 
 ::
 

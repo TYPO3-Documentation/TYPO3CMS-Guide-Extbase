@@ -1,8 +1,3 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:format.padding
@@ -10,35 +5,49 @@ f:format.padding
 
 Padding
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+padLength
+~~~~~~~~~
+:aspect:`Variable type`
+    Integer
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Wie viel Zeichen lang darf der Text inkl. der hinzugefügten Abstandszeichen maximal werden
 
- - :Property:    padLength
-   :Datatype:    Integer
-   :Description: Wie viel Zeichen lang darf der Text inkl. der hinzugefügten Abstandszeichen maximal werden
-   :Standard:
-   :Mandatory:   Ja
+:aspect:`Default value`
 
- - :Property:    padString
-   :Datatype:    String
-   :Description: Welches Zeichen soll als Abstand dienen
-   :Standard:    Leerzeichen
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    Yes
 
- - :Property:    padType
-   :Datatype:    String
-   :Description: Wo sollen die Abstandszeichen eingefügt werden. Zur Auswahl steht right, left und both
-   :Standard:    right
-   :Mandatory:   Nein
+padString
+~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Welches Zeichen soll als Abstand dienen
+
+:aspect:`Default value`
+    Leerzeichen
+
+:aspect:`Mandatory`
+    No
+
+padType
+~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Wo sollen die Abstandszeichen eingefügt werden. Zur Auswahl steht right, left und both
+
+:aspect:`Default value`
+    right
+
+:aspect:`Mandatory`
+    No
 
 Beispiel zur Funktionsweise
 ---------------------------

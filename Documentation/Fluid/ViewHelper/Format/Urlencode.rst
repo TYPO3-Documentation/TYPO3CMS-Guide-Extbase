@@ -1,8 +1,3 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:format.urlencode
@@ -11,23 +6,22 @@ f:format.urlencode
 In Texten und Firmennamen kommen immer wieder Sonderzeichen wie @ & oder % vor. Diese Zeichen sind nicht URL-sicher
 und sollten vor der Übermittlung durch diesen ViewHelper geschleust werden.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+value
+~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Der Text, der für die Übergabe per Link vorbereitet werden soll
 
- - :Property:    value
-   :Datatype:    String
-   :Description: Der Text, der für die Übergabe per Link vorbereitet werden soll
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
 Beispiel
 --------

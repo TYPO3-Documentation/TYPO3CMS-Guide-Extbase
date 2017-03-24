@@ -1,44 +1,54 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:format.number
 ===============
 
-Mit diesem ViewHelper könnt Ihr Zahlen formatieren. Er arbeitet ähnlich dem f:format.currency-ViewHelper
+Mit diesem ViewHelper könnt Ihr Zahlen formatieren. Er arbeitet ähnlich dem `f:format.currency`-ViewHelper
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+decimals
+~~~~~~~~
+:aspect:`Variable type`
+    Integer
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Wie viele Nachkommastellen dürfen angezeigt werden.
 
- - :Property:    decimals
-   :Datatype:    Integer
-   :Description: Wie viele Nachkommastellen dürfen angezeigt werden.
-   :Standard:    2
-   :Mandatory:   Nein
+:aspect:`Default value`
+    2
 
- - :Property:    decimalSeperator
-   :Datatype:    String
-   :Description: Welcher Zeichen soll für die Trennung von Euro und Cent verwendet werden. Dezimaltrenner.
-   :Standard:    .
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    No
 
- - :Property:    thousandsSeperator
-   :Datatype:    String
-   :Description: Welches Zeichen soll als Tausendertrennzeichen verwendet werden.
-   :Standard:    ,
-   :Mandatory:   Nein
+decimalSeparator
+~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Welcher Zeichen soll für die Trennung von Euro und Cent verwendet werden. Dezimaltrenner.
+
+:aspect:`Default value`
+    .
+
+:aspect:`Mandatory`
+    No
+
+thousandsSeparator
+~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Welches Zeichen soll als Tausendertrennzeichen verwendet werden.
+
+:aspect:`Default value`
+    ,
+
+:aspect:`Mandatory`
+    No
 
 Beispiel
 --------

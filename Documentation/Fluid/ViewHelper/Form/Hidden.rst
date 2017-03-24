@@ -1,33 +1,29 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:form.hidden
 =============
 
-Mit diesem ViewHelper erstellst Du ein verstecktes Feld. Das ist schonmal nützlich, um Datensatz-UIDs abzulegen,
-die der Webseitenbesucher nicht zu sehen braucht, aber für Dich wichtig sind, wenn es darum geht, die eingegebenen
-Daten einem Datensatz zuzuordnen, um ihn z.B. zu speichern.
+This ViewHelper allows you to create a hidden field in an HTML form. Such a field can be useful to provide record UIDs
+in the form, which the website visitor can't see but which are essential when transmitting the form data to the web
+server.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-.. include:: ../../UniversalFormFieldAttributes.txt
+All the :ref:`universal form field attributes <UniversalFormFieldAttributes>`
 
-Beispiel
+Examples
 --------
 
 ::
 
  <f:form.hidden name="myExtName[ttAddressUid]" value="15" />
 
-oder
+
+or
 
 ::
 
-.<f:form.hidden property="ttAddressUid" value="15" />
+ <f:form.hidden property="ttAddressUid" value="15" />

@@ -1,141 +1,166 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../Includes.txt
 
 f:for
 =====
 
-Der f:for-ViewHelper ist DER ViewHelper für die Listengeneration. Schaut Euch die Erläuterung in den Beispielen an.
+The `f:for` ViewHelper is THE ViewHelper for generating lists. Take a look at the extensive examples.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+each
+~~~~
+:aspect:`Variable type`
+    Array
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    The array or object to be iterated
 
- - :Property:    each
-   :Datatype:    Array
-   :Description: Array oder Objekt, das durchlaufen werden soll
-   :Standard:    NULL
-   :Mandatory:   Ja
+:aspect:`Default value`
+    NULL
 
- - :Property:    as
-   :Datatype:    String
-   :Description: Ein Variablenname, der Daten des aktuellen Durchlaufs enthält
-   :Standard:    NULL
-   :Mandatory:   Ja
+:aspect:`Mandatory`
+    Yes
 
- - :Property:    key
-   :Datatype:    String
-   :Description: Falls Ihr den Key/Schlüssel des aktuellen Durchlaufes benötigt, könnt Ihr hiermit den Namen einer weiteren Variable definieren
-   :Standard:    Leerer String
-   :Mandatory:   Ja
+as
+~~
+:aspect:`Variable type`
+    String
 
- - :Property:    reverse
-   :Datatype:    Boolean
-   :Description: Der Durchlauf des Arrays oder Objektes geschieht rückwärts
-   :Standard:    FALSE
-   :Mandatory:   Ja
+:aspect:`Description`
+    The name of the variable which contains the values of the current loop iteration
 
- - :Property:    iteration
-   :Datatype:    String
-   :Description: Eine Arrayvariable, die Informationen darüber beinhaltet, ob man sich im ersten oder letzten Durchlauf befindet. Außerdem enthalten: index, cycle, total, isEven, isOdd
-   :Standard:    NULL
-   :Mandatory:   Ja
+:aspect:`Default value`
+    NULL
 
-Einfaches Beispiel
-------------------
+:aspect:`Mandatory`
+    Yes
+
+key
+~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    If you need the key of the current loop iteration, this is the name of the variable containing it.
+
+:aspect:`Default value`
+    Empty string
+
+:aspect:`Mandatory`
+    Yes
+
+reverse
+~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    The loop will backwards
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    Yes
+
+iteration
+~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    An array variable related to the current iteration, which identifies whether it is in the first or 
+                 last loop index. This variable also contains values for index, cycle, total, isEven and isOdd
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    Yes
+
+Simple example
+--------------
 
 ::
 
- <f:alias map="{mitarbeiter: {0: {vorname: 'Stefan', stadt: 'Lindlar'},1: {vorname: 'Petra', stadt: 'Lindlar'},2: {vorname: 'Sascha', stadt: 'Remscheid'},3: {vorname: 'Patrick', stadt: 'Bonn'},4: {vorname: 'Sven', stadt: 'Gummersbach'},5: {vorname: 'Andrea', stadt: 'Wuppertal'}}}">
+ <f:alias map="{employees: {0: {first_name: 'Stefan', city: 'Lindlar'},1: {first_name: 'Petra', city: 'Lindlar'},2: {first_name: 'Sascha', city: 'Remscheid'},3: {first_name: 'Patrick', city: 'Bonn'},4: {first_name: 'Sven', city: 'Gummersbach'},5: {first_name: 'Andrea', city: 'Wuppertal'}}}">
    <table cellpadding="5" cellspacing="0" border="2">
-     <f:for each="{mitarbeiter}" as="kollege">
+     <f:for each="{employees}" as="employee">
        <tr>
-         <td>{kollege.vorname}</td>
-         <td>{kollege.stadt}</td>
+         <td>{employee.first_name}</td>
+         <td>{employee.city}</td>
        </tr>
      </f:for>
    </table>
  </f:alias>
 
-Ich weise der Variable mitarbeiter 6 Einträge zu, die dann eins nach dem Anderen von f:for durchlaufen werden. Mit
-jedem Durchlauf wird eine weitere Tabellenzeile erstellt.
+This creates a new table row for each of the entries in the 'employee' array.
 
-Beispiel für rückwärts
-----------------------
+Example for reverse iteration
+-----------------------------
 
 ::
 
- <f:alias map="{mitarbeiter: {0: {vorname: 'Stefan', stadt: 'Lindlar'},1: {vorname: 'Petra', stadt: 'Lindlar'},2: {vorname: 'Sascha', stadt: 'Remscheid'},3: {vorname: 'Patrick', stadt: 'Bonn'},4: {vorname: 'Sven', stadt: 'Gummersbach'},5: {vorname: 'Andrea', stadt: 'Wuppertal'}}}">
+ <f:alias map="{employees: {0: {first_name: 'Stefan', city: 'Lindlar'},1: {first_name: 'Petra', city: 'Lindlar'},2: {first_name: 'Sascha', city: 'Remscheid'},3: {first_name: 'Patrick', city: 'Bonn'},4: {first_name: 'Sven', city: 'Gummersbach'},5: {first_name: 'Andrea', city: 'Wuppertal'}}}">
    <table cellpadding="5" cellspacing="0" border="2">
-     <f:for each="{mitarbeiter}" as="kollege" reverse="1">
+     <f:for each="{employees}" as="employee" reverse="1">
        <tr>
-         <td>{kollege.vorname}</td>
-         <td>{kollege.stadt}</td>
+         <td>{employee.first_name}</td>
+         <td>{employee.city}</td>
        </tr>
      </f:for>
    </table>
  </f:alias>
 
-Zu Info: Man könnte bei dem Parameter reverse auch TRUE statt 1 verwenden.
+The parameter 'reverse' may alternatively contain TRUE instead of 1.
 
-Beispiel mit key/Schlüssel
---------------------------
+Example with key variable
+-------------------------
 
 ::
 
- <f:alias map="{mitarbeiter: {0: {vorname: 'Stefan', stadt: 'Lindlar'},1: {vorname: 'Petra', stadt: 'Lindlar'},2: {vorname: 'Sascha', stadt: 'Remscheid'},3: {vorname: 'Patrick', stadt: 'Bonn'},4: {vorname: 'Sven', stadt: 'Gummersbach'},5: {vorname: 'Andrea', stadt: 'Wuppertal'}}}">
+ <f:alias map="{employees: {0: {first_name: 'Stefan', city: 'Lindlar'},1: {first_name: 'Petra', city: 'Lindlar'},2: {first_name: 'Sascha', city: 'Remscheid'},3: {first_name: 'Patrick', city: 'Bonn'},4: {first_name: 'Sven', city: 'Gummersbach'},5: {first_name: 'Andrea', city: 'Wuppertal'}}}">
    <table cellpadding="5" cellspacing="0" border="2">
-     <f:for each="{mitarbeiter}" as="kollege" reverse="1" key="eintrag">
+     <f:for each="{employees}" as="employee" key="entrynumber">
        <tr>
-         <th colspan="2">Eintrag: {eintrag}</th>
+         <th colspan="2">Eintrag: {entrynumber}</th>
        </tr>
        <tr>
-         <td>{kollege.vorname}</td>
-         <td>{kollege.stadt}</td>
+         <td>{employee.first_name}</td>
+         <td>{employee.city}</td>
        </tr>
      </f:for>
    </table>
  </f:alias>
 
-Beispiel mit Durchlaufinformationen
------------------------------------
+Example with iterator information
+---------------------------------
 
 ::
 
- <f:alias map="{mitarbeiter: {0: {vorname: 'Stefan', stadt: 'Lindlar'},1: {vorname: 'Petra', stadt: 'Lindlar'},2: {vorname: 'Sascha', stadt: 'Remscheid'},3: {vorname: 'Patrick', stadt: 'Bonn'},4: {vorname: 'Sven', stadt: 'Gummersbach'},5: {vorname: 'Andrea', stadt: 'Wuppertal'}}}">
+ <f:alias map="{employees: {0: {first_name: 'Stefan', city: 'Lindlar'},1: {first_name: 'Petra', city: 'Lindlar'},2: {first_name: 'Sascha', city: 'Remscheid'},3: {first_name: 'Patrick', city: 'Bonn'},4: {first_name: 'Sven', city: 'Gummersbach'},5: {first_name: 'Andrea', city: 'Wuppertal'}}}">
    <table cellpadding="5" cellspacing="0" border="2">
-     <f:for each="{mitarbeiter}" as="kollege" iteration="iterator">
+     <f:for each="{employees}" as="employee" iteration="iterator">
        <f:if condition="{iterator.isFirst}">
          <tr>
-           <th colspan="2">Los gehts</th>
+           <th colspan="2">List of employees</th>
          </tr>
        </f:if>
        <tr>
-         <td>Durchlauf beginnend bei 0: {iterator.index}</td>
-         <td>Durchlauf beginnend bei 1: {iterator.cycle}</td>
-         <td{f:if(condition:iterator.isOdd, then: ' style="color: green;"')}>{kollege.vorname}</td>
-         <td{f:if(condition:iterator.isEven, then: ' style="color: red;"')}>{kollege.stadt}</td>
+         <td>Iteration beginning with 0: {iterator.index}</td>
+         <td>Iteration beginning with 1: {iterator.cycle}</td>
+         <td{f:if(condition:iterator.isOdd, then: ' style="color: green;"')}>{employee.first_name}</td>
+         <td{f:if(condition:iterator.isEven, then: ' style="color: red;"')}>{employee.city}</td>
        </tr>
        <f:if condition="{iterator.isLast}">
          <tr>
-           <th colspan="2">Eintraege: {iterator.total}</th>
+           <th colspan="2">Number of employees: {iterator.total}</th>
          </tr>
        </f:if>
      </f:for>
    </table>
  </f:alias>
 
-iterator.cycle ist genau wie iterator.index einfach nur ein Zähler und hat nichts mit dem ViewHelper f:cycle zu tun.
-Dieses Beispiel zeigt die Verwendung aller Durchlaufinformationen. Auch wenn Ihr den f:if-ViewHelper noch nicht
-kennengelernt haben solltet, so sollte dieses Beispiel selbsterklärend sein. Probierts mal aus.
+iterator.cycle is - just like iterator.index - simply a counter. It has nothing to do with the separate ViewHelper 
+`f:cycle`.

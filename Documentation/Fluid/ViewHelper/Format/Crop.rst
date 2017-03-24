@@ -1,84 +1,116 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:format.crop
-===============
+=============
 
-Schneidet Text zurecht
+Crops a string according to the defined properties.
 
-Eigenschaften
+maxCharacters
 -------------
 
-.. t3-field-list-table::
- :header-rows: 1
+:aspect:`Datatype`
+      Integer
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+      The number of characters to which the string should be abbreviated.
 
- - :Property:    maxCharacters
-   :Datatype:    Integer
-   :Description: Anzahl Zeichen nach denen abgeschnitten werden soll.
-   :Standard:
-   :Mandatory:   Ja
+:aspect:`Required`
+      Yes
 
- - :Property:    append
-   :Datatype:    String
-   :Description: Ein Text oder eine Anzahl Zeichen, die dem Text angefügt werden soll.
-   :Standard:    ...
-   :Mandatory:   Nein
+append
+------
 
- - :Property:    respectWordBoundaries
-   :Datatype:    Boolean
-   :Description: Solange dieser Wert aktiviert ist und ein Schnitt innerhalb eines Wortes geschehen würde, wird dieser Schnitt VOR dem Wort ausgeführt, um das Wort nicht zu stückeln. Mit FALSE zwingt man den ViewHelper zum Trennen IM Wort.
-   :Standard:    TRUE
-   :Mandatory:   Nein
+:aspect:`Datatype`
+      String
 
- - :Property:    respectHtml
-   :Datatype:    Boolean
-   :Description: Bei TRUE werden HTML-Tags berücksichtigt. Bei FALSE kann es vorkommen,
-                 dass die Trennung innerhalb des HTML-Tag statt findet.
-   :Standard:    TRUE
-   :Mandatory:   Nein
+:aspect:`Description`
+      A string to be appended to the cropped text.
 
-Beispiel
+
+respectWordBoundaries
+---------------------
+
+:aspect:`Datatype`
+      boolean
+
+:aspect:`Description`
+      If the value of this property is TRUE, the crop will only
+      happen between complete words, before the number of
+      characters has been reached.
+
+:aspect:`Default`
+      True
+
+
+respectHtml
+-----------
+
+:aspect:`Datatype`
+      boolean
+
+:aspect:`Description`
+      If the value of this property is TRUE, HTML tags will be taken
+      into account when cropping text. If the value is FALSE, then
+      the text may be cropped in the middle of an HTML tag.
+
+:aspect:`Default`
+      True
+
+
+Examples
 --------
 
-::
+Crop
+~~~~
 
- <f:format.crop maxCharacters="14">Diesen Text werden wir jetzt zerschnibbeln</f:format.crop>
+.. code-block:: xml
 
-Normalerweise würde dieser Befehl das Wort "werden" auftrennen. Aber dadurch dass "respectWordBoundaries" per default
-gesetzt ist erhalten wir diese Ausgabe:
+   <f:format.crop maxCharacters="40">
+      A bolt of lightning is going to strike the clock tower
+      at precisely 10:04pm, next Saturday night.
+   </f:format.crop>
 
-Diesen Text...
+If the text is cropped strictly at 40 characters, the end of the string will be in the middle of the word “the”. But
+the property 'respectWordBoundaries' is set by default, so the cropped text will read:
 
-Beispiel: Trennung im Wort
---------------------------
+.. code-block:: none
 
-::
+   A bolt of lightning is going to strike…
 
- <f:format.crop maxCharacters="14" respectWordBoundaries="FALSE">Diesen Text werden wir jetzt zerschnibbeln</f:format.crop>
 
-ergibt
+Splitting a word
+~~~~~~~~~~~~~~~~
 
-Diesen Text we...
+.. code-block:: xml
 
-Beispiel mit respectHtml = FALSE
---------------------------------
+   <f:format.crop maxCharacters="15" respectWordBoundaries="FALSE">
+      A bolt of lightning is going to strike the clock tower
+      at precisely 10:04pm, next Saturday night.
+   </f:format.crop>
 
-::
 
- <f:format.crop maxCharacters="25" respectHtml="FALSE"><p>Diesen Text <strong>werden</strong> wir jetzt zerschnibbeln</p></f:format.crop>
+Result:
 
-ergibt
+.. code-block:: none
 
-Diesen Text...
+   A bolt of light...
 
-Wie oben schon erwähnt, liegt das daran, dass nun auch alle Buchstaben der HTML-Tags mitgezählt werden.
+
+Don't respect HTML tags
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <f:format.crop maxCharacters="12" respectHtml="FALSE">
+      <p>A bolt of <em>lightning</em> is going to strike the clock tower
+      at precisely 10:04pm, next Saturday night.</p>
+   </f:format.crop>
+
+Result:
+
+.. code-block:: none
+
+   A bolt of...
+
+This result is produced because the individual characters within the paragraph
+tag itself are counted as part of the total.

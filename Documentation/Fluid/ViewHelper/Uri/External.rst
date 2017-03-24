@@ -1,45 +1,52 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:uri.external
 ==============
 
-Dieser ViewHelper erstellt einen Link zu einer externen Seite.
+This ViewHelper creates a link to an external page
 
 .. tip::
 
-   Wenn Ihr bei uri einen vollständigen Link angebt, also inkl http:// oder ftp://,
-   dann braucht Ihr defaultScheme nicht zu setzen.
+   If you specify an absolute URL like `http://` or `ftp://`
+   you don't need to set `defaultScheme`.
 
-Eigenschaften
--------------
 
-.. t3-field-list-table::
- :header-rows: 1
+Properties
+----------
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+uri
+~~~
+:aspect:`Variable type`
+    String
 
- - :Property:    uri
-   :Datatype:    String
-   :Description: Die URL zu der externen Zielseite
-   :Standard:
-   :Mandatory:   Ja
+:aspect:`Description`
+    URL of the target page
 
- - :Property:    defaultScheme
-   :Datatype:    String
-   :Description: Hier sind alle gültigen Schemas für Links erlaubt wie z.B. ftp oder https
-   :Standard:    http
-   :Mandatory:   Nein
+:aspect:`Default value`
 
-Beispiel
---------
+:aspect:`Mandatory`
+    Yes
 
-<f:link.external uri="www.example.com">Externer Link zu meiner Seite</f:link.external>
+
+defaultScheme
+~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    You can set the default scheme for this link, for example `ftp` or `https`
+
+:aspect:`Default value`
+    http
+
+:aspect:`Mandatory`
+    No
+
+
+Example
+-------
+
+.. code-block:: html
+
+   {f:uri.external(uri: 'www.example.com', defaultScheme: 'https')}
+

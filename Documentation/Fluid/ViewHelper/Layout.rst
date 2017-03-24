@@ -1,33 +1,26 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../Includes.txt
 
 f:layout
 ========
 
-Mit diesem ViewHelper könnt Ihr ein Layout wählen, dass für das aktuelle Template verwendet werden soll.
+You can use this ViewHelper to select a layout for use by the current template.
 
-Eigenschaften
--------------
+Properties
+----------
 
-Eigenschaften speziell für diesen ViewHelper
-############################################
+Exclusive properties of this ViewHelper
+########################################
 
-.. t3-field-list-table::
- :header-rows: 1
+name
+~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Name of the layout to be used. If no name is provided, the “Default” layout will be used.
 
- - :Property:    name
-   :Datatype:    String
-   :Description: Name des zu verwendenden Layouts. Wenn kein Name angegeben wurde, dann wird "Default" verwendet.
-   :Standard:
-   :Mandatory:   Ja
+:aspect:`Default value`
+    Default
 
+:aspect:`Mandatory`
+    Yes

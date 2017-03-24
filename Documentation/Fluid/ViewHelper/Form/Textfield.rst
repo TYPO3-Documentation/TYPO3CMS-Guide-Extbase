@@ -1,61 +1,76 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:form.textfield
 ================
 
-Mit diesem ViewHelper erstellt Ihr ein Textfeld.
+This ViewHelper allows you to create a simple text input field.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-.. include:: ../../UniversalFormFieldAttributes.txt
+All the :ref:`universal form field attributes <UniversalFormFieldAttributes>`
 
-Eigenschaften speziell für diesen ViewHelper
-############################################
+Exclusive properties of this ViewHelper
+#######################################
 
-.. t3-field-list-table::
- :header-rows: 1
+required
+~~~~~~~~
+:aspect:`Variable type`
+    Boolean
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    If this property is used, then the field is marked as being obligatory, so that a third party or browser-embedded
+    validator can be appropriately implemented.
 
- - :Property:    required
-   :Datatype:    Boolean
-   :Description: Wenn aktiviert, dann handelt es sich um ein Pflichtfeld
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
 
- - :Property:    type
-   :Datatype:    String
-   :Description: Als Alternative gibt es noch email, url
-   :Standard:    text
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    No
 
- - :Property:    placeholder
-   :Datatype:    String
-   :Description: Ein beliebiger Text, der verschwindet, sobald in dieses Feld reingeklickt wird.
-   :Standard:    NULL
-   :Mandatory:   Nein
+type
+~~~~
+:aspect:`Variable type`
+    String
 
-Beispiel
+:aspect:`Description`
+    The usual type is “text”, but several other types are available under the HTML5 definition. For example, `url`,
+    `email`, `date`.
+
+:aspect:`Default value`
+    text
+
+:aspect:`Mandatory`
+    No
+
+placeholder
+~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    A helpful, short piece of text, which disappears when a value is entered to the field.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+Examples
 --------
 
 ::
 
- <f:form.textfield name="myExtName[strasse]" />
+ <f:form.textfield property="address" />
 
-oder
+
+or
 
 ::
 
- <f:form.textfield property="strasse" />
+ <f:form.textfield name="myExtName[address]" />
+ <f:form.textfield name="myExtName[email]" type="email" required="TRUE" />
+

@@ -1,8 +1,3 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:link.email
@@ -11,64 +6,85 @@ f:link.email
 Mit diesem ViewHelper erstellt Ihr einen Link auf eine E-Mail-Adresse. Falls Ihr mit TypoScript im Bereich "config"
 Angaben zum Verschlüsseln der E-Mail-Adresse gemacht habt, so werden diese Einstellungen auch hier angewendet.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-Eigenschaften speziell für das HTML-Element
-###########################################
+Exclusive properties for the HTML-Element
+#########################################
 
-.. t3-field-list-table::
- :header-rows: 1
+name
+~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Der name des Links
 
- - :Property:    name
-   :Datatype:    String
-   :Description: Der name des Links
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
 
- - :Property:    rel
-   :Datatype:    String
-   :Description: Gibt die Beziehung zwischen dem aktuellen Dokument und dem verknüpften Dokument an
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    No
 
- - :Property:    rev
-   :Datatype:    String
-   :Description: Gibt die Beziehung zwischen dem verknüpften Dokument und dem aktuellen Dokument an
-   :Standard:    NULL
-   :Mandatory:   Nein
+rel
+~~~
+:aspect:`Variable type`
+    String
 
- - :Property:    target
-   :Datatype:    String
-   :Description: In welchem Fenster soll der Link geöffnet werden?
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Description`
+    Gibt die Beziehung zwischen dem aktuellen Dokument und dem verknüpften Dokument an
 
-Eigenschaften speziell für diesen ViewHelper
-############################################
+:aspect:`Default value`
+    NULL
 
-.. t3-field-list-table::
- :header-rows: 1
+:aspect:`Mandatory`
+    No
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+rev
+~~~
+:aspect:`Variable type`
+    String
 
- - :Property:    email
-   :Datatype:    String
-   :Description: Die zu verlinkende E-Mail-Adresse
-   :Standard:
-   :Mandatory:   Ja
+:aspect:`Description`
+    Gibt die Beziehung zwischen dem verknüpften Dokument und dem aktuellen Dokument an
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+target
+~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    In welchem Fenster soll der Link geöffnet werden?
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+Exclusive properties of this ViewHelper
+#######################################
+
+email
+~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Die zu verlinkende E-Mail-Adresse
+
+:aspect:`Default value`
+
+:aspect:`Mandatory`
+    Yes
 
 Beispiel
 --------

@@ -1,31 +1,27 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:form.password
 ===============
 
-Mit diesem ViewHelper erstellst Du ein Textfeld dessen Inhalt nicht lesbar ist. Alle Zeichen werden sofort in
-Sternchen umgewandelt.
+This ViewHelper allows you to create a field in an HTML form, whose content is optically masked by the browser. (e.g.
+the value in the field is replaced by a series of star characters.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-.. include:: ../../UniversalFormFieldAttributes.txt
+All the :ref:`universal form field attributes <UniversalFormFieldAttributes>`
 
-Beispiel
+Examples
 --------
 
 ::
 
  <f:form.password name="myExtName[password]" />
 
-oder
+
+or
 
 ::
 

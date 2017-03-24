@@ -1,45 +1,38 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.  ÄÖÜäöüß
-
 .. include:: ../Includes.txt
 
 Domain Driven Design
 ====================
 
-Ohne Struktur kann der Quellcode einer Software echt wüst aussehen. Wir haben
-Extensions gesehen die insgesamt 3 PDF-Generatoren beinhaltet haben. Wusste der
-Programmierer nicht mehr, dass er einen PDF-Generator implementiert hatte? Oder
-musste der PDF-Generator in einem Teilbereich etwas anderes arbeiten/interagieren?
-Wir wissen es nicht. Aber wenn dieser Programmierer irgendwann einmal wieder an
-seinem PDF-Generator arbeitet und einen Fehler behebt, wird er diesen dann auch für
-die beiden anderen PDF-Generatoren entfernen?
+The source code of a piece of software can quickly become very messy without 
+a clear structure. We've come across individual extensions which contain three 
+separate PDF generators. Did the developer forget that he'd already added a 
+PDF generator? Or did the extension need to use features of a PDF generator which 
+weren't possible with the former solution? Who knows?
 
-Viele Programmierer haben schon sehr früh erkannt, dass es zwingend nötig ist
-Quellcode zu strukturieren bzw. die Teilbereiche einer Software wie z.B. die
-PDF-Generierung, die Anbindung an eine Datenbanktabelle, das Schreiben von
-Logdateien oder dem Versand einer E-Mail in eigene Objekt den sogenannten
-Domainmodellen zu kapseln.
+Many programmers recognize early on that it's critical for source code to be clearly 
+structured. Whether during the implementation of a PDF generator, making a connection 
+to a database, writing a log file, or sending an email. This principle is called 
+*Domain Driven Design*. The biggest advantage is the separation of functionality, 
+so that the developer can focus on a specific problem. When working on a PDF 
+generator, there's no need to delve into the code for database connectivity. 
 
-Dieses Prinzip der Planung und Programmierung nennt man Domain Driven Design. Dies
-hat den Vorteil, dass sich der Programmierer immer auf ein spezielles Problem
-konzentrieren kann. Programmiert er gerade an dem PDF-Generator, dann werden ihm
-keine Teilbereiche aus der Logging-Domain oder aus der Datenbankanbindung in die
-Quere kommen. Auch Extbase selbst arbeitet nach diesem Prinzip. So brauchen Sie sich
-als Programmierer keine Gedanken darüber zu machen, wie Sie an die benötigten Daten
-für eine Ausgabe kommen. Mit Hilfe von Validatoren innerhalb des Domainmodels können
-Sie das Model anweisen sich selbst zu überprüfen. Wird das Model wo auch immer im
-Quellcode z.B. ungültig wird es nicht weiter verarbeitet bzw. wird nicht in der
-Datenbank abgespeichert.
+Extbase itself works according to this principle, so you don't need to give much 
+thought to how you should structure the necessary files: the structure is already 
+defined and common to all extensions.
 
-Domain Driven Design sollte schon während dem Gespräch mit dem Kunden angewendet
-werden. Erst dadurch können die jeweiligen Problemfälle, die der Kunde durch Ihr
-Programm gelöst haben will, visuell dargestellt werden. Alle Eigenschaften und
-Methoden werden mit dem Kunden besprochen und es wird eine einheitliche Sprache
-zwischen Ihnen und dem Kunden erstellt (Ubiquitous Language). Entscheiden Sie sich
-also bei der Debitorennummer für das Kürzel dNr, dann ist das IMMER die
-Debitorennummer und wenn der Kunde auf einmal mit debNr oder dNummer ankommt, dann
-ist dies für das aktuelle Projekt eine völlig neue Eigenschaft. Beim Bilden dieser
-gemeinsamen Sprache sollten Sie sich auf die englische Sprache einigen, da viele
-Fremdsprachen mit ihren Umlauten häufig zu Problemen führen.
+Thanks to validation features within the domain model, you can instruct the model to 
+“cross-check” itself. In the event that data is invalidated at some point in the 
+handling process, error handling kicks in and warns the developer, so that the 
+invalid data doesn't get written to the database.
+
+Domain Driven Design should form a part of the concept phase; where appropriate, 
+even during discussions with your client. This means that the data structure can be 
+planned from the beginning of the process, ensuring that problems can be avoided 
+during the development phase. This ensures a more efficient programming phase and less 
+work for both the programmer and the client.
+
+By using ubiquitous language, you ensure that everyone working on the project uses 
+the same terminology - avoiding misunderstanding by always referring to data properties 
+and system features in the same way. As in most development environments, it's 
+recommended that you use English terms for extension development. This avoids issues with 
+special characters, such as those with umlauts, in (for example) database column names.

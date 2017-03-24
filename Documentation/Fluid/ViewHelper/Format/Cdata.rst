@@ -1,8 +1,3 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 .. _f-format-cdata:
@@ -10,58 +5,64 @@
 f:format.cdata
 ==============
 
-Dieser ViewHelper ummantelt einen Text oder eine Variable mit CDATA. Das wird gerade dann interessant,
-wenn Ihr z.B. eine RSS-Ausgabe mit Hilfe von Extbase und Fluid programmiert. Da solche Ausgaben auf XML basieren, ist
-es wichtig HTML-Tags innerhalb dieser XML-Ausgabe zu maskieren.
+This ViewHelper wraps a text or variable output with CDATA tags. This is most useful for generating outputs like an RSS
+feed via Fluid. Because these format is based on an XML structure, HTML content within its tags need to be appropriately
+masked using CDATA tags.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+value
+~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    The string to be wrapped with CDATA tags.
 
- - :Property:    value
-   :Datatype:    String
-   :Description: Der Text, der mit CDATA ummantelt werden soll
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
 
-Beispiel mit Text:
-------------------
+:aspect:`Mandatory`
+    No
+
+
+Examples
+--------
+
+With text
+~~~~~~~~~
+
+.. code-block:: html
+
+   <f:format.cdata>Text to be wrapped</f:format.cdata>
+
+**Output**
 
 ::
 
- <f:format.cdata>Text, der ummantelt werden soll</f:format.cdata>
+ <![CDATA[Text to be wrapped]]>
 
-wird zu
 
-::
+With variables
+~~~~~~~~~~~~~~
 
- <![CDATA[Text, der ummantelt werden soll]]>
+We'll pass an unusual combination of HTML and text back from our Controller as an example::
 
-Beispiel mit Variablen:
------------------------
+   $this->view->assign('variable', '<strong>Stefan</strong>');
 
-Als Beispiel übergeben wir etwas untypisch HTML und Text vom Controller aus::
+We'll wrap the variable with CDATA tags in our Fluid template:
 
- $this->view->assign('variable', '<strong>Stefan</strong>');
+.. code-block:: html
 
-Im Fluidtemplate wickeln wir die Variable in CDATA ein::
+   <f:format.cdata>{variable} is his name</f:format.cdata>
 
- <f:format.cdata>{variable}, die ummantelt werden soll</f:format.cdata>
+which produces the result::
 
-Als Ergebnis erhaltet ihr::
+   <![CDATA[<strong>Stefan</strong> is his name]]>
 
- <![CDATA[<strong>Stefan</strong>, die ummantelt werden soll]]>
 
-.. important::
+.. warning::
 
-   Wie Ihr im Ergebnis sehen könnt, wird die Variable 1zu1 ausgegeben. Der Inhalt wird nicht durch htmlspecialchars
-   geschleust oder sonst in irgendeiner Form maskiert. Bitte beachtet diese Vorgehensweise gerade in Hinblick auf
-   XSS-Attacken.
+   As you can see, the variable in this example is output 1:1 instead of being parsed using htmlspecialchars and without
+   any kind of other masking. Be aware of this, especially taking care against cross site scripting attacks.

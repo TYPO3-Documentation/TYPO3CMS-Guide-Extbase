@@ -1,20 +1,14 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../Includes.txt
 
 JavaScript and Fluid Inline Syntax
 ==================================
 
-When Fluid ViewHelpers are used in mixed templates containing complex JavaScript blocks you might come across
-the situation that a ViewHelper using inline syntax don't get interpreted.
-In this case you can *wake up* the rendering by using a normal syntax ViewHelper or wrap the JavaScript part in
-a CDATA block.
+When Fluid ViewHelpers are used in mixed templates containing complex JavaScript blocks, you might come across a 
+situation in which a ViewHelper using inline syntax doesn't get interpreted. In this case you can *wake up* rendering 
+by using a normal syntax ViewHelper, or wrap the JavaScript part in a CDATA block.
 
-situation
----------
+Problem
+-------
 
 ::
 
@@ -50,29 +44,26 @@ situation
  </body>
  </html>
 
-The ViewHelper in line
-
-::
+The ViewHelper in the following line::
 
  <link rel="stylesheet" type="text/css" href="{f:uri.resource(path:'Css/main.css')}" />
 
-is not interpreted but ignored by fluid.
+…is not interpreted but ignored by Fluid.
 
-Solution
---------
+Solutions
+---------
 
-- wake up Fluid rendering
-  Introduce after the JavaScript block a normal syntax term, maybe::
+- Wake up Fluid rendering by introducing a normal syntax term after the JavaScript block. For example:::
 
-  <f:commment>wake up, fluid!</f:comment>
+  <f:comment>wake up, fluid!</f:comment>
 
-- wrap the JavaScript part in CDATA::
+- Wrap the JavaScript part in CDATA::
 
    <![CDATA[
    ...
    ]]>
 
-- use the :ref:`f:format.cdata <f-format-cdata>` viewHelper for the wrap::
+- Wrap the JavaScript block using the :ref:`f:format.cdata <f-format-cdata>` ViewHelper::
 
    <f:format.cdata>
      <script type="text/javascript">

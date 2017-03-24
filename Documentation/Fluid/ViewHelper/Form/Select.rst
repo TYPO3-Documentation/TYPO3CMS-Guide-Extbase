@@ -1,131 +1,191 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:form.select
 =============
 
-Mit diesem ViewHelper erstellt Ihr eine Selectbox.
+This ViewHelper enables you to create a SELECT element for an HTML form.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. include:: ../../UniversalTagAttributes.txt
+All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-.. include:: ../../UniversalFormFieldAttributes.txt
+All the :ref:`universal form field attributes <UniversalFormFieldAttributes>`
 
-Eigenschaften speziell für das HTML-Element
-###########################################
+Exclusive properties for the HTML-Element
+#########################################
 
-.. t3-field-list-table::
- :header-rows: 1
+multiple
+~~~~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    When this option is selected, the website visitor can concurrently select more than one option.
 
- - :Property:    multiple
-   :Datatype:    String
-   :Description: Wenn aktiviert, dann können mehrere Optionen gleichzeitig gewählt werden. In diesem Falle macht es
-                 Sinn den Wert size auf >=3 zu setzen.
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
 
- - :Property:    size
-   :Datatype:    String
-   :Description: Die Größe der Selectbox. Wie viele Optionen sollen gleichzeit angezeigt werden?
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    No
 
- - :Property:    disabled
-   :Datatype:    String
-   :Description: Wenn aktiviert, dann ist die Selectbox beim Laen des Formulars deaktiviert.
-   :Standard:    NULL
-   :Mandatory:   Nein
+size
+~~~~
+:aspect:`Variable type`
+    String
 
-Eigenschaften speziell für diesen ViewHelper
-############################################
+:aspect:`Description`
+    Defines the number of options which are displayed at the same time.
 
-.. t3-field-list-table::
- :header-rows: 1
+:aspect:`Default value`
+    NULL
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Mandatory`
+    No
 
- - :Property:    options
-   :Datatype:    Array
-   :Description: Welche Optionen sollen in der Auswahlliste erscheinen.
-   :Standard:
-   :Mandatory:   Ja
+disabled
+~~~~~~~~
+:aspect:`Variable type`
+    String
 
- - :Property:    optionValueField
-   :Datatype:    String
-   :Description: Wenn options Objekte enthält, dann könnt Ihr hier angeben welche Eigenschaft als zu übergebenden Wert verwendet werden soll
-   :Standard:
-   :Mandatory:   Nein
+:aspect:`Description`
+    When this option is selected, the SELECT element is deactivated in the browser, and no options can be selected by
+    the website visitor.
 
- - :Property:    optionLabelField
-   :Datatype:    String
-   :Description: Wenn options Objekte enthält, dann könnt Ihr hier angeben welche Eigenschaft als anzuzeigender Titel verwendet werden soll
-   :Standard:
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
 
- - :Property:    sortByOptionLabel
-   :Datatype:    Boolean
-   :Description: Soll nach dem anzuzeigenden Titel sortiert werden?
-   :Standard:    FALSE
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    No
 
- - :Property:    selectAllByDefault
-   :Datatype:    Boolean
-   :Description: Damit alle Optionen direkt vorausgewählt sind, muss das Attribut multiple und die size größer 1 gesetzt sein.
-   :Standard:    FALSE
-   :Mandatory:   Nein
+Exclusive properties of this ViewHelper
+#######################################
 
- - :Property:    errorClass
-   :Datatype:    String
-   :Description: Eine CSS-Klasse, die gesetzt werden soll, wenn der Validator für dieses Feld einen Fehler
-                 gemeldet hat.
-   :Standard:    f3-form-error
-   :Mandatory:   Nein
+options
+~~~~~~~
+:aspect:`Variable type`
+    Array
 
- - :Property:    prependOptionLabel
-   :Datatype:    String
-   :Description: Erzeugt eine weitere Option ganz am Anfang der Auflistung mit dem angegebenen Text.
-   :Standard:
-   :Mandatory:   Nein
+:aspect:`Description`
+    The options which are to be displayed in the SELECT element.
 
- - :Property:    prependOptionValue
-   :Datatype:    String
-   :Description: Erzeugt eine weitere Option ganz am Anfang der Auflistung mit dem angegebenen Wert.
-   :Standard:
-   :Mandatory:   Nein
+:aspect:`Default value`
+
+:aspect:`Mandatory`
+    Yes
+
+optionValueField
+~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    When the element contains options, then this property allows you to define which of the related records' properties
+    are used as the option value. (This will be sent to the server.) This property only works when using data related
+    to an Object.
+
+:aspect:`Default value`
+
+:aspect:`Mandatory`
+    No
+
+optionLabelField
+~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    When the element contains options, then this property allows you to define which of the related records' properties
+    are used as the visible text in the SELECT element. This property only works when using data related to an Object.
+
+:aspect:`Default value`
+
+:aspect:`Mandatory`
+    No
+
+sortByOptionLabel
+~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    Should the list of available options be sorted alphabetically, according to the visible text?
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+selectAllByDefault
+~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    If the `multiple` property is active and the `size` of the field is larger than 1, using this property allows you
+    to define that all of the available options are selected by default.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+errorClass
+~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    A CSS class name which can be assigned when the validator for this field identifies an error.
+
+:aspect:`Default value`
+    f3-form-error
+
+:aspect:`Mandatory`
+    No
+
+prependOptionLabel
+~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The visible text of an additional option which will be prepended to the list.
+
+:aspect:`Default value`
+
+:aspect:`Mandatory`
+    No
+
+prependOptionValue
+~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The value of an additional option which will be prepended to the list.
+
+:aspect:`Default value`
+
+:aspect:`Mandatory`
+    No
 
 .. tip::
 
-   Die Eigenschaften optionValueField und optionLabelField funktionieren nur, wenn es sich bei den Daten für eine
-   Option, um ein Objekt handelt.
+    The properties `optionValueField` and `optionLabelField` only work when using data related to an Object.
 
-.. tip::
 
-   Die Eigenschaften selectAllByDefault klappt nur, wenn auch die Eigenschaft multiple gesetzt ist.
-
-Beispiel
+Examples
 --------
 
 ::
 
  <f:form.select name="myExtName[country]" options="{data.countries}" />
 
-oder
+
+or
 
 ::
 

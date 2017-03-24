@@ -1,60 +1,80 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:format.bytes
 ==============
 
-Dieser ViewHelper wandelt eine Bytes-Angabe (Integer) in ein lesbares Format um.
+This ViewHelper converts a value in bytes (integer) into a readable format.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+value
+~~~~~
+:aspect:`Variable type`
+    Integer
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    The integer value (bytes) to be converted.
 
- - :Property:    value
-   :Datatype:    Integer
-   :Description: Die Bytes als Integer, die konvertiert werden sollen
-   :Standard:    NULL
-   :Mandatory:   Nein
+:aspect:`Default value`
+    NULL
 
- - :Property:    decimals
-   :Datatype:    Integer
-   :Description: Die Anzahl Zahlen, die nach dem Dezimalpunkt noch angezeigt werden sollen
-   :Standard:    0
-   :Mandatory:   Nein
+:aspect:`Mandatory`
+    No
 
- - :Property:    decimalSeparator
-   :Datatype:    String
-   :Description: Das Zeichen, das als Dezimaltrenner verwendet werden soll
-   :Standard:    .
-   :Mandatory:   Nein
+decimals
+~~~~~~~~
+:aspect:`Variable type`
+    Integer
 
- - :Property:    thousandsSeparator
-   :Datatype:    String
-   :Description: Das Zeichen, das als Tausendertrenner verwendet werden soll
-   :Standard:    ,
-   :Mandatory:   Nein
+:aspect:`Description`
+    The number of decimals to be shown after the decimal point.
 
-Beispiel mit Text:
-------------------
+:aspect:`Default value`
+    0
+
+:aspect:`Mandatory`
+    No
+
+decimalSeparator
+~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The character to use as the decimal separator.
+
+:aspect:`Default value`
+    .
+
+:aspect:`Mandatory`
+    No
+
+thousandsSeparator
+~~~~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The character to use as the “thousands” separator.
+
+:aspect:`Default value`
+    ,
+
+:aspect:`Mandatory`
+    No
+
+Example
+-------
+
+With a value of 1024.33, using the code 
 
 ::
 
  <f:format.bytes>{fileSize}</f:format.bytes>
 
-wird zu
+will output
 
 ::
 
- 123 KB
+ 1024 KB

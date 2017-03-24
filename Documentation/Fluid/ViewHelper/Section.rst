@@ -1,52 +1,47 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../Includes.txt
 
 f:section
 =========
 
-Sections sind ähnlich Partials mit dem Unterschied, dass Partials in Dateien ausgelagert werden und Sections
-innerhalb des Templates definiert werden müssen.
+A Section is similar to a Partial. The difference is that Partials are separate files, where Sections are defined within
+the same template file.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+name
+~~~~
+:aspect:`Variable type`
+    String
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    A name which can be referenced in order to fetch the content contained within the `f:section` tags.
 
- - :Property:    name
-   :Datatype:    String
-   :Description: Ein Name unter dem man den Inhalt zwischen den Tags wieder auffinden kann
-   :Standard:    NULL
-   :Mandatory:   Ja
+:aspect:`Default value`
+    NULL
 
-Beispiel
---------
+:aspect:`Mandatory`
+    Yes
+
+Example
+-------
 
 ::
 
  <f:section name="TableRow">
    <tr>
-     <td>{kollege.vorname}</td>
-     <td>{kollege.stadt}</td>
+     <td>{employee.first_name}</td>
+     <td>{employee.city}</td>
    </tr>
  </f:section>
- <f:alias map="{mitarbeiter: {0: {vorname: 'Stefan', stadt: 'Lindlar'},1: {vorname: 'Petra', stadt: 'Lindlar'},2: {vorname: 'Sascha', stadt: 'Remscheid'},3: {vorname: 'Patrick', stadt: 'Bonn'},4: {vorname: 'Sven', stadt: 'Gummersbach'},5: {vorname: 'Andrea', stadt: 'Wuppertal'}}}">
+
+ <f:alias map="{employees: {0: {first_name: 'Stefan', city: 'Lindlar'},1: {first_name: 'Petra', city: 'Lindlar'},2: {first_name: 'Sascha', city: 'Remscheid'},3: {first_name: 'Patrick', city: 'Bonn'},4: {first_name: 'Sven', city: 'Gummersbach'},5: {first_name: 'Andrea', city: 'Wuppertal'}}}">
    <table cellpadding="5" cellspacing="0" border="2">
-     <f:for each="{mitarbeiter}" as="kollege">
-       <f:render section="TableRow" arguments="{kollege: kollege}"/>
+     <f:for each="{employees}" as="employee">
+       <f:render section="TableRow" arguments="{employee: employee}"/>
      </f:for>
    </table>
  </f:alias>
 
-Wie Ihr seht wird hier erst das HTML für eine Tabellenzeile definiert und der Section der Name "TableRow" gegeben.
-Später dann in der Schleife könnt Ihr mit Hilfe des f:render-ViewHelpers diese Section wieder aufrufen.
+As you can see, we've defined a Section to contain the content of a table row. Then we've passed the employee data to
+this section on each iteration in the loop, to output the same HTML each time but containing the individual employee information.

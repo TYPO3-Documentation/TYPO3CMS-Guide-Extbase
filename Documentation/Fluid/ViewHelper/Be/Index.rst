@@ -1,12 +1,7 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
-ViewHelper: Be
-==============
+ViewHelpers for the TYPO3 backend
+=================================
 
 **Table of Contents**
 

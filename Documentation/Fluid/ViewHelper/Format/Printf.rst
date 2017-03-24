@@ -1,8 +1,3 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../../../Includes.txt
 
 f:format.printf
@@ -10,23 +5,21 @@ f:format.printf
 
 Mit diesem ViewHelper können Platzhalter in einem Text mit den Werten auf dem Array ersetzt werden.
 
-Eigenschaften
--------------
+Properties
+----------
 
-.. t3-field-list-table::
- :header-rows: 1
+arguments
+~~~~~~~~~
+:aspect:`Variable type`
+    Array
 
- - :Property,20:    Eigenschaft
-   :Datatype,20:    Datentyp
-   :Description,40: Beschreibung
-   :Standard,10:    Standard
-   :Mandatory,10:   Mandatory
+:aspect:`Description`
+    Gib hier Werte in Arraynotation ein, die die Platzhalter in dem Text, der sich zwischen den Tags befindet, ersetzt.
 
- - :Property:    arguments
-   :Datatype:    Array
-   :Description: Gib hier Werte in Arraynotation ein, die die Platzhalter in dem Text, der sich zwischen den Tags befindet, ersetzt.
-   :Standard:
-   :Mandatory:   Ja
+:aspect:`Default value`
+
+:aspect:`Mandatory`
+    Yes
 
 Beispiel
 --------
