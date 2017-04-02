@@ -10,5 +10,6 @@ ViewHelper: Menus
    :titlesonly:
    :glob:
 
+   ActionMenu
    ActionMenuItem
-   ActionMenuView
+   ActionMenuItemGroup

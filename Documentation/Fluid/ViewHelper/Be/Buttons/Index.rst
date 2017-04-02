@@ -11,5 +11,4 @@ ViewHelper: Buttons
    :glob:
 
    Csh
-   Icon
    Shortcut

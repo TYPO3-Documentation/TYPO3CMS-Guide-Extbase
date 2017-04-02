@@ -11,3 +11,12 @@ Properties
 ----------
 
 This ViewHelper doesn't accept any properties.
+
+Example
+-------
+
+Current page path, prefixed with "Path:" and wrapped in a span with the class "typo3-docheader-pagePath".
+
+::
+
+    <f:be.pagePath />

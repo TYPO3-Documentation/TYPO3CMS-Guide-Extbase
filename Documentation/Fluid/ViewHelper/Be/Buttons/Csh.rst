@@ -3,11 +3,11 @@
 f:be.buttons.csh
 ================
 
-This ViewHelper is rarely used, but very helpful nonetheless. It enables you to include hints into backend forms.
+This View helper returns a CSH (context sensitive help) button with an icon.
+It enables you to include hints into backend forms.
 
-TYPO3 uses this functionality all over the backend, and it is noticeable by the small “question mark” images. Hovering
-over the element reveals help text in a small tooltip, whilst clicking on the element displays the help text in a popup
-window. A user configuration setting is available, to allow or disallow the popup window.
+TYPO3 uses this functionality all over the backend, and it is noticeable by the small “question mark” image when hovering
+over the element, whilst clicking on the element displays the help text in a small tooltip.
 
 Properties
 ----------
@@ -18,7 +18,7 @@ table
    String
 
 :aspect:`Description`
-   Database table name.
+   Table name ('_MOD_'+module name). If not set, the current module name will be used.
 
 :aspect:`Default value`
    NULL
@@ -33,7 +33,7 @@ field
    String
 
 :aspect:`Description`
-   The key from the locallang file.
+   Field name (CSH locallang main key).
 
 :aspect:`Default value`
    Empty string
@@ -41,40 +41,25 @@ field
 :aspect:`Required`
    No
 
-iconOnly
-~~~~~~~~
+wrap
+~~~~
 :aspect:`Variable type`
-   Boolean
+   String
 
 :aspect:`Description`
-   Display the icon, but not the text.
+   Markup to wrap around the CSH, split by "|".
 
 :aspect:`Default value`
-   FALSE
+   Empty string
 
 :aspect:`Required`
    No
 
 
-styleAttributes
-~~~~~~~~~~~~~~~
-:aspect:`Variable type`
-    String
-
-:aspect:`Description`
-    Additional style attribute to be added to the containing table.
-
-:aspect:`Default value`
-    Empty string
-
-:aspect:`Required`
-    No
-
-
 Special case
 ------------
 
-There's a special case in which the “table” property doesn't need to be defined. This is the case then there are
+There's a special case in which the “table” property doesn't need to be defined. This is the case when there are
 form fields in the module, but when there is no 1:1 column in the database. For example, in the Scheduler, which
 stores its information in a serialized format in a single field, or in the case of a search field, whose value isn't
 sent to the database. Such fields can be assigned a csh icon through the addition of an entry in
@@ -122,18 +107,6 @@ The entry for the email address in the XLF file would be as follows:
 Examples
 --------
 
-.. attention::
-
-   There is a request to the backend user option `edit_showFieldHelp` within the source code of the csh API.
-   This isn't set by default, which therefore blocks the output of the csh help text. In order to see a
-   working version of this ViewHelper, you'll need to ensure that the following option is set within the
-   TS config for the active user or user group:
-
-   .. code-block:: typoscript
-
-      setup.override.edit_showFieldHelp = text
-
-
 Example: database fields
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -142,14 +115,6 @@ In the majority of TYPO3 tables, the language file key is usually the same as th
 .. code-block:: html
 
    <f:be.buttons.csh table="tt_content" field="header" />
-
-
-Example: style attributes
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: html
-
-   <f:be.buttons.csh table="tt_content" field="header" styleAttributes="background-color: red;" />
 
 
 Example: Icons for form fields without a 1:1 database structure
