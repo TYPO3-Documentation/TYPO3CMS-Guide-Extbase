@@ -13,6 +13,20 @@ All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
 All the :ref:`universal form field attributes <UniversalFormFieldAttributes>`
 
+disabled
+~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Specifies that the input element should be disabled when the page loads.
+
+:aspect:`Default value`
+    Empty string
+
+:aspect:`Mandatory`
+    No
+
 Example
 -------
 
