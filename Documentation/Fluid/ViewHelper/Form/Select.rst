@@ -3,7 +3,7 @@
 f:form.select
 =============
 
-This ViewHelper enables you to create a SELECT element for an HTML form.
+This ViewHelper enables you to create a <select> dropdown list for the use with a HTML form.
 
 Properties
 ----------
@@ -70,6 +70,21 @@ options
     The options which are to be displayed in the SELECT element.
 
 :aspect:`Default value`
+
+:aspect:`Mandatory`
+    Yes
+
+optionsAfterContent
+~~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+    If true, places auto-generated option tags after those rendered in the tag content.
+    If false, automatic options come first.
+
+:aspect:`Default value`
+    FALSE
 
 :aspect:`Mandatory`
     Yes
