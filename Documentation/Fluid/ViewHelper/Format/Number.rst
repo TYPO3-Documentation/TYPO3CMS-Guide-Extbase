@@ -3,7 +3,8 @@
 f:format.number
 ===============
 
-Mit diesem ViewHelper könnt Ihr Zahlen formatieren. Er arbeitet ähnlich dem `f:format.currency`-ViewHelper
+Formats a number with custom precision, decimal point and grouped thousands.
+http://www.php.net/manual/en/function.number-format.php
 
 Properties
 ----------
@@ -14,7 +15,7 @@ decimals
     Integer
 
 :aspect:`Description`
-    Wie viele Nachkommastellen dürfen angezeigt werden.
+    The number of digits after the decimal point.
 
 :aspect:`Default value`
     2
@@ -28,7 +29,7 @@ decimalSeparator
     String
 
 :aspect:`Description`
-    Welcher Zeichen soll für die Trennung von Euro und Cent verwendet werden. Dezimaltrenner.
+    The decimal point character.
 
 :aspect:`Default value`
     .
@@ -42,7 +43,7 @@ thousandsSeparator
     String
 
 :aspect:`Description`
-    Welches Zeichen soll als Tausendertrennzeichen verwendet werden.
+    The character for grouping the thousand digits.
 
 :aspect:`Default value`
     ,
@@ -50,11 +51,29 @@ thousandsSeparator
 :aspect:`Mandatory`
     No
 
-Beispiel
+Examples
 --------
+
+Defaults
+
+::
+
+ <f:format.number>423423.234</f:format.number>
+
+ 423,423.23
+
+
+With all parameters
+
+::
+
+ <f:format.number decimals="1" decimalSeparator="," thousandsSeparator=".">423423.234</f:format.number>
+
+ 423.423,2
+
 
 ::
 
  <f:format.number decimals="3" decimalSeparator="." thousandsSeparator=",">1122334455.667788</f:format.number>
 
-ergibt: 1,122,334,455.668. Wie Ihr seht wird sogar automatisch aufgerundet.
+ 1,122,334,455.668

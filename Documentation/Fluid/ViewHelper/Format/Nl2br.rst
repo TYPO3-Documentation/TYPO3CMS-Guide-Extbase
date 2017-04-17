@@ -3,28 +3,38 @@
 f:format.nl2br
 ==============
 
-Dieser ViewHelper besitzt keine Parameter. Den umzuwandelnden Inhalt bezieht er sich aus dem Text zwischen den Tags.
-Sinnvoll wird dieser ViewHelper beim Anzeigen von Inhalten aus TEXTAREA-Tags. Denn hier wurden die Zeilenumbrüche mit
-ENTER (CHR(10)) realisiert. HTML sind diese Umbrüche aber völlig egal und würde den Text einfach hintereinander weg
-anzeigen. Um das zu verhindern könnt Ihr diesen ViewHelper verwender. Er konvertiert alle CHR(10)-Zeilenumbrüche in
-<br />-Tags und so werden Zeilenumbrüche auch im Browser wieder richtig dargestellt.
+This ViewHelper is a wrapper for PHPs nl2br function.
+All CHR(10) linebreaks are translated in <br /> tags.
 
 Properties
 ----------
 
-Dieser ViewHelper besitzt keine Eigenschaften
+value
+~~~~~
 
-Beispiel
---------
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The string to format.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+
+Example
+-------
 
 ::
 
  <f:format.nl2br>Text
- mit
- Zeilenumbrüchen</f:format.nl2br>
+ with
+ linebreaks</f:format.nl2br>
 
 ergibt
 
 ::
 
- Text<br />mit<br />Zeilenumbrüchen
+ Text<br />with<br />linebreaks

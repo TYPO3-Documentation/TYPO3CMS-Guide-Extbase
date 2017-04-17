@@ -3,7 +3,8 @@
 f:format.htmlentities
 =====================
 
-Mit diesem ViewHelper könnt Ihr die htmlentities Funktion von PHP auf einen Text anwenden.
+Escapes special characters with their escaped counterparts as needed using PHPs htmlentities() function.
+http://www.php.net/manual/function.htmlentities.php
 
 Properties
 ----------
@@ -14,7 +15,7 @@ value
     String
 
 :aspect:`Description`
-    Der Text der dekodiert werden soll
+    String to format.
 
 :aspect:`Default value`
     NULL
@@ -28,7 +29,7 @@ keepQuotes
     Boolean
 
 :aspect:`Description`
-    Sollen einfache und doppelte Anführungsstriche auch dekodiert werden?
+    If TRUE, single and double quotes won't be replaced (sets ENT_NOQUOTES flag).
 
 :aspect:`Default value`
     FALSE
@@ -42,7 +43,7 @@ encoding
     String
 
 :aspect:`Description`
-    Wir sind hier im Bereich TYPO3 und da sollte der Zeichensatz auf UTF-8 und nix anderes stehen. Sollte wiedererwartend ein anderer Zeichensatz gewünscht sein, kann dieser hier angegeben werden. Siehe auch Info auf php.net.
+    Generally TYPO3 uses the UTF-8 charset. But if you need an other charset for a special case, you can enter it here.
 
 :aspect:`Default value`
     NULL
@@ -56,7 +57,7 @@ doubleEncode
     Boolean
 
 :aspect:`Description`
-    Bei TRUE (Standard) wird alles kodiert. Bei FALSE, werden bereits kodierte Werte nicht erneut kodiert.
+    If FALSE existing html entities won't be encoded, the default is to convert everything.
 
 :aspect:`Default value`
     TRUE

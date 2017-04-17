@@ -51,7 +51,7 @@ decimalSeparator
     No
 
 thousandsSeparator
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
     String
 
@@ -64,8 +64,22 @@ thousandsSeparator
 :aspect:`Mandatory`
     No
 
-Example
--------
+units
+~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Comma separated list of available units.
+
+:aspect:`Default value`
+    LocalizationUtility::translate('viewhelper.format.bytes.units', 'fluid')
+
+:aspect:`Mandatory`
+    No
+
+Examples
+--------
 
 With a value of 1024.33, using the code 
 
@@ -78,3 +92,27 @@ will output
 ::
 
  1024 KB
+
+With decimal and thousands separator
+
+::
+
+ {fileSize -> f:format.bytes(decimals: 2, decimalSeparator: '.', thousandsSeparator: ',')}
+
+will output
+
+::
+
+ 1,023.00 B
+
+You may provide an own set of units, like this: B,KB,MB,GB,TB,PB,EB,ZB,YB
+
+::
+
+ {fileSize -> f:format.bytes(units: '{f:translate(\'viewhelper.format.bytes.units\', \'fluid\')}'
+
+will output
+
+::
+
+ 123 KB
