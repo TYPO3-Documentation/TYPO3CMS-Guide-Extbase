@@ -3,7 +3,8 @@
 f:format.stripTags
 ==================
 
-Dieser ViewHelper entfernt sämtliche HTML-Tags aus einem Text.
+Removes tags from the given string (applying PHPs strip_tags() function).
+http://www.php.net/manual/function.strip-tags.php
 
 Properties
 ----------
@@ -14,7 +15,7 @@ value
     String
 
 :aspect:`Description`
-    Der Text aus dem die HTML-Tags entfernt werden sollen
+    String to format.
 
 :aspect:`Default value`
     NULL
@@ -22,9 +23,37 @@ value
 :aspect:`Mandatory`
     No
 
-Beispiel
+allowedTags
+~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Optional string of allowed tags as required by PHPs strip_tags() function.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+Examples
 --------
+
+Default notation
 
 ::
 
- <f:format.stripTags>Ein <strong>fetter</strong> Text mit einigen <span style="color: blue;">bunten</span> HTML-Tags.</f:format.stripTags>
+ <f:format.stripTags>Some Text with <b>Tags</b> and an &Uuml;mlaut.</f:format.stripTags>
+
+ Some Text with Tags and an &Uuml;mlaut.
+ (strip_tags() applied. Note: encoded entities are not decoded)
+
+Inline notation
+
+::
+
+ {text -> f:format.stripTags()}
+
+ Text without tags
+ (strip_tags() applied)

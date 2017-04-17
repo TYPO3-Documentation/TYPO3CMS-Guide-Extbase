@@ -11,18 +11,16 @@ ViewHelper: Format
    :glob:
 
    Bytes
-   Cdata
+   Case
    Crop
    Currency
    Date
    Html
    Htmlentities
    HtmlentitiesDecode
-   Htmlspecialchars
+   Json
    Nl2br
    Number
    Padding
-   Printf
-   Raw
    StripTags
    Urlencode

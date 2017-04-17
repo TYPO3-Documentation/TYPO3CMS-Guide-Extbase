@@ -3,7 +3,8 @@
 f:format.htmlentitiesDecode
 ===========================
 
-htmlEntityDecode
+Applies html_entity_decode() to a value.
+http://www.php.net/html_entity_decode
 
 Properties
 ----------
@@ -14,7 +15,7 @@ value
     String
 
 :aspect:`Description`
-    Der Text der dekodiert werden soll
+    String to format.
 
 :aspect:`Default value`
     NULL
@@ -28,7 +29,7 @@ keepQuotes
     Boolean
 
 :aspect:`Description`
-    Sollen einfache und doppelte Anführungsstriche auch dekodiert werden?
+    If TRUE, single and double quotes won't be replaced (sets ENT_NOQUOTES flag).
 
 :aspect:`Default value`
     FALSE
@@ -42,7 +43,7 @@ encoding
     String
 
 :aspect:`Description`
-    Wir sind hier im Bereich TYPO3 und da sollte der Zeichensatz auf UTF-8 und nix anderes stehen. Sollte wiedererwartend ein anderer Zeichensatz gewünscht sein, kann dieser hier angegeben werden. Siehe auch Info auf php.net.
+    Generally TYPO3 uses the UTF-8 charset. But if you need an other charset for a special case, you can enter it here.
 
 :aspect:`Default value`
     NULL
@@ -50,11 +51,11 @@ encoding
 :aspect:`Mandatory`
     No
 
-Beispiel
---------
+Example
+-------
 
 ::
 
  <p><f:format.htmlentitiesDecode>M&uuml;ller &amp; Breuer</f:format.htmlentitiesDecode>
 
-Im Quelltext sieht man wieder ein richtig sauberes: "Müller & Breuer".
+In the HTML source code you can see a clean: "Müller & Breuer".

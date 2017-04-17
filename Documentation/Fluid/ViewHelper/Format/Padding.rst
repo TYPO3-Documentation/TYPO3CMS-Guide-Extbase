@@ -3,10 +3,25 @@
 f:format.padding
 ================
 
-Padding
+Formats a string using PHPs str_pad function.
+http://www.php.net/manual/en/function.str_pad.php
 
 Properties
 ----------
+
+value
+~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    String to format
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
 
 padLength
 ~~~~~~~~~
@@ -14,9 +29,11 @@ padLength
     Integer
 
 :aspect:`Description`
-    Wie viel Zeichen lang darf der Text inkl. der hinzugefügten Abstandszeichen maximal werden
+    Length of the resulting string. If the value of pad_length is negative or less than the length of the input string,
+    no padding takes place.
 
 :aspect:`Default value`
+    NULL
 
 :aspect:`Mandatory`
     Yes
@@ -27,10 +44,10 @@ padString
     String
 
 :aspect:`Description`
-    Welches Zeichen soll als Abstand dienen
+    The padding string.
 
 :aspect:`Default value`
-    Leerzeichen
+    Space
 
 :aspect:`Mandatory`
     No
@@ -41,33 +58,37 @@ padType
     String
 
 :aspect:`Description`
-    Wo sollen die Abstandszeichen eingefügt werden. Zur Auswahl steht right, left und both
+    Append the padding at this site (Possible values: right, left, both).
 
 :aspect:`Default value`
-    right
+    'right'
 
 :aspect:`Mandatory`
     No
 
-Beispiel zur Funktionsweise
----------------------------
+Examples
+--------
+
+Defaults
 
 ::
 
- <p><f:format.padding padLength="10" padString="-=">TYPO3</f:format.padding>ist cool</p>
- <p><f:format.padding padLength="10" padString="#">Stefan</f:format.padding>ist cool</p>
- <p><f:format.padding padLength="10" padString=" ">Ich</f:format.padding>bin cool</p>
+ <f:format.padding padLength="10">TYPO3</f:format.padding>
 
-In diesem Beispiel wird das angegebene Zeichen oder die Zeichen solange wiederholt, bis das Maximum an Zeichen erfüllt ist. Je nach Zeichensatz macht diese Darstellung wenig Sinn. Denn wie Ihr seht beginnen die letzten beiden Wörter je Zeile immer an einer unterschiedlichen Stelle.
+ TYPO3     (note the trailing whitespace)
 
-Beispiel mit sinnvoller Einrückung
-----------------------------------
+Specify padding string
 
 ::
 
- <pre><f:format.padding padLength="10" padString=" ">TYPO3</f:format.padding>ist cool<br />
- <f:format.padding padLength="10" padString=" ">Stefan</f:format.padding>ist cool<br />
- <f:format.padding padLength="10" padString=" ">Ich</f:format.padding>bin cool</pre>
+ <f:format.padding padLength="10" padString="-=">TYPO3</f:format.padding>
 
-Hier nahezu das gleiche Beispiel wie oben. Allerdings fangen die letzten beiden Wörter je Zeile nun immer an der
-gleichen Position an. Mit Hilfe diesen ViewHelpers könnte man also so eine Art Tabulator erstellen.
+ TYPO3-=-=-
+
+Specify padding type
+
+::
+
+ <f:format.padding padLength="10" padString="-" padType="both">TYPO3</f:format.padding>
+
+ --TYPO3---

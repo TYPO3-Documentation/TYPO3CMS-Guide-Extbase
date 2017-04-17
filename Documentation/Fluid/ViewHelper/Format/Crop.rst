@@ -26,6 +26,11 @@ append
 :aspect:`Description`
       A string to be appended to the cropped text.
 
+:aspect:`Default`
+      ...
+
+:aspect:`Required`
+      No
 
 respectWordBoundaries
 ---------------------
@@ -41,6 +46,8 @@ respectWordBoundaries
 :aspect:`Default`
       True
 
+:aspect:`Required`
+      No
 
 respectHtml
 -----------
@@ -55,6 +62,9 @@ respectHtml
 
 :aspect:`Default`
       True
+
+:aspect:`Required`
+      No
 
 
 Examples
