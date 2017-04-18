@@ -3,7 +3,7 @@
 f:link.action
 =============
 
-Dieser ViewHelper erstellt einen Link zu einer anderen aufzurufenden Action
+A view helper for creating links to extbase actions.
 
 Properties
 ----------
@@ -19,7 +19,7 @@ name
     String
 
 :aspect:`Description`
-    Der name des Links
+    Specifies the name of an anchor.
 
 :aspect:`Default value`
     NULL
@@ -33,7 +33,7 @@ rel
     String
 
 :aspect:`Description`
-    Gibt die Beziehung zwischen dem aktuellen Dokument und dem verknüpften Dokument an
+    Specifies the relationship between the current document and the linked document.
 
 :aspect:`Default value`
     NULL
@@ -47,7 +47,7 @@ rev
     String
 
 :aspect:`Description`
-    Gibt die Beziehung zwischen dem verknüpften Dokument und dem aktuellen Dokument an
+    Specifies the relationship between the linked document and the current document.
 
 :aspect:`Default value`
     NULL
@@ -61,7 +61,7 @@ target
     String
 
 :aspect:`Description`
-    In welchem Fenster soll der Link geöffnet werden?
+    Specifies where to open the linked document.
 
 :aspect:`Default value`
     NULL
@@ -78,7 +78,7 @@ action
     String
 
 :aspect:`Description`
-    Auf welche Actionmethode soll der Link zeigen
+    Target action.
 
 :aspect:`Default value`
     NULL
@@ -92,10 +92,10 @@ arguments
     Array
 
 :aspect:`Description`
-    Welche Argumente/Parameter sollen dem Link angehängt werden
+    Arguments to be added to the link.
 
 :aspect:`Default value`
-    Leeres Array
+    Empty Array
 
 :aspect:`Mandatory`
     No
@@ -106,7 +106,7 @@ controller
     String
 
 :aspect:`Description`
-    Auf welchen Controller soll der Link zeigen
+    Target controller. If NULL current controllerName is used.
 
 :aspect:`Default value`
     NULL
@@ -120,7 +120,7 @@ extensionName
     String
 
 :aspect:`Description`
-    Auf welchen Controller und/oder Action welcher Extension soll der Link zeigen
+    Target Extension Name (without "tx_" prefix and no underscores). If NULL the current extension name is used.
 
 :aspect:`Default value`
     NULL
@@ -134,7 +134,7 @@ pluginName
     String
 
 :aspect:`Description`
-    Auf welchen Controller und/oder Action welchen Plugins soll der Link zeigen
+    Target plugin. If empty, the current plugin name is used.
 
 :aspect:`Default value`
     NULL
@@ -148,7 +148,7 @@ pageUid
     Integer
 
 :aspect:`Description`
-    Auf welche Seiten-UID soll verlinkt werden
+    Target page. See TypoLink destination.
 
 :aspect:`Default value`
     NULL
@@ -162,7 +162,7 @@ pageType
     Integer
 
 :aspect:`Description`
-    Auf welche Seitentyp ID soll verlinkt werden.
+    Type of the target page. See typolink.parameter.
 
 :aspect:`Default value`
     0
@@ -176,7 +176,7 @@ noCache
     Boolean
 
 :aspect:`Description`
-    Verhindert das Caching der aufzurufenden Seite
+    Set this to disable caching for the target page. You should not need this.
 
 :aspect:`Default value`
     FALSE
@@ -190,7 +190,7 @@ noCacheHash
     Boolean
 
 :aspect:`Description`
-    Verhindert, dass der cHash-Parameter nicht mit an die URL angehangen wird.
+    Set this to suppress the cHash query parameter created by TypoLink. You should not need this.
 
 :aspect:`Default value`
     FALSE
@@ -204,10 +204,10 @@ section
     String
 
 :aspect:`Description`
-    Auf welchen Anker soll die Zielseite springen (#anker)
+    The anchor to be added to the URI.
 
 :aspect:`Default value`
-    Leerer String
+    Empty String
 
 :aspect:`Mandatory`
     No
@@ -218,10 +218,10 @@ format
     String
 
 :aspect:`Description`
-    Gibt an um welches Format es sich bei der Zielseite handelt. Alternativ gibt es noch "xml"
+    The requested format, e.g. ".html.
 
 :aspect:`Default value`
-    Leerer String
+    Empty String
 
 :aspect:`Mandatory`
     No
@@ -232,7 +232,7 @@ linkAccessRestrictedPages
     Boolean
 
 :aspect:`Description`
-    Normalerweise werden Links auf geschützte Seiten nicht erzeugt. Hier mit kann man die Linkgeneration erzwingen.
+    If set, links pointing to access restricted pages will still link to the page even though the page cannot be accessed.
 
 :aspect:`Default value`
     FALSE
@@ -246,10 +246,10 @@ additionalParams
     Array
 
 :aspect:`Description`
-    Fügt weitere Parameter der Zielseite an. Im Gegensatz zu arguments, können hiermit Variablen hinzugefügt werden die nicht mit dem Extensionnamen geprefixed werden.
+    Additional query parameters that won't be prefixed like $arguments (overrule $arguments).
 
 :aspect:`Default value`
-    Leeres Array
+    Empty Array
 
 :aspect:`Mandatory`
     No
@@ -260,7 +260,7 @@ absolute
     Boolean
 
 :aspect:`Description`
-    Nach Aktivierung wird der Zeilseite noch der Domainname und Pfad vorangestellt.
+    If set, the URI of the rendered link is absolute.
 
 :aspect:`Default value`
     FALSE
@@ -274,7 +274,7 @@ addQueryString
     Boolean
 
 :aspect:`Description`
-    Falls der aktuellen Seite bereits Parameter über die URL mitgegeben wurden, könnt Ihr hier nun entscheiden, ob diese Parameter auch mit auf die Zielseite übergeben werden.
+    If set, the current query parameters will be kept in the URI.
 
 :aspect:`Default value`
     FALSE
@@ -288,17 +288,36 @@ argumentsToBeExcludedFromQueryString
     Array
 
 :aspect:`Description`
-    Falls Ihr addQueryString aktiviert habt, aber einen oder zwei bestimmte Parameter wieder entfernen wollt, dann tragt Ihr hier diese Parameter ein.
+    Arguments to be removed from the URI. Only active if $addQueryString = TRUE.
 
 :aspect:`Default value`
-    Leeres Array
+    Empty Array
 
 :aspect:`Mandatory`
     No
 
-Beispiel
+addQueryStringMethod
+~~~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Set which parameters will be kept. Only active if $addQueryString = TRUE.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+Examples
 --------
+
+Link to the show-action of the current controller
 
 ::
 
- <f:link.action action="show">Zeige Details</f:link.action>
+ <f:link.action action="show">action link</f:link.action>
+
+ <a href="index.php?id=123&tx_myextension_plugin[action]=show&tx_myextension_plugin[controller]=Standard&cHash=xyz">action link</f:link.action>
+ (depending on the current page and your TS configuration)

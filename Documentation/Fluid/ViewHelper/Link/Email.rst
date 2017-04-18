@@ -3,8 +3,8 @@
 f:link.email
 ============
 
-Mit diesem ViewHelper erstellt Ihr einen Link auf eine E-Mail-Adresse. Falls Ihr mit TypoScript im Bereich "config"
-Angaben zum Verschlüsseln der E-Mail-Adresse gemacht habt, so werden diese Einstellungen auch hier angewendet.
+Email link ViewHelper.
+Generates an email link incorporating TYPO3s spamProtectEmailAddresses-settings.
 
 Properties
 ----------
@@ -20,7 +20,7 @@ name
     String
 
 :aspect:`Description`
-    Der name des Links
+    Specifies the name of an anchor.
 
 :aspect:`Default value`
     NULL
@@ -34,7 +34,7 @@ rel
     String
 
 :aspect:`Description`
-    Gibt die Beziehung zwischen dem aktuellen Dokument und dem verknüpften Dokument an
+    Specifies the relationship between the current document and the linked document.
 
 :aspect:`Default value`
     NULL
@@ -48,7 +48,7 @@ rev
     String
 
 :aspect:`Description`
-    Gibt die Beziehung zwischen dem verknüpften Dokument und dem aktuellen Dokument an
+    Specifies the relationship between the linked document and the current document.
 
 :aspect:`Default value`
     NULL
@@ -62,7 +62,7 @@ target
     String
 
 :aspect:`Description`
-    In welchem Fenster soll der Link geöffnet werden?
+    Specifies where to open the linked document.
 
 :aspect:`Default value`
     NULL
@@ -79,16 +79,31 @@ email
     String
 
 :aspect:`Description`
-    Die zu verlinkende E-Mail-Adresse
+    The email address to be turned into a link.
 
 :aspect:`Default value`
+    NULL
 
 :aspect:`Mandatory`
     Yes
 
-Beispiel
+
+Examples
 --------
+
+Basic email link
 
 ::
 
- <f:link.email email="meine@mailadresse.tld" />
+ <f:link.email email="foo@bar.tld" />
+
+ <a href="javascript:linkTo_UnCryptMailto('ocknvq,hqqBdct0vnf');">foo(at)bar.tld</a>
+ (depending on your spamProtectEmailAddresses-settings)
+
+Email link with custom linktext
+
+::
+
+ <f:link.email email="foo@bar.tld">some custom content</f:link.email>
+
+ <a href="javascript:linkTo_UnCryptMailto('ocknvq,hqqBdct0vnf');">some custom content</a>

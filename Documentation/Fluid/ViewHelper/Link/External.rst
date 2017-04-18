@@ -3,7 +3,7 @@
 f:link.external
 ===============
 
-Dieser ViewHelper erstellt einen Link zu einer externen Seite.
+A ViewHelper for creating links to external targets.
 
 .. tip::
 
@@ -24,7 +24,7 @@ name
     String
 
 :aspect:`Description`
-    Der name des Links
+    Specifies the name of an anchor.
 
 :aspect:`Default value`
     NULL
@@ -38,7 +38,7 @@ rel
     String
 
 :aspect:`Description`
-    Gibt die Beziehung zwischen dem aktuellen Dokument und dem verknüpften Dokument an
+    Specifies the relationship between the current document and the linked document.
 
 :aspect:`Default value`
     NULL
@@ -52,7 +52,7 @@ rev
     String
 
 :aspect:`Description`
-    Gibt die Beziehung zwischen dem verknüpften Dokument und dem aktuellen Dokument an
+    Specifies the relationship between the linked document and the current document.
 
 :aspect:`Default value`
     NULL
@@ -66,7 +66,7 @@ target
     String
 
 :aspect:`Description`
-    In welchem Fenster soll der Link geöffnet werden?
+    Specifies where to open the linked document.
 
 :aspect:`Default value`
     NULL
@@ -83,9 +83,10 @@ uri
     String
 
 :aspect:`Description`
-    Die URL zu der externen Zielseite
+    The URI that will be put in the href attribute of the rendered link tag.
 
 :aspect:`Default value`
+    NULL
 
 :aspect:`Mandatory`
     Yes
@@ -96,17 +97,27 @@ defaultScheme
     String
 
 :aspect:`Description`
-    Hier sind alle gültigen Schemas für Links erlaubt wie z.B. ftp oder https
+    Scheme the href attribute will be prefixed with if specified $uri does not contain a scheme already.
 
 :aspect:`Default value`
-    http
+    'http'
 
 :aspect:`Mandatory`
     No
 
-Beispiel
+Examples
 --------
 
 ::
 
- <f:link.external uri="www.example.com">Externer Link zu meiner Seite</f:link.external>
+ <f:link.external uri="http://www.typo3.org" target="_blank">external link</f:link.external>
+
+ <a href="http://www.typo3.org" target="_blank">external link</a>
+
+Custom default scheme
+
+::
+
+ <f:link.external uri="typo3.org" defaultScheme="ftp">external ftp link</f:link.external>
+
+ <a href="ftp://typo3.org">external ftp link</a>
