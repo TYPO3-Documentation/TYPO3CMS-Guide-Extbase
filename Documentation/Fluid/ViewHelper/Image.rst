@@ -16,7 +16,34 @@ Inline usage example
 
 ::
 
-   {f:image(additionalAttributes: {foo: 'bar'}, data: {foo: 'bar'}, src: 'NULL', width: 'NULL', height: 'NULL', minWidth: 123, minHeight: 123, maxWidth: 123, maxHeight: 123, treatIdAsReference: 1, image: [anySimpleType], crop: [anySimpleType], cropVariant: 'default', absolute: 1, class: 'NULL', dir: 'NULL', id: 'NULL', lang: 'NULL', style: 'NULL', title: 'NULL', accesskey: 'NULL', tabindex: 123, onclick: 'NULL', alt: 'NULL', ismap: 'NULL', longdesc: 'NULL', usemap: 'NULL')}
+   {f:image(
+      additionalAttributes: {foo: 'bar'},
+      data: {foo: 'bar'},
+      src: 'NULL',
+      width: 'NULL',
+      height: 'NULL',
+      minWidth: 123,
+      minHeight: 123,
+      maxWidth: 123,
+      maxHeight: 123,
+      treatIdAsReference: 1,
+      image: [anySimpleType],
+      crop: [anySimpleType],
+      cropVariant: 'default',
+      absolute: 1,
+      class: 'NULL',
+      dir: 'NULL',
+      id: 'NULL',
+      lang: 'NULL',
+      style: 'NULL',
+      title: 'NULL',
+      accesskey: 'NULL',
+      tabindex: 123,
+      onclick: 'NULL',
+      alt: 'NULL',
+      ismap: 'NULL',
+      longdesc: 'NULL',
+      usemap: 'NULL')}
 
 
 Exclusive properties of the HTML tag
@@ -166,7 +193,7 @@ crop
     No
 
 cropVariant
-~~~~
+~~~~~~~~~~~
 :aspect:`Variable type`
     string
 
