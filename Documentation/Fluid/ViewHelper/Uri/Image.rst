@@ -53,6 +53,34 @@ height
 
 :aspect:`Mandatory`
     No
+    
+crop
+~~~~
+:aspect:`Variable type`
+    anySimpleType
+
+:aspect:`Description`
+    Overrule cropping of image (setting to FALSE disables the cropping set in FileReference)
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+    
+cropVariant
+~~~~~~~~~~~
+:aspect:`Variable type`
+    string
+
+:aspect:`Description`
+    Select a cropping variant, in case multiple croppings have been specified or stored in FileReference
+
+:aspect:`Default value`
+    'default'
+
+:aspect:`Mandatory`
+    No
 
 minWidth
 ~~~~~~~~
