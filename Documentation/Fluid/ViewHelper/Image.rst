@@ -16,7 +16,7 @@ Inline usage example
 
 ::
 
-   {f:image(additionalAttributes: {foo: 'bar'}, data: {foo: 'bar'}, src: 'NULL', width: 'NULL', height: 'NULL', minWidth: 123, minHeight: 123, maxWidth: 123, maxHeight: 123, treatIdAsReference: 1, image: [anySimpleType], crop: [anySimpleType], absolute: 1, class: 'NULL', dir: 'NULL', id: 'NULL', lang: 'NULL', style: 'NULL', title: 'NULL', accesskey: 'NULL', tabindex: 123, onclick: 'NULL', alt: 'NULL', ismap: 'NULL', longdesc: 'NULL', usemap: 'NULL')}
+   {f:image(additionalAttributes: {foo: 'bar'}, data: {foo: 'bar'}, src: 'NULL', width: 'NULL', height: 'NULL', minWidth: 123, minHeight: 123, maxWidth: 123, maxHeight: 123, treatIdAsReference: 1, image: [anySimpleType], crop: [anySimpleType], cropVariant: 'default', absolute: 1, class: 'NULL', dir: 'NULL', id: 'NULL', lang: 'NULL', style: 'NULL', title: 'NULL', accesskey: 'NULL', tabindex: 123, onclick: 'NULL', alt: 'NULL', ismap: 'NULL', longdesc: 'NULL', usemap: 'NULL')}
 
 
 Exclusive properties of the HTML tag
@@ -161,6 +161,20 @@ crop
 
 :aspect:`Default value`
     NULL
+
+:aspect:`Mandatory`
+    No
+
+cropVariant
+~~~~
+:aspect:`Variable type`
+    string
+
+:aspect:`Description`
+    Select a cropping variant, in case multiple croppings have been specified or stored in FileReference
+
+:aspect:`Default value`
+    'default'
 
 :aspect:`Mandatory`
     No
