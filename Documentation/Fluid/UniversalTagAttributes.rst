@@ -140,19 +140,3 @@ onclick
 
 :aspect:`Mandatory`
     No
-
-data
-----
-
-:aspect:`Variable type`
-    Array
-
-:aspect:`Description`
-    Adds the "data-*" attribute to the tag. New since TYPO3 7 LTS.
-    *Example:* `data="{foo:'bar'}"` produces `data-foo="bar"`
-
-:aspect:`Default value`
-    NULL
-
-:aspect:`Mandatory`
-    No
