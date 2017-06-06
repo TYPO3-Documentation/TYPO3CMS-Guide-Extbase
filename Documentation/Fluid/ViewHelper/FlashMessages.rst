@@ -14,30 +14,9 @@ Properties
 
 All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-renderMode
-~~~~~~~~~~
-:aspect:`Variable type`
-    String
-
-:aspect:`Description`
-    Should the error messages be displayed as a list (UL) or wrapped in a container (DIV)?
-
-:aspect:`Default value`
-    NULL
-
-:aspect:`Mandatory`
-    Yes
-
 Example
 -------
 
 ::
 
  <f:flashMessages />
-
-Example with output contained in a DIV
---------------------------------------
-
-::
-
- <f:flashMessages renderMode="div" />
