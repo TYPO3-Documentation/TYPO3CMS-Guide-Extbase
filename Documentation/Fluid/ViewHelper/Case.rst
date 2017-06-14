@@ -29,3 +29,17 @@ Example
 --------
 
 A example of the usage of the `f:case` ViewHelper is in the documentation for the `f:switch` ViewHelper.
+
+Deprecation
+--------
+
+The usage of this ViewHelper as default case like below is deprecated and will be removed in TYPO3 v9.*.
+Use DefaultCaseViewHelper instead.
+
+Old:
+::
+    <f:case default="TRUE">Foo</f:case>
+
+New:
+::
+    <f:defaultCase>Foo</f:defaultCase>
