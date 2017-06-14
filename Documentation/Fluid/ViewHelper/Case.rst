@@ -36,7 +36,7 @@ Deprecation
 The usage of this ViewHelper as default case like below is deprecated and will be removed in TYPO3 v9.*.
 Use DefaultCaseViewHelper instead.
 
-Old:
+Deprecated:
 ::
     <f:case default="TRUE">Foo</f:case>
 
