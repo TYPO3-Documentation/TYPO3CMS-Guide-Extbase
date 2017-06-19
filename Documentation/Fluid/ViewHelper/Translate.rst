@@ -38,13 +38,13 @@ default
 :aspect:`Mandatory`
     Yes
 
-htmlEscape (removed)
+htmlEscape
 ~~~~~~~~~~
-:aspect:`Variable type`
-    Boolean
 
-:aspect:`Description`
-   Please wrap the view helper in <f:format.raw> if you want to disable HTML escaping, which is enabled by default now.
+.. attention::
+
+   Property `htmlEscape` doesn't exist any more. Html escaping is now done by default.
+   To suppress that wrap the `f:translate` in a `<f:format.raw>` viewhelper.
 
 arguments
 ~~~~~~~~~
