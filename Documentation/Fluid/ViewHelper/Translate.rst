@@ -40,19 +40,11 @@ default
 
 htmlEscape
 ~~~~~~~~~~
-:aspect:`Variable type`
-    Boolean
 
-:aspect:`Description`
-   Strings from the translation files are usually parsed using the PHP function htmlspecialchars, so any
-   HTML code in the translation file will be converted to an encoded string. Set the value of this property to FALSE to
-   disable this behaviour.
+.. attention::
 
-:aspect:`Default value`
-    TRUE
-
-:aspect:`Mandatory`
-    Yes
+   Property `htmlEscape` doesn't exist any more. Html escaping is now done by default.
+   To suppress that wrap the `f:translate` in a `<f:format.raw>` viewhelper.
 
 arguments
 ~~~~~~~~~
@@ -97,7 +89,7 @@ Basic
 
 ::
 
- <f:translate key="domain_model.title" htmlEscape="false" />
+ <f:translate key="domain_model.title" />
 
 With full file path
 ~~~~~~~~~~~~~~~~~~~
