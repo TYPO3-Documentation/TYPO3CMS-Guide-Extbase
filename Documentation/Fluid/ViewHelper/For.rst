@@ -48,7 +48,7 @@ key
     Empty string
 
 :aspect:`Mandatory`
-    Yes
+    No
 
 reverse
 ~~~~~~~
@@ -62,7 +62,7 @@ reverse
     FALSE
 
 :aspect:`Mandatory`
-    Yes
+    No
 
 iteration
 ~~~~~~~~~
@@ -77,7 +77,7 @@ iteration
     NULL
 
 :aspect:`Mandatory`
-    Yes
+    No
 
 Simple example
 --------------
