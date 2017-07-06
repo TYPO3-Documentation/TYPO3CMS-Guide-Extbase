@@ -8,11 +8,6 @@ A view helper for rendering a pagination of objects or arrays
 Properties
 ----------
 
-All the :ref:`universal tag attributes <UniversalTagAttributes>`
-
-Exclusive properties of this ViewHelper
-#######################################
-
 objects
 ~~~~~~
 :aspect:`Variable type`
@@ -59,21 +54,25 @@ Examples
 --------
 
 Pagination of a blog with required arguments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
-<f:widget.paginate objects="{blogs}" as="paginatedBlogs">
-    <f:for each="{paginatedBlogs}" as="blog">
-        <h2>{blog.title}</h2>
-        <p>{blog.text}</p>
-    </f:for>
-</f:widget.paginate>
+ <f:widget.paginate objects="{blogs}" as="paginatedBlogs">
+   <f:for each="{paginatedBlogs}" as="blog">
+     <h2>{blog.title}</h2>
+     <p>{blog.text}</p>
+   </f:for>
+ </f:widget.paginate>
 
 Pagination of a blog with custom configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-<f:widget.paginate objects="{blogs}" as="paginatedBlogs" configuration="{itemsPerPage: 5, insertAbove: 1, insertBelow: 0, maximumNumberOfLinks: 10}">
-    <f:for each="{paginatedBlogs}" as="blog">
-        <h2>{blog.title}</h2>
-        <p>{blog.text}</p>
-    </f:for>
-</f:widget.paginate>
+:: 
+
+ <f:widget.paginate objects="{blogs}" as="paginatedBlogs" configuration="{itemsPerPage: 5, insertAbove: 1, insertBelow: 0, maximumNumberOfLinks: 10}">
+   <f:for each="{paginatedBlogs}" as="blog">
+     <h2>{blog.title}</h2>
+     <p>{blog.text}</p>
+   </f:for>
+ </f:widget.paginate>
