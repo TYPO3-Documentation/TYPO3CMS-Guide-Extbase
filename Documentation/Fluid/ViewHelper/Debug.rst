@@ -133,7 +133,7 @@ Examples
 
 ::
 
-   {customers -> f:debug(title="Results of customers query")}
+   {customers -> f:debug(title: "Results of customers query")}
 
 ::
 
