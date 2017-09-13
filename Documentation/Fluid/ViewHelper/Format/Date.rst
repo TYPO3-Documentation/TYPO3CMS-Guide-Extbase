@@ -155,8 +155,8 @@ Inline notation
 ::
 
    {f:format.date(date: dateObject)}
-   {f:format.date(date: dateObject format: "%d. %B %Y")}
-   {f:format.date(date: "now" format: "%c")}
+   {f:format.date(date: dateObject, format: "%d. %B %Y")}
+   {f:format.date(date: "now", format: "%c")}
 
 
 More inline notation
