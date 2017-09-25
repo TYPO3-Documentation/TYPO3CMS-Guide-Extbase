@@ -43,7 +43,7 @@ disabled
 :aspect:`Mandatory`
     No
 
-maxLength
+maxlength
 ~~~~~~~~~
 :aspect:`Variable type`
     Int
