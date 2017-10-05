@@ -115,7 +115,7 @@ In locallang.xlf::
 sequentially. In order to be more specific about which placeholders are replaced by which array values, use the more
 specific placeholder syntax::
 
-   <f:translate key="LLL:fileadmin/lang/locallang.xml:domain_model.bestfilm" arguments="{0: 'Back to the Future, 1: '1985'}" />
+   <f:translate key="LLL:fileadmin/lang/locallang.xml:domain_model.bestfilm" arguments="{0: 'Back to the Future', 1: '1985'}" />
 
 and::
 
