@@ -165,11 +165,12 @@ addQueryString
     If set, the current query parameters will be kept in the URI.
     
     .. attention::
-      
-       This property should not be used for cached contents without a valid 
+
+       This property should not be used for cached contents without a valid
        cHash. Otherwise the page is cached for the first set of parameters
        and subsubsequently taken from the cache no matter what parameters
-       are given.
+       are given. Additionally the security risk of cache poisoning has to
+       be considered.
 
 
 :aspect:`Default value`
