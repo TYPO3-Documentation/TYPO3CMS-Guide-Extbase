@@ -6,7 +6,9 @@ f:format.html
 When you've created a Model for the `tt_content` table, data that you receive for the front end is raw and 
 unformatted: just as it's stored in the database. So that you can parse this data and output it as you would by 
 using `styles.content.get` in TypoScript, you can use this ViewHelper. It takes the unformatted content and runs it 
-through the `lib.parseFunc_RTE` parser, providing you with the formatted output you need.
+through a parser, providing you with the formatted output you need.
+You can either specify a path to the TypoScript setting or set the parseFunc options directly.
+By default `lib.parseFunc_RTE` is used to parse the string.
 
 Properties
 ----------

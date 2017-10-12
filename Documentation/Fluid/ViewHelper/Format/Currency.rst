@@ -113,7 +113,7 @@ Examples
 
    <f:format.currency currencySign="€" decimalSeparator="." thousandsSeparator="," prependCurrency="true">1122334455.66</f:format.currency>
 
-produces: € 1,122,334,455.66
+produces: `€ 1,122,334,455.66
 
 Non-float value
 ~~~~~~~~~~~~~~~

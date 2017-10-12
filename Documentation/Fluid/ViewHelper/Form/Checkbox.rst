@@ -97,7 +97,7 @@ which is taken from the extension_builder.
 The checkbox will only appear once this amendment is in place.
 
 Example without a property
----------------------------
+--------------------------
 
 The problem with this method is that you'll have to find out yourself if the checkbox is active or not. You will need
 to have already set the values in your Controller, and then apply the state by means of the `checked` attribute. Valid

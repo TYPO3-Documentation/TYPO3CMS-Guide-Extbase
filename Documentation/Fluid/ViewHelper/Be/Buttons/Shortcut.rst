@@ -3,10 +3,10 @@
 f:be.buttons.shortcut
 =====================
 
-This ViewHelper provides the bookmark function used in the backend.
+This ViewHelper provides the bookmark function used in the backend. Currently this ViewHelper is not used by the core.
 
-Features
---------
+Properties
+----------
 
 getVars
 ~~~~~~~
@@ -14,7 +14,7 @@ getVars
     Array
 
 :aspect:`Description`
-    If empty, the page UID, module and module arguments to save with the bookmark.
+    List of GET variables to store. By default the current id, module and all module arguments will be stored.
 
 :aspect:`Default value`
     Empty array
@@ -28,7 +28,7 @@ setVars
     Array
 
 :aspect:`Description`
-    See template::makeShortcutIcon(). Usually not used for Extbase extensions.
+    List of SET[] variables to store. See DocumentTemplate::makeShortcutIcon(). Normally won't be used by Extbase modules.
 
 :aspect:`Default value`
     Empty array
@@ -39,6 +39,10 @@ setVars
 Example
 -------
 
-::
+Default::
 
- <f:be.buttons.shortcut />
+    <f:be.buttons.shortcut />
+
+Explicitly set parameters to be stored in the shortcut::
+
+    <f:be.buttons.shortcut getVars="{0: 'M', 1: 'myOwnPrefix'}" setVars="{0: 'function'}" />

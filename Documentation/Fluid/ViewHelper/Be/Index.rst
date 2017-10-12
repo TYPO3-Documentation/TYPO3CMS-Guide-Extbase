@@ -15,6 +15,8 @@ ViewHelpers for the TYPO3 backend
    Security/Index
    Widget/Index
    Container
+   InfoBox
    PageInfo
    PagePath
+   PageRenderer
    TableList

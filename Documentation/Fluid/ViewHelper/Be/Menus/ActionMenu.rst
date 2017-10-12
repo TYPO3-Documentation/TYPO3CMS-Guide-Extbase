@@ -1,10 +1,10 @@
 .. include:: ../../../../Includes.txt
 
-f:be.menus.actionMenuView
-=========================
+f:be.menus.actionMenu
+=====================
 
-This ViewHelper creates a select box. With the addition of the `f:be.menus.actionMenuItem` ViewHelper, you can fill this 
-select box with options, which will lead to an appropriate view when they are selected.
+This ViewHelper creates a select box. With the addition of the `f:be.menus.actionMenuItem` and `f:be.menus.actionMenuItemGroup`
+ViewHelper, you can fill this select box with options, which will lead to an appropriate view when they are selected.
 
 Properties
 ----------

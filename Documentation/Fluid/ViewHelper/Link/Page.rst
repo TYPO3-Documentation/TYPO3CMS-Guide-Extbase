@@ -3,7 +3,7 @@
 f:link.page
 ===========
 
-Dieser ViewHelper erstellt einen Link zu einer anderen Seiten-UID
+A view helper for creating links to TYPO3 pages.
 
 Properties
 ----------
@@ -19,7 +19,7 @@ target
     String
 
 :aspect:`Description`
-    In welchem Fenster soll der Link geöffnet werden?
+    Specifies where to open the linked document.
 
 :aspect:`Default value`
     NULL
@@ -33,7 +33,7 @@ rel
     String
 
 :aspect:`Description`
-    Gibt die Beziehung zwischen dem aktuellen Dokument und dem verknüpften Dokument an
+    Specifies the relationship between the current document and the linked document.
 
 :aspect:`Default value`
     NULL
@@ -50,7 +50,7 @@ pageUid
     Integer|NULL
 
 :aspect:`Description`
-    Auf welche Seiten-UID soll verlinkt werden
+    Target page. See TypoLink destination.
 
 :aspect:`Default value`
     NULL
@@ -64,7 +64,7 @@ additionalParams
     Array
 
 :aspect:`Description`
-    Fügt weitere Parameter der Zielseite an. Im Gegensatz zu arguments, können hiermit Variablen hinzugefügt werden die nicht mit dem Extensionnamen geprefixed werden.
+    Query parameters to be attached to the resulting URI.
 
 :aspect:`Default value`
     Leeres Array
@@ -78,7 +78,7 @@ pageType
     Integer
 
 :aspect:`Description`
-    Auf welche Seitentyp ID soll verlinkt werden.
+    Type of the target page. See typolink.parameter.
 
 :aspect:`Default value`
     0
@@ -92,7 +92,7 @@ noCache
     Boolean
 
 :aspect:`Description`
-    Verhindert das Caching der aufzurufenden Seite
+    Set this to disable caching for the target page. You should not need this.
 
 :aspect:`Default value`
     FALSE
@@ -106,7 +106,7 @@ noCacheHash
     Boolean
 
 :aspect:`Description`
-    Verhindert, dass der ``cHash``-Parameter mit an die URL angehangen wird.
+    Set this to suppress the `cHash` query parameter created by TypoLink. You should not need this.
 
 :aspect:`Default value`
     FALSE
@@ -120,7 +120,7 @@ section
     String
 
 :aspect:`Description`
-    Auf welchen Anker soll die Zielseite springen (#anker)
+    The anchor to be added to the URI.
 
 :aspect:`Default value`
     Leerer String
@@ -134,7 +134,7 @@ linkAccessRestrictedPages
     Boolean
 
 :aspect:`Description`
-    Normalerweise werden Links auf geschützte Seiten nicht erzeugt. Hier mit kann man die Linkgeneration erzwingen.
+    If set, links pointing to access restricted pages will still link to the page even though the page cannot be accessed.
 
 :aspect:`Default value`
     FALSE
@@ -148,7 +148,7 @@ absolute
     Boolean
 
 :aspect:`Description`
-    Nach Aktivierung wird der Zeilseite noch der Domainname und Pfad vorangestellt.
+    If set, the URI of the rendered link is absolute.
 
 :aspect:`Default value`
     FALSE
@@ -162,7 +162,7 @@ addQueryString
     Boolean
 
 :aspect:`Description`
-    Falls der aktuellen Seite bereits Parameter über die URL mitgegeben wurden, könnt Ihr hier nun entscheiden, ob diese Parameter auch mit auf die Zielseite übergeben werden.
+    If set, the current query parameters will be kept in the URI.
     
     **Note:** This option should not be used in a part which will be cached or only if it was called with a valid cHash, otherwise
               the parameters of the first page hit after the cache was cleared will be stored in 
@@ -180,7 +180,7 @@ argumentsToBeExcludedFromQueryString
     Array
 
 :aspect:`Description`
-    Falls Ihr addQueryString aktiviert habt, aber einen oder zwei bestimmte Parameter wieder entfernen wollt, dann tragt Ihr hier diese Parameter ein.
+    Arguments to be removed from the URI. Only active if $addQueryString = TRUE.
 
 :aspect:`Default value`
     Leeres Array
@@ -188,19 +188,47 @@ argumentsToBeExcludedFromQueryString
 :aspect:`Mandatory`
     No
 
-Beispiel
+addQueryStringMethod
+~~~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    Set which parameters will be kept. Only active if $addQueryString = TRUE.
+
+:aspect:`Default value`
+    NULL
+
+:aspect:`Mandatory`
+    No
+
+
+Examples
 --------
+
+Link to the current page
 
 ::
 
- <f:link.page pageUid="134">Linkname für die Seite 134</f:link.page>
+ <f:link.page>page link</f:link.page>
 
- <f:link.page pageUid="134" additionalParams="{L:1}">
- /index.php?id=134&L=1
+ <a href="index.php?id=123">page link</f:link.action>
+ (depending on the current page and your TS configuration)
 
- <f:link.page pageUid="134" additionalParams="{param: 'test'}">
- /index.php?id=134&param=test
+Query parameters
 
- <f:link.page pageUid="134" additionalParams="{param: '{name: \'test\'}'}">
- /index.php?id=134&param[name]=test
+::
 
+ <f:link.page pageUid="1" additionalParams="{foo: 'bar'}">page link</f:link.page>
+
+ <a href="index.php?id=1&foo=bar">page link</f:link.action>
+ (depending on your TS configuration)
+
+Query parameters for extensions
+
+::
+
+ <f:link.page pageUid="1" additionalParams="{extension_key: {foo: 'bar'}}">page link</f:link.page>
+
+ <a href="index.php?id=1&extension_key[foo]=bar">page link</f:link.action>
+ (depending on your TS configuration)

@@ -36,7 +36,9 @@ enableJumpToUrl
 
 :aspect:`Description`
     Activate this parameter if you want to use the ActionMenu ViewHelper. This loads the necessary JavaScript assets.
-
+    
+    This property has been marked as deprecated in TYPO3 6.2 and was removed in TYPO3 7.0.
+    
 :aspect:`Default value`
     TRUE
 
@@ -162,6 +164,8 @@ addCssFile
 
 :aspect:`Description`
     Bind a specific CSS asset file to the view.
+    
+    This property has been marked as deprecated in TYPO3 6.2 and was removed in TYPO3 7.0. Please use the `includeCssFiles` instead.
 
 :aspect:`Default value`
     NULL
@@ -176,6 +180,8 @@ addJsFile
 
 :aspect:`Description`
     Bind a specific JavaScript asset file to the view.
+    
+    This property has been marked as deprecated in TYPO3 6.2 and was removed in TYPO3 7.0. Please use the `includeJsFiles` instead.
 
 :aspect:`Default value`
     NULL
@@ -218,7 +224,7 @@ includeJsFiles
     Array
 
 :aspect:`Description`
-    Using addJsFile will only allow you to bind in a single JavaScript asset file. Using includeCssFiles allows you to 
+    Using addJsFile will only allow you to bind in a single JavaScript asset file. Using includeJsFiles allows you to 
     bind multiple files.
 
 :aspect:`Default value`
@@ -241,3 +247,28 @@ addJsInlineLabels
 
 :aspect:`Required`
     No
+
+Examples
+--------
+
+Simple
+~~~~~~
+
+"your module content" wrapped with proper head & body tags.
+Default backend CSS styles and JavaScript will be included.
+
+::
+
+    <f:be.container>your module content</f:be.container>
+
+All options
+~~~~~~~~~~~
+
+"your module content" wrapped with proper head & body tags.
+Custom CSS file EXT:your_extension/Resources/Public/Css/styles.css and JavaScript files
+EXT:your_extension/Resources/Public/JavaScript/Library1.js and EXT:your_extension/Resources/Public/JavaScript/Library2.js
+will be loaded, plus ExtJS and jQuery and some inline labels for usage in JS code.
+
+::
+
+    <f:be.container pageTitle="foo" enableClickMenu="false" loadExtJs="true" loadExtJsTheme="false" enableExtJsDebug="true" loadJQuery="true" includeCssFiles="{0: '{f:uri.resource(path:\'Css/Styles.css\')}'}" includeJsFiles="{0: '{f:uri.resource(path:\'JavaScript/Library1.js\')}', 1: '{f:uri.resource(path:\'JavaScript/Library2.js\')}'}" addJsInlineLabels="{0: 'label1', 1: 'label2'}">your module content</f:be.container>

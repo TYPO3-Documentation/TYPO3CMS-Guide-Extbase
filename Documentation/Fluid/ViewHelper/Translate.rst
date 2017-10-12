@@ -40,19 +40,11 @@ default
 
 htmlEscape
 ~~~~~~~~~~
-:aspect:`Variable type`
-    Boolean
 
-:aspect:`Description`
-   Strings from the translation files are usually parsed using the PHP function htmlspecialchars, so any
-   HTML code in the translation file will be converted to an encoded string. Set the value of this property to FALSE to
-   disable this behaviour.
+.. attention::
 
-:aspect:`Default value`
-    TRUE
-
-:aspect:`Mandatory`
-    Yes
+   Property `htmlEscape` doesn't exist any more. Html escaping is now done by default.
+   To suppress that wrap the `f:translate` in a `<f:format.raw>` viewhelper.
 
 arguments
 ~~~~~~~~~
@@ -97,7 +89,7 @@ Basic
 
 ::
 
- <f:translate key="domain_model.title" htmlEscape="false" />
+ <f:translate key="domain_model.title" />
 
 With full file path
 ~~~~~~~~~~~~~~~~~~~
@@ -111,7 +103,7 @@ With placeholders
 
 In the template::
 
- <f:translate key="LLL:fileadmin/lang/locallang.xml:domain_model.bestfilm" arguments="{0: 'Back to the Future}" />
+ <f:translate key="LLL:fileadmin/lang/locallang.xml:domain_model.bestfilm" arguments="{0: 'Back to the Future'}" />
 
 In locallang.xlf::
 
@@ -123,7 +115,7 @@ In locallang.xlf::
 sequentially. In order to be more specific about which placeholders are replaced by which array values, use the more
 specific placeholder syntax::
 
-   <f:translate key="LLL:fileadmin/lang/locallang.xml:domain_model.bestfilm" arguments="{0: 'Back to the Future, 1: '1985'}" />
+   <f:translate key="LLL:fileadmin/lang/locallang.xml:domain_model.bestfilm" arguments="{0: 'Back to the Future', 1: '1985'}" />
 
 and::
 

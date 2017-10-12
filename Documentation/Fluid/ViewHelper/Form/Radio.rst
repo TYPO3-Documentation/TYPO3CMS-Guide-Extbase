@@ -41,7 +41,13 @@ Examples
  <f:form.radio name="myExtName[age]" value="41-99" />
 
 
-or
+Preselect
+
+::
+
+ <f:form.radio name="myRadioButton" value="someValue" checked="{object.value} == 5" />
+
+Bind to object property
 
 ::
 
