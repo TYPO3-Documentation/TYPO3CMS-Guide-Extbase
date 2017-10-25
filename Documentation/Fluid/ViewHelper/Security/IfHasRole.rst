@@ -43,7 +43,7 @@ Role by number:
    </f:security.ifHasRole>
 
 
-Role by usergrup title:
+Role by usergroup title:
 
 .. code-block:: html
 
