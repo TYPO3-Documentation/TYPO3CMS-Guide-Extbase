@@ -12,7 +12,7 @@ detect ViewHelper calls that follow the block that was parsed as accessor but wa
 
 In this case you can manipulate the JavaScript block to prevent it from being detected as accessor. There are several
 ways you can achieve this: by using a normal ViewHelper, or wrap the JavaScript part in a CDATA block, or disrupt the
-detection of beginnign and closing curly braces.
+detection of beginning and closing curly braces.
 
 Problem
 -------
