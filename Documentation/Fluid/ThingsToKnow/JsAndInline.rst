@@ -4,8 +4,15 @@ JavaScript and Fluid Inline Syntax
 ==================================
 
 When Fluid ViewHelpers are used in mixed templates containing complex JavaScript blocks, you might come across a 
-situation in which a ViewHelper using inline syntax doesn't get interpreted. In this case you can *wake up* rendering 
-by using a normal syntax ViewHelper, or wrap the JavaScript part in a CDATA block.
+situation in which a ViewHelper using inline syntax doesn't get interpreted.
+
+This is usually caused by the Fluid parser detecting one or more of the JavaScript expressions as so-called accessors,
+which normally would indicate a variable should be rendered. When this happens, the internals of Fluid may not properly
+detect ViewHelper calls that follow the block that was parsed as accessor but was JavaScript.
+
+In this case you can manipulate the JavaScript block to prevent it from being detected as accessor. There are several
+ways you can achieve this: by using a normal ViewHelper, or wrap the JavaScript part in a CDATA block, or disrupt the
+detection of beginnign and closing curly braces.
 
 Problem
 -------
@@ -53,9 +60,21 @@ The ViewHelper in the following line::
 Solutions
 ---------
 
-- Wake up Fluid rendering by introducing a normal syntax term after the JavaScript block. For example:::
+- Prevent Fluid from detecting the JavaScript as if it were Fluid, by adding disrupting markup. For example:::
 
-  <f:comment>wake up, fluid!</f:comment>
+  myFunction = function () {
+    <f:comment>This comment is here to prevent Fluid's parser from detecting the content of brackets</f:comment>
+    // some simple JS that would otherwise be detected by Fluid
+    foo()
+  };
+
+- Disrupt detection of opening and closing curly braces::
+
+  myFunction = function () <f:format.raw>{</f:format.raw>
+    // some simple JS that would otherwise be detected by Fluid
+    // IMPORTANT! f:comment cannot be used here, it has to be a VH that allows the tag body to output!
+    foo()
+  };
 
 - Wrap the JavaScript part in CDATA::
 
