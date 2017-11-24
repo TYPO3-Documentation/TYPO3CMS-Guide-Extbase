@@ -12,8 +12,8 @@ src
     String
 
 :aspect:`Description`
-    Path and file name to the source image. The path must be relative to the project's webroot folder. 
-                 You can also use paths which feature the EXT: convention.
+    Path and file name to the source image. The path must be relative to the project's webroot folder.
+    You can also use paths which feature the EXT: convention.
 
 :aspect:`Default value`
 
@@ -27,9 +27,10 @@ width
 
 :aspect:`Description`
     Width of the image. In addition to a numeric value (pixels), you can also add the suffix “c” or “m” in 
-                 order to crop or scale the generated image. (Check out the imgResource documentation for details.)
-                 Cropping is changed since Typo3 7.2! Use crop="offsetX,offsetY,width,height" to crop images instead of suffix "c".
-                 <a href="https://docs.typo3.org/typo3cms/extensions/core/Changelog/7.2/Feature-65584-AddImageCropping.html">Learn more</a>
+    order to crop or scale the generated image. (Check out the imgResource documentation for details.)
+    Cropping is changed since Typo3 7.2! Use crop="offsetX,offsetY,width,height" to crop images instead 
+    of suffix "c".
+    `Learn more. <https://docs.typo3.org/typo3cms/extensions/core/Changelog/7.2/Feature-65584-AddImageCropping.html>`__
 
 :aspect:`Default value`
     NULL
@@ -43,10 +44,11 @@ height
     String
 
 :aspect:`Description`
-    Height of the image. In addition to a numeric value (pixels), you can also add the suffix “c” or “m” in 
-                 order to crop or scale the generated image. (Check out the imgResource documentation for details.)
-                  Cropping is changed since Typo3 7.2! Use crop="offsetX,offsetY,width,height" to crop images instead of suffix "c".
-                 <a href="https://docs.typo3.org/typo3cms/extensions/core/Changelog/7.2/Feature-65584-AddImageCropping.html">Learn more</a>
+    Height of the image. In addition to a numeric value (pixels), you can also add the suffix “c” or “m” in
+    order to crop or scale the generated image. (Check out the imgResource documentation for details.)
+    Cropping is changed since Typo3 7.2! Use crop="offsetX,offsetY,width,height" to crop images instead 
+    of suffix "c".
+    `Learn more. <https://docs.typo3.org/typo3cms/extensions/core/Changelog/7.2/Feature-65584-AddImageCropping.html>`__
 
 :aspect:`Default value`
     NULL
@@ -88,8 +90,8 @@ minWidth
     Integer
 
 :aspect:`Description`
-    A minimum width for the generated image, in pixels. Smaller images will be scaled up, as long as the 
-                 Install Tool setting ``[GFX][im_noScaleUp]`` isn't activated.
+    A minimum width for the generated image, in pixels. Smaller images will be scaled up, as long as the
+    Install Tool setting ``[GFX][im_noScaleUp]`` isn't activated.
 
 :aspect:`Default value`
     NULL
@@ -104,7 +106,7 @@ minHeight
 
 :aspect:`Description`
     A minimum height for the generated image, in pixels. Smaller images will be scaled up, as long as the 
-                 Install Tool setting ``[GFX][im_noScaleUp]`` isn't activated.
+    Install Tool setting ``[GFX][im_noScaleUp]`` isn't activated.
 
 :aspect:`Default value`
     NULL
@@ -119,7 +121,7 @@ maxWidth
 
 :aspect:`Description`
     Maximum width for the generated image. If the source image is wider than this value, it will be 
-                 scaled down.
+    scaled down.
 
 :aspect:`Default value`
     NULL
@@ -134,7 +136,7 @@ maxHeight
 
 :aspect:`Description`
     Maximum height for the generated image. If the source image is taller than this value, it will be 
-                 scaled down.
+    scaled down.
 
 :aspect:`Default value`
     NULL
@@ -149,7 +151,7 @@ treatIdAsReference
 
 :aspect:`Description`
     If this value is set to TRUE, then the ViewHelper expects the value given by ``src`` to be a 
-                 ``sys_file_reference``. If not, then it expects a ``sys_file`` or regular file path.
+    `sys_file_reference`. If not, then it expects a ``sys_file`` or regular file path.
 
 :aspect:`Default value`
     FALSE
