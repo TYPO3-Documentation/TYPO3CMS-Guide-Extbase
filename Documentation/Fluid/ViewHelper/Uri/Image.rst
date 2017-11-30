@@ -18,7 +18,21 @@ src
 :aspect:`Default value`
 
 :aspect:`Mandatory`
-    Yes
+    Either this or `image`
+    
+image
+~~~~~
+
+:aspect:`Variable type`
+    Object
+    
+:aspect:`Description`
+    An image object.
+    
+:aspect:`Default value`
+
+:aspect:`Mandatory`
+    Either this or `src
 
 width
 ~~~~~
@@ -151,7 +165,7 @@ treatIdAsReference
 
 :aspect:`Description`
     If this value is set to TRUE, then the ViewHelper expects the value given by ``src`` to be a 
-    `sys_file_reference`. If not, then it expects a ``sys_file`` or regular file path.
+    `sys_file_reference`. If not, then it expects a ``sys_file`` or regular file path. Not required if `image` parameter is used.
 
 :aspect:`Default value`
     FALSE
