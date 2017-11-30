@@ -15,10 +15,8 @@ src
     Path and file name to the source image. The path must be relative to the project's webroot folder.
     You can also use paths which feature the EXT: convention.
 
-:aspect:`Default value`
-
 :aspect:`Mandatory`
-    Either this or `image` parameter
+    Either 'this' or 'image' parameter
     
 image
 ~~~~~
@@ -29,10 +27,8 @@ image
 :aspect:`Description`
     An image object.
     
-:aspect:`Default value`
-
 :aspect:`Mandatory`
-    Either this or `src` parameter
+    Either 'this' or 'src' parameter
 
 width
 ~~~~~
