@@ -15,10 +15,20 @@ src
     Path and file name to the source image. The path must be relative to the project's webroot folder.
     You can also use paths which feature the EXT: convention.
 
-:aspect:`Default value`
-
 :aspect:`Mandatory`
-    Yes
+    Either 'this' or 'image' parameter
+    
+image
+~~~~~
+
+:aspect:`Variable type`
+    Object
+    
+:aspect:`Description`
+    An image object.
+    
+:aspect:`Mandatory`
+    Either 'this' or 'src' parameter
 
 width
 ~~~~~
@@ -151,11 +161,10 @@ treatIdAsReference
 
 :aspect:`Description`
     If this value is set to TRUE, then the ViewHelper expects the value given by ``src`` to be a 
-    `sys_file_reference`. If not, then it expects a ``sys_file`` or regular file path.
+    `sys_file_reference`. If not, then it expects a ``sys_file`` or regular file path. Not required if `image` parameter is used.
 
 :aspect:`Default value`
     FALSE
 
 :aspect:`Mandatory`
     No
-
