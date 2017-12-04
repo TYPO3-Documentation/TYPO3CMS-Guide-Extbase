@@ -217,7 +217,7 @@ Link to the current page
 
  <f:link.page>page link</f:link.page>
 
- <a href="index.php?id=123">page link</f:link.action>
+ <a href="index.php?id=123">page link</a>
  (depending on the current page and your TS configuration)
 
 Query parameters
@@ -226,7 +226,7 @@ Query parameters
 
  <f:link.page pageUid="1" additionalParams="{foo: 'bar'}">page link</f:link.page>
 
- <a href="index.php?id=1&foo=bar">page link</f:link.action>
+ <a href="index.php?id=1&foo=bar">page link</a>
  (depending on your TS configuration)
 
 Query parameters for extensions
@@ -235,5 +235,5 @@ Query parameters for extensions
 
  <f:link.page pageUid="1" additionalParams="{extension_key: {foo: 'bar'}}">page link</f:link.page>
 
- <a href="index.php?id=1&extension_key[foo]=bar">page link</f:link.action>
+ <a href="index.php?id=1&extension_key[foo]=bar">page link</a>
  (depending on your TS configuration)
