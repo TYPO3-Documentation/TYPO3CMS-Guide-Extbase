@@ -17,139 +17,139 @@ Properties
 pageUid
 ~~~~~~~
 :aspect:`Variable type`
-    Integer|NULL
+   Integer|NULL
 
 :aspect:`Description`
-    Auf welche Seiten-UID soll verlinkt werden
+   Links to this page UID.
 
 :aspect:`Default value`
-    NULL
+   NULL
 
 :aspect:`Mandatory`
-    No
+   No
 
 additionalParams
 ~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
-    Array
+   Array
 
 :aspect:`Description`
-    Fügt weitere Parameter der Zielseite an. Im Gegensatz zu arguments, können hiermit Variablen hinzugefügt werden die nicht mit dem Extensionnamen geprefixed werden.
+   Adds additional parameters for the target page. Compared to `arguments` the variables can be added without extension key prefix.
 
 :aspect:`Default value`
-    Leeres Array
+   Empty Array
 
 :aspect:`Mandatory`
-    No
+   No
 
 pageType
 ~~~~~~~~
 :aspect:`Variable type`
-    Integer
+   Integer
 
 :aspect:`Description`
-    Auf welche Seitentyp ID soll verlinkt werden.
+   Links to this page type.
 
 :aspect:`Default value`
-    0
+   0
 
 :aspect:`Mandatory`
-    No
+   No
 
 noCache
 ~~~~~~~
 :aspect:`Variable type`
-    Boolean
+   Boolean
 
 :aspect:`Description`
-    Verhindert das Caching der aufzurufenden Seite
+   Prevents the caching of the called page.
 
 :aspect:`Default value`
-    FALSE
+   FALSE
 
 :aspect:`Mandatory`
-    No
+   No
 
 noCacheHash
 ~~~~~~~~~~~
 :aspect:`Variable type`
-    Boolean
+   Boolean
 
 :aspect:`Description`
-    Verhindert, dass der cHash-Parameter nicht mit an die URL angehangen wird.
+   Prevents the additional cHash parameter added to the link.
 
 :aspect:`Default value`
-    FALSE
+   FALSE
 
 :aspect:`Mandatory`
-    No
+   No
 
 section
 ~~~~~~~
 :aspect:`Variable type`
-    String
+   String
 
 :aspect:`Description`
-    Auf welchen Anker soll die Zielseite springen (#anker)
+   Links to this anchor on the target page.
 
 :aspect:`Default value`
-    Leerer String
+   Empty string
 
 :aspect:`Mandatory`
-    No
+   No
 
 linkAccessRestrictedPages
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
-    Boolean
+   Boolean
 
 :aspect:`Description`
-    Normalerweise werden Links auf geschützte Seiten nicht erzeugt. Hier mit kann man die Linkgeneration erzwingen.
+   Forces a link to a restricted page. Normally such links won't be generated.
 
 :aspect:`Default value`
-    FALSE
+   FALSE
 
 :aspect:`Mandatory`
-    No
+   No
 
 absolute
 ~~~~~~~~
 :aspect:`Variable type`
-    Boolean
+   Boolean
 
 :aspect:`Description`
-    Nach Aktivierung wird der Zeilseite noch der Domainname und Pfad vorangestellt.
+   Creates an absolute link with domain name.
 
 :aspect:`Default value`
-    FALSE
+   FALSE
 
 :aspect:`Mandatory`
-    No
+   No
 
 addQueryString
 ~~~~~~~~~~~~~~
 :aspect:`Variable type`
-    Boolean
+   Boolean
 
 :aspect:`Description`
-    Falls der aktuellen Seite bereits Parameter über die URL mitgegeben wurden, könnt Ihr hier nun entscheiden, ob diese Parameter auch mit auf die Zielseite übergeben werden.
+   Adds all parameters to the target URL which are on the current page.
 
 :aspect:`Default value`
-    FALSE
+   FALSE
 
 :aspect:`Mandatory`
-    No
+   No
 
 argumentsToBeExcludedFromQueryString
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 :aspect:`Variable type`
-    Array
+   Array
 
 :aspect:`Description`
-    Falls Ihr addQueryString aktiviert habt, aber einen oder zwei bestimmte Parameter wieder entfernen wollt, dann tragt Ihr hier diese Parameter ein.
+   Excludes all give arguments if `addQueryString` is active.
 
 :aspect:`Default value`
-    Leeres Array
+   Empty array
 
 :aspect:`Mandatory`
-    No
+   No
