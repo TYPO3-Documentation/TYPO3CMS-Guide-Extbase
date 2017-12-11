@@ -31,7 +31,7 @@ partial
     String
 
 :aspect:`Description`
-    The path and filename (without .html suffix), starting from the Partials root folder. 
+    The path and filename (without .html suffix), starting from the Partials root folder.
 
 :aspect:`Default value`
     NULL
@@ -45,7 +45,8 @@ arguments
     Array
 
 :aspect:`Description`
-    Which variables should be passed into the Partial or into the Layout. The special value {_all} passes all available variables into the Partial.
+    Which variables should be passed into the Partial or into the Layout.
+    The special value {_all} passes all available variables into the Partial.
 
 :aspect:`Default value`
     Empty array
