@@ -46,6 +46,7 @@ arguments
 
 :aspect:`Description`
     Which variables should be passed into the Partial or into the Layout.
+    The special value {_all} passes all available variables into the Partial.
 
 :aspect:`Default value`
     Empty array
