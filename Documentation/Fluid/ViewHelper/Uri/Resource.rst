@@ -9,45 +9,42 @@ Properties
 path
 ~~~~
 :aspect:`Variable type`
-    String
+   String
 
 :aspect:`Description`
-    Der Pfad inkl. Dateiname zu der Datei. Die Angabe erfolgt relativ zum Resource-Verzeichnis der
-                 aktuellen Extension.
-
-:aspect:`Default value`
+   The path including filename to the file, relative to the :file:`Resources`
+   folder of the current extension
 
 :aspect:`Mandatory`
-    Yes
+   Yes
 
 extensionName
 ~~~~~~~~~~~~~
 :aspect:`Variable type`
-    String
+   String
 
 :aspect:`Description`
-    Falls eine Datei einer anderen Extension benötigt wird,
-                 kann hier der entsprechende Extensionname angegeben werden. Auch hier muss die Pfad relativ zum
-                 Resourceverzeichnis angegeben werden.
+   If given, the file will be taken from the :file:`Resources` folder 
+   of the given extension.
 
 :aspect:`Default value`
-    NULL
+   NULL
 
 :aspect:`Mandatory`
-    No
+   No
 
 absolute
 ~~~~~~~~
 :aspect:`Variable type`
-    Boolean
+   Boolean
 
 :aspect:`Description`
-    Wenn dieser Wert auf TRUE gesetzt wird, wird ein absoluter Pfad zurück geliefert.
+   If `true` an absolute path to the file will be used.
 
 :aspect:`Default value`
-    FALSE
+   FALSE
 
 :aspect:`Mandatory`
-    No
+   No
 
 
