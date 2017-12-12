@@ -12,9 +12,8 @@ path
    String
 
 :aspect:`Description`
-   The path incl. filename to the file (relative to the `Resource` folder of current extension)
-
-:aspect:`Default value`
+   The path including filename to the file, relative to the :file:`Resources`
+   folder of the current extension
 
 :aspect:`Mandatory`
    Yes
@@ -25,7 +24,8 @@ extensionName
    String
 
 :aspect:`Description`
-   If given, the file will be taken from the `Resources` folder of given extension.
+   If given, the file will be taken from the :file:`Resources` folder 
+   of the given extension.
 
 :aspect:`Default value`
    NULL
