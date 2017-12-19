@@ -31,10 +31,10 @@ Default notation
 
 ::
 
- <f:format.rawurlencode>foo @+%/</f:format.rawurlencode>
+ <f:format.urlencode>foo @+%/</f:format.urlencode>
 
  foo%20%40%2B%25%2F
- (rawurlencode() applied)
+ (urlencode() applied)
 
 Inline notation
 
@@ -43,4 +43,4 @@ Inline notation
  {text -> f:format.urlencode()}
 
  Url encoded text
- (rawurlencode() applied)
+ (urlencode() applied)
