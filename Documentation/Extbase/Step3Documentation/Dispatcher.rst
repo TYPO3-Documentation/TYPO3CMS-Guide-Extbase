@@ -31,7 +31,7 @@ This is how Extbase provides a *RequestHandler* for requests from the frontend, 
 Thanks to this TypoScript configuration, you have the possibility of registering your own *RequestHandler*. For 
 example, a handler for AJAX requests can be registered here.
 
-The class-specific method *canHandleRequest* decides whether the the request can be handled by its RequestHandler. For 
+The class-specific method *canHandleRequest* decides whether the request can be handled by its RequestHandler. For 
 a *BackendRequestHandler*, the check looks like this::
 
  canHandleRequest() {
