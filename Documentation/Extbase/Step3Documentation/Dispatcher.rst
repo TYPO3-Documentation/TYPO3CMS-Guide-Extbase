@@ -53,7 +53,7 @@ plugin configuration in ext_localconf.php in order to find out which Controller 
 (Using the method *loadDefaultValues*.) The RequestBuilder also checks the Uri, to check whether an alternative 
 Controller or an alternative action should be loaded instead of the entries from ext_localconf.php.
 
-All of the page request data is now collated and made available within the *$reqeust* object.::
+All of the page request data is now collated and made available within the *$request* object.::
 
  $request = $this->objectManager->create('Tx_Extbase_MVC_Web_Request');
  $request->setPluginName($this->pluginName);
