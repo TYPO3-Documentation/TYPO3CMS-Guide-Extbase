@@ -31,7 +31,7 @@ This is how Extbase provides a *RequestHandler* for requests from the frontend, 
 Thanks to this TypoScript configuration, you have the possibility of registering your own *RequestHandler*. For 
 example, a handler for AJAX requests can be registered here.
 
-The class-specific method *canHandleRequest* decides whether the the request can be handled by its RequestHandler. For 
+The class-specific method *canHandleRequest* decides whether the request can be handled by its RequestHandler. For 
 a *BackendRequestHandler*, the check looks like this::
 
  canHandleRequest() {
@@ -53,7 +53,7 @@ plugin configuration in ext_localconf.php in order to find out which Controller 
 (Using the method *loadDefaultValues*.) The RequestBuilder also checks the Uri, to check whether an alternative 
 Controller or an alternative action should be loaded instead of the entries from ext_localconf.php.
 
-All of the page request data is now collated and made available within the *$reqeust* object.::
+All of the page request data is now collated and made available within the *$request* object.::
 
  $request = $this->objectManager->create('Tx_Extbase_MVC_Web_Request');
  $request->setPluginName($this->pluginName);
