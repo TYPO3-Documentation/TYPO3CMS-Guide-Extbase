@@ -27,13 +27,13 @@ The *Reflection API* complements PHP's built-in reflection support by advanced a
 The *Persistence module* allows you to transparently persist your objects following principles of Domain Driven Design.
 The *Security framework* enforces security policies and provides an API for managing those.
 The *Session framework* takes care of session handling and storing session information in different backends
-The *I18n service* manages languages and other regional settings and makes them accessible to other packages and TYPO3 FLOW sub packages.
+The *I18n service* manages languages and other regional settings and makes them accessible to other packages and Neos Flow sub packages.
 The *Utility module* is a library of useful general-purpose functions for file handling, algorithms, environment abstraction and more.
 
 If you are overwhelmed by the amount of information in this reference, just keep in mind that you don't need to know 
-all of it to write your own TYPO3 FLOW packages. You can always come back and look up a specific topic once you need to 
+all of it to write your own Neos Flow packages. You can always come back and look up a specific topic once you need to 
 know about it - that's what references are for.
 
 Even if you don't need to know everything, we recommend that you get familiar with the concepts of each module and read 
-the whole manual. This way you make sure that you don't miss any of the great features TYPO3 FLOW provides, and you'll 
+the whole manual. This way you make sure that you don't miss any of the great features Neos Flow provides, and you'll 
 feel inspired to produce clean and easy-maintainable code.
