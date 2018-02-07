@@ -14,9 +14,55 @@ Properties
 
 All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-Example
--------
+queueIdentifier
+~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    string
+
+:aspect:`Description`
+   Flash-message queue to use.
+
+:aspect:`Default value`
+   null
+
+:aspect:`Mandatory`
+    No
+
+as
+~~
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+    The name of the current flashMessage variable for rendering inside.
+
+:aspect:`Default value`
+    null
+
+:aspect:`Mandatory`
+    No
+
+
+Examples
+--------
+
+**Standard Usage**
 
 ::
 
  <f:flashMessages />
+
+**Self Rendered Template**
+
+:: 
+
+<f:flashMessages queueIdentifier="myQueue" as="flashMessages">
+    <f:for each="{flashMessages}" as="flashMessage">
+        <div class="alert {flashMessage.class}">
+            <f:if condition="{flashMessage.title}">
+                <strong>{flashMessage.title}</strong><br>
+            </f:if>
+            <p>{flashMessage.message -> f:format.html()}</p>
+        </div>
+    </f:for>
+</f:flashMessages>
