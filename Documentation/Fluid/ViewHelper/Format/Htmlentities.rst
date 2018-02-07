@@ -4,7 +4,7 @@ f:format.htmlentities
 =====================
 
 Escapes special characters with their escaped counterparts as needed using PHPs htmlentities() function.
-http://www.php.net/manual/function.htmlentities.php
+http://www.php.net/manual/en/function.htmlentities.php
 
 Properties
 ----------
