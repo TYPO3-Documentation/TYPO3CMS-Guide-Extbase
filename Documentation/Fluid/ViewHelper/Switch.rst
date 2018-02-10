@@ -46,6 +46,13 @@ We get as result::
 
    Hello Mrs. Brown
 
+Inline notation::
+
+   {f:render(partial:'SwitchItem', arguments:'{employee: employee}')}
+
+To use an inline notation, it would be a good idea to store the f:switch regulary into a partial and define only the f:render as inline notation.
+
+
 The frequent use of this ViewHelper may indicate a "weak programming architecture".
 The better approach may be to reconsider the architecture within the Actions and the Controller.
 
