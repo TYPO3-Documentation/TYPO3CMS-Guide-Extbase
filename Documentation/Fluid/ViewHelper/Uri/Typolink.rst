@@ -71,10 +71,24 @@ Output
 `index.php?id=19&X=y&u=b`
 
 
-Example x: Tag notation
+Example 2: Tag notation
 -----------------------
 
+((correct?))
+
+Tag usage::
+
+   <f:uri.typolink parameter="{link}" additionalParams="''">
+   	<!-- tag content - may (will?) be ignored! -->
+   </f:uri.typolink>
+
+Inline usage::
+
+   {f:uri.typolink(parameter: "{link}", additionalParams: '''')}
+
+
 ((to be written))
+
 
 Example y: Inline notation
 --------------------------
