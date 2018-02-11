@@ -1,16 +1,14 @@
 .. include:: ../../Includes.txt
 
-ViewHelper
-==========
+ViewHelpers
+===========
 
 The power of Fluid is the usage of ViewHelpers. There are many of them, for all kind of tasks. What is available and how to use it can be found on the following pages.
 
 **Table of Contents**
 
 .. toctree::
-   :maxdepth: 5
    :titlesonly:
-   :glob:
 
    Be/Index
    Debug/Index
