@@ -2,71 +2,80 @@
 
 .. highlight:: html
 
+.. _viewhelper-uri-typolink:
+
+==============
 f:uri.typolink
 ==============
 
-Example::
+Usage
+=====
 
-   <f:uri.typolink parameter="1">linktext</f:uri.typolink>
+Assumptions:
+   `{link}` contains string `"19 - - - &X=y"`.
+     
+   The link has to be given with a full set of parameters as expected by
+   :ref:`TypoScript typolink standard <t3tsref:stdwrap-typolink>`.
+   In the parts 'target', 'class' and 'title' are not used and will be discarded.
+
+Minimal usage
+   `<f:uri.typolink parameter="{link}" />`
+      
+   Result: `index.php?id=19&X=y`
+
+All parameters
+   `<f:uri.typolink parameter="…" additionalAttributes="…" additionalParams="…" useCacheHash="true" />`
 
 
-Properties
-----------
+Parameters
+==========
 
 parameter
-~~~~~~~~~
+   required, *type:* string, *default value:* NULL
 
-:aspect:`Variable type`
-    String
-
-:aspect:`Description`
-    UID of the target page to link to.
-    TypoScript-Syntax is expected like `19 _blank`.
-    See :ref:`t3tsref:stdwrap-typolink`
-
-:aspect:`Default value`
-    NULL
-
-:aspect:`Mandatory`
-    Yes
-
-additionalParams
-~~~~~~~~~~~~~~~~
-
-:aspect:`Variable type`
-    String
-
-:aspect:`Description`
-    Add more parameters to the link. Opposed to `arguments` these names will not be
-    prefixed with the extension name.
-
-:aspect:`Default value`
-    Empty string
+   The UID of the target page to link to. :ref:`TypoScript syntax <t3tsref:stdwrap-typolink>`
+   is expected, for example like `19 _blank`.
 
 
 additionalAttributes
-~~~~~~~~~~~~~~~~~~~~
+   not required, *type:* array, *default value:* `"{}"` (empty array)
 
-:aspect:`Variable type`
-    Array
+   To add attributes to the a-tag. The array will automatically be converted 
+   to :ref:`TypoScript-Syntax <t3tsref:stdwrap-typolink>` :ts:`param1=value&param2=value`
 
-:aspect:`Description`
-   To add attributes to the 'ATag'. The array will automatically be converted 
-   to TypoScript syntax param1=value param2=value
+additionalParams
+   not required, *type:* string, *default value:* `""` (empty string)
 
-:aspect:`Default value`
-    Empty array
-
+   Add more parameters to the link. Opposed to `arguments` these names will not be
+   prefixed with the extension name.
 
 useCacheHash
-~~~~~~~~~~~~
+   not required, *type:* boolean, *default value:* false
 
-:aspect:`Variable type`
-    Boolean
+Examples
+========
 
-:aspect:`Description`
+Example 1: Tag notation
+-----------------------
+
+((to be written))
+
+Example 2: Inline notation
+--------------------------
+
+((to be written))
 
 
-:aspect:`Default value`
-    FALSE
+... and so on
+-------------
+
+((to be written))
+
+
+Example 99: ...
+---------------
+
+((to be written))
+
+
 
