@@ -12,9 +12,9 @@ Usage
 =====
 
 Minimal usage
-   `<f:uri.typolink parameter="{link}" />`
+   Code: `<f:uri.typolink parameter="{link}" />`
    
-   *Assumption:* `{link}` contains string `"19 - - - &X=y"`.
+   Assumption: `{link}` contains string `"19 - - - &X=y"`.
       
    Result: `index.php?id=19&X=y`
 
@@ -61,40 +61,30 @@ Examples
 Example 1
 ---------
 
-Usage:
+Code
    `<f:uri.typolink parameter="{link}" additionalParams="&u=b" />`
 
-Assumption:
+Assumption
    `{link}` contains string `"19 - - - &X=y"`
 
 Output
    `index.php?id=19&X=y&u=b`
 
 
-Example 2: Tag notation
------------------------
+Example 2
+---------
 
 ((correct?))
 
-Tag usage::
+Tag code::
 
    <f:uri.typolink parameter="{link}" additionalParams="''">
    	<!-- tag content - may (will?) be ignored! -->
    </f:uri.typolink>
 
-Inline usage::
+Inline code::
 
    {f:uri.typolink(parameter: "{link}", additionalParams: '''')}
-
-
-((to be written))
-
-
-Example y: Inline notation
---------------------------
-
-((to be written))
-
 
 
 Example 99: ...
