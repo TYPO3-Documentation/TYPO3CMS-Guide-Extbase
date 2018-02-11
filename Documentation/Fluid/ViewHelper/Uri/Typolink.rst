@@ -58,21 +58,29 @@ Parameters
 Examples
 ========
 
-Example 1: Tag notation
+Example 1
+---------
+
+Usage:
+`<f:uri.typolink parameter="{link}" additionalParams="&u=b" />`
+
+Assumption:
+`{link}` contains string `"19 - - - &X=y"`
+
+Output
+`index.php?id=19&X=y&u=b`
+
+
+Example x: Tag notation
 -----------------------
 
 ((to be written))
 
-Example 2: Inline notation
+Example y: Inline notation
 --------------------------
 
 ((to be written))
 
-
-... and so on
--------------
-
-((to be written))
 
 
 Example 99: ...
