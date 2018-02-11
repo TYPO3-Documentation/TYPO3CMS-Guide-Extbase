@@ -21,7 +21,7 @@ Minimal usage
 All parameters
    `<f:uri.typolink parameter="…" additionalAttributes="…" additionalParams="…" useCacheHash="false" />`
 
-*Note:* The `{link}` has to be given with a full set of parameters as expected by
+*Note:* The `{link}` has to be given with a full set of parameters as expected by the
 :ref:`TypoScript typolink standard <t3tsref:stdwrap-typolink>`.
 Fluid will not use the parts 'target', 'class' and 'title' within the typolink viewhelper.
 
