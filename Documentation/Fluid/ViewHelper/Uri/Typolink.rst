@@ -1,12 +1,11 @@
 .. include:: ../../../Includes.txt
 
+.. highlight:: html
+
 f:uri.typolink
-==========
+==============
 
-Example
--------
-
-.. code-block:: html
+Example::
 
    <f:uri.typolink parameter="1">linktext</f:uri.typolink>
 
@@ -44,9 +43,6 @@ additionalParams
 :aspect:`Default value`
     Empty string
 
-:aspect:`Mandatory`
-    No
-
 
 additionalAttributes
 ~~~~~~~~~~~~~~~~~~~~
@@ -55,13 +51,12 @@ additionalAttributes
     Array
 
 :aspect:`Description`
-   To add attributes to the 'ATag'. The array will automatically be converted to TypoScript syntax Param1=Wert Param2=Wert
+   To add attributes to the 'ATag'. The array will automatically be converted 
+   to TypoScript syntax param1=value param2=value
 
 :aspect:`Default value`
     Empty array
 
-:aspect:`Mandatory`
-    No
 
 useCacheHash
 ~~~~~~~~~~~~
@@ -74,9 +69,4 @@ useCacheHash
 
 :aspect:`Default value`
     FALSE
-
-:aspect:`Mandatory`
-    No
-
-.. highlight:: html
 
