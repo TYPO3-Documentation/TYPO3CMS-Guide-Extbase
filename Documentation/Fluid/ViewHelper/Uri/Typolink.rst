@@ -16,8 +16,8 @@ Minimal usage
    
       <f:uri.typolink parameter="{link}" />
    
-   Assuming `{link}` is set to `"19 - - - &X=y"`
-   the result will be `index.php?id=19&X=y` in this case.
+   The result will be `index.php?id=19&X=y` when we assume that
+   `{link}` equals the string `"19 - - - &X=y"`.
 
 All parameters
    ::
