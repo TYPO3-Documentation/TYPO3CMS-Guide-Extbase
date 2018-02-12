@@ -59,6 +59,8 @@ additionalParams
    Add more parameters to the link. Opposed to `arguments` these names will not be
    prefixed with the extension name.
 
+.. _viewhelper-uri-typolink-useCacheHash:
+
 useCacheHash
    **not required**, *type:* **boolean**, *default value:* **false**
    
