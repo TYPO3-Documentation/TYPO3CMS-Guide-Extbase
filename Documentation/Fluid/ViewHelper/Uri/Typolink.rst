@@ -12,14 +12,15 @@ Usage
 =====
 
 Minimal usage
+
    ::
    
       <f:uri.typolink parameter="{link}" />
    
    The result will be `index.php?id=19&X=y` when we assume that
    `{link}` equals the string `"19 - - - &X=y"`.
-
 All parameters
+
    ::
    
       <f:uri.typolink 
@@ -28,11 +29,9 @@ All parameters
          additionalParams="…" 
          useCacheHash="false"
       />`
-
 *Note:* The string denoted by `{link}` has to have the full set of parameters as expected by the
 :ref:`TypoScript typolink standard <t3tsref:stdwrap-typolink>`.
 In this viewhelper the parts 'target', 'class' and 'title' will be discarded though.
-
 
 
 Parameters
@@ -41,7 +40,7 @@ Parameters
 .. rst-class:: dl-parameters
 
 parameter
-   :sep:`|` :aspect:`Needed:`  required
+   :sep:`|` :aspect:`Condition:`  required
    :sep:`|` :aspect:`Type:`    string
    :sep:`|` :aspect:`Default:` NULL
    :sep:`|` 
@@ -51,7 +50,7 @@ parameter
 
 
 additionalAttributes
-   :sep:`|` :aspect:`Needed:`  optional
+   :sep:`|` :aspect:`Condition:`  optional
    :sep:`|` :aspect:`Type:`    array
    :sep:`|` :aspect:`Default:` empty array
    :sep:`|` 
@@ -60,7 +59,7 @@ additionalAttributes
    to :ref:`TypoScript-Syntax <t3tsref:stdwrap-typolink>` :ts:`param1=value&param2=value`
 
 additionalParams
-   :sep:`|` :aspect:`Needed:`  optional
+   :sep:`|` :aspect:`Condition:`  optional
    :sep:`|` :aspect:`Type:`    string
    :sep:`|` :aspect:`Default:` empty string
    :sep:`|` 
@@ -72,7 +71,7 @@ additionalParams
 .. _viewhelper-uri-typolink-useCacheHash:
 
 useCacheHash
-   :sep:`|` :aspect:`Needed:`  optional
+   :sep:`|` :aspect:`Condition:`  optional
    :sep:`|` :aspect:`Type:`    boolean
    :sep:`|` :aspect:`Default:` false
    :sep:`|` 
@@ -87,12 +86,15 @@ Example 1
 ---------
 
 Code
+
    `<f:uri.typolink parameter="{link}" additionalParams="&u=b" />`
 
 Assumption
+
    `{link}` contains string `"19 - - - &X=y"`
 
 Output
+
    `index.php?id=19&X=y&u=b`
 
 
@@ -106,11 +108,9 @@ Tag code::
    <f:uri.typolink parameter="{link}" additionalParams="''">
    	<!-- tag content - may (will?) be ignored! -->
    </f:uri.typolink>
-
 Inline code::
 
    {f:uri.typolink(parameter: "{link}", additionalParams: '''')}
-
 
 Example 99: ...
 ---------------
