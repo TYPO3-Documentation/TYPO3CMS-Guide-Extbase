@@ -16,16 +16,17 @@ Minimal usage
    
       <f:uri.typolink parameter="{link}" />
    
-   Assumption: `{link}` contains string `"19 - - - &X=y"`.
-      
-   Result: `index.php?id=19&X=y`
+   *Example:* Assuming the string `{link}` is `"19 - - - &X=y"`
+   the result will be`index.php?id=19&X=y`.
 
 All parameters
    ::
    
       <f:uri.typolink parameter="…" 
-         additionalAttributes="…" additionalParams="…" 
-         useCacheHash="false" />`
+         additionalAttributes="…" 
+         additionalParams="…" 
+         useCacheHash="false"
+      />`
 
 *Note:* The string denoted by `{link}` has to have the full set of parameters as expected by the
 :ref:`TypoScript typolink standard <t3tsref:stdwrap-typolink>`.
