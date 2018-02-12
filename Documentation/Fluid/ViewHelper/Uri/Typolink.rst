@@ -8,6 +8,8 @@
 f:uri.typolink
 ==============
 
+((add short description here: what does it do?))
+
 Usage
 =====
 
@@ -67,9 +69,6 @@ additionalParams
    Add more parameters to the link. Opposed to `arguments` these names will not be
    prefixed with the extension name.
 
-.. rst-class:: dl-parameters
-.. _viewhelper-uri-typolink-useCacheHash:
-
 useCacheHash
    :sep:`|` :aspect:`Condition:`  optional
    :sep:`|` :aspect:`Type:`    boolean
@@ -112,8 +111,7 @@ Inline code::
 
    {f:uri.typolink(parameter: "{link}", additionalParams: '''')}
 
-Example 99: ...
----------------
+Example 99
+----------
 
 ((to be written))
-((linktest: :ref:`parameter useCacheHash <viewhelper-uri-typolink-useCacheHash>`))
