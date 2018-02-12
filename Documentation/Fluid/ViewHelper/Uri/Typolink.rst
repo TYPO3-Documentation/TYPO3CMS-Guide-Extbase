@@ -11,16 +11,15 @@ f:uri.typolink
 Usage
 =====
 
-Minimal usage
-
+Minimal usage:
    ::
    
       <f:uri.typolink parameter="{link}" />
    
    The result will be `index.php?id=19&X=y` when we assume that
    `{link}` equals the string `"19 - - - &X=y"`.
-All parameters
 
+All parameters:
    ::
    
       <f:uri.typolink 
@@ -29,6 +28,7 @@ All parameters
          additionalParams="…" 
          useCacheHash="false"
       />`
+
 *Note:* The string denoted by `{link}` has to have the full set of parameters as expected by the
 :ref:`TypoScript typolink standard <t3tsref:stdwrap-typolink>`.
 In this viewhelper the parts 'target', 'class' and 'title' will be discarded though.
