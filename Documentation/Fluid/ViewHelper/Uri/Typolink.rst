@@ -72,7 +72,10 @@ additionalParams
 .. _viewhelper-uri-typolink-useCacheHash:
 
 useCacheHash
-   **not required**, *type:* **boolean**, *default value:* **false**
+   :sep:`|` :aspect:`Needed:`  optional
+   :sep:`|` :aspect:`Type:`    boolean
+   :sep:`|` :aspect:`Default:` false
+   :sep:`|` 
    
    See :ref:`t3tsref:typolink-usecachehash`
    
