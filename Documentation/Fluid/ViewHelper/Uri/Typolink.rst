@@ -7,7 +7,8 @@
 f:uri.typolink
 ==============
 
-((add short description here: what does it do?))
+This is a viewhelper to create uris from an argument string that the link wizard (typolink)
+understands.
 
 Usage
 =====
