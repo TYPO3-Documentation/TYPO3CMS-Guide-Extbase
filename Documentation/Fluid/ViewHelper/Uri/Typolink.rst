@@ -16,13 +16,14 @@ Minimal usage
    
       <f:uri.typolink parameter="{link}" />
    
-   *Example:* Assuming the string `{link}` is `"19 - - - &X=y"`
-   the result will be`index.php?id=19&X=y`.
+   Assuming `{link}` is set to `"19 - - - &X=y"`
+   the result will be `index.php?id=19&X=y` in this case.
 
 All parameters
    ::
    
-      <f:uri.typolink parameter="…" 
+      <f:uri.typolink 
+         parameter="…" 
          additionalAttributes="…" 
          additionalParams="…" 
          useCacheHash="false"
@@ -37,7 +38,7 @@ In this viewhelper the parts 'target', 'class' and 'title' will be discarded tho
 Parameters
 ==========
 
-.. rst-class:: vh-parameters
+.. rst-class:: dl-parameters
 
 parameter
    **required**, *type:* **string**, *default value:* **NULL**
