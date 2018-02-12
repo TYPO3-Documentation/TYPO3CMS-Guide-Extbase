@@ -36,8 +36,7 @@ In this viewhelper the parts 'target', 'class' and 'title' will be discarded tho
 Parameters
 ==========
 
-.. container::
-   :class: parameters
+.. container:: parameters
 
    .. rst-class:: vh-parameters
 
