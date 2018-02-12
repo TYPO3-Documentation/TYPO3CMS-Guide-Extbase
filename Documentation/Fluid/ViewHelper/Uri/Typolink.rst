@@ -41,14 +41,18 @@ Parameters
 .. rst-class:: dl-parameters
 
 parameter
-   :aspect:`Needed:` required  :aspect:`Type:` string :aspect:`Default:` NULL
+   :aspect:`Needed:`  required \|
+   :aspect:`Type:`    string \|
+   :aspect:`Default:` NULL
 
    The UID of the target page to link to. :ref:`TypoScript syntax <t3tsref:stdwrap-typolink>`
    is expected, for example like `19 _blank`.
 
 
 additionalAttributes
-   :aspect:`Needed:` optional  :aspect:`Type:` array :aspect:`Default:` empty array
+   :aspect:`Needed:`  optional  \|
+   :aspect:`Type:`    array     \|
+   :aspect:`Default:` empty array
 
    To add attributes to the a-tag. The array will automatically be converted 
    to :ref:`TypoScript-Syntax <t3tsref:stdwrap-typolink>` :ts:`param1=value&param2=value`
