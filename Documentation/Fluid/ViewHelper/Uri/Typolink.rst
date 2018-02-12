@@ -1,6 +1,5 @@
 .. include:: ../../../Includes.txt
 .. highlight:: html
-.. role:: sep (strong)
 
 .. _viewhelper-uri-typolink:
 
