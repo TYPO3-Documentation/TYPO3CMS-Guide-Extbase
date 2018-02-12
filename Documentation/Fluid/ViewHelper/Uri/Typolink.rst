@@ -59,6 +59,7 @@ additionalParams
    Add more parameters to the link. Opposed to `arguments` these names will not be
    prefixed with the extension name.
 
+.. rst-class:: dl-parameters
 .. _viewhelper-uri-typolink-useCacheHash:
 
 useCacheHash
