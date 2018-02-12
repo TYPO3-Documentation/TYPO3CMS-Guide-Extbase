@@ -5,79 +5,68 @@ f:for
 
 The `f:for` ViewHelper is THE ViewHelper for generating lists. Take a look at the extensive examples.
 
-Properties
-----------
+
+Usage
+=====
+
+Minimal usage:
+   ::
+   
+      ...
+   
+
+All parameters:
+   ::
+   
+      ...
+
+Parameters
+==========
+
+.. rst-class:: dl-parameters
 
 each
-~~~~
-:aspect:`Variable type`
-    Array
+   :sep:`|` :aspect:`Condition:`  required
+   :sep:`|` :aspect:`Type:`       array
+   :sep:`|` :aspect:`Default:`    NULL
+   :sep:`|` 
 
-:aspect:`Description`
-    The array or object to be iterated
-
-:aspect:`Default value`
-    NULL
-
-:aspect:`Mandatory`
-    Yes
+   The array or object to be iterated.
 
 as
-~~
-:aspect:`Variable type`
-    String
+   :sep:`|` :aspect:`Condition:`  required
+   :sep:`|` :aspect:`Type:`       string
+   :sep:`|` :aspect:`Default:`    NULL
+   :sep:`|` 
 
-:aspect:`Description`
-    The name of the variable which contains the values of the current loop iteration
-
-:aspect:`Default value`
-    NULL
-
-:aspect:`Mandatory`
-    Yes
+   The name of the variable which contains the values of the current loop iteration.
 
 key
-~~~
-:aspect:`Variable type`
-    String
+   :sep:`|` :aspect:`Condition:`  optional
+   :sep:`|` :aspect:`Type:`       string
+   :sep:`|` :aspect:`Default:`    empty string
+   :sep:`|` 
 
-:aspect:`Description`
-    If you need the key of the current loop iteration, this is the name of the variable containing it.
-
-:aspect:`Default value`
-    Empty string
-
-:aspect:`Mandatory`
-    No
+   If you need the key of the current loop iteration, this is the name of the variable containing it.
 
 reverse
-~~~~~~~
-:aspect:`Variable type`
-    Boolean
+   :sep:`|` :aspect:`Condition:`  optional
+   :sep:`|` :aspect:`Type:`       boolean
+   :sep:`|` :aspect:`Default:`    false
+   :sep:`|` 
 
-:aspect:`Description`
-    The loop will backwards
-
-:aspect:`Default value`
-    FALSE
-
-:aspect:`Mandatory`
-    No
+   Loop backwards.
 
 iteration
-~~~~~~~~~
-:aspect:`Variable type`
-    String
+   :sep:`|` :aspect:`Condition:`  optional
+   :sep:`|` :aspect:`Type:`       string (?)
+   :sep:`|` :aspect:`Default:`    NULL
+   :sep:`|` 
 
-:aspect:`Description`
-    An array variable related to the current iteration, which identifies whether it is in the first or 
-                 last loop index. This variable also contains values for index, cycle, total, isEven and isOdd
+   An array variable related to the current iteration, which identifies whether 
+   it is in the first or last loop index. This variable also contains values 
+   for index, cycle, total, isEven and isOdd
 
-:aspect:`Default value`
-    NULL
-
-:aspect:`Mandatory`
-    No
 
 Simple example
 --------------
