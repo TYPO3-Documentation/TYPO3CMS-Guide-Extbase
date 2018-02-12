@@ -1,6 +1,6 @@
 .. include:: ../../../Includes.txt
-
 .. highlight:: html
+.. role:: sep (strong)
 
 .. _viewhelper-uri-typolink:
 
@@ -41,29 +41,29 @@ Parameters
 .. rst-class:: dl-parameters
 
 parameter
-   \|
-   :aspect:`Needed:`  required \|
-   :aspect:`Type:`    string \|
-   :aspect:`Default:` NULL \|
+   :sep:`|` :aspect:`Needed:`  required
+   :sep:`|` :aspect:`Type:`    string
+   :sep:`|` :aspect:`Default:` NULL
+   :sep:`|` 
 
    The UID of the target page to link to. :ref:`TypoScript syntax <t3tsref:stdwrap-typolink>`
    is expected, for example like `19 _blank`.
 
 
 additionalAttributes
-   \|
-   :aspect:`Needed:`  optional \|
-   :aspect:`Type:`    array \|
-   :aspect:`Default:` empty array \|
+   :sep:`|` :aspect:`Needed:`  optional
+   :sep:`|` :aspect:`Type:`    array
+   :sep:`|` :aspect:`Default:` empty array
+   :sep:`|` 
 
    To add attributes to the a-tag. The array will automatically be converted 
    to :ref:`TypoScript-Syntax <t3tsref:stdwrap-typolink>` :ts:`param1=value&param2=value`
 
 additionalParams
-   `|` :aspect:`Needed:`  optional
-   `|` :aspect:`Type:`    string
-   `|` :aspect:`Default:` empty string
-   `|` 
+   :sep:`|` :aspect:`Needed:`  optional
+   :sep:`|` :aspect:`Type:`    string
+   :sep:`|` :aspect:`Default:` empty string
+   :sep:`|` 
 
    Add more parameters to the link. Opposed to `arguments` these names will not be
    prefixed with the extension name.
