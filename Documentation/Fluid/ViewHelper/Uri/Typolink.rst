@@ -12,47 +12,58 @@ Usage
 =====
 
 Minimal usage
-   Code: `<f:uri.typolink parameter="{link}" />`
+   ::
+   
+      <f:uri.typolink parameter="{link}" />
    
    Assumption: `{link}` contains string `"19 - - - &X=y"`.
       
    Result: `index.php?id=19&X=y`
 
 All parameters
-   `<f:uri.typolink parameter="…" additionalAttributes="…" additionalParams="…" useCacheHash="false" />`
+   ::
+   
+      <f:uri.typolink parameter="…" 
+         additionalAttributes="…" additionalParams="…" 
+         useCacheHash="false" />`
 
-*Note:* The string denoted by `{link}` has to be given with a full set of parameters as expected by the
+*Note:* The string denoted by `{link}` has to have the full set of parameters as expected by the
 :ref:`TypoScript typolink standard <t3tsref:stdwrap-typolink>`.
-Fluid will not use the parts 'target', 'class' and 'title' within the typolink viewhelper.
+In this viewhelper the parts 'target', 'class' and 'title' will be discarded though.
 
 
 
 Parameters
 ==========
 
-:parameter:
-   **required**, *type:* **string**, *default value:* **NULL**
+.. container::
+   :class: parameters
 
-   The UID of the target page to link to. :ref:`TypoScript syntax <t3tsref:stdwrap-typolink>`
-   is expected, for example like `19 _blank`.
+   .. rst-class:: vh-parameters
+
+   parameter
+      **required**, *type:* **string**, *default value:* **NULL**
+
+      The UID of the target page to link to. :ref:`TypoScript syntax <t3tsref:stdwrap-typolink>`
+      is expected, for example like `19 _blank`.
 
 
-:additionalAttributes:
-   **not required**, *type:* **array**, *default value:* **empty array**
+   additionalAttributes
+      **not required**, *type:* **array**, *default value:* **empty array**
 
-   To add attributes to the a-tag. The array will automatically be converted 
-   to :ref:`TypoScript-Syntax <t3tsref:stdwrap-typolink>` :ts:`param1=value&param2=value`
+      To add attributes to the a-tag. The array will automatically be converted 
+      to :ref:`TypoScript-Syntax <t3tsref:stdwrap-typolink>` :ts:`param1=value&param2=value`
 
-:additionalParams:
-   **not required**, *type:* **string**, *default value:* **empty string**
+   additionalParams
+      **not required**, *type:* **string**, *default value:* **empty string**
 
-   Add more parameters to the link. Opposed to `arguments` these names will not be
-   prefixed with the extension name.
+      Add more parameters to the link. Opposed to `arguments` these names will not be
+      prefixed with the extension name.
 
-:useCacheHash:
-   **not required**, *type:* **boolean**, *default value:* **false**
+   useCacheHash
+      **not required**, *type:* **boolean**, *default value:* **false**
    
-   See :ref:`t3tsref:typolink-usecachehash`
+      See :ref:`t3tsref:typolink-usecachehash`
    
 
 Examples
