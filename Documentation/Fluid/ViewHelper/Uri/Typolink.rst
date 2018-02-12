@@ -60,7 +60,10 @@ additionalAttributes
    to :ref:`TypoScript-Syntax <t3tsref:stdwrap-typolink>` :ts:`param1=value&param2=value`
 
 additionalParams
-   **not required**, *type:* **string**, *default value:* **empty string**
+   `|` :aspect:`Needed:`  optional
+   `|` :aspect:`Type:`    string
+   `|` :aspect:`Default:` empty string
+   `|` 
 
    Add more parameters to the link. Opposed to `arguments` these names will not be
    prefixed with the extension name.
