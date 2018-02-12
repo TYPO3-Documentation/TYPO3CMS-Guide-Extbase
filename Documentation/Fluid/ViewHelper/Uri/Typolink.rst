@@ -103,4 +103,4 @@ Example 99: ...
 ---------------
 
 ((to be written))
-
+((linktest: :ref:`parameter useCacheHash <viewhelper-uri-typolink-useCacheHash>`))
