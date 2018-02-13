@@ -84,9 +84,10 @@ Examples
 Example 1
 ---------
 
-Code
-
-   `<f:uri.typolink parameter="{link}" additionalParams="&u=b" />`
+Code:
+   ::
+   
+      `<f:uri.typolink parameter="{link}" additionalParams="&u=b" />`
 
 Assumption
 
@@ -104,12 +105,14 @@ Example 2
 
 Tag code:
    ::
+   
       <f:uri.typolink parameter="{link}" additionalParams="''">
    	   <!-- tag content - may (will?) be ignored! -->
       </f:uri.typolink>
    
 Inline code:
    ::
+   
       {f:uri.typolink(parameter: "{link}", additionalParams: '''')}
 
 Example 99
