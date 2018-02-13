@@ -14,6 +14,7 @@ Usage
 =====
 
 Minimal usage:
+
    ::
    
       <f:uri.typolink parameter="{link}" />
@@ -22,6 +23,7 @@ Minimal usage:
    `{link}` equals the string `"19 - - - &X=y"`.
 
 All parameters:
+
    ::
    
       <f:uri.typolink 
@@ -107,6 +109,7 @@ Tag code::
    <f:uri.typolink parameter="{link}" additionalParams="''">
    	<!-- tag content - may (will?) be ignored! -->
    </f:uri.typolink>
+   
 Inline code::
 
    {f:uri.typolink(parameter: "{link}", additionalParams: '''')}
