@@ -166,14 +166,15 @@ Example: Exhaustive usage
    .. figure:: For.rst.001.png
       :class: with-shadow
 
-      Keeping `reverse="false"`
+      With `reverse="false"` items appear in normal (default) order.
 
 4. Result for `reverse="true"`:
 
    .. figure:: For.rst.002.png
       :class: with-shadow
 
-      Setting `reverse="true"`
+      With `reverse="true"` items appear in reversed order. Everything else
+      remains.
 
 
 Example: Minimum usage
