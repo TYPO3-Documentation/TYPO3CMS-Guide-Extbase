@@ -90,11 +90,9 @@ Code:
       <f:uri.typolink parameter="{link}" additionalParams="&u=b" />
 
 Assumption
-
    `{link}` contains string `"19 - - - &X=y"`
 
 Output
-
    `index.php?id=19&X=y&u=b`
 
 
