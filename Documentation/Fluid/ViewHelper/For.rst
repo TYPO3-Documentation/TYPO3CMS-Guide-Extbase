@@ -23,7 +23,7 @@ All parameters:
    ::
 
       <f:for each="{items}" as="item" key="itemkey"
-                   reverse="false" iteration="iterator">
+             reverse="false" iteration="iterator">
          ...
       </f:for>
 
@@ -47,7 +47,7 @@ as
    :sep:`|` :aspect:`Default:`    NULL
    :sep:`|`
 
-   The name of the variable which contains the value
+   The **name of the variable** which contains the value
    for the current loop iteration.
 
 key
@@ -56,7 +56,7 @@ key
    :sep:`|` :aspect:`Default:`    empty string
    :sep:`|`
 
-   The name of the variable that contains the key
+   The **name of the variable** that contains the key
    of the current loop iteration.
 
 reverse
@@ -65,11 +65,11 @@ reverse
    :sep:`|` :aspect:`Default:`    false
    :sep:`|`
 
-   A boolean value. Use *true* to reverse the sequence.
+   A **boolean flag**. Use *true* to reverse the sequence.
 
-   *Examples for true:* `reverse="true"`, `reverse="1"`, `reverse="abc"`.
+   *Examples of true:* `reverse="true"`, `reverse="1"`, `reverse="abc"`.
 
-   *Examples for false:* `reverse="false"`, `reverse="0"`, `reverse=""`.
+   *Examples of false:* `reverse="false"`, `reverse="0"`, `reverse=""`.
 
 iteration
    :sep:`|` :aspect:`Condition:`  optional
@@ -77,7 +77,7 @@ iteration
    :sep:`|` :aspect:`Default:`    NULL
    :sep:`|`
 
-   The name of a variable that holds the iteration data of each loop.
+   The **name of a variable** that holds the iteration data of each loop.
 
    *Example:* `iteration="iterator"`. Iteration data can then be accessed
    like `{iterator.index}`, `{iterator.cycle}`, `{iterator.total}`,
