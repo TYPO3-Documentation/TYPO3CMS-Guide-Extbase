@@ -15,19 +15,19 @@ Usage
 
 Minimal usage:
    ::
-   
+
       <f:uri.typolink parameter="{link}" />
-   
+
    The result will be `index.php?id=19&X=y` when we assume that
    `{link}` equals the string `"19 - - - &X=y"`.
 
 All parameters:
    ::
-   
-      <f:uri.typolink 
-         parameter="…" 
-         additionalAttributes="…" 
-         additionalParams="…" 
+
+      <f:uri.typolink
+         parameter="…"
+         additionalAttributes="…"
+         additionalParams="…"
          useCacheHash="false"
       />`
 
@@ -45,7 +45,7 @@ parameter
    :sep:`|` :aspect:`Condition:`  required
    :sep:`|` :aspect:`Type:`    string
    :sep:`|` :aspect:`Default:` NULL
-   :sep:`|` 
+   :sep:`|`
 
    The UID of the target page to link to. :ref:`TypoScript syntax <t3tsref:stdwrap-typolink>`
    is expected, for example like `19 _blank`.
@@ -55,16 +55,16 @@ additionalAttributes
    :sep:`|` :aspect:`Condition:`  optional
    :sep:`|` :aspect:`Type:`    array
    :sep:`|` :aspect:`Default:` empty array
-   :sep:`|` 
+   :sep:`|`
 
-   To add attributes to the a-tag. The array will automatically be converted 
+   To add attributes to the a-tag. The array will automatically be converted
    to :ref:`TypoScript-Syntax <t3tsref:stdwrap-typolink>` :ts:`param1=value&param2=value`
 
 additionalParams
    :sep:`|` :aspect:`Condition:`  optional
    :sep:`|` :aspect:`Type:`    string
    :sep:`|` :aspect:`Default:` empty string
-   :sep:`|` 
+   :sep:`|`
 
    Add more parameters to the link. Opposed to `arguments` these names will not be
    prefixed with the extension name.
@@ -73,10 +73,10 @@ useCacheHash
    :sep:`|` :aspect:`Condition:`  optional
    :sep:`|` :aspect:`Type:`    boolean
    :sep:`|` :aspect:`Default:` false
-   :sep:`|` 
-   
+   :sep:`|`
+
    See :ref:`t3tsref:typolink-usecachehash`
-   
+
 
 Examples
 ========
@@ -86,8 +86,8 @@ Example 1
 
 Code:
    ::
-   
-      `<f:uri.typolink parameter="{link}" additionalParams="&u=b" />`
+
+      <f:uri.typolink parameter="{link}" additionalParams="&u=b" />
 
 Assumption
 
@@ -105,14 +105,14 @@ Example 2
 
 Tag code:
    ::
-   
+
       <f:uri.typolink parameter="{link}" additionalParams="''">
-   	   <!-- tag content - may (will?) be ignored! -->
+         <!-- tag content - may (will?) be ignored! -->
       </f:uri.typolink>
-   
+
 Inline code:
    ::
-   
+
       {f:uri.typolink(parameter: "{link}", additionalParams: '''')}
 
 Example 99
