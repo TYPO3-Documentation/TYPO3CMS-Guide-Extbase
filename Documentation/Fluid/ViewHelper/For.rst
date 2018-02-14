@@ -204,8 +204,8 @@ Example: Minimum usage
 This creates a new table row for each of the entries in the 'employee' array.
 
 
-Example: Using the iterator
----------------------------
+Example: Iterator usage
+-----------------------
 
 ::
 
