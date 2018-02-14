@@ -10,6 +10,12 @@ f:uri.typolink
 This is a viewhelper to create uris from an argument string that the link wizard (typolink)
 understands.
 
+.. attention::
+
+   The contents of this page my partly be wrong or incomplete. Please see:
+   https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-Extbase/pull/95
+   
+
 Usage
 =====
 
