@@ -109,7 +109,7 @@ You may provide an own set of units, like this: B,KB,MB,GB,TB,PB,EB,ZB,YB
 
 ::
 
- {fileSize -> f:format.bytes(units: '{f:translate(\'viewhelper.format.bytes.units\', \'fluid\')}'
+ {fileSize -> f:format.bytes(units: '{f:translate(id: \'viewhelper.format.bytes.units\', extensionName: \'fluid\')}')}
 
 will output
 
