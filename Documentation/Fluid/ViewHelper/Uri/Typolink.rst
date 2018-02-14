@@ -13,10 +13,11 @@ understands.
 .. attention::
 
    Parts of this page may be wrong or incomplete. Please see `Issue #95
-   <https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-Extbase/pull/95>__`
+   <https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-Extbase/pull/95>`__
    and `the source
    <https://github.com/TYPO3/TYPO3.CMS/blob/master/typo3/sysext/fluid/Classes/ViewHelpers/Uri/TypolinkViewHelper.php>`__.
-   Please help updating the documentation.
+   
+   **Please help updating the documentation.**
    
 
 Usage
