@@ -10,15 +10,6 @@ f:uri.typolink
 This is a viewhelper to create uris from an argument string that the link wizard (typolink)
 understands.
 
-.. attention::
-
-   Parts of this page may be wrong or incomplete. Please see `Pull Request #95
-   <https://github.com/TYPO3-Documentation/TYPO3CMS-Guide-Extbase/pull/95>`__
-   and `the source
-   <https://github.com/TYPO3/TYPO3.CMS/blob/master/typo3/sysext/fluid/Classes/ViewHelpers/Uri/TypolinkViewHelper.php>`__.
-   
-   **Please help updating the documentation.**
-   
 
 Usage
 =====
@@ -36,7 +27,6 @@ All parameters:
 
       <f:uri.typolink
          parameter="…"
-         additionalAttributes="…"
          additionalParams="…"
          useCacheHash="false"
       />`
@@ -61,23 +51,13 @@ parameter
    is expected, for example like `19 _blank`.
 
 
-additionalAttributes
-   :sep:`|` :aspect:`Condition:`  optional
-   :sep:`|` :aspect:`Type:`    array
-   :sep:`|` :aspect:`Default:` empty array
-   :sep:`|`
-
-   To add attributes to the a-tag. The array will automatically be converted
-   to :ref:`TypoScript-Syntax <t3tsref:stdwrap-typolink>` :ts:`param1=value&param2=value`
-
 additionalParams
    :sep:`|` :aspect:`Condition:`  optional
    :sep:`|` :aspect:`Type:`    string
    :sep:`|` :aspect:`Default:` empty string
    :sep:`|`
 
-   Add more parameters to the link. Opposed to `arguments` these names will not be
-   prefixed with the extension name.
+   Add more parameters to the link like &param=1.
 
 useCacheHash
    :sep:`|` :aspect:`Condition:`  optional
@@ -109,21 +89,19 @@ Output
 Example 2
 ---------
 
-((correct?))
-
 Tag code:
    ::
 
       <f:uri.typolink parameter="{link}" additionalParams="''">
-         <!-- tag content - may (will?) be ignored! -->
+         tag content will be ignored!
       </f:uri.typolink>
+
+Inline tag:
+   ::
+
+      <f:uri.typolink parameter="{link}" additionalParams="''" />
 
 Inline code:
    ::
 
-      {f:uri.typolink(parameter: "{link}", additionalParams: '''')}
-
-Example 99
-----------
-
-((to be written))
+      {f:uri.typolink(parameter: '{link}', additionalParams: '\'\'')}
