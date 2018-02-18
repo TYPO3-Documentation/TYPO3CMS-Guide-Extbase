@@ -1,68 +1,82 @@
-.. include:: ../../Includes.txt
+.. highlight:: html
 
+===============
 f:flashMessages
 ===============
 
-This ViewHelper is for use in extensions you programme yourself, as it is intended to output error messages which are
-shown to the website user. For example, a user has forgotten to fill out a required field and the relevant Action method
-is connected to a server-side validator. The input is passed to an errorAction method, which collates each error
-messages as a 'Flash Message' in turn, then outputs them all as a “bundle” at the place where you have inserted this
-ViewHelper.
+This viewhelper is for use in extensions you program yourself, as it is
+intended to output error messages which are shown to the website user. For
+example, a user has forgotten to fill out a required field and the relevant
+Action method is connected to a server-side validator. The input is passed to
+an errorAction method, which collates each error messages as a 'Flash Message'
+in turn, then outputs them all as a “bundle” at the place where you have
+inserted this viewhelper.
 
-Properties
-----------
+
+Usage
+=====
+
+Minimal usage:
+   ::
+
+      ...
+
+
+All parameters:
+   ::
+
+      ...
+
+
+Parameters
+==========
 
 All the :ref:`universal tag attributes <UniversalTagAttributes>`
 
-queueIdentifier
-~~~~~~~~~~~~~~~
-:aspect:`Variable type`
-    string
+plus
 
-:aspect:`Description`
+.. rst-class:: dl-parameters
+
+queueIdentifier
+   :sep:`|` :aspect:`Condition:`  optional
+   :sep:`|` :aspect:`Type:`       string
+   :sep:`|` :aspect:`Default:`    null
+   :sep:`|`
+
    Flash-message queue to use.
 
-:aspect:`Default value`
-   null
-
-:aspect:`Mandatory`
-    No
 
 as
-~~
-:aspect:`Variable type`
-    String
+   :sep:`|` :aspect:`Condition:`  optional
+   :sep:`|` :aspect:`Type:`       string
+   :sep:`|` :aspect:`Default:`    null
+   :sep:`|`
 
-:aspect:`Description`
-    The name of the current flashMessage variable for rendering inside.
-
-:aspect:`Default value`
-    null
-
-:aspect:`Mandatory`
-    No
+   The name of the current flashMessage variable for rendering inside.
 
 
 Examples
---------
+========
 
-**Standard Usage**
+Example: Standard Usage
+-----------------------
 
 ::
 
- <f:flashMessages />
+    <f:flashMessages />
 
-**Self Rendered Template**
+Example: Self Rendered Template
+-------------------------------
 
-:: 
+::
 
-<f:flashMessages queueIdentifier="myQueue" as="flashMessages">
-    <f:for each="{flashMessages}" as="flashMessage">
-        <div class="alert {flashMessage.class}">
+   <f:flashMessages queueIdentifier="myQueue" as="flashMessages">
+      <f:for each="{flashMessages}" as="flashMessage">
+         <div class="alert {flashMessage.class}">
             <f:if condition="{flashMessage.title}">
-                <strong>{flashMessage.title}</strong><br>
+               <strong>{flashMessage.title}</strong><br>
             </f:if>
             <p>{flashMessage.message -> f:format.html()}</p>
-        </div>
-    </f:for>
-</f:flashMessages>
+         </div>
+      </f:for>
+   </f:flashMessages>
