@@ -19,13 +19,13 @@ Usage
 Minimal usage:
    ::
 
-      ...
+      <f:flashMessages />
 
 
 All parameters:
    ::
 
-      ...
+      <f:flashMessages queueIdentifier="myQueue" as="flashMessages"></f:flashMessages>
 
 
 Parameters
