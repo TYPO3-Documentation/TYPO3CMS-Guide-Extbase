@@ -3,12 +3,10 @@
 ViewHelpers for the TYPO3 backend
 =================================
 
-**Table of Contents**
+**Contents**
 
 .. toctree::
-   :maxdepth: 5
    :titlesonly:
-   :glob:
 
    Buttons/Index
    Menus/Index
