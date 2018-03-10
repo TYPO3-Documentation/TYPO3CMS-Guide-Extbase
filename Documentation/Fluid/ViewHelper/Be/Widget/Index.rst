@@ -1,13 +1,12 @@
 .. include:: ../../../../Includes.txt
 
+==================
 ViewHelper: Widget
 ==================
 
-**Table of Contents**
+**Contents**
 
 .. toctree::
-   :maxdepth: 5
    :titlesonly:
-   :glob:
 
    Paginate
