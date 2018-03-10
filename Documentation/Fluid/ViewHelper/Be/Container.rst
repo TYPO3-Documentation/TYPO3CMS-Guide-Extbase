@@ -18,6 +18,8 @@ around ten properties.
 Properties
 ==========
 
+.. rst-class:: dl-parameters
+
 pageTitle
    :sep:`|` :aspect:`Condition:`  optional
    :sep:`|` :aspect:`Type:`       string
@@ -203,18 +205,18 @@ loaded, plus ExtJS and jQuery and some inline labels for usage in JS code.
 
 ::
 
-   <f:be.container pageTitle="foo" 
-                   enableClickMenu="false" 
-                   loadExtJs="true" 
-                   loadExtJsTheme="false" 
-                   enableExtJsDebug="true" 
-                   loadJQuery="true" 
-                   includeCssFiles="{0: '{f:uri.resource(path:\'Css/Styles.css\')}'}" 
+   <f:be.container pageTitle="foo"
+                   enableClickMenu="false"
+                   loadExtJs="true"
+                   loadExtJsTheme="false"
+                   enableExtJsDebug="true"
+                   loadJQuery="true"
+                   includeCssFiles="{0: '{f:uri.resource(path:\'Css/Styles.css\')}'}"
                    includeJsFiles="{
-                      0: '{f:uri.resource(path:\'JavaScript/Library1.js\')}', 
-                      1: '{f:uri.resource(path:\'JavaScript/Library2.js\')}'}" 
+                      0: '{f:uri.resource(path:\'JavaScript/Library1.js\')}',
+                      1: '{f:uri.resource(path:\'JavaScript/Library2.js\')}'}"
                    addJsInlineLabels="{
-                      0: 'label1', 
+                      0: 'label1',
                       1: 'label2'}"
    >
       your module content

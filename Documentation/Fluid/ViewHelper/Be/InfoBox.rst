@@ -9,6 +9,8 @@ View helper for rendering a styled content infobox markup.
 Properties
 ==========
 
+.. rst-class:: dl-parameters
+
 message
    :sep:`|` :aspect:`Condition:`  optional
    :sep:`|` :aspect:`Type:`       string
@@ -77,9 +79,9 @@ All options
 
 ::
 
-   <f:be.infobox title="Message title" 
-                 message="your box content" 
-                 state="-2" 
-                 iconName="check" 
-                 disableIcon="true" 
+   <f:be.infobox title="Message title"
+                 message="your box content"
+                 state="-2"
+                 iconName="check"
+                 disableIcon="true"
    />
