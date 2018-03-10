@@ -38,7 +38,6 @@ loadExtJs
 
 
 loadExtJsTheme
-~~~~~~~~~~~~~~
    :sep:`|` :aspect:`Condition:`  optional
    :sep:`|` :aspect:`Type:`       boolean
    :sep:`|` :aspect:`Default:`    true
