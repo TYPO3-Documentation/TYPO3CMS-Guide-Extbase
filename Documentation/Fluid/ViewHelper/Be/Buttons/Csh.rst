@@ -1,5 +1,6 @@
 .. include:: ../../../../Includes.txt
 
+================
 f:be.buttons.csh
 ================
 
@@ -10,59 +11,47 @@ TYPO3 uses this functionality all over the backend, and it is noticeable by the 
 over the element, whilst clicking on the element displays the help text in a small tooltip.
 
 Properties
-----------
+==========
+
+.. rst-class:: dl-parameters
 
 table
-~~~~~
-:aspect:`Variable type`
-   String
+   :sep:`|` :aspect:`Condition:`  optional
+   :sep:`|` :aspect:`Type:`       string
+   :sep:`|` :aspect:`Default:`    null
+   :sep:`|`
 
-:aspect:`Description`
-   Table name ('_MOD_'+module name). If not set, the current module name will be used.
-
-:aspect:`Default value`
-   NULL
-
-:aspect:`Required`
-   No
+   Table name ('_MOD_'+module name). If not set, the current module name will
+   be used.
 
 
 field
-~~~~~
-:aspect:`Variable type`
-   String
+   :sep:`|` :aspect:`Condition:`  optional
+   :sep:`|` :aspect:`Type:`       string
+   :sep:`|` :aspect:`Default:`    empty string
+   :sep:`|`
 
-:aspect:`Description`
    Field name (CSH locallang main key).
 
-:aspect:`Default value`
-   Empty string
-
-:aspect:`Required`
-   No
 
 wrap
-~~~~
-:aspect:`Variable type`
-   String
+   :sep:`|` :aspect:`Condition:`  optional
+   :sep:`|` :aspect:`Type:`       string
+   :sep:`|` :aspect:`Default:`    empty string
+   :sep:`|`
 
-:aspect:`Description`
-   Markup to wrap around the CSH, split by "|".
-
-:aspect:`Default value`
-   Empty string
-
-:aspect:`Required`
-   No
+   Markup to wrap around the CSH, split by `|` .
 
 
 Special case
 ------------
 
-There's a special case in which the “table” property doesn't need to be defined. This is the case when there are
-form fields in the module, but when there is no 1:1 column in the database. For example, in the Scheduler, which
-stores its information in a serialized format in a single field, or in the case of a search field, whose value isn't
-sent to the database. Such fields can be assigned a csh icon through the addition of an entry in
+There's a special case in which the “table” property doesn't need to be
+defined. This is the case when there are form fields in the module, but when
+there is no 1:1 column in the database. For example, in the Scheduler, which
+stores its information in a serialized format in a single field, or in the case
+of a search field, whose value isn't sent to the database. Such fields can be
+assigned a csh icon through the addition of an entry in
 :file:`ext_tables.php`::
 
    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
@@ -71,9 +60,10 @@ sent to the database. Such fields can be assigned a csh icon through the additio
    );
 
 
-Note the reference to the fully-formed module name. This is comprised of the category (e.g. “web”), the
-upper-camel-cased extension name and the upper-camel-cased module name. In the example of an extension named
-“sfextbase” and a module named “extbase”, the complete name would be::
+Note the reference to the fully-formed module name. This is comprised of the
+category (e.g. “web”), the upper-camel-cased extension name and the upper-
+camel-cased module name. In the example of an extension named “sfextbase” and a
+module named “extbase”, the complete name would be::
 
    web_SfextbaseExtbase
 
@@ -98,19 +88,21 @@ The entry for the email address in the XLF file would be as follows:
     </trans-unit>
     <trans-unit id="email.details" xml:space="preserve">
       <source>
-         I am a really long description, which gives plenty of detail about this field relating to an email address,
-         as well as what you need to note and that you need to add a valid email address in this field.
+         I am a really long description, which gives plenty of detail about 
+         this field relating to an email address, as well as what you need to 
+         note and that you need to add a valid email address in this field.
       </source>
     </trans-unit>
 
 
 Examples
---------
+========
 
 Example: database fields
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
-In the majority of TYPO3 tables, the language file key is usually the same as the column name:
+In the majority of TYPO3 tables, the language file key is usually the same as
+the column name:
 
 .. code-block:: html
 
@@ -118,9 +110,10 @@ In the majority of TYPO3 tables, the language file key is usually the same as th
 
 
 Example: Icons for form fields without a 1:1 database structure
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------------------------
 
-This example relates to the special case mentioned above, in which the table name may not be indicated:
+This example relates to the special case mentioned above, in which the table
+name may not be indicated:
 
 .. code-block:: html
 
