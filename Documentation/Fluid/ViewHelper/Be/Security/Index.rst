@@ -1,14 +1,13 @@
 .. include:: ../../../../Includes.txt
 
+====================
 ViewHelper: Security
 ====================
 
-**Table of Contents**
+**Contents**
 
 .. toctree::
-   :maxdepth: 5
    :titlesonly:
-   :glob:
 
    IfAuthenticated
    IfHasRole
