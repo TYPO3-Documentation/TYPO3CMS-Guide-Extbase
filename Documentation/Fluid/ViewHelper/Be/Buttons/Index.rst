@@ -1,14 +1,13 @@
 .. include:: ../../../../Includes.txt
 
+===================
 ViewHelper: Buttons
 ===================
 
-**Table of Contents**
+**Contents**
 
 .. toctree::
-   :maxdepth: 5
    :titlesonly:
-   :glob:
 
    Csh
    Shortcut
