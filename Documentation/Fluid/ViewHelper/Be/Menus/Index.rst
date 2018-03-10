@@ -3,12 +3,10 @@
 ViewHelper: Menus
 =================
 
-**Table of Contents**
+**Contents**
 
 .. toctree::
-   :maxdepth: 5
    :titlesonly:
-   :glob:
 
    ActionMenu
    ActionMenuItem
