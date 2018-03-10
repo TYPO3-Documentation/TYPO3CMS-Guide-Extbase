@@ -135,3 +135,5 @@ will be loaded, plus ExtJS and jQuery and some inline labels for usage in JS cod
                            1: '{f:uri.resource(path:\'JavaScript/Library2.js\')}'" 
                        addJsInlineLabels="{0: 'label1', 1: 'label2'}" 
     />
+    
+    
