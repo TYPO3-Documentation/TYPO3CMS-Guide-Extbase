@@ -23,7 +23,6 @@ getVars
 
 
 setVars
-~~~~~~~
    :sep:`|` :aspect:`Condition:`  optional
    :sep:`|` :aspect:`Type:`       array
    :sep:`|` :aspect:`Default:`    empty array
