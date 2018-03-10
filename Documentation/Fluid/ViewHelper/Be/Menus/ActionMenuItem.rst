@@ -41,7 +41,6 @@ action
 
 
 arguments
-~~~~~~~~~
    :sep:`|` :aspect:`Condition:`  required
    :sep:`|` :aspect:`Type:`       array
    :sep:`|` :aspect:`Default:`    empty array
