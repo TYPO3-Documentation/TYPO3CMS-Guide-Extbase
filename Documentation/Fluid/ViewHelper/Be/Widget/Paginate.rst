@@ -45,6 +45,8 @@ configuration
 Configuration of the page navigation
 ====================================
 
+.. rst-class:: dl-parameters
+
 itemsPerPage
    :sep:`|` :aspect:`Condition:`  optional
    :sep:`|` :aspect:`Type:`       QueryResultInterface
