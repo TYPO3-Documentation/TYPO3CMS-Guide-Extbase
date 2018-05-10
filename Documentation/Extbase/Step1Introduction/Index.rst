@@ -10,6 +10,5 @@ Step 1 - Introduction
    :titlesonly:
    :glob:
 
-   Introduction
    DomainDrivenDesign
    DependencyInjection
