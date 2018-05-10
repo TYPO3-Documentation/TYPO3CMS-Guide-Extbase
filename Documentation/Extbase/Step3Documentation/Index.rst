@@ -11,7 +11,6 @@ Step 3 - Documentation
    :glob:
 
    Architecture
-   Arguments
    Bootstrap
    Dispatcher
    ActionController
