@@ -1,15 +1,89 @@
 .. include:: ../Includes.txt
 
+===========
 Fluid Guide
 ===========
 
-This Guide demonstrates the usage of Fluid to render output.
-Fluid is a template engine that is designed to be flexible and extensible, but easy to use. It is part of the TYPO3 CMS and of Neos Flow.
+Introduction
+============
 
+What is Fluid?
+----------------
 
-**Table of Contents**
+Fluid is a PHP template engine, developed independently of TYPO3. It was introduced
+back in 2009 with TYPO3 4.3, along with Extbase.
+
+The biggest difference to most other template engines is the valid xml syntax.
+Therefore there is no new Syntax to understand.
+
+The engine is available at https://github.com/TYPO3/Fluid and can be used in PHP
+projects without TYPO3.
+
+Should I use Fluid?
+---------------------
+
+Fluid is the de-facto-standard for any HTML based output in TYPO3. It's used by
+Extbase-Extensions by default and is available to TypoScript via
+:ref:`t3tsref:cobj-fluidtemplate`.
+
+Also you can use the :php:`TYPO3\CMS\Fluid\View\StandaloneView` to use Fluid in your
+command controller or `AbstractPlugin`.
+
+Also it's used by the system extension fluid_styled_content to provide output of
+default content elements.
+
+How do I get started with Fluid?
+----------------------------------
+
+* Check out the Fluid documentation https://github.com/TYPO3/Fluid
+* Check out the Fluid documentation section in this guide.
+* Inspect the existing Fluid templates, e.g. provided by TYPO3's system extension
+  fluid_styled_content https://github.com/TYPO3-CMS/fluid_styled_content .
+
+Concepts
+--------
+
+TYPO3 itself requires the Fluid template engine. As this engine does not know
+anything about TYPO3, the engine is extended by TYPO3 within the system extension
+fluid. This extension provides further ViewHelpers for TYPO3 specifics like link building.
+
+Fluid itself provides a basic **syntax**, this syntax is explained at
+https://github.com/TYPO3/Fluid/blob/master/doc/FLUID_SYNTAX.md .
+This syntax can be extended, see
+https://github.com/TYPO3/Fluid/blob/master/doc/FLUID_EXPRESSIONS.md .
+
+Also Fluid has different levels of **templates**. There is always a *Template*, which can
+contain different *Sections*. Also the *Template* can inherit a *Layout*.
+For easier re-use *Partials* can be created and rendered within *Layouts* and *Templates*.
+For further information on files check out
+https://github.com/TYPO3/Fluid/blob/master/doc/FLUID_STRUCTURE.md .
+
+In TYPO3's extensions the default lookup paths are:
+
+Templates
+   Resources/Private/Templates
+Layouts
+   Resources/Private/Layouts
+Partials
+   Resources/Private/Partials
+
+But these can be configured through TypoScript, via
+:ref:`t3tsref:cobj-fluidtemplate-properties-templaterootpaths`,
+:ref:`t3tsref:cobj-fluidtemplate-properties-layoutrootpaths` and
+:ref:`t3tsref:cobj-fluidtemplate-properties-partialrootpaths`.
+
+To further extend Fluid, there are **ViewHelpers**. These are basically custom
+HTML-Tags which contain PHP Logic.
+To understand what they are and how to use them, check out
+https://github.com/TYPO3/Fluid/blob/master/doc/FLUID_VIEWHELPERS.md .
+If you want to write your own ViewHelpers take a look at
+https://github.com/TYPO3/Fluid/blob/master/doc/FLUID_CREATING_VIEWHELPERS.md .
+
+Main Contents
+=============
 
 .. toctree::
+   :hidden:
 
    ViewHelper/Index
    UniversalTagAttributes
