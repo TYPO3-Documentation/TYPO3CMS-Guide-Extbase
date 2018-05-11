@@ -22,8 +22,8 @@ If you develop an extension for TYPO3 you should most definitely use Extbase.
 The days of piBased extensions are numbered. Extbase gives you the benefit of a
 modern, clear and highly structured means of PHP development.
 
-How do I get started with Extbase?
-----------------------------------
+How to get started with Extbase
+-------------------------------
 
 * Check out the Extbase documentation section.
 * Inspect the code of Extbase-based extensions in the The TYPO3 extension repository (TER).
