@@ -1,10 +1,13 @@
 .. include:: ../../../Includes.txt
 
+.. _vh-link-typolink:
+
 f:link.typolink
 ===============
 
 A ViewHelper to create links from fields supported by the link wizard.
 
+.. _vh-link-typolink-properties:
 
 Properties
 ----------
@@ -124,10 +127,14 @@ useCacheHash
 
 .. highlight:: html
 
+.. _vh-link-typolink-example:
+
 Example
 -------
 
-Fluid
+Minimal example
+###############
+
 
 ::
 
@@ -143,6 +150,7 @@ Result
    <a href="index.php?id=19&X=y" title="testtitle with whitespace" target="_blank">Linktext</a>
 
 Full configuration
+##################
 
 ::
 

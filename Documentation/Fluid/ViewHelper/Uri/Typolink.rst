@@ -1,13 +1,13 @@
 .. include:: ../../../Includes.txt
 .. highlight:: html
 
-.. _viewhelper-uri-typolink:
+.. _vh-uri-typolink:
 
 ==============
 f:uri.typolink
 ==============
 
-This is a viewhelper to create uris from an argument string that the link wizard (typolink)
+This is a ViewHelper to create uris from an argument string that the link wizard (typolink)
 understands.
 
 

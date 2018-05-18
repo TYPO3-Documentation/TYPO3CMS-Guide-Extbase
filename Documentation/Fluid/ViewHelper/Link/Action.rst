@@ -1,9 +1,13 @@
 .. include:: ../../../Includes.txt
 
+.. _vh-link-action:
+
 f:link.action
 =============
 
-A view helper for creating links to extbase actions.
+A ViewHelper for creating links to Extbase actions.
+
+.. _vh-link-action-properties:
 
 Properties
 ----------
@@ -314,10 +318,15 @@ Examples
 --------
 
 Link to the show-action of the current controller
+##################################################
 
-::
+.. code-block:: html
 
- <f:link.action action="show">action link</f:link.action>
+   <f:link.action action="show">action link</f:link.action>
 
- <a href="index.php?id=123&tx_myextension_plugin[action]=show&tx_myextension_plugin[controller]=Standard&cHash=xyz">action link</f:link.action>
+Result:
+
+.. code-block:: html
+
+   <a href="index.php?id=123&tx_myextension_plugin[action]=show&tx_myextension_plugin[controller]=Standard&cHash=xyz">action link</f:link.action>
  (depending on the current page and your TS configuration)

@@ -1,13 +1,18 @@
 .. include:: ../../../Includes.txt
 
+.. _vh-uri-resource:
+
+==============
 f:uri.resource
 ==============
 
+.. _vh-uri-resource-properties:
+
 Properties
-----------
+==========
 
 path
-~~~~
+----
 :aspect:`Variable type`
    String
 
@@ -19,7 +24,8 @@ path
    Yes
 
 extensionName
-~~~~~~~~~~~~~
+-------------
+
 :aspect:`Variable type`
    String
 
@@ -34,7 +40,8 @@ extensionName
    No
 
 absolute
-~~~~~~~~
+--------
+
 :aspect:`Variable type`
    Boolean
 

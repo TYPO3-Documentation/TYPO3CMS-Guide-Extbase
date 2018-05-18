@@ -3,7 +3,8 @@
 f:uri.action
 ============
 
-This ViewHelper creates a link to a given action.
+This ViewHelper creates a URI to a given action. If you need
+a ViewHelper for creating a link, look at :ref:`vh-link-action`.
 
 Properties
 ----------

@@ -1,10 +1,14 @@
 .. include:: ../../../Includes.txt
 
+.. _vh-link-email:
+
 f:link.email
 ============
 
 Email link ViewHelper.
 Generates an email link incorporating TYPO3s spamProtectEmailAddresses-settings.
+
+.. _vh-link-email-properties:
 
 Properties
 ----------
@@ -88,22 +92,34 @@ email
     Yes
 
 
+.. _vh-link-email-examples:
+
 Examples
 --------
 
 Basic email link
+################
 
-::
+.. code-block:: html
 
  <f:link.email email="foo@bar.tld" />
+
+Result:
+
+.. code-block:: html
 
  <a href="javascript:linkTo_UnCryptMailto('ocknvq,hqqBdct0vnf');">foo(at)bar.tld</a>
  (depending on your spamProtectEmailAddresses-settings)
 
 Email link with custom linktext
+###############################
 
-::
+.. code-block:: html
 
  <f:link.email email="foo@bar.tld">some custom content</f:link.email>
+
+Result:
+
+.. code-block:: html
 
  <a href="javascript:linkTo_UnCryptMailto('ocknvq,hqqBdct0vnf');">some custom content</a>

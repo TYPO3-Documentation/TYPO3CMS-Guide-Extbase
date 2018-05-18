@@ -1,5 +1,7 @@
 .. include:: ../../../Includes.txt
 
+.. _vh-link-external:
+
 f:link.external
 ===============
 
@@ -7,8 +9,10 @@ A ViewHelper for creating links to external targets.
 
 .. tip::
 
-   Wenn Ihr bei uri einen vollständigen Link angebt, also inkl. http:// oder ftp://,
-   dann braucht Ihr defaultScheme nicht zu setzen.
+   If you specify an absolute URL like `http://` or `ftp://`
+   you don't need to set `defaultScheme`.
+
+.. _vh-link-external-properties:
 
 Properties
 ----------
@@ -105,19 +109,31 @@ defaultScheme
 :aspect:`Mandatory`
     No
 
+.. _vh-link-external-examples:
+
 Examples
 --------
 
-::
+.. code-block:: html
 
- <f:link.external uri="http://www.typo3.org" target="_blank">external link</f:link.external>
+   <f:link.external uri="http://www.typo3.org" target="_blank">external link</f:link.external>
 
- <a href="http://www.typo3.org" target="_blank">external link</a>
+Result:
+
+.. code-block:: html
+
+    <a href="http://www.typo3.org" target="_blank">external link</a>
 
 Custom default scheme
+#####################
 
 ::
 
  <f:link.external uri="typo3.org" defaultScheme="ftp">external ftp link</f:link.external>
+
+
+Result:
+
+::
 
  <a href="ftp://typo3.org">external ftp link</a>

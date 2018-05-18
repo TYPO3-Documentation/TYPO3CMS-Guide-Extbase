@@ -1,9 +1,13 @@
 .. include:: ../../../Includes.txt
 
+.. _vh-link-page:
+
 f:link.page
 ===========
 
 A view helper for creating links to TYPO3 pages.
+
+.. _vh-link-page-properties:
 
 Properties
 ----------
@@ -207,33 +211,49 @@ addQueryStringMethod
 :aspect:`Mandatory`
     No
 
+.. _vh-link-page-examples:
 
 Examples
 --------
 
 Link to the current page
+########################
 
 ::
 
  <f:link.page>page link</f:link.page>
 
+Result:
+
+::
+
  <a href="index.php?id=123">page link</a>
  (depending on the current page and your TS configuration)
 
 Query parameters
+################
 
 ::
 
  <f:link.page pageUid="1" additionalParams="{foo: 'bar'}">page link</f:link.page>
 
+Result:
+
+::
+
  <a href="index.php?id=1&foo=bar">page link</a>
  (depending on your TS configuration)
 
 Query parameters for extensions
+###############################
 
 ::
 
  <f:link.page pageUid="1" additionalParams="{extension_key: {foo: 'bar'}}">page link</f:link.page>
+
+Result:
+
+::
 
  <a href="index.php?id=1&extension_key[foo]=bar">page link</a>
  (depending on your TS configuration)

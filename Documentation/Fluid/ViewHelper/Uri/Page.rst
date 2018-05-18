@@ -1,21 +1,22 @@
 .. include:: ../../../Includes.txt
 
+.. _vh-uri-page:
+
+==========
 f:uri.page
 ==========
 
-Example
--------
+This ViewHelper creates a URI to a given page. If you need
+a ViewHelper for creating a link, look at :ref:`vh-link-page`.
 
-.. code-block:: html
-
-   <f:uri.page pageUid="1" additionalParams="{foo: 'bar'}">page link</f:uri.page>
-
+.. _vh-uri-page-properties:
 
 Properties
-----------
+==========
 
 pageUid
-~~~~~~~
+-------
+
 :aspect:`Variable type`
    Integer|NULL
 
@@ -29,7 +30,8 @@ pageUid
    No
 
 additionalParams
-~~~~~~~~~~~~~~~~
+----------------
+
 :aspect:`Variable type`
    Array
 
@@ -43,7 +45,8 @@ additionalParams
    No
 
 pageType
-~~~~~~~~
+--------
+
 :aspect:`Variable type`
    Integer
 
@@ -57,7 +60,8 @@ pageType
    No
 
 noCache
-~~~~~~~
+-------
+
 :aspect:`Variable type`
    Boolean
 
@@ -71,7 +75,8 @@ noCache
    No
 
 noCacheHash
-~~~~~~~~~~~
+-----------
+
 :aspect:`Variable type`
    Boolean
 
@@ -85,7 +90,8 @@ noCacheHash
    No
 
 section
-~~~~~~~
+-------
+
 :aspect:`Variable type`
    String
 
@@ -99,7 +105,8 @@ section
    No
 
 linkAccessRestrictedPages
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
+
 :aspect:`Variable type`
    Boolean
 
@@ -113,7 +120,8 @@ linkAccessRestrictedPages
    No
 
 absolute
-~~~~~~~~
+--------
+
 :aspect:`Variable type`
    Boolean
 
@@ -127,7 +135,8 @@ absolute
    No
 
 addQueryString
-~~~~~~~~~~~~~~
+--------------
+
 :aspect:`Variable type`
    Boolean
 
@@ -141,7 +150,8 @@ addQueryString
    No
 
 argumentsToBeExcludedFromQueryString
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------
+
 :aspect:`Variable type`
    Array
 
@@ -153,3 +163,11 @@ argumentsToBeExcludedFromQueryString
 
 :aspect:`Mandatory`
    No
+
+
+Examples
+========
+
+.. code-block:: html
+
+   <f:uri.page pageUid="1" additionalParams="{foo: 'bar'}">page link</f:uri.page>

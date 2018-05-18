@@ -1,13 +1,24 @@
 .. include:: ../../../Includes.txt
 
+.. vh-uri-image:
+
+===========
 f:uri.image
 ===========
 
+This ViewHelper creates a URI to a given image. If you need
+a ViewHelper for creating a link, look at :ref:`vh-link-image`.
+
+The created string may not be a fully qualified URI, it may be a relative path.
+
+.. vh-uri-properties:
+
 Properties
-----------
+==========
 
 src
-~~~
+---
+
 :aspect:`Variable type`
     String
 
@@ -19,7 +30,7 @@ src
     Either 'this' or 'image' parameter
     
 image
-~~~~~
+-----
 
 :aspect:`Variable type`
     Object
@@ -31,7 +42,8 @@ image
     Either 'this' or 'src' parameter
 
 width
-~~~~~
+-----
+
 :aspect:`Variable type`
     String
 
@@ -49,7 +61,8 @@ width
     No
 
 height
-~~~~~~
+------
+
 :aspect:`Variable type`
     String
 
@@ -67,7 +80,8 @@ height
     No
     
 crop
-~~~~
+----
+
 :aspect:`Variable type`
     anySimpleType
 
@@ -81,7 +95,8 @@ crop
     No
     
 cropVariant
-~~~~~~~~~~~
+-----------
+
 :aspect:`Variable type`
     string
 
@@ -95,7 +110,8 @@ cropVariant
     No
 
 minWidth
-~~~~~~~~
+--------
+
 :aspect:`Variable type`
     Integer
 
@@ -110,7 +126,8 @@ minWidth
     No
 
 minHeight
-~~~~~~~~~
+---------
+
 :aspect:`Variable type`
     Integer
 
@@ -125,7 +142,8 @@ minHeight
     No
 
 maxWidth
-~~~~~~~~
+--------
+
 :aspect:`Variable type`
     Integer
 
@@ -140,7 +158,8 @@ maxWidth
     No
 
 maxHeight
-~~~~~~~~~
+---------
+
 :aspect:`Variable type`
     Integer
 
@@ -155,16 +174,53 @@ maxHeight
     No
 
 treatIdAsReference
-~~~~~~~~~~~~~~~~~~
+------------------
+
 :aspect:`Variable type`
     Boolean
 
 :aspect:`Description`
-    If this value is set to TRUE, then the ViewHelper expects the value given by ``src`` to be a 
-    `sys_file_reference`. If not, then it expects a ``sys_file`` or regular file path. Not required if `image` parameter is used.
+    If this value is set to TRUE, then the ViewHelper expects the value
+    given by ``src`` to be a `sys_file_reference`. If not, then it
+    expects a ``sys_file`` or regular file path. Not required if
+    `image` parameter is used.
 
 :aspect:`Default value`
     FALSE
 
 :aspect:`Mandatory`
     No
+
+
+.. highlight:: html
+
+.. vh-uri-examples:
+
+Examples
+========
+
+Using an existing image reference
+---------------------------------
+
+Fluid:
+
+::
+
+   <f:uri.image image"{file)}" />
+
+Result:
+
+   /fileadmin/images/image.jpg
+
+Using uri.image in a link
+-------------------------
+
+Fluid:
+
+::
+
+   <a href="{f:uri.image(image: file)}">Link to image file</a>
+
+Result::
+
+   <a href="/fileadmin/images/image.jpg">Image</a>
