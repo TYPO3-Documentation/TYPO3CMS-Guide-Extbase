@@ -72,7 +72,7 @@ Here's an example of how the configuration might appear::
 
    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
       '_MOD_web_SfextbaseExtbase',
-      'EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_extbase.xlf'
+      'EXT:ext_key/Resources/Private/Language/locallang_extbase.xlf'
    );
 
 
