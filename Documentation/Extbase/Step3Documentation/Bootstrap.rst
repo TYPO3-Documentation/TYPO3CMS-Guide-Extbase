@@ -9,7 +9,7 @@ caches, and the activation of the persistence layer.
 This initialisation process is prepared in ext_localconf.php::
 
  Tx_Extbase_Utility_Extension::configurePlugin(
-   $_EXTKEY,
+   'Vendor.ext_key',
    'Products',
    array(
      'Product' => 'list, show',
