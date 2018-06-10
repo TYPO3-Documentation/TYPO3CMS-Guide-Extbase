@@ -1,7 +1,7 @@
 .. include:: ../../../Includes.txt
 
 ============
-f:be.InfoBox
+f:be.infobox
 ============
 
 View helper for rendering a styled content infobox markup.
