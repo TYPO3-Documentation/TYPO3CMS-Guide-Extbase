@@ -209,7 +209,7 @@ Example: Iterator usage
 
 ::
 
- <f:alias map="{
+   <f:alias map="{
     employees: {
        0: {first_name: 'Stefan', city: 'Lindlar'},
        1: {first_name: 'Petra', city: 'Lindlar'},
@@ -217,7 +217,7 @@ Example: Iterator usage
        3: {first_name: 'Patrick', city: 'Bonn'},
        4: {first_name: 'Sven', city: 'Gummersbach'},
        5: {first_name: 'Andrea', city: 'Wuppertal'}}}
- ">
+   ">
     <table cellpadding="5" cellspacing="0" border="2">
        <f:for each="{employees}" as="employee" iteration="iterator">
           <f:if condition="{iterator.isFirst}">
@@ -239,4 +239,3 @@ Example: Iterator usage
        </f:for>
     </table>
  </f:alias>
-
