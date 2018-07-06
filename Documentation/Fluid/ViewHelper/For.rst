@@ -14,7 +14,7 @@ Usage
 Minimal usage:
    ::
 
-      <f:for each="{itmes}" as="item">
+      <f:for each="{items}" as="item">
          ...
       </f:for>
 
