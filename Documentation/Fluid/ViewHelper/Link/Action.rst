@@ -330,3 +330,24 @@ Result:
 
    <a href="index.php?id=123&tx_myextension_plugin[action]=show&tx_myextension_plugin[controller]=Standard&cHash=xyz">action link</f:link.action>
  (depending on the current page and your TS configuration)
+ 
+Link to download-action with multiple arguments
+##################################################
+
+.. code-block:: html
+
+   <f:link.action action="download"
+       arguments="{
+                     uid: '{User.id}',
+                     name: '{User.name}',
+                     email: '{User.contact.email}'
+                   }"
+       target="_blank">Download
+    </f:link.action>
+    
+Result:
+ 
+.. code-block:: html
+
+   <a target="_blank" href="/site/?extension_plugin%5Buid%5D=1234&amp;extension_plugin%5Bname%5D=Linda%20Test&amp;extension_plugin%5Bemail%5D=test%40testmail.com&amp;extension_plugin%5Baction%5D=download&amp;extension_plugin%5Bcontroller%5D=Standard&amp;cHash=xyz">Download</a>
+   (depending on the current page and your TS configuration)
