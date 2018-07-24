@@ -206,7 +206,7 @@ Fluid:
 
 ::
 
-   <f:uri.image image"{file)}" />
+   <f:uri.image image="{file}" />
 
 Result:
 
