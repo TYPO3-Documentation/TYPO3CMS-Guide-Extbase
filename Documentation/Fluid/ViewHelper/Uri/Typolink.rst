@@ -39,6 +39,9 @@ In this viewhelper the parts 'target', 'class' and 'title' will be discarded tho
 Parameters
 ==========
 
+parameter
+---------
+
 .. rst-class:: dl-parameters
 
 parameter
@@ -50,6 +53,10 @@ parameter
    The UID of the target page to link to. :ref:`TypoScript syntax <t3tsref:stdwrap-typolink>`
    is expected, for example like `19 _blank`.
 
+additionalParams
+----------------
+
+.. rst-class:: dl-parameters
 
 additionalParams
    :sep:`|` :aspect:`Condition:`  optional
@@ -58,6 +65,11 @@ additionalParams
    :sep:`|`
 
    Add more parameters to the link like &param=1.
+
+useCacheHash
+------------
+
+.. rst-class:: dl-parameters
 
 useCacheHash
    :sep:`|` :aspect:`Condition:`  optional
