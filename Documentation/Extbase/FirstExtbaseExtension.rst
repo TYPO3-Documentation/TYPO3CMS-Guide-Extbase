@@ -6,7 +6,7 @@ Creating an Extbase extension
 Your first extension - step by step
 -----------------------------------
 
-First of all, you'll need to put aside your knowledge of piBase programming to understand that programming
+First of all, you'll need to put aside your knowledge of piBase programming (which was the old method of writing TYPO3 extensions) to understand that programming
 in Extbase doesn't begin with code, but in discussions with the client. As a programmer, you need to be clear 
 on the client's requirements. The more clarity you achieve at the concept stage, the better you can plan - 
 and planning is the alpha and omega of programming for Extbase.
