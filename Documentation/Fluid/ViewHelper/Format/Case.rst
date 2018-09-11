@@ -75,3 +75,16 @@ Example with given mode
    <f:format.case mode="capital">someString</f:format.case>
 
    SomeString
+   
+Example: inline notation
+
+::
+
+   {f:format.case(mode: 'lower', value: 'UPPERCASE STRING')}
+   
+   Output: uppercase string
+ 
+::
+
+   {myVar -> f:format.case(mode: 'lower')}
+   
