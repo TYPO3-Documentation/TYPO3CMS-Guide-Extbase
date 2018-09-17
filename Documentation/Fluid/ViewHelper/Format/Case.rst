@@ -60,31 +60,25 @@ mode
 Examples
 --------
 
-Some Text with mixed case
-
-::
+Transform some mixed case text to *upper* case::
 
    <f:format.case>Some Text with miXed case</f:format.case>
 
    SOME TEXT WITH MIXED CASE
 
-Example with given mode
-
-::
+Transform to *capital* case::
 
    <f:format.case mode="capital">someString</f:format.case>
 
    SomeString
    
-Example: inline notation
-
-::
+Transform to *lower* case::
 
    {f:format.case(mode: 'lower', value: 'UPPERCASE STRING')}
    
    Output: uppercase string
  
-::
+Transform to *lower* case using functional notation::
 
    {myVar -> f:format.case(mode: 'lower')}
    
