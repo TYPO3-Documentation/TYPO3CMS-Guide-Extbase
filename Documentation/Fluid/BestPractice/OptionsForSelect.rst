@@ -7,7 +7,7 @@ The f:form.select ViewHelper provides a few cool options, for example optionValu
 makes it possible to access specific properties of an object and use them as the value or label within the generated 
 options of a SELECT element.
 
-These two properties, however, present an problem: they only work with objects. If the data structure is formed of an 
+These two properties, however, present a problem: They only work with objects. If the data structure is formed of an 
 array, the following test within the f:form.select ViewHelper will fail:
 
 ::
@@ -15,8 +15,8 @@ array, the following test within the f:form.select ViewHelper will fail:
    if (is_object($value)) {
 
 These two properties are only processed within this 'if' statement. We could perhaps build our own mini-domain model 
-with getter and setter methods to handle the label and value. But this is overkill. The better alternative is to make 
-use of the PHP standard class :php:`stdClass`.
+with getter and setter methods to handle the label and value. But this would be an overkill.
+The better alternative is to make use of the PHP standard class :php:`stdClass`.
 
 ::
 
