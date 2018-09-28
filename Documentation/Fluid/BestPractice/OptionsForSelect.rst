@@ -20,6 +20,8 @@ use of the PHP standard class :php:`stdClass`.
 
 ::
 
+    use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
+
     /**
     * action list
     *
