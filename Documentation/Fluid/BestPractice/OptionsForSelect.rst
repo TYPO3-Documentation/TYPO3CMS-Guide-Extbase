@@ -20,6 +20,8 @@ The better alternative is to make use of the PHP standard class :php:`stdClass`.
 
 ::
 
+    use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
+
     /**
     * action list
     *
@@ -38,7 +40,7 @@ The better alternative is to make use of the PHP standard class :php:`stdClass`.
         $categories = array();
         $entries = array('car', 'bike', 'train');
         foreach ($entries as $entry) {
-            $category = new stdClass();
+            $category = new \stdClass();
             $category->key = $entry;
             $category->value = LocalizationUtility::translate('category.' . $entry, 'myExtName');
             $categories[] = $category;
