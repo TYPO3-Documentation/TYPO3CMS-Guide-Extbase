@@ -67,7 +67,7 @@ Workaround for an invalid Form object
 .. tip::
 
    The following text was pre-existing at the time of this page's translation to English. It may no longer be
-   current or relevant in more up-to-date versions of Fluid/Extbase.
+   relevant in more up-to-date versions of Fluid/Extbase.
 
 Checkbox handling is a catastrophe in Fluid/Extbase. It took me quite a bit of time to get checkboxes working, because
 their use requires an empty but available Model if they are to be bound to an object by means of a property::
@@ -75,8 +75,7 @@ their use requires an empty but available Model if they are to be bound to an ob
    No value found for key `Tx_Fluid_ViewHelpers_FormViewHelper->formObject`
 
 In order to get rid of an error message like this one, you'll need to ensure that the object isn't NULL. You'll need to
-create an empty object in the relevant Action. You could achieve this using code according to the following example,
-which is taken from the extension_builder.
+create an empty object in the relevant Action. You could achieve this with something like the following:
 
 ::
 
@@ -87,9 +86,9 @@ which is taken from the extension_builder.
   * @dontvalidate $newCar
   * @return void
   */
- public function newAction(Tx_Sffluid_Domain_Model_Car $newCar = NULL) {
+ public function newAction(\Vendor\Extkey\Domain\Model\Car $newCar = NULL) {
    if ($newCar == NULL) { // workaround for fluid bug ##5636
-     $newCar = t3lib_div::makeInstance('Tx_Sffluid_Domain_Model_Car');
+     $newCar = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\Vendor\Extkey\Domain\Model\Car::class);
    }
    $this->view->assign('newCar', $newCar);
  }
