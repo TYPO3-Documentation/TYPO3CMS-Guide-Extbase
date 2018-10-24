@@ -45,6 +45,21 @@ rel
 :aspect:`Mandatory`
     No
 
+additionalAttributes
+~~~~~~~~~~~~~~~~~~~~
+:aspect:`Variable type`
+    Array
+
+:aspect:`Description`
+    Additional tag attributes. They will be added directly to the resulting HTML tag.
+
+:aspect:`Default value`
+    Empty Array
+
+:aspect:`Mandatory`
+    No
+
+
 Exclusive properties of this ViewHelper
 #######################################
 
