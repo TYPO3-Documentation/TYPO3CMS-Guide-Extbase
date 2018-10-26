@@ -1,0 +1,6 @@
+{
+    "name": "typo3/guide-extbasefluid",
+    "type": "typo3-cms-documentation",
+    "description": "A TYPO3 Extbase and Fluid Guide",
+    "license": "OPL-1.0"
+}
