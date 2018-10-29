@@ -33,7 +33,7 @@ Example
  with
  linebreaks</f:format.nl2br>
 
-ergibt
+Result:
 
 ::
 
