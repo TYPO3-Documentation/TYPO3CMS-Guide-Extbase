@@ -12,10 +12,6 @@ A ViewHelper to create links from fields supported by the link wizard.
 Properties
 ----------
 
-The UniversalTagAttributes :ref:`UniversalTagAttributes`
-
-Plus:
-
 parameter
 ~~~~~~~~~
 
@@ -121,6 +117,75 @@ useCacheHash
 
 :aspect:`Default value`
     FALSE
+
+:aspect:`Mandatory`
+    No
+
+addQueryString
+~~~~~~~~~~~~~~~~~~~~
+
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+   If set, the current query parameters will be kept in the URI.
+
+:aspect:`Default value`
+    FALSE
+
+:aspect:`Mandatory`
+    No
+	
+addQueryStringMethod
+~~~~~~~~~~~~~~~~~~~~
+
+:aspect:`Variable type`
+    String
+
+:aspect:`Description`
+	If set to GET or POST, then the parsed query arguments
+	(GET or POST data) will be used. This setting is useful, if you use
+	URL processing extensions like Real URL, which translate part of the
+	path into query arguments.
+
+	It's also possible to get both, POST and GET data, on setting this to
+
+	"POST,GET" or "GET,POST". The last method in this sequence takes
+	precedence and overwrites the parts that are also present for the
+	first method.
+
+:aspect:`Default value`
+    GET
+
+:aspect:`Mandatory`
+    No
+	
+addQueryStringExclude
+~~~~~~~~~~~~~~~~~~~~
+
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+   List of query arguments to exclude from the link. Typical examples are 'L' or 'cHash'.
+
+:aspect:`Default value`
+    Empty string
+
+:aspect:`Mandatory`
+    No
+	
+absolute
+~~~~~~~~~~~~~~~~~~~~
+
+:aspect:`Variable type`
+    Boolean
+
+:aspect:`Description`
+   If set, the URI of the rendered link is absolute.
+
+:aspect:`Default value`
+    GET
 
 :aspect:`Mandatory`
     No
