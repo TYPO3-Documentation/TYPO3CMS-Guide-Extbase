@@ -62,6 +62,13 @@ Inline notation
 
  {f:variable(name: 'myvariable', value: 'some value')}
 
+Inline notation II
+~~~~~~~~~~~~~~~~~~
+
+::
+
+ {oldvariable -> f:format.htmlspecialchars() -> f:variable(name: 'newvariable')}
+
 Simple math
 ~~~~~~~~~~~
 
