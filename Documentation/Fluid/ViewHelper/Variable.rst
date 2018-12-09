@@ -11,7 +11,8 @@ Properties
 ----------
 
 name
-~~~
+~~~~
+
 :aspect:`Variable type`
     String
 
