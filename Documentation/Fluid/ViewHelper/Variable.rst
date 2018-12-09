@@ -78,11 +78,11 @@ Simple math
  {f:variable(name: 'mycount', value: 0)}
  {mycount}
 
-> Outout is "0"
+> Output is "0"
 
 ::
 
  {f:variable(name: 'mycount', value: '{mycount + 1}')}
  {mycount}
 
-> Outout is now "1"
+> Output is now "1"
