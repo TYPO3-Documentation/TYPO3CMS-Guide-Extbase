@@ -5,7 +5,8 @@ f:variable
 
 Assigns one template variable which will exist also after the ViewHelper is done rendering, i.e. adds template variables.
 
-If you require a variable assignment which does not exist in the template after a piece of Fluid code is rendered, consider using `f:alias` instead.
+If you require a variable assignment which does not exist in the template after a piece of Fluid code is rendered,
+consider using :ref:`vh-f-alias` instead.
 
 Properties
 ----------

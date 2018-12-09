@@ -1,5 +1,7 @@
 .. include:: ../../Includes.txt
 
+.. _vh-f-alias:
+
 f:alias
 =======
 
