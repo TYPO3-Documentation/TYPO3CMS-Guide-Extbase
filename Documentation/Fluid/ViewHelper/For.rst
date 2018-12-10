@@ -81,7 +81,7 @@ iteration
 
    *Example:* `iteration="iterator"`. Iteration data can then be accessed
    like `{iterator.index}`, `{iterator.cycle}`, `{iterator.total}`,
-   `{iterator.isEven}`, `{iterator.isOdd}`.
+   `{iterator.isEven}`, `{iterator.isOdd}`, `{iterator.isFirst}`, `{iterator.isLast}`.
 
    *Attention:* `iterator.cycle` is just a simple counter.  It has nothing to
    do with the viewhelper `f:cycle`.
