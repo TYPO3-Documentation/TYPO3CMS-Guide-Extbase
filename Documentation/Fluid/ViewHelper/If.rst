@@ -117,13 +117,15 @@ Inline notation
 You can also use the ViewHelper with an inline notation.
 
 ::
-  {f:if(condition: '{numberVar} == 1', then: 'active', else: 'disable')}
-  {f:if(condition: varName, then: 'varName is set')}
-  {f:if(condition: '{varA} && {varB}', then: 'both set')}
-  {f:if(condition: '{foo} == \'bar\'', then: 'var foo is equal to string bar')}
-  {f:if(condition: '{foo} == "bar"', then: 'var foo is equal to string bar')}
+
+   {f:if(condition: '{numberVar} == 1', then: 'active', else: 'disable')}
+   {f:if(condition: varName, then: 'varName is set')}
+   {f:if(condition: '{varA} && {varB}', then: 'both set')}
+   {f:if(condition: '{foo} == \'bar\'', then: 'var foo is equal to string bar')}
+   {f:if(condition: '{foo} == "bar"', then: 'var foo is equal to string bar')}
 
 For example to output the class attribute of an html element
 
 ::
-  <span class="product-headline {f:if(condition: isHighlight, then: 'highlight-headline')}">{headline}</span>
+
+   <span class="product-headline {f:if(condition: isHighlight, then: 'highlight-headline')}">{headline}</span>
