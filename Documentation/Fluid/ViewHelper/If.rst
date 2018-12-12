@@ -114,13 +114,13 @@ use the `f:then` / `f:else` ViewHelpers.
 
 Inline notation
 ---------------
-You can also use the ViewHelper with an inline notation.
+You can also use the ViewHelper with :ref:`inline notation <inline-notation-vs-tag-based-notation>`.
 
 ::
 
    {f:if(condition: '{numberVar} == 1', then: 'active', else: 'disable')}
-   {f:if(condition: varName, then: 'varName is set')}
-   {f:if(condition: '{varA} && {varB}', then: 'both set')}
+   {f:if(condition: varName, then: 'varName evaluates to true')}
+   {f:if(condition: '{varA} && {varB}', then: 'both varA and varB evaluate to true')}
    {f:if(condition: '{foo} == \'bar\'', then: 'var foo is equal to string bar')}
    {f:if(condition: '{foo} == "bar"', then: 'var foo is equal to string bar')}
 
