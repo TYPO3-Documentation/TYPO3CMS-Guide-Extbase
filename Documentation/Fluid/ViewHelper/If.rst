@@ -111,3 +111,21 @@ Simple examples
 If there are no `f:then` or `f:else` ViewHelpers in use, the content between the `f:if` ViewHelpers will only be output if 
 the comparison returns a positive result. If you need to use the full if-then-else construct, then you'll have to 
 use the `f:then` / `f:else` ViewHelpers.
+
+Inline notation
+---------------
+You can also use the ViewHelper with :ref:`inline notation <inline-notation-vs-tag-based-notation>`.
+
+::
+
+   {f:if(condition: '{numberVar} == 1', then: 'active', else: 'disable')}
+   {f:if(condition: varName, then: 'varName evaluates to true')}
+   {f:if(condition: '{varA} && {varB}', then: 'both varA and varB evaluate to true')}
+   {f:if(condition: '{foo} == \'bar\'', then: 'var foo is equal to string bar')}
+   {f:if(condition: '{foo} == "bar"', then: 'var foo is equal to string bar')}
+
+For example to output the class attribute of an html element
+
+::
+
+   <span class="product-headline {f:if(condition: isHighlight, then: 'highlight-headline')}">{headline}</span>
