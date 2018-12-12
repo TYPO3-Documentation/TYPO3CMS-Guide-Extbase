@@ -41,6 +41,7 @@ The power of Fluid is the usage of ViewHelpers. There are many of them, for all 
    RenderChildren
    RenderFlashMessages
    Section
+   Spaceless
    Switch
    Then
    Translate
