@@ -11,10 +11,6 @@ f:switch
 This ViewHelper was introduced in v6.2 to allow multi-case comparison within a single ViewHelper. This
 is much simpler than using a series of stacked `f:if` ViewHelpers.
 
-*Note:* Frequent use of this viewHelper may indicate a "weak programming architecture".
-A better approach then would be to reconsider the architecture of actions and controllers.
-
-
 Properties
 ==========
 
