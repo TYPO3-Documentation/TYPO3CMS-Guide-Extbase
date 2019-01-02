@@ -1,5 +1,7 @@
 .. highlight:: html
 
+.. _vh-flash-messages:
+
 ===============
 f:flashMessages
 ===============
