@@ -1,0 +1,29 @@
+:orphan:
+
+.. include:: Includes.txt
+
+
+.. _404:
+
+===============
+404 - Not Found
+===============
+
+The page or file you reached is no longer available. It has probably
+been moved or deleted.
+
+We suggest to try one of the following:
+
+* In case you are looking for the documentation of a ViewHelper:
+  The Fluid ViewHelper Reference is now being automatically generated
+  and has moved to: :ref:`t3fluidvhreference:start`.
+* If you are looking for a page in this "Extbase / Fluid Guide",
+  use search on this page or navigate through the menu.
+* For a general search of TYPO3 documentation, use an external search
+  engine, for example `google <https://www.google.com/search?q=site%3Adocs.typo3.org>`__
+
+You can contact us on Slack: https://typo3.slack.com
+(`Register <https://my.typo3.org/about-mytypo3org/slack/>`__) or via email:
+documentation@typo3.org.
+
+
