@@ -24,7 +24,10 @@ A TYPO3 Extbase and Fluid Guide (deprecated)
       For more information, see `Deprecation of Extbase / Fluid Guide <https://docs.typo3.org/Home/About/News/2019/Index.html#news-2019-06-26>`__
 
 
-* For information about resources on Extbase / Fluid, see :ref:`t3start:next-steps-developers-extbase`.
+For information about resources on Extbase / Fluid, see
+
+* :ref:`Getting Started Tutorial > Next Steps > For Developers > Fluid / Extbase <t3start:next-steps-developers-extbase>`.
+
 
 ViewHelper references:
 
