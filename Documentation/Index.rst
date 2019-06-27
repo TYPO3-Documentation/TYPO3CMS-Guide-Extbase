@@ -27,6 +27,7 @@ A TYPO3 Extbase and Fluid Guide (deprecated)
 The content of this document is related to TYPO3, a GNU/GPL CMS/Framework available from `www.typo3.org
 <http://www.typo3.org/>`_
 
+For information about resources on Extbase / Fluid, see :ref:`t3start:next-steps-developers-extbase`.
 
 
 .. toctree::
