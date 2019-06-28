@@ -1,7 +1,7 @@
 .. include:: ../../Includes.txt
 
-Step 1 - Introduction
-=====================
+Introduction
+============
 
 **Table of Contents**
 
@@ -10,5 +10,4 @@ Step 1 - Introduction
    :titlesonly:
    :glob:
 
-   DomainDrivenDesign
    DependencyInjection
