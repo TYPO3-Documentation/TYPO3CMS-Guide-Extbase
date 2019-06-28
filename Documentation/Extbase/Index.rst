@@ -42,7 +42,9 @@ Main Contents
    :hidden:
 
    FirstExtbaseExtension
-   ExtendExtbaseExtension
    Step1Introduction/Index
-   Step2SystemCheck/Index
-   Step3Documentation/Index
+   Step3Documentation/Architecture
+   Step3Documentation/Bootstrap
+   Step3Documentation/Dispatcher
+   Step3Documentation/ActionController
+   ExtendExtbaseExtension
