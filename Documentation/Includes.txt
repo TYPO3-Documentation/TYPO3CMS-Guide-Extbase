@@ -15,3 +15,17 @@
 
 .. default-role:: code
 .. highlight:: php
+
+
+.. ---------------------------------------------------------------------
+.. Add content below, which should be displayed at the top of EVERY page.
+.. ---------------------------------------------------------------------
+
+.. warning::
+
+   The information for this version |release| is outdated.
+   For resources on Extbase / Fluid, see:
+
+   * :ref:`Getting Started Tutorial > Next Steps > For Developers > Fluid / Extbase <t3start:next-steps-developers-extbase>`.
+
+   Contact: https://typo3.org/community/teams/documentation/#c9886
