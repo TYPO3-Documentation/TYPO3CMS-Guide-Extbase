@@ -32,8 +32,8 @@ global TypoScript template::
    pluginName = Products
  }
 
-As soon as you add this Extbase plugin to a page, the method *run* in the class *tx_extbase_core_bootstrap* is 
-exectued. So that it knows wich extension and plugin we're dealing with, information about the *extensionName* and 
+As soon as you add this Extbase plugin to a page, the method *run* of the class *tx_extbase_core_bootstrap* is being 
+exectued. Now the page knows which extension and plugin you're dealing with, information on the *extensionName* and 
 *pluginName* are passed to the method. This is where the actual bootstrapping takes place.::
 
  $this->initializeObjectManager();
