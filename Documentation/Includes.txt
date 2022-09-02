@@ -17,7 +17,7 @@
 .. highlight:: php
 
 .. attention::
-   TYPO3 v9 has reached its end-of-life September 30th, 2021 and is not
+   TYPO3 v8 has reached its end-of-life March 31st, 2020 and is not
    maintained by the community anymore.
 
    You can order Extended Long Term Support (ELTS) here:
